@@ -27,7 +27,7 @@ interface Citation {
 }
 
 const CATEGORIES = [
-  { key: 'constitutional', label: 'Constitutional', color: 'var(--accent-primary)' },
+  { key: 'constitutional', label: 'Constitutional', color: 'var(--link)' },
   { key: 'civil_rights', label: 'Civil Rights', color: 'var(--link)' },
   { key: 'criminal', label: 'Criminal Law', color: 'var(--data-negative)' },
   { key: 'regulatory', label: 'Regulatory', color: 'var(--data-positive)' },
@@ -180,14 +180,14 @@ export default function CitationsPage() {
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 24 }}>
-        <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
+        <Link href="/legal" style={{ color: 'var(--link)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Citation Explorer</span>
       </nav>
 
       {/* Hero */}
       <div style={{ marginBottom: 16 }}>
-        <h1 style={{ fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
+        <h1 style={{ fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--text1)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Citation Explorer
         </h1>
         <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -204,9 +204,9 @@ export default function CitationsPage() {
             borderRadius: 20,
             fontSize: 14,
             fontWeight: 500,
-            border: !activeCategory ? '2px solid var(--accent-primary)' : '1px solid var(--bdr)',
-            background: !activeCategory ? '#E8F4FD' : 'var(--color-surface-0)',
-            color: !activeCategory ? 'var(--accent-primary)' : 'var(--color-text-muted)',
+            border: !activeCategory ? '2px solid var(--link)' : '1px solid var(--bdr)',
+            background: !activeCategory ? '#E8F4FD' : 'var(--card)',
+            color: !activeCategory ? 'var(--link)' : 'var(--color-text-muted)',
             cursor: 'pointer',
           }}
         >
@@ -222,7 +222,7 @@ export default function CitationsPage() {
               fontSize: 14,
               fontWeight: 500,
               border: activeCategory === cat.key ? `2px solid ${cat.color}` : '1px solid var(--bdr)',
-              background: activeCategory === cat.key ? `${cat.color}14` : 'var(--color-surface-0)',
+              background: activeCategory === cat.key ? `${cat.color}14` : 'var(--card)',
               color: activeCategory === cat.key ? cat.color : 'var(--color-text-muted)',
               cursor: 'pointer',
             }}
@@ -235,8 +235,8 @@ export default function CitationsPage() {
       {/* Graph */}
       <div style={{
         borderRadius: 4,
-        border: '1px solid var(--border-default)',
-        background: 'var(--color-surface-1)',
+        border: '1px solid var(--bdr)',
+        background: 'var(--surf)',
         overflow: 'hidden',
         marginBottom: 24,
         position: 'relative',
@@ -260,7 +260,7 @@ export default function CitationsPage() {
                 y1={from.y}
                 x2={to.x}
                 y2={to.y}
-                stroke={highlighted ? '#94A3B8' : 'var(--border-default)'}
+                stroke={highlighted ? '#94A3B8' : 'var(--bdr)'}
                 strokeWidth={highlighted ? 1.5 + edge.strength : 0.5}
                 opacity={highlighted ? 0.6 : 0.15}
                 strokeDasharray={edge.strength < 0.5 ? '4 4' : 'none'}
@@ -293,7 +293,7 @@ export default function CitationsPage() {
                   cy={node.y}
                   r={nodeSize}
                   fill={selected?.id === node.id ? color : `${color}CC`}
-                  stroke={selected?.id === node.id ? 'var(--color-text-primary)' : color}
+                  stroke={selected?.id === node.id ? 'var(--text1)' : color}
                   strokeWidth={selected?.id === node.id ? 3 : 1.5}
                 />
                 <text
@@ -302,7 +302,7 @@ export default function CitationsPage() {
                   textAnchor="middle"
                   fontSize="10"
                   fontWeight={selected?.id === node.id ? 700 : 500}
-                  fill={hl ? 'var(--color-text-primary)' : 'var(--color-text-muted)'}
+                  fill={hl ? 'var(--text1)' : 'var(--color-text-muted)'}
                   fontFamily="var(--font-ui)"
                 >
                   {node.name.length > 22 ? node.name.slice(0, 20) + '...' : node.name}
@@ -331,8 +331,8 @@ export default function CitationsPage() {
             width: 280,
             padding: '24px',
             borderRadius: 4,
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
@@ -350,13 +350,13 @@ export default function CitationsPage() {
                 &times;
               </button>
             </div>
-            <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
+            <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--text1)', margin: '0 0 4px' }}>
               {selected.name}
             </h3>
             <div style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 8 }}>
               {selected.court} &middot; {selected.year}
             </div>
-            <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: '0 0 12px' }}>
+            <p style={{ fontSize: 14, color: 'var(--text2)', lineHeight: 1.5, margin: '0 0 12px' }}>
               {selected.significance}
             </p>
             <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 6 }}>
@@ -368,11 +368,11 @@ export default function CitationsPage() {
                 const other = NODES.find(n => n.id === otherId);
                 const direction = c.from === selected.id ? 'Cites' : 'Cited by';
                 return (
-                  <div key={i} style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>
+                  <div key={i} style={{ fontSize: 12, color: 'var(--text2)' }}>
                     <span style={{ color: 'var(--color-text-muted)' }}>{direction}:</span>{' '}
                     <button
                       onClick={() => setSelected(NODES.find(n => n.id === otherId) || null)}
-                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--accent-primary)', fontSize: 12, padding: 0, fontWeight: 500 }}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--link)', fontSize: 12, padding: 0, fontWeight: 500 }}
                     >
                       {other?.name} ({other?.year})
                     </button>
@@ -391,25 +391,25 @@ export default function CitationsPage() {
         gap: 12,
         marginBottom: 20,
       }}>
-        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
+        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr)', background: 'var(--card)', textAlign: 'center' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono, monospace)' }}>
             {NODES.length}
           </div>
           <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>Landmark Cases</div>
         </div>
-        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr)', background: 'var(--card)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CITATIONS.length}
           </div>
           <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>Citation Links</div>
         </div>
-        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr)', background: 'var(--card)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CATEGORIES.length}
           </div>
           <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>Legal Categories</div>
         </div>
-        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr)', background: 'var(--card)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--wrn-txt)', fontFamily: 'var(--font-mono, monospace)' }}>
             {new Date().getFullYear() - Math.min(...NODES.map(n => n.year))}+
           </div>
@@ -419,7 +419,7 @@ export default function CitationsPage() {
 
       {/* Case list */}
       <div style={{ marginBottom: 20 }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', marginBottom: 16 }}>All Cases in Network</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--text1)', marginBottom: 16 }}>All Cases in Network</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 12 }}>
           {NODES.sort((a, b) => b.year - a.year).map(node => (
             <button
@@ -428,15 +428,15 @@ export default function CitationsPage() {
               style={{
                 padding: '16px 24px',
                 borderRadius: 4,
-                border: selected?.id === node.id ? `2px solid ${CATEGORY_COLORS[node.category]}` : '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
+                border: selected?.id === node.id ? `2px solid ${CATEGORY_COLORS[node.category]}` : '1px solid var(--bdr)',
+                background: 'var(--card)',
                 textAlign: 'left',
                 cursor: 'pointer',
                 transition: 'border-color 150ms',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>{node.name}</span>
+                <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)' }}>{node.name}</span>
                 <span style={{ fontSize: 12, color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono, monospace)' }}>{node.year}</span>
               </div>
               <div style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 6 }}>{node.significance}</div>
@@ -462,7 +462,7 @@ export default function CitationsPage() {
 
       {/* Back to hub */}
       <div style={{ textAlign: 'center' }}>
-        <Link href="/legal" style={{ fontSize: 14, color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500 }}>
+        <Link href="/legal" style={{ fontSize: 14, color: 'var(--link)', textDecoration: 'none', fontWeight: 500 }}>
           &larr; Back to Research Hub
         </Link>
       </div>

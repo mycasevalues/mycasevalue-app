@@ -89,7 +89,7 @@ export default function CourtGuidePage() {
         </section>
 
         {/* Key Topics Section */}
-        <section className="mb-12 rounded bg-[var(--color-surface-1)] p-8">
+        <section className="mb-12 rounded bg-[var(--surf)] p-8">
           <h2 className="mb-6 text-2xl font-bold text-[var(--color-text-muted)]">
             12 Pages of Practical Guidance
           </h2>

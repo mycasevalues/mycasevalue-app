@@ -33,9 +33,9 @@ const variantStyles = {
     iconPath: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
   },
   danger: {
-    borderColor: 'var(--accent-primary)',
+    borderColor: 'var(--link)',
     background: 'rgba(232,23,31,0.05)',
-    iconColor: 'var(--accent-primary)',
+    iconColor: 'var(--link)',
     iconPath: 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z',
   },
 };
@@ -78,7 +78,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
               fontFamily: 'var(--font-ui)',
               fontSize: '14px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 4px 0',
             }}
           >
@@ -89,7 +89,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
           style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '14px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             lineHeight: 1.6,
           }}
         >

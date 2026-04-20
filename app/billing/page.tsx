@@ -72,8 +72,8 @@ export default function BillingPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ width: 32, height: 32, border: '3px solid var(--border-default)', borderTopColor: 'var(--accent-primary)', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+      <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: 32, height: 32, border: '3px solid var(--bdr)', borderTopColor: 'var(--link)', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -83,9 +83,9 @@ export default function BillingPage() {
   const details = PLAN_DETAILS[currentPlan] || PLAN_DETAILS.free;
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '32px 24px' }}>
+      <div style={{ backgroundColor: 'var(--link)', color: 'var(--card)', padding: '32px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '24px' }}>
@@ -102,12 +102,12 @@ export default function BillingPage() {
 
           {/* Badge and Title */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
-            <span style={{ padding: '6px 14px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <span style={{ padding: '6px 14px', backgroundColor: 'var(--link)', color: 'var(--card)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               BILLING
             </span>
           </div>
 
-          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 12px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--card)', margin: '0 0 12px 0' }}>
             Billing & Subscription
           </h1>
 
@@ -127,14 +127,14 @@ export default function BillingPage() {
             </div>
           )}
           {/* Current Plan Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--bdr)', marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
               <div>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 8px 0' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 8px 0' }}>
                   Current Plan
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <span className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--text1)' }}>
                     {details.name}
                   </span>
                   <span style={{ padding: '4px 12px', borderRadius: '3px', fontSize: '12px', fontWeight: 500, backgroundColor: 'rgba(0,105,151,0.06)', color: 'var(--gold)' }}>
@@ -143,30 +143,30 @@ export default function BillingPage() {
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <span className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                <span className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--text1)' }}>
                   {details.price}
                 </span>
                 {currentPlan === 'attorney' && (
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0 0' }}>per month</p>
+                  <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '4px 0 0 0' }}>per month</p>
                 )}
               </div>
             </div>
 
             {planInfo?.grantedAt && (
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '16px 0 0 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '16px 0 0 0' }}>
                 Active since {new Date(planInfo.grantedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
             {planInfo?.expiresAt && (
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '4px 0 0 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '4px 0 0 0' }}>
                 Next billing date: {new Date(planInfo.expiresAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
           </div>
 
           {/* Plan Features */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+          <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--bdr)', marginBottom: '24px' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 20px 0' }}>
               Your Plan Includes
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px' }}>
@@ -175,28 +175,28 @@ export default function BillingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--data-positive)" strokeWidth="2.5" style={{ flexShrink: 0 }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span style={{ fontSize: '14px', color: 'var(--color-text-primary)' }}>{feature}</span>
+                  <span style={{ fontSize: '14px', color: 'var(--text1)' }}>{feature}</span>
                 </div>
               ))}
             </div>
 
-            <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid var(--border-default)' }}>
-              <Link href="/pricing" style={{ display: 'inline-block', padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+            <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid var(--bdr)' }}>
+              <Link href="/pricing" style={{ display: 'inline-block', padding: '8px 24px', backgroundColor: 'var(--link)', color: 'var(--card)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
                 {currentPlan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
               </Link>
             </div>
           </div>
 
           {/* Payment Method (placeholder for future Stripe) */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+          <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--bdr)', marginBottom: '24px' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px 0' }}>
               Payment Method
             </h2>
-            <div style={{ backgroundColor: 'var(--color-surface-1)', borderRadius: '4px', padding: '24px', border: '2px dashed var(--border-default)', textAlign: 'center' }}>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 4px 0' }}>
+            <div style={{ backgroundColor: 'var(--surf)', borderRadius: '4px', padding: '24px', border: '2px dashed var(--bdr)', textAlign: 'center' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 4px 0' }}>
                 No payment method on file
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>
                 All features are currently free during our beta period
               </p>
             </div>

@@ -269,7 +269,7 @@ Platform: MyCaseValue Legal Research
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)' }}>
       {/* Header */}
       <div style={{
         background: 'var(--card)',
@@ -302,7 +302,7 @@ Platform: MyCaseValue Legal Research
             fontSize: '28px',
             fontWeight: '700',
             fontFamily: 'var(--font-legal)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 16px 0',
             letterSpacing: '-0.025em',
             lineHeight: '1.1',
@@ -334,7 +334,7 @@ Platform: MyCaseValue Legal Research
             fontWeight: '600',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             marginBottom: '12px',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -358,7 +358,7 @@ Platform: MyCaseValue Legal Research
               border: '1px solid var(--bdr)',
               borderRadius: '2px',
               background: 'var(--card)',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               cursor: 'pointer',
               transition: 'border-color 200ms',
             }}
@@ -397,7 +397,7 @@ Platform: MyCaseValue Legal Research
               fontWeight: '500',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
             }}>
               Favorable Jurisdictions
@@ -419,7 +419,7 @@ Platform: MyCaseValue Legal Research
               fontWeight: '500',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
             }}>
               Mixed Jurisdictions
@@ -441,7 +441,7 @@ Platform: MyCaseValue Legal Research
               fontWeight: '500',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
             }}>
               Unfavorable Jurisdictions
@@ -453,7 +453,7 @@ Platform: MyCaseValue Legal Research
               fontSize: '22px',
               fontWeight: '600',
               fontFamily: 'var(--font-mono)',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: '4px',
             }}>
               50
@@ -463,7 +463,7 @@ Platform: MyCaseValue Legal Research
               fontWeight: '500',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
             }}>
               Total States
@@ -477,7 +477,7 @@ Platform: MyCaseValue Legal Research
             fontSize: '20px',
             fontWeight: '600',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 24px 0',
             letterSpacing: '-0.3px',
           }}>
@@ -542,7 +542,7 @@ Platform: MyCaseValue Legal Research
                       fontSize="14"
                       fontWeight="600"
                       fontFamily="var(--font-mono)"
-                      fill="var(--color-text-primary)"
+                      fill="var(--text1)"
                     >
                       {state}
                     </text>
@@ -552,7 +552,7 @@ Platform: MyCaseValue Legal Research
                       textAnchor="middle"
                       fontSize="10"
                       fontFamily="var(--font-ui)"
-                      fill="var(--color-text-secondary)"
+                      fill="var(--text2)"
                     >
                       {getStatusLabel(data?.status || 'no-data')}
                     </text>
@@ -577,7 +577,7 @@ Platform: MyCaseValue Legal Research
               fontWeight: '600',
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               marginBottom: '8px',
               fontFamily: 'var(--font-ui)',
             }}>
@@ -596,7 +596,7 @@ Platform: MyCaseValue Legal Research
                 border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 background: 'var(--card)',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 cursor: 'pointer',
               }}
             >
@@ -616,7 +616,7 @@ Platform: MyCaseValue Legal Research
               fontWeight: '600',
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               marginBottom: '8px',
               fontFamily: 'var(--font-ui)',
             }}>
@@ -635,7 +635,7 @@ Platform: MyCaseValue Legal Research
                 border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 background: 'var(--card)',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 cursor: 'pointer',
               }}
             >
@@ -656,7 +656,7 @@ Platform: MyCaseValue Legal Research
                 border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 background: 'var(--card)',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 cursor: 'pointer',
                 fontWeight: '500',
                 transition: 'all 200ms',
@@ -675,7 +675,7 @@ Platform: MyCaseValue Legal Research
                 border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 background: 'var(--card)',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 cursor: 'pointer',
                 fontWeight: '500',
                 transition: 'all 200ms',
@@ -692,7 +692,7 @@ Platform: MyCaseValue Legal Research
             fontSize: '20px',
             fontWeight: '600',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 16px 0',
             letterSpacing: '-0.3px',
           }}>
@@ -717,7 +717,7 @@ Platform: MyCaseValue Legal Research
                     padding: '16px',
                     textAlign: 'left',
                     fontWeight: '600',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontSize: '12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -728,7 +728,7 @@ Platform: MyCaseValue Legal Research
                     padding: '16px',
                     textAlign: 'left',
                     fontWeight: '600',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontSize: '12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -739,7 +739,7 @@ Platform: MyCaseValue Legal Research
                     padding: '16px',
                     textAlign: 'left',
                     fontWeight: '600',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontSize: '12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -750,7 +750,7 @@ Platform: MyCaseValue Legal Research
                     padding: '16px',
                     textAlign: 'left',
                     fontWeight: '600',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontSize: '12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -761,7 +761,7 @@ Platform: MyCaseValue Legal Research
                     padding: '16px',
                     textAlign: 'center',
                     fontWeight: '600',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontSize: '12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -772,7 +772,7 @@ Platform: MyCaseValue Legal Research
                     padding: '16px',
                     textAlign: 'center',
                     fontWeight: '600',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontSize: '12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -824,13 +824,13 @@ Platform: MyCaseValue Legal Research
                         {row.stateName}
                       </button>
                     </td>
-                    <td style={{ padding: '16px', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+                    <td style={{ padding: '16px', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text2)' }}>
                       {row.statute}
                     </td>
-                    <td style={{ padding: '16px', color: 'var(--color-text-primary)', maxWidth: '280px' }}>
+                    <td style={{ padding: '16px', color: 'var(--text1)', maxWidth: '280px' }}>
                       {row.keyProvisions}
                     </td>
-                    <td style={{ padding: '16px', color: 'var(--color-text-secondary)', fontSize: '12px' }}>
+                    <td style={{ padding: '16px', color: 'var(--text2)', fontSize: '12px' }}>
                       {new Date(row.effectiveDate).toLocaleDateString()}
                     </td>
                     <td style={{ padding: '16px', textAlign: 'center' }}>
@@ -847,7 +847,7 @@ Platform: MyCaseValue Legal Research
                         {getStatusLabel(row.status)}
                       </span>
                     </td>
-                    <td style={{ padding: '16px', textAlign: 'center', color: 'var(--color-text-secondary)', fontSize: '12px' }}>
+                    <td style={{ padding: '16px', textAlign: 'center', color: 'var(--text2)', fontSize: '12px' }}>
                       {row.keycite}
                     </td>
                   </tr>
@@ -863,7 +863,7 @@ Platform: MyCaseValue Legal Research
             fontSize: '14px',
             fontWeight: '600',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 16px 0',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
@@ -963,7 +963,7 @@ Platform: MyCaseValue Legal Research
             fontSize: '16px',
             fontWeight: '600',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 16px 0',
           }}>
             Summary Analysis
@@ -976,7 +976,7 @@ Platform: MyCaseValue Legal Research
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 margin: '0 0 12px 0',
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -984,7 +984,7 @@ Platform: MyCaseValue Legal Research
               </h4>
               <p style={{
                 fontSize: '14px',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: 0,
                 lineHeight: '1.6',
                 fontFamily: 'var(--font-ui)',
@@ -1000,7 +1000,7 @@ Platform: MyCaseValue Legal Research
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 margin: '0 0 12px 0',
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -1008,7 +1008,7 @@ Platform: MyCaseValue Legal Research
               </h4>
               <p style={{
                 fontSize: '14px',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: 0,
                 lineHeight: '1.6',
                 fontFamily: 'var(--font-ui)',
@@ -1024,7 +1024,7 @@ Platform: MyCaseValue Legal Research
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 margin: '0 0 12px 0',
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -1032,7 +1032,7 @@ Platform: MyCaseValue Legal Research
               </h4>
               <p style={{
                 fontSize: '14px',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: 0,
                 lineHeight: '1.6',
                 fontFamily: 'var(--font-ui)',
@@ -1053,7 +1053,7 @@ Platform: MyCaseValue Legal Research
               fontWeight: '600',
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               margin: '0 0 12px 0',
               fontFamily: 'var(--font-ui)',
             }}>
@@ -1061,7 +1061,7 @@ Platform: MyCaseValue Legal Research
             </h4>
             <p style={{
               fontSize: '14px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: 0,
               lineHeight: '1.6',
               fontFamily: 'var(--font-ui)',
@@ -1084,7 +1084,7 @@ Platform: MyCaseValue Legal Research
             fontSize: '14px',
             fontWeight: '600',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 16px 0',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
@@ -1101,10 +1101,10 @@ Platform: MyCaseValue Legal Research
                 border: `2px solid var(--data-positive)`,
               }} />
               <div>
-                <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)' }}>
+                <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--text1)' }}>
                   Favorable
                 </div>
-                <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+                <div style={{ fontSize: '12px', color: 'var(--text2)' }}>
                   Plaintiff-friendly jurisdiction
                 </div>
               </div>
@@ -1119,10 +1119,10 @@ Platform: MyCaseValue Legal Research
                 border: `2px solid var(--gold)`,
               }} />
               <div>
-                <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)' }}>
+                <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--text1)' }}>
                   Mixed
                 </div>
-                <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+                <div style={{ fontSize: '12px', color: 'var(--text2)' }}>
                   Fact-dependent or neutral
                 </div>
               </div>
@@ -1137,10 +1137,10 @@ Platform: MyCaseValue Legal Research
                 border: `2px solid var(--data-negative)`,
               }} />
               <div>
-                <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)' }}>
+                <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--text1)' }}>
                   Unfavorable
                 </div>
-                <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+                <div style={{ fontSize: '12px', color: 'var(--text2)' }}>
                   Defendant-friendly jurisdiction
                 </div>
               </div>
@@ -1183,7 +1183,7 @@ Platform: MyCaseValue Legal Research
           <p style={{ margin: '0 0 12px 0', fontFamily: 'var(--font-ui)' }}>
             <strong>Legal Disclaimer:</strong> This 50-State Jurisdictional Survey is provided for research and comparative analysis purposes only and does not constitute legal advice. The information reflects statutory law as of publication and may not account for recent amendments or developments in case law. Jurisdictional analysis is necessarily general and individual circumstances may vary significantly. Always consult with a qualified attorney licensed in the relevant jurisdiction before relying on any legal analysis or making litigation decisions.
           </p>
-          <p style={{ margin: 0, fontFamily: 'var(--font-ui)', fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+          <p style={{ margin: 0, fontFamily: 'var(--font-ui)', fontSize: '12px', color: 'var(--text2)' }}>
             © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved. Data compiled from public legal sources and maintained for legal research purposes only.
           </p>
         </div>

@@ -121,8 +121,8 @@ export default function DiscoveryGeneratorPage() {
 
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
-    border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
+    border: '1px solid var(--bdr)', borderRadius: '2px', fontSize: '14px',
+    color: 'var(--text1)', backgroundColor: 'var(--card)', fontFamily: 'var(--font-ui)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -132,10 +132,10 @@ export default function DiscoveryGeneratorPage() {
   const hasAnyText = texts.interrogatories || texts.production || texts.admissions;
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: var(--shadow-focus); }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--link); box-shadow: var(--shadow-focus); }
       `}</style>
 
       {/* Header */}
@@ -153,7 +153,7 @@ export default function DiscoveryGeneratorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--text1)', fontFamily: 'var(--font-legal)', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
             Draft Discovery Requests in Minutes, Not Hours
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--text3)', margin: 0, lineHeight: 1.6 }}>
@@ -166,13 +166,13 @@ export default function DiscoveryGeneratorPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: hasAnyText ? '340px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
-            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
+          <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
               Case Details
             </h2>
             <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>Case Category</label>
                 <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); }} style={selectStyle}>
                   <option value="">Select category...</option>
                   {SITS.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
@@ -181,7 +181,7 @@ export default function DiscoveryGeneratorPage() {
 
               {caseCategory && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type *</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>Case Type *</label>
                   <select value={caseType} onChange={e => setCaseType(e.target.value)} style={selectStyle}>
                     <option value="">Select type...</option>
                     {caseOptions.map(opt => <option key={opt.label} value={opt.nos}>{opt.label}</option>)}
@@ -190,7 +190,7 @@ export default function DiscoveryGeneratorPage() {
               )}
 
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Party Role *</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>Party Role *</label>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   {['plaintiff', 'defendant'].map(role => (
                     <button
@@ -199,9 +199,9 @@ export default function DiscoveryGeneratorPage() {
                       onClick={() => setPartyRole(role)}
                       style={{
                         flex: 1, padding: '8px', borderRadius: '2px',
-                        border: `1px solid ${partyRole === role ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                        backgroundColor: partyRole === role ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)',
-                        color: partyRole === role ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                        border: `1px solid ${partyRole === role ? 'var(--link)' : 'var(--bdr)'}`,
+                        backgroundColor: partyRole === role ? 'rgba(10,102,194,0.08)' : 'var(--surf)',
+                        color: partyRole === role ? 'var(--link)' : 'var(--text2)',
                         fontSize: '14px', fontWeight: 600, cursor: 'pointer',
                         textTransform: 'capitalize',
                       }}
@@ -213,22 +213,22 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Claims or Defenses (optional)</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>Claims or Defenses (optional)</label>
                 <textarea
                   placeholder="Describe the key claims or defenses to tailor the discovery requests..."
                   value={claimsDefenses}
                   onChange={e => setClaimsDefenses(e.target.value)}
                   style={{
-                    width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
-                    borderRadius: '2px', fontSize: '14px', color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
+                    width: '100%', padding: '12px 14px', border: '1px solid var(--bdr)',
+                    borderRadius: '2px', fontSize: '14px', color: 'var(--text1)',
+                    backgroundColor: 'var(--card)', fontFamily: 'var(--font-ui)',
                     minHeight: '80px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
                 />
               </div>
 
               {error && (
-                <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--bdr)' }}>
                   <p style={{ fontSize: '14px', color: 'var(--data-negative)', margin: 0 }}>{error}</p>
                 </div>
               )}
@@ -238,8 +238,8 @@ export default function DiscoveryGeneratorPage() {
                 disabled={loading || !caseType}
                 style={{
                   width: '100%', padding: '16px',
-                  backgroundColor: loading || !caseType ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse)', border: 'none', borderRadius: '2px',
+                  backgroundColor: loading || !caseType ? 'var(--bdr)' : 'var(--link)',
+                  color: 'var(--chrome-text)', border: 'none', borderRadius: '2px',
                   fontSize: '14px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.5px',
                   cursor: loading || !caseType ? 'not-allowed' : 'pointer',
@@ -254,7 +254,7 @@ export default function DiscoveryGeneratorPage() {
           {hasAnyText && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Tabs */}
-              <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-0)', borderRadius: '4px', padding: '4px', border: '1px solid var(--border-default)' }}>
+              <div style={{ display: 'flex', gap: '4px', background: 'var(--card)', borderRadius: '4px', padding: '4px', border: '1px solid var(--bdr)' }}>
                 {TABS.map(tab => (
                   <button
                     key={tab.key}
@@ -264,8 +264,8 @@ export default function DiscoveryGeneratorPage() {
                     }}
                     style={{
                       flex: 1, padding: '8px 12px', borderRadius: '2px', border: 'none',
-                      background: activeTab === tab.key ? 'var(--accent-primary)' : 'transparent',
-                      color: activeTab === tab.key ? '#FFF' : 'var(--color-text-secondary)',
+                      background: activeTab === tab.key ? 'var(--link)' : 'transparent',
+                      color: activeTab === tab.key ? '#FFF' : 'var(--text2)',
                       fontSize: '12px', fontWeight: 600, cursor: 'pointer',
                       fontFamily: 'var(--font-ui)', transition: 'all 200ms',
                     }}
@@ -282,19 +282,19 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {/* Content */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
+              <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: 8 }}>
-                  <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+                  <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--text1)', margin: '0 0 8px' }}>
                     {TABS.find(t => t.key === activeTab)?.label}
-                    {loading && activeTab && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
+                    {loading && activeTab && <span style={{ fontSize: 12, color: 'var(--link)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
                     <button
                       onClick={copyToClipboard}
                       disabled={loading || !currentText}
                       style={{
-                        padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)',
-                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '2px',
+                        padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--link)',
+                        color: 'var(--chrome-text)', border: 'none', borderRadius: '2px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || !currentText ? 0.5 : 1,
@@ -307,7 +307,7 @@ export default function DiscoveryGeneratorPage() {
                       disabled={loading || exporting || !currentText}
                       style={{
                         padding: '8px 12px', background: 'var(--gold)',
-                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '2px',
+                        color: 'var(--chrome-text)', border: 'none', borderRadius: '2px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || exporting || !currentText ? 0.5 : 1,
@@ -323,16 +323,16 @@ export default function DiscoveryGeneratorPage() {
                     ref={outputRef}
                     style={{
                       maxHeight: '600px', overflowY: 'auto', padding: '16px',
-                      background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)',
-                      fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: '1.7',
+                      background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)',
+                      fontSize: '14px', color: 'var(--text1)', lineHeight: '1.7',
                       fontFamily: 'var(--font-ui)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
                     }}
                   >
                     {currentText}
-                    {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--accent-primary)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
+                    {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--link)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                   </div>
                 ) : (
-                  <div style={{ padding: '40px', textAlign: 'center', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+                  <div style={{ padding: '40px', textAlign: 'center', color: 'var(--text2)', fontSize: '14px' }}>
                     {loading ? 'Generating...' : 'Click "Generate" or switch to this tab to generate content.'}
                   </div>
                 )}

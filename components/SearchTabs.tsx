@@ -25,7 +25,7 @@ export default function SearchTabs() {
           display: 'flex',
           gap: '8px',
           marginBottom: '24px',
-          borderBottom: '2px solid var(--border-default)',
+          borderBottom: '2px solid var(--bdr)',
         }}
       >
         {tabs.map((tab) => (
@@ -37,10 +37,10 @@ export default function SearchTabs() {
               fontSize: '14px',
               fontWeight: activeTab === tab.id ? '600' : '500',
               fontFamily: 'var(--font-ui)',
-              color: activeTab === tab.id ? 'var(--accent-primary)' : 'var(--text3, #4A4940)',
+              color: activeTab === tab.id ? 'var(--link)' : 'var(--text3, #4A4940)',
               background: 'transparent',
               border: 'none',
-              borderBottom: activeTab === tab.id ? '3px solid var(--accent-primary)' : 'none',
+              borderBottom: activeTab === tab.id ? '3px solid var(--link)' : 'none',
               cursor: 'pointer',
               transition: 'all 200ms',
               display: 'flex',

@@ -376,8 +376,8 @@ export default function DistrictsPage() {
             }}>
               <thead>
                 <tr style={{
-                  background: 'var(--color-surface-1, #F4F3EF)',
-                  borderBottom: '1px solid var(--border-default)',
+                  background: 'var(--surf, #F4F3EF)',
+                  borderBottom: '1px solid var(--bdr)',
                 }}>
                   <th style={thStyle({ width: 280, textAlign: 'left' })}>District Name</th>
                   <th style={thStyle({ width: 72 })}>Code</th>
@@ -393,8 +393,8 @@ export default function DistrictsPage() {
                   <tr
                     key={row.code}
                     style={{
-                      borderBottom: '1px solid var(--border-default)',
-                      background: i % 2 === 1 ? 'var(--color-surface-0, #FFFFFF)' : 'transparent',
+                      borderBottom: '1px solid var(--bdr)',
+                      background: i % 2 === 1 ? 'var(--card, #FFFFFF)' : 'transparent',
                       transition: 'var(--transition-fast)',
                     }}
                   >
@@ -540,7 +540,7 @@ function thStyle(overrides: React.CSSProperties = {}): React.CSSProperties {
     letterSpacing: '0.5px',
     textTransform: 'uppercase' as const,
     color: 'var(--color-text-muted, var(--text-tertiary))',
-    backgroundColor: 'var(--color-surface-1, #F4F3EF)',
+    backgroundColor: 'var(--surf, #F4F3EF)',
     whiteSpace: 'nowrap' as const,
     ...overrides,
   };

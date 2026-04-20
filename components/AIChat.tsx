@@ -36,8 +36,8 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
         style={{
           position: 'fixed', bottom: 24, right: 24, zIndex: 1000,
           width: 56, height: 56, borderRadius: '50%',
-          background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover))',
-          color: 'var(--color-text-inverse)', border: 'none', cursor: 'pointer',
+          background: 'linear-gradient(135deg, var(--link), var(--accent-primary-hover))',
+          color: 'var(--chrome-text)', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           boxShadow: '0 4px 20px rgba(139,92,246,0.4)',
           fontSize: 24,
@@ -50,8 +50,8 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
   }
 
   const containerStyle: React.CSSProperties = compact
-    ? { position: 'fixed', bottom: 24, right: 24, zIndex: 1000, width: 400, maxHeight: 500, borderRadius: 4, border: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-0)', boxShadow: '0 8px 40px rgba(0,0,0,0.15)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }
-    : { borderRadius: '4px', border: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-0)', display: 'flex', flexDirection: 'column', overflow: 'hidden' };
+    ? { position: 'fixed', bottom: 24, right: 24, zIndex: 1000, width: 400, maxHeight: 500, borderRadius: 4, border: '1px solid var(--bdr)', backgroundColor: 'var(--card)', boxShadow: '0 8px 40px rgba(0,0,0,0.15)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }
+    : { borderRadius: '4px', border: '1px solid var(--bdr)', backgroundColor: 'var(--card)', display: 'flex', flexDirection: 'column', overflow: 'hidden' };
 
   return (
     <motion.div
@@ -60,12 +60,12 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
       style={containerStyle}
     >
       {/* Header */}
-      <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--border-default)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover))' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--color-text-inverse)' }}>
+      <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--bdr)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg, var(--link), var(--accent-primary-hover))' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--chrome-text)' }}>
           <span style={{ fontWeight: 600, fontSize: 14 }}>AI Case Analyst</span>
         </div>
         {compact && (
-          <button onClick={() => setIsOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--color-text-inverse)', cursor: 'pointer', fontSize: 18 }}>✕</button>
+          <button onClick={() => setIsOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--chrome-text)', cursor: 'pointer', fontSize: 18 }}>✕</button>
         )}
       </div>
 
@@ -76,7 +76,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
             <p style={{ marginBottom: 8 }}>Ask questions about federal court data, settlement values, case trends, and more.</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
               {['Average PI settlement?', 'Employment case trends', 'Top districts by volume'].map(q => (
-                <button key={q} onClick={() => { const e = { target: { value: q } } as React.ChangeEvent<HTMLInputElement>; handleInputChange(e); }} style={{ fontSize: 12, padding: '4px 10px', borderRadius: '4px', border: '1px solid var(--border-default)', background: 'var(--color-surface-1)', cursor: 'pointer', color: 'var(--color-text-secondary)' }}>{q}</button>
+                <button key={q} onClick={() => { const e = { target: { value: q } } as React.ChangeEvent<HTMLInputElement>; handleInputChange(e); }} style={{ fontSize: 12, padding: '4px 10px', borderRadius: '4px', border: '1px solid var(--bdr)', background: 'var(--surf)', cursor: 'pointer', color: 'var(--text2)' }}>{q}</button>
               ))}
             </div>
           </div>
@@ -87,8 +87,8 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
             <div style={{
               padding: '8px 14px', borderRadius: '4px', fontSize: 14, lineHeight: 1.5,
               ...(msg.role === 'user'
-                ? { backgroundColor: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderBottomRightRadius: 4 }
-                : { backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', borderBottomLeftRadius: 4 })
+                ? { backgroundColor: 'var(--link)', color: 'var(--chrome-text)', borderBottomRightRadius: 4 }
+                : { backgroundColor: 'var(--surf)', color: 'var(--text1)', borderBottomLeftRadius: 4 })
             }}>
               {msg.content}
             </div>
@@ -97,7 +97,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
 
         {completion && (
           <div style={{ alignSelf: 'flex-start', maxWidth: '85%' }}>
-            <div style={{ padding: '8px 14px', borderRadius: '4px', fontSize: 14, lineHeight: 1.5, backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', borderBottomLeftRadius: 4 }}>
+            <div style={{ padding: '8px 14px', borderRadius: '4px', fontSize: 14, lineHeight: 1.5, backgroundColor: 'var(--surf)', color: 'var(--text1)', borderBottomLeftRadius: 4 }}>
               {completion}
               <motion.span animate={{ opacity: [0, 1, 0] }} transition={{ repeat: Infinity, duration: 1 }}>▋</motion.span>
             </div>
@@ -108,7 +108,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
           <div style={{ alignSelf: 'flex-start' }}>
             <motion.div style={{ display: 'flex', gap: 4, padding: '8px 14px' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               {[0, 1, 2].map(i => (
-                <motion.div key={i} style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: 'var(--accent-primary)' }} animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.15 }} />
+                <motion.div key={i} style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: 'var(--link)' }} animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.15 }} />
               ))}
             </motion.div>
           </div>
@@ -124,21 +124,21 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSubmit} style={{ padding: '12px 16px', borderTop: '1px solid var(--border-default)', display: 'flex', gap: 8 }}>
+      <form onSubmit={handleSubmit} style={{ padding: '12px 16px', borderTop: '1px solid var(--bdr)', display: 'flex', gap: 8 }}>
         <input
           value={input}
           onChange={handleInputChange}
           placeholder={placeholder}
           disabled={isLoading}
-          style={{ flex: 1, padding: '8px 12px', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: 14, outline: 'none' }}
+          style={{ flex: 1, padding: '8px 12px', borderRadius: '4px', border: '1px solid var(--bdr)', fontSize: 14, outline: 'none' }}
         />
         <button
           type="submit"
           disabled={isLoading || !input.trim()}
           style={{
             padding: '8px 16px', borderRadius: '4px', border: 'none',
-            background: isLoading || !input.trim() ? 'var(--color-text-muted)' : 'var(--accent-primary)',
-            color: 'var(--color-text-inverse)', cursor: isLoading || !input.trim() ? 'not-allowed' : 'pointer',
+            background: isLoading || !input.trim() ? 'var(--color-text-muted)' : 'var(--link)',
+            color: 'var(--chrome-text)', cursor: isLoading || !input.trim() ? 'not-allowed' : 'pointer',
             fontSize: 14, fontWeight: 600,
           }}
         >

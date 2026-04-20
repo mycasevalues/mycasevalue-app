@@ -288,7 +288,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
       <div style={{
         display: 'flex',
         gap: 0,
-        borderBottom: '1px solid var(--border-default)',
+        borderBottom: '1px solid var(--bdr)',
         marginBottom: 32,
       }}>
         <button
@@ -301,10 +301,10 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             fontSize: 14,
             fontWeight: 600,
             fontFamily: 'var(--font-ui)',
-            color: activeTab === 'directory' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
-            background: activeTab === 'directory' ? 'var(--color-surface-0)' : 'var(--color-surface-1)',
+            color: activeTab === 'directory' ? 'var(--link)' : 'var(--text2)',
+            background: activeTab === 'directory' ? 'var(--card)' : 'var(--surf)',
             border: 'none',
-            borderBottom: activeTab === 'directory' ? '3px solid var(--accent-primary)' : '3px solid transparent',
+            borderBottom: activeTab === 'directory' ? '3px solid var(--link)' : '3px solid transparent',
             cursor: 'pointer',
             transition: 'all 200ms ease',
           }}
@@ -322,10 +322,10 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             fontSize: 14,
             fontWeight: 600,
             fontFamily: 'var(--font-ui)',
-            color: activeTab === 'by-case-type' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
-            background: activeTab === 'by-case-type' ? 'var(--color-surface-0)' : 'var(--color-surface-1)',
+            color: activeTab === 'by-case-type' ? 'var(--link)' : 'var(--text2)',
+            background: activeTab === 'by-case-type' ? 'var(--card)' : 'var(--surf)',
             border: 'none',
-            borderBottom: activeTab === 'by-case-type' ? '3px solid var(--accent-primary)' : '3px solid transparent',
+            borderBottom: activeTab === 'by-case-type' ? '3px solid var(--link)' : '3px solid transparent',
             cursor: 'pointer',
             transition: 'all 200ms ease',
           }}
@@ -341,8 +341,8 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
       <div style={{
         padding: '24px',
         borderRadius: 2,
-        border: '1px solid var(--border-default)',
-        background: 'var(--color-surface-0)',
+        border: '1px solid var(--bdr)',
+        background: 'var(--card)',
         marginBottom: 32,
       }}>
         <div style={{ marginBottom: 20 }}>
@@ -350,7 +350,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             display: 'block',
             fontSize: 12,
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: 8,
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -370,7 +370,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               width: '100%',
               padding: '12px 16px',
               borderRadius: 2,
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               fontSize: 14,
               fontFamily: 'var(--font-ui)',
               boxSizing: 'border-box',
@@ -389,7 +389,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               display: 'block',
               fontSize: 12,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: 8,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -404,7 +404,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 width: '100%',
                 padding: '12px 16px',
                 borderRadius: 2,
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 fontSize: 14,
                 fontFamily: 'var(--font-ui)',
               }}
@@ -420,7 +420,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               display: 'block',
               fontSize: 12,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: 8,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -436,7 +436,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 width: '100%',
                 padding: '12px 16px',
                 borderRadius: 2,
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 fontSize: 14,
                 fontFamily: 'var(--font-ui)',
                 opacity: !selectedCircuit ? 0.5 : 1,
@@ -454,7 +454,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               display: 'block',
               fontSize: 12,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: 8,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -472,7 +472,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 width: '100%',
                 padding: '12px 16px',
                 borderRadius: 2,
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 fontSize: 14,
                 fontFamily: 'var(--font-ui)',
               }}
@@ -488,7 +488,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               display: 'block',
               fontSize: 12,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: 8,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -506,7 +506,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 width: '100%',
                 padding: '12px 16px',
                 borderRadius: 2,
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 fontSize: 14,
                 fontFamily: 'var(--font-ui)',
               }}
@@ -523,7 +523,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
       <div style={{
         fontSize: 14,
         fontFamily: 'var(--font-ui)',
-        color: 'var(--color-text-secondary)',
+        color: 'var(--text2)',
         marginBottom: 20,
       }}>
         Showing {state.judges.length > 0 ? (state.currentPage - 1) * JUDGES_PER_PAGE + 1 : 0} to{' '}
@@ -535,7 +535,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         <div style={{
           padding: '48px 24px',
           textAlign: 'center',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           fontFamily: 'var(--font-ui)',
         }}>
           Loading judges...
@@ -562,17 +562,17 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         <>
         {/* View mode toggle */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-          <span style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+          <span style={{ fontSize: 14, color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
             Showing {state.judges.length} of {state.total} judges
           </span>
-          <div style={{ display: 'flex', gap: 4, background: 'var(--color-surface-1)', borderRadius: 4, padding: 2 }}>
+          <div style={{ display: 'flex', gap: 4, background: 'var(--surf)', borderRadius: 4, padding: 2 }}>
             <button
               onClick={() => setViewMode('table')}
               style={{
                 padding: '6px 12px', fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer',
                 borderRadius: 2, fontFamily: 'var(--font-ui)', transition: 'all 150ms',
-                background: viewMode === 'table' ? 'var(--color-surface-0)' : 'transparent',
-                color: viewMode === 'table' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                background: viewMode === 'table' ? 'var(--card)' : 'transparent',
+                color: viewMode === 'table' ? 'var(--link)' : 'var(--text2)',
                 boxShadow: viewMode === 'table' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
               }}
               aria-label="Table view"
@@ -584,8 +584,8 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               style={{
                 padding: '6px 12px', fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer',
                 borderRadius: 2, fontFamily: 'var(--font-ui)', transition: 'all 150ms',
-                background: viewMode === 'cards' ? 'var(--color-surface-0)' : 'transparent',
-                color: viewMode === 'cards' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                background: viewMode === 'cards' ? 'var(--card)' : 'transparent',
+                color: viewMode === 'cards' ? 'var(--link)' : 'var(--text2)',
                 boxShadow: viewMode === 'cards' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
               }}
               aria-label="Card view"
@@ -597,7 +597,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
 
         {/* Table View */}
         {viewMode === 'table' && (
-          <div style={{ marginBottom: 32, border: '1px solid var(--border-default)', borderRadius: 4, overflow: 'hidden', background: 'var(--color-surface-0)' }}>
+          <div style={{ marginBottom: 32, border: '1px solid var(--bdr)', borderRadius: 4, overflow: 'hidden', background: 'var(--card)' }}>
             <JudgeTableView judges={state.judges} sortBy={sortBy} sortOrder="asc" />
           </div>
         )}
@@ -619,20 +619,20 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               <div key={judge.id} style={{
                 padding: '24px',
                 borderRadius: 2,
-                border: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
+                border: '1px solid var(--bdr)',
+                background: 'var(--card)',
                 transition: 'all 200ms ease',
                 display: 'flex',
                 flexDirection: 'column',
               }}
               onMouseEnter={(e) => {
                 const elem = e.currentTarget;
-                elem.style.borderColor = 'var(--accent-primary)';
+                elem.style.borderColor = 'var(--link)';
                 elem.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.15)';
               }}
               onMouseLeave={(e) => {
                 const elem = e.currentTarget;
-                elem.style.borderColor = 'var(--border-default)';
+                elem.style.borderColor = 'var(--bdr)';
                 elem.style.boxShadow = 'none';
               }}
               >
@@ -640,7 +640,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 <h3 style={{
                   fontSize: 16,
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-legal)',
                   lineHeight: 1.3,
@@ -652,7 +652,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 <p style={{
                   fontSize: 14,
                   fontWeight: 400,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   margin: '0 0 4px 0',
                   fontFamily: 'var(--font-ui)',
                 }}>
@@ -678,7 +678,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   marginBottom: 12,
                   fontSize: 12,
                   fontFamily: 'var(--font-ui)',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                 }}>
                   <div style={{
                     width: 10,
@@ -717,7 +717,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   fontSize: 14,
                   fontWeight: 400,
                   fontFamily: 'var(--font-mono)',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   margin: '0 0 16px 0',
                 }}>
                   {judge.total_cases_handled} cases handled
@@ -729,25 +729,25 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   padding: '12px 16px',
                   textAlign: 'center',
                   borderRadius: 2,
-                  border: '1px solid var(--accent-primary)',
-                  color: 'var(--accent-primary)',
+                  border: '1px solid var(--link)',
+                  color: 'var(--link)',
                   textDecoration: 'none',
                   fontSize: 14,
                   fontWeight: 600,
                   fontFamily: 'var(--font-ui)',
                   transition: 'all 200ms ease',
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
                   const elem = e.currentTarget as HTMLAnchorElement;
-                  elem.style.background = 'var(--accent-primary)';
-                  elem.style.color = 'var(--color-surface-0)';
+                  elem.style.background = 'var(--link)';
+                  elem.style.color = 'var(--card)';
                 }}
                 onMouseLeave={(e) => {
                   const elem = e.currentTarget as HTMLAnchorElement;
-                  elem.style.background = 'var(--color-surface-0)';
-                  elem.style.color = 'var(--accent-primary)';
+                  elem.style.background = 'var(--card)';
+                  elem.style.color = 'var(--link)';
                 }}
                 >
                   View Profile
@@ -765,7 +765,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         <div style={{
           padding: '48px 24px',
           textAlign: 'center',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           fontFamily: 'var(--font-ui)',
         }}>
           No judges found matching your criteria. Try adjusting your filters.
@@ -788,9 +788,9 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             style={{
               padding: '8px 16px',
               borderRadius: 2,
-              border: '1px solid var(--border-default)',
-              background: state.currentPage === 1 ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
-              color: state.currentPage === 1 ? 'var(--text4, #8A8780)' : 'var(--color-text-primary)',
+              border: '1px solid var(--bdr)',
+              background: state.currentPage === 1 ? 'var(--surf)' : 'var(--card)',
+              color: state.currentPage === 1 ? 'var(--text4, #8A8780)' : 'var(--text1)',
               cursor: state.currentPage === 1 ? 'not-allowed' : 'pointer',
               fontSize: 14,
               fontWeight: 600,
@@ -832,9 +832,9 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   style={{
                     padding: '8px 16px',
                     borderRadius: 2,
-                    border: '1px solid var(--border-default)',
-                    background: isCurrentPage ? 'var(--accent-primary)' : 'var(--color-surface-0)',
-                    color: isCurrentPage ? 'var(--color-surface-0)' : 'var(--color-text-primary)',
+                    border: '1px solid var(--bdr)',
+                    background: isCurrentPage ? 'var(--link)' : 'var(--card)',
+                    color: isCurrentPage ? 'var(--card)' : 'var(--text1)',
                     cursor: 'pointer',
                     fontSize: 14,
                     fontWeight: 600,
@@ -853,9 +853,9 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             style={{
               padding: '8px 16px',
               borderRadius: 2,
-              border: '1px solid var(--border-default)',
-              background: state.currentPage === totalPages ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
-              color: state.currentPage === totalPages ? 'var(--text4, #8A8780)' : 'var(--color-text-primary)',
+              border: '1px solid var(--bdr)',
+              background: state.currentPage === totalPages ? 'var(--surf)' : 'var(--card)',
+              color: state.currentPage === totalPages ? 'var(--text4, #8A8780)' : 'var(--text1)',
               cursor: state.currentPage === totalPages ? 'not-allowed' : 'pointer',
               fontSize: 14,
               fontWeight: 600,
@@ -876,8 +876,8 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         <div style={{
           padding: '24px',
           borderRadius: 2,
-          border: '1px solid var(--border-default)',
-          background: 'var(--color-surface-0)',
+          border: '1px solid var(--bdr)',
+          background: 'var(--card)',
           marginBottom: 32,
         }}>
           <div style={{
@@ -891,7 +891,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 display: 'block',
                 fontSize: 12,
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 8,
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -909,7 +909,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   width: '100%',
                   padding: '12px 16px',
                   borderRadius: 2,
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   fontSize: 14,
                   fontFamily: 'var(--font-ui)',
                 }}
@@ -929,7 +929,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 display: 'block',
                 fontSize: 12,
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 8,
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -944,7 +944,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   width: '100%',
                   padding: '12px 16px',
                   borderRadius: 2,
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   fontSize: 14,
                   fontFamily: 'var(--font-ui)',
                 }}
@@ -967,7 +967,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 display: 'block',
                 fontSize: 12,
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 8,
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -982,7 +982,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   width: '100%',
                   padding: '12px 16px',
                   borderRadius: 2,
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   fontSize: 14,
                   fontFamily: 'var(--font-ui)',
                 }}
@@ -1001,7 +1001,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           <div style={{
             fontSize: 14,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             marginBottom: 20,
           }}>
             Showing {byNOSState.judges.length} judges
@@ -1013,7 +1013,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           <div style={{
             padding: '48px 24px',
             textAlign: 'center',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             fontFamily: 'var(--font-ui)',
           }}>
             Loading judges...
@@ -1051,8 +1051,8 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   style={{
                     padding: '24px',
                     borderRadius: 2,
-                    border: '1px solid var(--border-default)',
-                    background: 'var(--color-surface-0)',
+                    border: '1px solid var(--bdr)',
+                    background: 'var(--card)',
                     marginBottom: 16,
                     display: 'grid',
                     gridTemplateColumns: 'auto 1fr auto auto auto auto auto auto',
@@ -1062,12 +1062,12 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   }}
                   onMouseEnter={(e) => {
                     const elem = e.currentTarget;
-                    elem.style.borderColor = 'var(--accent-primary)';
+                    elem.style.borderColor = 'var(--link)';
                     elem.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.15)';
                   }}
                   onMouseLeave={(e) => {
                     const elem = e.currentTarget;
-                    elem.style.borderColor = 'var(--border-default)';
+                    elem.style.borderColor = 'var(--bdr)';
                     elem.style.boxShadow = 'none';
                   }}
                 >
@@ -1075,7 +1075,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   <div style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     fontFamily: 'var(--font-mono)',
                   }}>
                     #{idx + 1}
@@ -1086,7 +1086,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     <h3 style={{
                       fontSize: 14,
                       fontWeight: 600,
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       margin: '0 0 4px 0',
                       fontFamily: 'var(--font-legal)',
                     }}>
@@ -1095,7 +1095,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     <p style={{
                       fontSize: 12,
                       fontWeight: 400,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       margin: 0,
                       fontFamily: 'var(--font-ui)',
                     }}>
@@ -1151,7 +1151,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     <div style={{
                       fontSize: 14,
                       fontWeight: 600,
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       fontFamily: 'var(--font-mono)',
                     }}>
                       {totalCases}
@@ -1173,7 +1173,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     <div style={{
                       fontSize: 14,
                       fontWeight: 600,
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       fontFamily: 'var(--font-mono)',
                     }}>
                       {avgDuration.toFixed(1)}
@@ -1193,26 +1193,26 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     padding: '8px 16px',
                     textAlign: 'center',
                     borderRadius: 2,
-                    border: '1px solid var(--accent-primary)',
-                    color: 'var(--accent-primary)',
+                    border: '1px solid var(--link)',
+                    color: 'var(--link)',
                     textDecoration: 'none',
                     fontSize: 14,
                     fontWeight: 600,
                     fontFamily: 'var(--font-ui)',
-                    background: 'var(--color-surface-0)',
+                    background: 'var(--card)',
                     cursor: 'pointer',
                     transition: 'all 200ms ease',
                     whiteSpace: 'nowrap',
                   }}
                   onMouseEnter={(e) => {
                     const elem = e.currentTarget as HTMLAnchorElement;
-                    elem.style.background = 'var(--accent-primary)';
-                    elem.style.color = 'var(--color-surface-0)';
+                    elem.style.background = 'var(--link)';
+                    elem.style.color = 'var(--card)';
                   }}
                   onMouseLeave={(e) => {
                     const elem = e.currentTarget as HTMLAnchorElement;
-                    elem.style.background = 'var(--color-surface-0)';
-                    elem.style.color = 'var(--accent-primary)';
+                    elem.style.background = 'var(--card)';
+                    elem.style.color = 'var(--link)';
                   }}
                   >
                     View Profile
@@ -1228,7 +1228,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           <div style={{
             padding: '48px 24px',
             textAlign: 'center',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             fontFamily: 'var(--font-ui)',
           }}>
             No judges found matching your criteria. Try adjusting your filters.
@@ -1240,14 +1240,14 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           <div style={{
             padding: '24px',
             borderRadius: 2,
-            border: '1px solid var(--border-default)',
-            background: 'var(--color-surface-1)',
+            border: '1px solid var(--bdr)',
+            background: 'var(--surf)',
             marginTop: 32,
           }}>
             <p style={{
               fontSize: 12,
               lineHeight: 1.6,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>

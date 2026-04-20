@@ -84,8 +84,8 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
         onClick={() => setShowModal(true)}
         style={{
           padding: '8px 14px',
-          backgroundColor: 'var(--accent-primary)',
-          color: 'var(--color-surface-0)',
+          backgroundColor: 'var(--link)',
+          color: 'var(--card)',
           border: 'none',
           borderRadius: '4px',
           fontSize: '12px',
@@ -125,7 +125,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
             padding: '12px 16px',
             borderRadius: '4px',
             backgroundColor: 'rgba(5, 150, 105, 0.95)',
-            color: 'var(--color-surface-0)',
+            color: 'var(--card)',
             fontSize: '14px',
             fontWeight: 500,
             boxShadow: 'var(--shadow-md)',
@@ -154,7 +154,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
           <div
             ref={modalRef}
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
               padding: '24px',
               maxWidth: '400px',
@@ -167,7 +167,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 style={{
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: 0,
                 }}
               >
@@ -180,7 +180,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                   background: 'none',
                   border: 'none',
                   fontSize: '20px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   cursor: 'pointer',
                   padding: '0',
                   lineHeight: '1',
@@ -190,7 +190,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
               </button>
             </div>
 
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 16px' }}>
               <strong>{itemTitle}</strong>
             </p>
 
@@ -199,7 +199,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 style={{
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   display: 'block',
                   marginBottom: '6px',
                 }}
@@ -213,23 +213,23 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 style={{
                   width: '100%',
                   padding: '8px 12px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
-                  backgroundColor: 'var(--color-surface-0)',
-                  color: 'var(--color-text-primary)',
+                  backgroundColor: 'var(--card)',
+                  color: 'var(--text1)',
                   minHeight: '80px',
                   resize: 'vertical',
                   boxSizing: 'border-box',
                 }}
                 disabled={isSaving}
                 onFocus={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--accent-primary)';
+                  e.currentTarget.style.borderColor = 'var(--link)';
                   e.currentTarget.style.boxShadow = '0 0 0 2px rgba(10, 102, 194, 0.08)';
                 }}
                 onBlur={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--border-default)';
+                  e.currentTarget.style.borderColor = 'var(--bdr)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               />
@@ -253,9 +253,9 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 disabled={isSaving}
                 style={{
                   padding: '8px 16px',
-                  backgroundColor: 'var(--color-surface-1)',
-                  color: 'var(--color-text-primary)',
-                  border: '1px solid var(--border-default)',
+                  backgroundColor: 'var(--surf)',
+                  color: 'var(--text1)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   fontSize: '12px',
                   fontWeight: 600,
@@ -272,8 +272,8 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 disabled={isSaving}
                 style={{
                   padding: '8px 16px',
-                  backgroundColor: 'var(--accent-primary)',
-                  color: 'var(--color-surface-0)',
+                  backgroundColor: 'var(--link)',
+                  color: 'var(--card)',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '12px',

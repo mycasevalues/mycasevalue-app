@@ -43,7 +43,7 @@ export default function QuickLookupForm() {
           style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             fontFamily: 'var(--font-ui)',
           }}
         >
@@ -56,12 +56,12 @@ export default function QuickLookupForm() {
           style={{
             height: '48px',
             padding: '12px 16px',
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '3px',
             fontFamily: 'var(--font-ui)',
             fontSize: '14px',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             width: '100%',
             appearance: 'none',
             backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
@@ -94,7 +94,7 @@ export default function QuickLookupForm() {
             style={{
               fontSize: '14px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
             }}
           >
@@ -107,12 +107,12 @@ export default function QuickLookupForm() {
             style={{
               height: '48px',
               padding: '12px 16px',
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '3px',
               fontFamily: 'var(--font-ui)',
               fontSize: '14px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               width: '100%',
               appearance: 'none',
               backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
@@ -138,8 +138,8 @@ export default function QuickLookupForm() {
         type="submit"
         style={{
           height: '48px',
-          background: 'var(--accent-primary)',
-          color: 'var(--color-surface-0)',
+          background: 'var(--link)',
+          color: 'var(--card)',
           fontWeight: 600,
           fontSize: '14px',
           borderRadius: '3px',
@@ -162,8 +162,8 @@ export default function QuickLookupForm() {
         const wrColor = (rd.wr ?? 0) >= 50 ? 'var(--data-positive, #176438)' : (rd.wr ?? 0) >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-negative, #B01E1E)';
         return (
           <div style={{
-            background: 'var(--color-surface-1)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--surf)',
+            border: '1px solid var(--bdr)',
             borderRadius: 2,
             padding: '12px 16px',
             display: 'grid',
@@ -176,19 +176,19 @@ export default function QuickLookupForm() {
               <div style={{ fontSize: 18, fontWeight: 600, color: wrColor, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {(rd.wr ?? 0).toFixed(1)}%
               </div>
-              <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
+              <div style={{ fontSize: 12, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
             </div>
             <div>
               <div style={{ fontSize: 18, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.mo ?? '–'}mo
               </div>
-              <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
+              <div style={{ fontSize: 12, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+              <div style={{ fontSize: 18, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.total ? (rd.total >= 1000 ? `${(rd.total / 1000).toFixed(0)}K` : rd.total.toLocaleString()) : '–'}
               </div>
-              <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Cases</div>
+              <div style={{ fontSize: 12, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Cases</div>
             </div>
           </div>
         );
@@ -198,7 +198,7 @@ export default function QuickLookupForm() {
       <div
         style={{
           fontSize: '12px',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           textAlign: 'center',
           marginTop: '8px',
         }}
@@ -214,7 +214,7 @@ export default function QuickLookupForm() {
           outline: none;
         }
         .quick-lookup-select:invalid {
-          border-color: var(--accent-primary) !important;
+          border-color: var(--link) !important;
         }
         .quick-lookup-submit:hover {
           background: var(--accent-primary-hover, #A87222) !important;

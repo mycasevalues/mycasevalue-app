@@ -163,11 +163,11 @@ function CaseSearchContent() {
   const hasFilters = court || caseType || yearFrom || yearTo || status;
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-          <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)', marginBottom: '0.25rem' }}>Search Federal Cases</h1>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--text1)', marginBottom: '0.25rem' }}>Search Federal Cases</h1>
           <p className="text-sm text-[var(--color-text-muted)]">
             Search individual case records from public federal court data.
           </p>
@@ -199,7 +199,7 @@ function CaseSearchContent() {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search by case name, docket number, or keyword..."
                 className="w-full h-11 pl-10 pr-4 rounded border text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-colors"
-                style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+                style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
               />
             </div>
             <button
@@ -216,7 +216,7 @@ function CaseSearchContent() {
           <aside className="w-full lg:w-56 flex-shrink-0">
             <div
               className="rounded border p-4 space-y-4"
-              style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+              style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider">
@@ -241,7 +241,7 @@ function CaseSearchContent() {
                   onChange={(e) => setCourt(e.target.value)}
                   placeholder="e.g. SDNY, CACD"
                   className="w-full h-9 px-3 rounded-md border text-sm"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 />
               </div>
 
@@ -254,7 +254,7 @@ function CaseSearchContent() {
                   onChange={(e) => setCaseType(e.target.value)}
                   placeholder="e.g. Securities Fraud"
                   className="w-full h-9 px-3 rounded-md border text-sm"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 />
               </div>
 
@@ -270,7 +270,7 @@ function CaseSearchContent() {
                     min="1970"
                     max="2026"
                     className="w-full h-9 px-3 rounded-md border text-sm"
-                    style={{ borderColor: 'var(--border-default)' }}
+                    style={{ borderColor: 'var(--bdr)' }}
                   />
                 </div>
                 <div className="flex-1">
@@ -283,7 +283,7 @@ function CaseSearchContent() {
                     min="1970"
                     max="2026"
                     className="w-full h-9 px-3 rounded-md border text-sm"
-                    style={{ borderColor: 'var(--border-default)' }}
+                    style={{ borderColor: 'var(--bdr)' }}
                   />
                 </div>
               </div>
@@ -295,7 +295,7 @@ function CaseSearchContent() {
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
                   className="w-full h-9 px-3 rounded-md border text-sm"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 >
                   <option value="">All</option>
                   <option value="open">Open</option>
@@ -345,7 +345,7 @@ function CaseSearchContent() {
                     performSearch(1);
                   }}
                   className="h-8 px-3 rounded-md border text-xs"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 >
                   {SORT_OPTIONS.map((opt) => (
                     <option key={opt.value} value={opt.value}>
@@ -363,7 +363,7 @@ function CaseSearchContent() {
                   <div
                     key={i}
                     className="rounded border p-5 animate-pulse"
-                    style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+                    style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
                   >
                     <div className="h-5 bg-[rgba(255,255,255,0.08)] rounded w-3/4 mb-3" />
                     <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-1/2 mb-4" />
@@ -378,7 +378,7 @@ function CaseSearchContent() {
             {error && (
               <div
                 className="rounded border p-6 text-center"
-                style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+                style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
               >
                 <p className="text-sm text-[var(--data-negative)] mb-2">{error}</p>
                 <button
@@ -394,7 +394,7 @@ function CaseSearchContent() {
             {!hasSearched && !loading && (
               <div
                 className="rounded border p-8 text-center"
-                style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+                style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
               >
                 
                 <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-2">
@@ -413,7 +413,7 @@ function CaseSearchContent() {
                         performSearch(1);
                       }}
                       className="text-xs px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link)] hover:text-[var(--link)] hover:bg-white/5 transition-all"
-                      style={{ borderColor: 'var(--border-default)' }}
+                      style={{ borderColor: 'var(--bdr)' }}
                     >
                       {eq}
                     </button>
@@ -426,7 +426,7 @@ function CaseSearchContent() {
             {hasSearched && !loading && !error && total === 0 && (
               <div
                 className="rounded border p-8 text-center"
-                style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+                style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
               >
                 <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-2">No Cases Found</h3>
                 <p className="text-sm text-[var(--color-text-muted)] mb-4">
@@ -441,7 +441,7 @@ function CaseSearchContent() {
                         performSearch(1);
                       }}
                       className="text-xs px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link)] hover:text-[var(--link)] transition-all"
-                      style={{ borderColor: 'var(--border-default)' }}
+                      style={{ borderColor: 'var(--bdr)' }}
                     >
                       Try: {eq}
                     </button>
@@ -466,7 +466,7 @@ function CaseSearchContent() {
                   onClick={() => performSearch(page - 1)}
                   disabled={page <= 1}
                   className="h-8 px-3 rounded-md border text-xs font-medium disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[var(--color-surface-2)] transition-colors"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 >
                   Previous
                 </button>
@@ -477,7 +477,7 @@ function CaseSearchContent() {
                   onClick={() => performSearch(page + 1)}
                   disabled={page >= totalPages}
                   className="h-8 px-3 rounded-md border text-xs font-medium disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[var(--color-surface-2)] transition-colors"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 >
                   Next
                 </button>
@@ -499,11 +499,11 @@ function CaseResultCard({ result }: { result: SearchResult }) {
     <Link
       href={`/case/${result.id}`}
       className="block rounded border p-5 hover:shadow-md transition-all group"
-      style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+      style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
     >
       {/* Top row: case name + status */}
       <div className="flex items-start justify-between gap-3 mb-2">
-        <h3 className="text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--link)] transition-colors leading-snug">
+        <h3 className="text-sm font-semibold text-[var(--text1)] group-hover:text-[var(--link)] transition-colors leading-snug">
           {result.caseName}
         </h3>
         {result.status && (
@@ -556,8 +556,8 @@ function CaseResultCard({ result }: { result: SearchResult }) {
               key={`${t.category}-${t.tag}`}
               className="text-[10px] px-2 py-0.5 rounded border"
               style={{
-                borderColor: 'var(--border-default)',
-                color: 'var(--color-text-secondary)',
+                borderColor: 'var(--bdr)',
+                color: 'var(--text2)',
               }}
             >
               {t.tag}
@@ -575,7 +575,7 @@ export default function CaseSearchPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--color-surface-1)' }}>
+        <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--surf)' }}>
           <div className="text-sm text-[var(--color-text-muted)]">Loading search...</div>
         </div>
       }

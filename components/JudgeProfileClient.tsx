@@ -148,10 +148,10 @@ export default function JudgeProfileClient({
       {/* Section 2: Judge Radar Chart */}
       <div
         style={{
-          background: 'var(--color-surface-0)',
+          background: 'var(--card)',
           padding: '32px',
           borderRadius: '4px',
-          border: '1px solid var(--border-default)',
+          border: '1px solid var(--bdr)',
           marginBottom: '48px',
         }}
       >
@@ -160,7 +160,7 @@ export default function JudgeProfileClient({
             fontSize: '16px',
             fontFamily: 'var(--font-heading)',
             fontWeight: '700',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginTop: 0,
             marginBottom: '24px',
           }}
@@ -184,10 +184,10 @@ export default function JudgeProfileClient({
       {statistics.length > 0 && (
         <div
           style={{
-            background: 'var(--color-surface-0)',
+            background: 'var(--card)',
             padding: '32px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             marginBottom: '48px',
           }}
         >
@@ -196,7 +196,7 @@ export default function JudgeProfileClient({
               fontSize: '16px',
               fontFamily: 'var(--font-heading)',
               fontWeight: '700',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginTop: 0,
               marginBottom: '24px',
             }}
@@ -210,10 +210,10 @@ export default function JudgeProfileClient({
       {/* Section 4: District Comparison Table */}
       <div
         style={{
-          background: 'var(--color-surface-0)',
+          background: 'var(--card)',
           padding: '32px',
           borderRadius: '4px',
-          border: '1px solid var(--border-default)',
+          border: '1px solid var(--bdr)',
           marginBottom: '48px',
           overflowX: 'auto',
         }}
@@ -223,7 +223,7 @@ export default function JudgeProfileClient({
             fontSize: '16px',
             fontFamily: 'var(--font-heading)',
             fontWeight: '700',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginTop: 0,
             marginBottom: '24px',
           }}
@@ -239,11 +239,11 @@ export default function JudgeProfileClient({
           }}
         >
           <thead>
-            <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
-              <th style={{ textAlign: 'left', padding: '12px 0', fontWeight: '600', color: 'var(--color-text-primary)' }}>Metric</th>
-              <th style={{ textAlign: 'right', padding: '12px 0', fontWeight: '600', color: 'var(--color-text-primary)' }}>This Judge</th>
-              <th style={{ textAlign: 'right', padding: '12px 0', fontWeight: '600', color: 'var(--color-text-primary)' }}>District Average</th>
-              <th style={{ textAlign: 'right', padding: '12px 0', fontWeight: '600', color: 'var(--color-text-primary)' }}>Difference</th>
+            <tr style={{ borderBottom: '2px solid var(--bdr)' }}>
+              <th style={{ textAlign: 'left', padding: '12px 0', fontWeight: '600', color: 'var(--text1)' }}>Metric</th>
+              <th style={{ textAlign: 'right', padding: '12px 0', fontWeight: '600', color: 'var(--text1)' }}>This Judge</th>
+              <th style={{ textAlign: 'right', padding: '12px 0', fontWeight: '600', color: 'var(--text1)' }}>District Average</th>
+              <th style={{ textAlign: 'right', padding: '12px 0', fontWeight: '600', color: 'var(--text1)' }}>Difference</th>
             </tr>
           </thead>
           <tbody>
@@ -290,10 +290,10 @@ export default function JudgeProfileClient({
       {aiAnalysis && (
         <div
           style={{
-            background: 'var(--color-surface-0)',
+            background: 'var(--card)',
             padding: '32px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             marginBottom: '48px',
           }}
         >
@@ -334,7 +334,7 @@ export default function JudgeProfileClient({
               fontSize: '16px',
               fontFamily: 'var(--font-heading)',
               fontWeight: '700',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginTop: 0,
               marginBottom: '24px',
             }}
@@ -364,10 +364,10 @@ export default function JudgeProfileClient({
       {opinions.length > 0 && (
         <div
           style={{
-            background: 'var(--color-surface-0)',
+            background: 'var(--card)',
             padding: '32px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             marginBottom: '48px',
           }}
         >
@@ -376,7 +376,7 @@ export default function JudgeProfileClient({
               fontSize: '16px',
               fontFamily: 'var(--font-heading)',
               fontWeight: '700',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginTop: 0,
               marginBottom: '24px',
             }}
@@ -388,7 +388,7 @@ export default function JudgeProfileClient({
             style={{
               padding: '12px 16px',
               background: 'rgba(59,130,246,0.08)',
-              border: '1px solid var(--accent-primary)',
+              border: '1px solid var(--link)',
               borderRadius: '4px',
               marginBottom: '24px',
             }}
@@ -415,8 +415,8 @@ export default function JudgeProfileClient({
                   key={opinion.id}
                   style={{
                     padding: '24px',
-                    background: 'var(--color-surface-1)',
-                    border: '1px solid var(--border-default)',
+                    background: 'var(--surf)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     cursor: 'pointer',
                   }}
@@ -434,7 +434,7 @@ export default function JudgeProfileClient({
                             fontSize: '14px',
                             fontFamily: 'var(--font-heading)',
                             fontWeight: '700',
-                            color: 'var(--accent-primary)',
+                            color: 'var(--link)',
                             textDecoration: 'none',
                             display: 'block',
                             marginBottom: '8px',
@@ -449,7 +449,7 @@ export default function JudgeProfileClient({
                             fontSize: '14px',
                             fontFamily: 'var(--font-heading)',
                             fontWeight: '700',
-                            color: 'var(--color-text-primary)',
+                            color: 'var(--text1)',
                             margin: '0 0 8px 0',
                           }}
                         >
@@ -465,7 +465,7 @@ export default function JudgeProfileClient({
                           gap: '12px',
                           fontSize: '12px',
                           fontFamily: 'var(--font-ui)',
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                           marginBottom: '8px',
                         }}
                       >
@@ -480,7 +480,7 @@ export default function JudgeProfileClient({
                                 display: 'inline-block',
                                 padding: '2px 8px',
                                 background: 'rgba(59,130,246,0.08)',
-                                border: '1px solid var(--accent-primary)',
+                                border: '1px solid var(--link)',
                                 borderRadius: '3px',
                                 color: 'var(--accent-primary-hover)',
                                 fontSize: '12px',
@@ -501,7 +501,7 @@ export default function JudgeProfileClient({
                                 background: 'rgba(255,255,255,0.05)',
                                 border: '1px solid rgba(255,255,255,0.1)',
                                 borderRadius: '3px',
-                                color: 'var(--color-text-secondary)',
+                                color: 'var(--text2)',
                                 fontSize: '12px',
                                 fontWeight: '600',
                               }}
@@ -532,14 +532,14 @@ export default function JudgeProfileClient({
                       style={{
                         marginTop: '16px',
                         paddingTop: '16px',
-                        borderTop: '1px solid var(--border-default)',
+                        borderTop: '1px solid var(--bdr)',
                       }}
                     >
                       <p
                         style={{
                           fontSize: '14px',
                           fontFamily: 'var(--font-ui)',
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                           margin: 0,
                           lineHeight: '1.6',
                         }}
@@ -558,7 +558,7 @@ export default function JudgeProfileClient({
       {/* Last Updated and Data Attribution */}
       <div
         style={{
-          background: 'var(--color-surface-1)',
+          background: 'var(--surf)',
           padding: '24px',
           borderRadius: '4px',
           marginBottom: '48px',
@@ -587,10 +587,10 @@ export default function JudgeProfileClient({
       {/* Section 7: CTA / Next Steps */}
       <div
         style={{
-          background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--link-hover, #083D7A) 100%)',
+          background: 'linear-gradient(135deg, var(--link) 0%, var(--link-hover, #083D7A) 100%)',
           padding: '40px',
           borderRadius: '4px',
-          color: 'var(--color-surface-0)',
+          color: 'var(--card)',
           marginTop: '48px',
         }}
       >
@@ -613,8 +613,8 @@ export default function JudgeProfileClient({
             style={{
               display: 'inline-block',
               padding: '12px 24px',
-              background: 'var(--color-surface-0)',
-              color: 'var(--accent-primary)',
+              background: 'var(--card)',
+              color: 'var(--link)',
               textDecoration: 'none',
               borderRadius: '4px',
               fontFamily: 'var(--font-ui)',
@@ -623,7 +623,7 @@ export default function JudgeProfileClient({
               transition: 'background-color 200ms ease',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.06)')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--color-surface-0)')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--card)')}
           >
             View District Judges
           </Link>
@@ -634,7 +634,7 @@ export default function JudgeProfileClient({
                 display: 'inline-block',
                 padding: '12px 24px',
                 background: 'rgba(255, 255, 255, 0.2)',
-                color: 'var(--color-surface-0)',
+                color: 'var(--card)',
                 textDecoration: 'none',
                 borderRadius: '4px',
                 fontFamily: 'var(--font-ui)',
@@ -655,7 +655,7 @@ export default function JudgeProfileClient({
               display: 'inline-block',
               padding: '12px 24px',
               background: 'rgba(255, 255, 255, 0.2)',
-              color: 'var(--color-surface-0)',
+              color: 'var(--card)',
               textDecoration: 'none',
               borderRadius: '4px',
               fontFamily: 'var(--font-ui)',
@@ -701,7 +701,7 @@ function StatCard({
         style={{
           fontSize: '12px',
           fontFamily: 'var(--font-ui)',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           margin: '0 0 12px 0',
           fontWeight: '500',
           textTransform: 'uppercase',
@@ -759,12 +759,12 @@ function DistrictComparisonRow({
   const districtVal = isNaN(districtValue ?? 0) ? 0 : districtValue ?? 0;
 
   return (
-    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
-      <td style={{ padding: '16px 0', color: 'var(--color-text-primary)', fontWeight: '500' }}>{metric}</td>
-      <td style={{ padding: '16px 0', textAlign: 'right', color: 'var(--color-text-primary)', fontWeight: '600' }}>
+    <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
+      <td style={{ padding: '16px 0', color: 'var(--text1)', fontWeight: '500' }}>{metric}</td>
+      <td style={{ padding: '16px 0', textAlign: 'right', color: 'var(--text1)', fontWeight: '600' }}>
         {isNaN(judgeVal) ? '—' : `${judgeVal.toFixed(1)}${suffix}`}
       </td>
-      <td style={{ padding: '16px 0', textAlign: 'right', color: 'var(--color-text-secondary)' }}>
+      <td style={{ padding: '16px 0', textAlign: 'right', color: 'var(--text2)' }}>
         {isNaN(districtVal) ? '—' : `${districtVal.toFixed(1)}${suffix}`}
       </td>
       <td style={{ padding: '16px 0', textAlign: 'right', color: diffColor, fontWeight: '600' }}>
@@ -783,7 +783,7 @@ function AnalysisSection({ title, content }: { title: string; content: string })
           fontSize: '14px',
           fontFamily: 'var(--font-heading)',
           fontWeight: '700',
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginTop: 0,
           marginBottom: '8px',
           textTransform: 'uppercase',
@@ -796,7 +796,7 @@ function AnalysisSection({ title, content }: { title: string; content: string })
         style={{
           fontSize: '14px',
           fontFamily: 'var(--font-ui)',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           lineHeight: '1.6',
           margin: 0,
         }}

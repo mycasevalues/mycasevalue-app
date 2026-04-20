@@ -198,13 +198,13 @@ export default function EnterprisePage() {
       </section>
 
       {/* Features Grid */}
-      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--surf)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -217,17 +217,17 @@ export default function EnterprisePage() {
 
               const card = (
                 <div key={f.title} style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '2px',
                   padding: '24px 16px',
                 }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                   <h3 style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '1rem',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '8px',
                   }}>
                     {f.title}
@@ -235,7 +235,7 @@ export default function EnterprisePage() {
                   <p style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '0.875rem',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}>
@@ -246,7 +246,7 @@ export default function EnterprisePage() {
                       display: 'inline-block',
                       marginTop: '12px',
                       fontSize: '0.8rem',
-                      color: 'var(--accent-primary)',
+                      color: 'var(--link)',
                       textDecoration: 'none',
                       fontWeight: 500,
                     }}>
@@ -265,13 +265,13 @@ export default function EnterprisePage() {
       </section>
 
       {/* Use Cases */}
-      <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--card)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -280,8 +280,8 @@ export default function EnterprisePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
             {USE_CASES.map(useCase => (
               <div key={useCase.title} style={{
-                background: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 padding: '32px 24px',
               }}>
@@ -289,7 +289,7 @@ export default function EnterprisePage() {
                   fontFamily: 'var(--font-ui)',
                   fontSize: '1.125rem',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   marginBottom: '16px',
                 }}>
                   {useCase.title}
@@ -297,7 +297,7 @@ export default function EnterprisePage() {
                 <ul style={{
                   fontFamily: 'var(--font-ui)',
                   fontSize: '0.875rem',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   lineHeight: 1.8,
                   margin: 0,
                   paddingLeft: '24px',
@@ -313,13 +313,13 @@ export default function EnterprisePage() {
       </section>
 
       {/* Pricing */}
-      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--surf)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             textAlign: 'center',
             marginBottom: '16px',
           }}>
@@ -328,7 +328,7 @@ export default function EnterprisePage() {
           <p style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -338,13 +338,13 @@ export default function EnterprisePage() {
             <table style={{
               width: '100%',
               borderCollapse: 'collapse',
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '2px',
               overflow: 'hidden',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
             }}>
               <thead>
-                <tr style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)' }}>
+                <tr style={{ background: 'var(--link)', color: 'var(--surf)' }}>
                   <th style={{ padding: '24px 24px', textAlign: 'left', fontFamily: 'var(--font-ui)', fontWeight: 600, fontSize: '0.875rem' }}>Feature</th>
                   {PRICING_TIERS.map(tier => (
                     <th key={tier.name} style={{ padding: '24px 24px', textAlign: 'left', fontFamily: 'var(--font-ui)', fontWeight: 600, fontSize: '0.875rem' }}>
@@ -354,50 +354,50 @@ export default function EnterprisePage() {
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderTop: '1px solid var(--border-default)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Users</td>
+                <tr style={{ borderTop: '1px solid var(--bdr)' }}>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text2)' }}>Users</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text1)' }}>
                       {tier.users}
                     </td>
                   ))}
                 </tr>
-                <tr style={{ borderTop: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>API Calls/Month</td>
+                <tr style={{ borderTop: '1px solid var(--bdr)', background: 'var(--surf)' }}>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text2)' }}>API Calls/Month</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text1)' }}>
                       {tier.apiCalls}
                     </td>
                   ))}
                 </tr>
-                <tr style={{ borderTop: '1px solid var(--border-default)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Custom Dashboards</td>
+                <tr style={{ borderTop: '1px solid var(--bdr)' }}>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text2)' }}>Custom Dashboards</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text1)' }}>
                       {tier.dashboards}
                     </td>
                   ))}
                 </tr>
-                <tr style={{ borderTop: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>White-Label Reports</td>
+                <tr style={{ borderTop: '1px solid var(--bdr)', background: 'var(--surf)' }}>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text2)' }}>White-Label Reports</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text1)' }}>
                       {tier.whiteLabel}
                     </td>
                   ))}
                 </tr>
-                <tr style={{ borderTop: '1px solid var(--border-default)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>SSO & Directory Integration</td>
+                <tr style={{ borderTop: '1px solid var(--bdr)' }}>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text2)' }}>SSO & Directory Integration</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text1)' }}>
                       {tier.sso}
                     </td>
                   ))}
                 </tr>
-                <tr style={{ borderTop: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Price</td>
+                <tr style={{ borderTop: '1px solid var(--bdr)', background: 'var(--surf)' }}>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--text2)' }}>Price</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text1)' }}>
                       Contact us
                     </td>
                   ))}
@@ -409,12 +409,12 @@ export default function EnterprisePage() {
       </section>
 
       {/* Social Proof */}
-      <section style={{ padding: '24px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+      <section style={{ padding: '24px 16px', background: 'var(--card)', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <p style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '1.125rem',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             lineHeight: 1.8,
           }}>
             Trusted by legal professionals at leading law firms, insurance companies, and law schools for mission-critical case analytics and litigation support.
@@ -423,13 +423,13 @@ export default function EnterprisePage() {
       </section>
 
       {/* FAQ */}
-      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--surf)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -438,8 +438,8 @@ export default function EnterprisePage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {FAQ_ITEMS.map((item, idx) => (
               <details key={idx} style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 padding: '24px',
               }}>
@@ -447,7 +447,7 @@ export default function EnterprisePage() {
                   fontFamily: 'var(--font-ui)',
                   fontSize: '1rem',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   cursor: 'pointer',
                   listStyle: 'none',
                 }}>
@@ -456,7 +456,7 @@ export default function EnterprisePage() {
                 <p style={{
                   fontFamily: 'var(--font-ui)',
                   fontSize: '0.875rem',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   lineHeight: 1.6,
                   marginTop: '16px',
                   marginBottom: 0,
@@ -470,13 +470,13 @@ export default function EnterprisePage() {
       </section>
 
       {/* Demo Form */}
-      <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--card)' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             textAlign: 'center',
             marginBottom: '16px',
           }}>
@@ -485,7 +485,7 @@ export default function EnterprisePage() {
           <p style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             textAlign: 'center',
             marginBottom: '24px',
             lineHeight: 1.6,
@@ -498,8 +498,8 @@ export default function EnterprisePage() {
 
       {/* Responsive grid style */}
       <style dangerouslySetInnerHTML={{ __html: `
-        summary::marker { color: var(--accent-primary); }
-        summary::-webkit-details-marker { color: var(--accent-primary); }
+        summary::marker { color: var(--link); }
+        summary::-webkit-details-marker { color: var(--link); }
         @media (max-width: 768px) {
           section div[style*="grid-template-columns: repeat(3"] {
             grid-template-columns: 1fr !important;

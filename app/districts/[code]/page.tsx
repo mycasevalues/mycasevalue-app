@@ -257,7 +257,7 @@ export default async function DistrictPage({ params }: PageProps) {
 
   if (!districtMeta) {
     return (
-      <div style={{ background: 'var(--color-surface-0)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ background: 'var(--card)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center', padding: '2rem' }}>
           <h1 style={{ color: 'var(--text1)', fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', margin: '0 0 12px' }}>
             District not found
@@ -297,11 +297,11 @@ export default async function DistrictPage({ params }: PageProps) {
     : '—';
 
   return (
-    <div style={{ background: 'var(--color-surface-0)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--card)', minHeight: '100vh' }}>
 
       {/* ── Breadcrumb ── */}
       <nav style={{
-        background: 'var(--color-surface-0)', borderBottom: '1px solid var(--bdr)',
+        background: 'var(--card)', borderBottom: '1px solid var(--bdr)',
         padding: '8px 22px', fontSize: 12, fontFamily: 'var(--font-ui)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -314,7 +314,7 @@ export default async function DistrictPage({ params }: PageProps) {
       </nav>
 
       {/* ── Page Header ── */}
-      <header style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--bdr)', padding: '16px 22px 12px' }}>
+      <header style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '16px 22px 12px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <div>
@@ -364,7 +364,7 @@ export default async function DistrictPage({ params }: PageProps) {
               { label: 'Active Judges', value: `${6 + Math.round(deterministic * 30)}`, accent: 'var(--link)' },
             ].map((stat) => (
               <div key={stat.label} style={{
-                background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: 2,
+                background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
                 padding: '8px 12px', position: 'relative', overflow: 'hidden',
               }}>
                 <div style={{ position: 'absolute', left: 0, top: 0, width: 3, height: '100%', background: stat.accent }} />
@@ -380,7 +380,7 @@ export default async function DistrictPage({ params }: PageProps) {
 
       {/* ── Gold Tab Bar ── */}
       <div style={{
-        background: 'var(--color-surface-0)', borderBottom: '2px solid var(--bdr)',
+        background: 'var(--card)', borderBottom: '2px solid var(--bdr)',
         padding: '0 22px',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', gap: 0, overflowX: 'auto' }}>
@@ -509,7 +509,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   style={{ textDecoration: 'none', color: 'inherit' }}
                 >
                   <div className="district-case-card" style={{
-                    background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: 2,
+                    background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
                     padding: '12px 14px', cursor: 'pointer', transition: 'border-color 150ms ease',
                   }}>
                     <h3 style={{
@@ -553,7 +553,7 @@ export default async function DistrictPage({ params }: PageProps) {
               10-Year Filing Volume
             </h2>
             <div style={{
-              background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: 2,
+              background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
               padding: '16px 16px',
             }}>
               <div style={{ minHeight: 180 }}>
@@ -595,7 +595,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 { label: '90th Percentile', value: `$${Math.round(300 + deterministic * 900)}K` },
               ].map(s => (
                 <div key={s.label} style={{
-                  background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: 2, padding: '8px 12px',
+                  background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2, padding: '8px 12px',
                 }}>
                   <div style={{ ...sectionLabel, marginBottom: 4 }}>{s.label}</div>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 500, color: 'var(--text1)' }}>{s.value}</div>

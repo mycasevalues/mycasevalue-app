@@ -304,11 +304,11 @@ const methodColors: Record<string, string> = {
 
 export default function ApiAccessPage() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, select:focus, textarea:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, select:focus, textarea:focus { border-color: var(--link) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: 20px; } }
         code { font-family: var(--font-mono); }
         pre { font-family: var(--font-mono); }
@@ -333,7 +333,7 @@ export default function ApiAccessPage() {
             style={{
               fontSize: '28px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: 0,
               fontFamily: 'var(--font-legal)',
             }}
@@ -353,7 +353,7 @@ export default function ApiAccessPage() {
             style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 16px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -402,10 +402,10 @@ export default function ApiAccessPage() {
               <div
                 key={idx}
                 style={{
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   borderRadius: '4px',
                   padding: '16px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                 }}
               >
@@ -414,7 +414,7 @@ export default function ApiAccessPage() {
                   style={{
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 4px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -422,7 +422,7 @@ export default function ApiAccessPage() {
                 >
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>{item.desc}</p>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -434,7 +434,7 @@ export default function ApiAccessPage() {
             style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 16px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -443,10 +443,10 @@ export default function ApiAccessPage() {
           </h2>
           <div
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
               padding: '16px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
@@ -454,8 +454,8 @@ export default function ApiAccessPage() {
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: '14px',
-                color: 'var(--color-text-primary)',
-                backgroundColor: 'var(--color-surface-0)',
+                color: 'var(--text1)',
+                backgroundColor: 'var(--card)',
                 padding: '8px 12px',
                 borderRadius: '4px',
                 display: 'block',
@@ -473,7 +473,7 @@ export default function ApiAccessPage() {
             style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 16px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -485,16 +485,16 @@ export default function ApiAccessPage() {
             <div
               key={idx}
               style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 overflow: 'hidden',
                 marginBottom: '16px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
               {/* Endpoint Header */}
-              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--bdr)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
                   <span
                     style={{
@@ -516,8 +516,8 @@ export default function ApiAccessPage() {
                     style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '14px',
-                      color: 'var(--color-text-primary)',
-                      backgroundColor: 'var(--color-surface-0)',
+                      color: 'var(--text1)',
+                      backgroundColor: 'var(--card)',
                       padding: '4px 8px',
                       borderRadius: '4px',
                       wordBreak: 'break-all',
@@ -527,17 +527,17 @@ export default function ApiAccessPage() {
                     {endpoint.path}
                   </code>
                 </div>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0' }}>{endpoint.description}</p>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0' }}>{endpoint.description}</p>
               </div>
 
               {/* Parameters */}
               {endpoint.params.length > 0 && (
-                <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--bdr)' }}>
                   <h4
                     style={{
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       margin: '0 0 12px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
@@ -554,7 +554,7 @@ export default function ApiAccessPage() {
                             style={{
                               fontFamily: 'var(--font-mono)',
                               fontSize: '12px',
-                              color: 'var(--accent-primary)',
+                              color: 'var(--link)',
                               fontWeight: 600,
                             }}
                           >
@@ -563,7 +563,7 @@ export default function ApiAccessPage() {
                           <span
                             style={{
                               fontSize: '12px',
-                              color: 'var(--color-text-secondary)',
+                              color: 'var(--text2)',
                               backgroundColor: 'rgba(255,255,255,0.05)',
                               padding: '2px 6px',
                               borderRadius: '3px',
@@ -586,7 +586,7 @@ export default function ApiAccessPage() {
                             </span>
                           )}
                         </div>
-                        <p style={{ color: 'var(--color-text-secondary)', margin: '0', fontSize: '12px' }}>{param.description}</p>
+                        <p style={{ color: 'var(--text2)', margin: '0', fontSize: '12px' }}>{param.description}</p>
                       </div>
                     ))}
                   </div>
@@ -594,12 +594,12 @@ export default function ApiAccessPage() {
               )}
 
               {/* cURL Example */}
-              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--bdr)' }}>
                 <h4
                   style={{
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -626,12 +626,12 @@ export default function ApiAccessPage() {
               </div>
 
               {/* Response Example */}
-              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--bdr)' }}>
                 <h4
                   style={{
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -663,7 +663,7 @@ export default function ApiAccessPage() {
                   style={{
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -681,7 +681,7 @@ export default function ApiAccessPage() {
                         alignItems: 'flex-start',
                         gap: '12px',
                         padding: '8px 12px',
-                        backgroundColor: 'var(--color-surface-0)',
+                        backgroundColor: 'var(--card)',
                         borderRadius: '4px',
                         borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative)' : error.code >= 400 ? 'var(--wrn-txt)' : 'var(--data-positive)'}`,
                       }}
@@ -691,13 +691,13 @@ export default function ApiAccessPage() {
                           fontFamily: 'var(--font-mono)',
                           fontSize: '12px',
                           fontWeight: 600,
-                          color: 'var(--color-text-primary)',
+                          color: 'var(--text1)',
                           minWidth: '35px',
                         }}
                       >
                         {error.code}
                       </code>
-                      <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>{error.message}</p>
+                      <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>{error.message}</p>
                     </div>
                   ))}
                 </div>
@@ -712,7 +712,7 @@ export default function ApiAccessPage() {
             style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 16px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -721,14 +721,14 @@ export default function ApiAccessPage() {
           </h2>
           <div
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
               padding: '24px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 16px' }}>
               All API requests require authentication using a Bearer token in the Authorization header.
             </p>
             <pre
@@ -755,7 +755,7 @@ export default function ApiAccessPage() {
             style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 16px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -764,10 +764,10 @@ export default function ApiAccessPage() {
           </h2>
           <div
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
               padding: '24px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
@@ -781,7 +781,7 @@ export default function ApiAccessPage() {
                   <p
                     style={{
                       fontSize: '12px',
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       fontWeight: 600,
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
@@ -790,11 +790,11 @@ export default function ApiAccessPage() {
                   >
                     {item.label}
                   </p>
-                  <p style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{item.value}</p>
+                  <p style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: 0 }}>{item.value}</p>
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '16px 0 0' }}>
+            <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '16px 0 0' }}>
               During beta, rate limits are 100 requests per minute. Contact us to request higher limits.
             </p>
           </div>
@@ -806,7 +806,7 @@ export default function ApiAccessPage() {
             style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 16px',
               fontFamily: 'var(--font-heading)',
             }}

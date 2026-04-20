@@ -442,7 +442,7 @@ export default function SOLCalculatorPage() {
     display: 'block',
     fontSize: '14px',
     fontWeight: 600,
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
     marginBottom: '6px',
     fontFamily: 'var(--font-ui)',
   };
@@ -451,11 +451,11 @@ export default function SOLCalculatorPage() {
     width: '100%',
     padding: '12px 14px',
     height: 'auto',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     borderRadius: '4px',
     fontSize: '14px',
-    color: 'var(--color-text-primary)',
-    backgroundColor: 'var(--color-surface-0)',
+    color: 'var(--text1)',
+    backgroundColor: 'var(--card)',
     fontFamily: 'var(--font-ui)',
     transition: 'border-color 200ms',
     outline: 'none',
@@ -466,10 +466,10 @@ export default function SOLCalculatorPage() {
   const isExpired = daysRemaining !== null && daysRemaining < 0;
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
-        input:focus, select:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, select:focus { border-color: var(--link) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: 28px; } }
       `}</style>
 
@@ -488,7 +488,7 @@ export default function SOLCalculatorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--text1)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Statute of Limitations Calculator
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: '8px 0 0 0' }}>
@@ -503,8 +503,8 @@ export default function SOLCalculatorPage() {
           <style>{`.sol-grid { grid-template-columns: 1fr !important; } @media (min-width: 768px) { .sol-grid { grid-template-columns: 1fr 1fr !important; } }`}</style>
 
           {/* Input Section */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
+          <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
               Calculate Deadline
             </h2>
 
@@ -566,8 +566,8 @@ export default function SOLCalculatorPage() {
                 style={{
                   padding: '16px 24px',
                   height: '48px',
-                  backgroundColor: selectedCaseType && incidentDate ? 'var(--accent-primary)' : 'var(--bdr)',
-                  color: 'var(--color-text-primary)',
+                  backgroundColor: selectedCaseType && incidentDate ? 'var(--link)' : 'var(--bdr)',
+                  color: 'var(--text1)',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '14px',
@@ -591,20 +591,20 @@ export default function SOLCalculatorPage() {
                 {/* Main Deadline Card */}
                 <div
                   style={{
-                    background: 'var(--color-surface-0)',
+                    background: 'var(--card)',
                     borderRadius: '4px',
                     padding: '32px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     boxShadow: 'var(--shadow-xs)',
                   }}
                 >
-                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text2)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Filing Deadline
                   </h3>
-                  <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+                  <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px' }}>
                     {deadline}
                   </p>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0 }}>
                     {selectedSOLData?.federalSOL}
                   </p>
                 </div>
@@ -657,13 +657,13 @@ export default function SOLCalculatorPage() {
             )}
 
             {selectedSOLData && (
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+              <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '24px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px' }}>
                   Key Rules
                 </h3>
                 <ul style={{ margin: 0, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {selectedSOLData.notes.slice(0, 3).map((note, i) => (
-                    <li key={i} style={{ fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                    <li key={i} style={{ fontSize: '12px', color: 'var(--text2)', lineHeight: 1.5 }}>
                       {note}
                     </li>
                   ))}
@@ -675,9 +675,9 @@ export default function SOLCalculatorPage() {
 
         {/* Detailed SOL Data Table */}
         {selectedSOLData && (
-          <div style={{ marginTop: '40px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', overflow: 'hidden' }}>
-            <div style={{ padding: '24px', borderBottom: '1px solid var(--border-default)' }}>
-              <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+          <div style={{ marginTop: '40px', background: 'var(--card)', borderRadius: '4px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)', overflow: 'hidden' }}>
+            <div style={{ padding: '24px', borderBottom: '1px solid var(--bdr)' }}>
+              <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--text1)', margin: '0 0 8px' }}>
                 {selectedSOLData.caseType}
               </h2>
             </div>
@@ -685,16 +685,16 @@ export default function SOLCalculatorPage() {
             <div style={{ padding: '24px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
                 <div>
-                  <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Federal Statute
                   </h3>
-                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: 0 }}>
                     {selectedSOLData.federalSOL}
                   </p>
                 </div>
                 {selectedSOLData.discoveryRule && (
                   <div>
-                    <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       Discovery Rule
                     </h3>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--data-positive)', margin: 0 }}>
@@ -705,12 +705,12 @@ export default function SOLCalculatorPage() {
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px' }}>
                   Important Notes
                 </h3>
                 <ul style={{ margin: 0, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {selectedSOLData.notes.map((note, i) => (
-                    <li key={i} style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    <li key={i} style={{ fontSize: '14px', color: 'var(--text2)', lineHeight: 1.6 }}>
                       {note}
                     </li>
                   ))}
@@ -718,20 +718,20 @@ export default function SOLCalculatorPage() {
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px' }}>
                   Tolling Rules
                 </h3>
                 <ul style={{ margin: 0, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {selectedSOLData.tollingRules.map((rule, i) => (
-                    <li key={i} style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    <li key={i} style={{ fontSize: '14px', color: 'var(--text2)', lineHeight: 1.6 }}>
                       {rule}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div style={{ padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', borderLeft: '4px solid var(--accent-primary)' }}>
-                <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5 }}>
+              <div style={{ padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', borderLeft: '4px solid var(--link)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text1)', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> This tool provides general information about statutory deadlines. Statute of limitations rules vary significantly by state and claim type. Tolling, discovery rules, and equitable estoppel may apply. Consult a licensed attorney in your jurisdiction immediately—missing a deadline can be catastrophic.
                 </p>
               </div>

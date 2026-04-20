@@ -28,7 +28,7 @@ export default function LienCalculatorPage() {
       {/* Header */}
       <header style={{
         background: 'var(--card)',
-        color: 'var(--color-text-inverse)',
+        color: 'var(--chrome-text)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -53,7 +53,7 @@ export default function LienCalculatorPage() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Lien Calculator
           </div>
-          <h1 style={{ color: 'var(--color-text-inverse)', fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
+          <h1 style={{ color: 'var(--chrome-text)', fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
             Calculate Net Recovery After Liens
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', fontSize: '14px', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -63,18 +63,18 @@ export default function LienCalculatorPage() {
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 14, fontFamily: 'var(--font-ui)' }}>
+      <nav style={{ background: 'var(--card)', padding: '12px 0', borderBottom: '1px solid var(--bdr)', fontSize: 14, fontFamily: 'var(--font-ui)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
-          <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
-          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
-          <Link href="/calculator" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Calculator</Link>
-          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
-          <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Liens</span>
+          <Link href="/" style={{ color: 'var(--link)', textDecoration: 'none' }}>Home</Link>
+          <span style={{ color: 'var(--bdr)', margin: '0 8px' }}>/</span>
+          <Link href="/calculator" style={{ color: 'var(--link)', textDecoration: 'none' }}>Calculator</Link>
+          <span style={{ color: 'var(--bdr)', margin: '0 8px' }}>/</span>
+          <span style={{ color: 'var(--text1)', fontWeight: 600 }}>Liens</span>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div style={{ background: 'var(--color-surface-1)', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
+      <div style={{ background: 'var(--surf)', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <LienCalculator />
         </div>

@@ -121,11 +121,11 @@ export default async function ReportPage({
 
   if (!data && !dbStats) {
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', padding: '64px 24px', textAlign: 'center' }}>
-        <p style={{ fontSize: 18, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontWeight: 600, marginBottom: 12 }}>
+      <div style={{ minHeight: '100vh', background: 'var(--surf)', padding: '64px 24px', textAlign: 'center' }}>
+        <p style={{ fontSize: 18, color: 'var(--text1)', fontFamily: 'var(--font-ui)', fontWeight: 600, marginBottom: 12 }}>
           No data found for this case type.
         </p>
-        <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: 24 }}>
+        <p style={{ fontSize: 14, color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: 24 }}>
           We don&apos;t have outcome data for code &ldquo;{nos}&rdquo; yet.
         </p>
         <Link href="/cases" style={{ fontSize: 14, color: 'var(--gold)', textDecoration: 'none', fontWeight: 500, fontFamily: 'var(--font-ui)' }}>
@@ -171,10 +171,10 @@ export default async function ReportPage({
       if (!allowed) {
         return (
           <div style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-ui)' }}>
-            <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 16, color: 'var(--color-text-primary)' }}>Daily limit reached</h1>
-            <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
-            <Link href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '2px', textDecoration: 'none', fontWeight: 700 }}>See pricing →</Link>
-            <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
+            <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 16, color: 'var(--text1)' }}>Daily limit reached</h1>
+            <p style={{ color: 'var(--text2)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
+            <Link href="/pricing" style={{ padding: '12px 28px', background: 'var(--link)', color: 'var(--chrome-text)', borderRadius: '2px', textDecoration: 'none', fontWeight: 700 }}>See pricing →</Link>
+            <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
           </div>
         );
       }
@@ -230,9 +230,9 @@ export default async function ReportPage({
   const recapResults: CourtRecord[] = recapDockets.status === 'fulfilled' ? recapDockets.value : [];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)' }}>
       <style>{`
-        .report-breadcrumb-link { color: var(--color-text-inverse); text-decoration: none; transition: opacity 200ms ease; font-weight: 500; }
+        .report-breadcrumb-link { color: var(--chrome-text); text-decoration: none; transition: opacity 200ms ease; font-weight: 500; }
         .report-breadcrumb-link:hover { opacity: 0.8; }
         .report-nos-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(59,130,246,0.08); color: var(--link); border: 1px solid rgba(59,130,246,0.2); border-radius: 3px; font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-ui); margin-top: 8px; }
 
@@ -253,19 +253,19 @@ export default async function ReportPage({
           }
 
           /* Clean background for print */
-          div[style*="background: var(--color-surface-1)"] {
+          div[style*="background: var(--surf)"] {
             background: white !important;
           }
 
           /* Ensure header prints cleanly */
           div[style*="background: #FFFFFF"] {
-            background: var(--color-surface-1) !important;
+            background: var(--surf) !important;
             border: none !important;
             color: black !important;
           }
 
           /* White subheader background */
-          div[style*="background: var(--color-surface-0)"][style*="border-bottom"] {
+          div[style*="background: var(--card)"][style*="border-bottom"] {
             background: white !important;
             border: 1px solid var(--bdr) !important;
           }
@@ -357,7 +357,7 @@ export default async function ReportPage({
 
       {/* Dark Institutional Header Banner */}
       <div style={{
-        background: 'var(--color-surface-0)',
+        background: 'var(--card)',
         borderBottom: '1px solid var(--bdr)',
         position: 'relative',
         overflow: 'hidden',
@@ -373,7 +373,7 @@ export default async function ReportPage({
             <span>/</span>
             <Link href="/cases" className="report-breadcrumb-link">Cases</Link>
             <span>/</span>
-            <span style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>{categoryLabel || label}</span>
+            <span style={{ color: 'var(--link)', fontWeight: 600 }}>{categoryLabel || label}</span>
           </nav>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
             <div style={{ flex: 1 }}>
@@ -381,7 +381,7 @@ export default async function ReportPage({
                 fontSize: '20px',
                 fontWeight: 700,
                 margin: 0,
-                color: 'var(--color-text-inverse)',
+                color: 'var(--chrome-text)',
                 fontFamily: 'var(--font-legal)',
                 letterSpacing: '-0.8px',
                 lineHeight: 1.15,
@@ -398,9 +398,9 @@ export default async function ReportPage({
       </div>
 
       {/* White Subheader Section */}
-      <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
-          <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: '0 0 20px', lineHeight: 1.7, fontWeight: 500 }}>
+          <p style={{ fontSize: 14, color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: '0 0 20px', lineHeight: 1.7, fontWeight: 500 }}>
             Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases · {districtLabel} · Public court records
             {categoryLabel ? ` · ${categoryLabel}` : ''}
           </p>
@@ -411,13 +411,13 @@ export default async function ReportPage({
           />
 
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 16 }}>
-            <span style={{ fontSize: 12, padding: '6px 12px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
+            <span style={{ fontSize: 12, padding: '6px 12px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: 4, color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
               FJC IDB · Updated quarterly
             </span>
-            <span style={{ fontSize: 12, padding: '6px 12px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
+            <span style={{ fontSize: 12, padding: '6px 12px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: 4, color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
               CourtListener · Live
             </span>
-            <span style={{ fontSize: 12, padding: '6px 12px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
+            <span style={{ fontSize: 12, padding: '6px 12px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: 4, color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
               RECAP Archive · Live
             </span>
           </div>
@@ -427,17 +427,17 @@ export default async function ReportPage({
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
         {/* ═══ FREE: Win Rate Analysis ═══ */}
         <section style={{
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
           boxShadow: 'var(--shadow-xs)',
         }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
             Win Rate Analysis
           </h2>
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
             Overview of case outcomes
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }} className="win-rate-grid">
@@ -446,87 +446,87 @@ export default async function ReportPage({
               @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 16px; } }
               .report-cta-btn { display: inline-block; padding: 8px 24px; background: var(--gold, #C4882A); color: var(--chrome-text); border: 1px solid var(--gold, #C4882A); border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: -0.005em; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
               .report-cta-btn:hover { background: var(--gold); border-color: var(--gold); }
-              .report-red-link { font-size: 14px; font-weight: 500; color: var(--accent-primary); text-decoration: none; font-family: var(--font-ui); transition: color 200ms ease; }
+              .report-red-link { font-size: 14px; font-weight: 500; color: var(--link); text-decoration: none; font-family: var(--font-ui); transition: color 200ms ease; }
               .report-red-link:hover { color: var(--gold); }
-              .report-related-case { text-decoration: none; color: var(--accent-primary); transition: all 200ms ease; display: block; }
+              .report-related-case { text-decoration: none; color: var(--link); transition: all 200ms ease; display: block; }
               .report-related-case:hover { color: var(--gold); padding-left: 4px; }
             `}</style>
-            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-              <p style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
+            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+              <p style={{ fontSize: '28px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {winRate}%
               </p>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '6px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '6px' }}>
                 Win rate
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 Trial outcomes
               </p>
             </div>
-            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-              <p style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
+            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+              <p style={{ fontSize: '28px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {settlementRate}%
               </p>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '6px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '6px' }}>
                 Settlement rate
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 Pre-trial resolutions
               </p>
             </div>
-            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-              <p style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
+            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+              <p style={{ fontSize: '28px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {dismissRate}%
               </p>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '6px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '6px' }}>
                 Dismissal rate
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 Cases not pursued
               </p>
             </div>
           </div>
           {/* Enhanced Outcome Distribution Visualization */}
-          <div style={{ marginTop: '32px', background: 'var(--color-surface-0)', padding: '24px', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
+          <div style={{ marginTop: '32px', background: 'var(--card)', padding: '24px', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+            <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
               Outcome Distribution
             </p>
-            <div style={{ display: 'flex', height: '24px', borderRadius: '4px', overflow: 'hidden', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)' }}>
-              {winRate > 0 && <div style={{ width: `${winRate}%`, background: 'var(--data-positive)', transition: 'width 0.5s ease', display: 'flex', alignItems: 'center', justifyContent: 'center' }} title={`Win: ${winRate}%`}><span style={{ color: 'var(--color-text-inverse)', fontSize: '12px', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{winRate > 8 ? `${winRate}%` : ''}</span></div>}
-              {settlementRate > 0 && <div style={{ width: `${settlementRate}%`, background: 'var(--wrn-txt)', transition: 'width 0.5s ease', display: 'flex', alignItems: 'center', justifyContent: 'center' }} title={`Settlement: ${settlementRate}%`}><span style={{ color: 'var(--color-text-inverse)', fontSize: '12px', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{settlementRate > 8 ? `${settlementRate}%` : ''}</span></div>}
-              {dismissRate > 0 && <div style={{ width: `${dismissRate}%`, background: 'var(--accent-primary)', transition: 'width 0.5s ease', display: 'flex', alignItems: 'center', justifyContent: 'center' }} title={`Other/Dismissed: ${dismissRate}%`}><span style={{ color: 'var(--color-text-inverse)', fontSize: '12px', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{dismissRate > 8 ? `${dismissRate}%` : ''}</span></div>}
+            <div style={{ display: 'flex', height: '24px', borderRadius: '4px', overflow: 'hidden', background: 'var(--surf)', border: '1px solid var(--bdr)' }}>
+              {winRate > 0 && <div style={{ width: `${winRate}%`, background: 'var(--data-positive)', transition: 'width 0.5s ease', display: 'flex', alignItems: 'center', justifyContent: 'center' }} title={`Win: ${winRate}%`}><span style={{ color: 'var(--chrome-text)', fontSize: '12px', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{winRate > 8 ? `${winRate}%` : ''}</span></div>}
+              {settlementRate > 0 && <div style={{ width: `${settlementRate}%`, background: 'var(--wrn-txt)', transition: 'width 0.5s ease', display: 'flex', alignItems: 'center', justifyContent: 'center' }} title={`Settlement: ${settlementRate}%`}><span style={{ color: 'var(--chrome-text)', fontSize: '12px', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{settlementRate > 8 ? `${settlementRate}%` : ''}</span></div>}
+              {dismissRate > 0 && <div style={{ width: `${dismissRate}%`, background: 'var(--link)', transition: 'width 0.5s ease', display: 'flex', alignItems: 'center', justifyContent: 'center' }} title={`Other/Dismissed: ${dismissRate}%`}><span style={{ color: 'var(--chrome-text)', fontSize: '12px', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{dismissRate > 8 ? `${dismissRate}%` : ''}</span></div>}
             </div>
             <div style={{ display: 'flex', gap: '16px', marginTop: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               {[
                 { label: 'Plaintiff Win', value: winRate, color: 'var(--data-positive)' },
                 { label: 'Settlement', value: settlementRate, color: 'var(--wrn-txt)' },
-                { label: 'Other/Dismissed', value: dismissRate, color: 'var(--accent-primary)' },
+                { label: 'Other/Dismissed', value: dismissRate, color: 'var(--link)' },
               ].map((item) => (
                 <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <div style={{ width: '10px', height: '10px', borderRadius: '4px', background: item.color }} />
-                  <span style={{ fontSize: '12px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>{item.label}</span>
-                  <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>({item.value}%)</span>
+                  <span style={{ fontSize: '12px', color: 'var(--text1)', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>{item.label}</span>
+                  <span style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-mono)' }}>({item.value}%)</span>
                 </div>
               ))}
             </div>
           </div>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '12px', textAlign: 'center', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
+          <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '12px', textAlign: 'center', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
             Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases
           </p>
         </section>
 
         {/* ═══ Year-Over-Year Trends ═══ */}
         <section style={{
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
           boxShadow: 'var(--shadow-xs)',
         }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
             Year-Over-Year Case Volume
           </h2>
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
             5-year trend of case filing volume
           </p>
           {(() => {
@@ -560,7 +560,7 @@ export default async function ReportPage({
                         style={{
                           width: '100%',
                           height: `${heightPercent}%`,
-                          background: 'var(--accent-primary)',
+                          background: 'var(--link)',
                           borderRadius: '2px 2px 0 0',
                           transition: 'all 0.3s ease',
                           cursor: 'pointer',
@@ -568,10 +568,10 @@ export default async function ReportPage({
                         }}
                       />
                       <div style={{ textAlign: 'center' }}>
-                        <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', margin: '4px 0 0' }}>
+                        <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', margin: '4px 0 0' }}>
                           {item.year}
                         </p>
-                        <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: '2px 0 0' }}>
+                        <p style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: '2px 0 0' }}>
                           {(item.count / 1000).toFixed(1)}K
                         </p>
                       </div>
@@ -582,41 +582,41 @@ export default async function ReportPage({
             );
           })()}
           <style>{`.yoy-bar { background: var(--link); transition: background-color 150ms ease; } .yoy-bar:hover { background: var(--link) !important; }`}</style>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px', textAlign: 'center', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
+          <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '16px', textAlign: 'center', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
             Deterministic projection based on historical case volume patterns
           </p>
         </section>
 
         {/* ═══ FREE: Case Timeline ═══ */}
         <section style={{
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
           boxShadow: 'var(--shadow-xs)',
         }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
             Case Timeline
           </h2>
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
             Time and settlement data
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }} className="timeline-grid">
             <style>{`.timeline-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .timeline-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
-            <div style={{ textAlign: 'center', padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-              <p style={{ fontSize: 36, fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
+            <div style={{ textAlign: 'center', padding: '24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+              <p style={{ fontSize: 36, fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
                 {medianDuration}
               </p>
-              <p style={{ fontSize: 12, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0, marginBottom: 4 }}>months</p>
-              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>Median time from filing to resolution</p>
+              <p style={{ fontSize: 12, fontWeight: 500, color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0, marginBottom: 4 }}>months</p>
+              <p style={{ fontSize: 14, color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>Median time from filing to resolution</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-              <p style={{ fontSize: 36, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
+            <div style={{ textAlign: 'center', padding: '24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+              <p style={{ fontSize: 36, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
                 {trialMedian}
               </p>
-              <p style={{ fontSize: 12, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0, marginBottom: 4 }}>award</p>
-              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>Median trial outcome</p>
+              <p style={{ fontSize: 12, fontWeight: 500, color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0, marginBottom: 4 }}>award</p>
+              <p style={{ fontSize: 14, color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>Median trial outcome</p>
             </div>
           </div>
         </section>
@@ -627,50 +627,50 @@ export default async function ReportPage({
             {/* Settlement Range */}
             {settlementRange && (
               <section style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
                 boxShadow: 'var(--shadow-xs)',
               }}>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   Settlement Range
                 </h2>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
                   Distribution of settlement amounts
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }} className="settlement-grid">
                   <style>{`.settlement-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 768px) { .settlement-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
-                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2)', margin: '0 0 10px' }}>
                       25th Percentile
                     </p>
-                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
+                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
                       {formatSettlementAmount(settlementRange.lo, { compact: true })}
                     </p>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>Conservative</p>
+                    <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>Conservative</p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2)', margin: '0 0 10px' }}>
                       Median
                     </p>
-                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
+                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
                       {formatSettlementAmount(settlementRange.md, { compact: true })}
                     </p>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>Typical</p>
+                    <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>Typical</p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2)', margin: '0 0 10px' }}>
                       75th Percentile
                     </p>
-                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
+                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
                       {formatSettlementAmount(settlementRange.hi, { compact: true })}
                     </p>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>Favorable</p>
+                    <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>Favorable</p>
                   </div>
                 </div>
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '24px', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '24px', fontFamily: 'var(--font-ui)', fontWeight: 500 }}>
                   95% confidence interval: ±{Math.round((settlementRate || 50) * 0.08)}% based on sample size of {totalCases?.toLocaleString() || 'N/A'} cases.
                   {(totalCases || 0) < 500 && ' Limited sample — interpret with caution.'}
                 </p>
@@ -680,40 +680,40 @@ export default async function ReportPage({
             {/* Representation Impact */}
             {(proSeWinRate !== null && representedWinRate !== null) && (
               <section style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
                 boxShadow: 'var(--shadow-xs)',
               }}>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   Representation Impact
                 </h2>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
                   How representation affects outcomes
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '24px' }} className="representation-grid">
                   <style>{`.representation-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .representation-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
-                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2)', margin: '0 0 10px' }}>
                       Self-Represented (Pro Se)
                     </p>
-                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
+                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
                       {proSeWinRate}%
                     </p>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+                    <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                       win rate{real?.ps?.total ? ` · ${real.ps.total.toLocaleString()} cases` : ''}
                     </p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2)', margin: '0 0 10px' }}>
                       Attorney Represented
                     </p>
-                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
+                    <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
                       {representedWinRate}%
                     </p>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+                    <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                       win rate{real?.rr?.total ? ` · ${real.rr.total.toLocaleString()} cases` : ''}
                     </p>
                   </div>
@@ -724,17 +724,17 @@ export default async function ReportPage({
             {/* State-Level Breakdown */}
             {real?.state_rates && Object.keys(real.state_rates).length > 3 && (
               <section style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
                 boxShadow: 'var(--shadow-xs)',
               }}>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   Win Rates by State
                 </h2>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
                   How case outcome rates vary across federal districts
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -747,19 +747,19 @@ export default async function ReportPage({
                       const diff = Math.round((stateWr - natAvg) * 10) / 10;
                       return (
                         <div key={stateId} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid var(--bdr)' }}>
-                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', width: '36px', fontFamily: 'var(--font-mono)' }}>{stateId}</span>
+                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', width: '36px', fontFamily: 'var(--font-mono)' }}>{stateId}</span>
                           <div style={{ flex: 1, height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
-                            <div style={{ height: '100%', width: `${Math.min(100, stateWr)}%`, background: stateWr >= natAvg ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
+                            <div style={{ height: '100%', width: `${Math.min(100, stateWr)}%`, background: stateWr >= natAvg ? 'var(--data-positive)' : 'var(--link)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
                           </div>
-                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(stateWr)}%</span>
-                          <span style={{ fontSize: '12px', fontWeight: 600, color: diff > 0 ? 'var(--data-positive)' : diff < 0 ? 'var(--accent-primary)' : 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', width: '52px', textAlign: 'right' }}>
+                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(stateWr)}%</span>
+                          <span style={{ fontSize: '12px', fontWeight: 600, color: diff > 0 ? 'var(--data-positive)' : diff < 0 ? 'var(--link)' : 'var(--text2)', fontFamily: 'var(--font-mono)', width: '52px', textAlign: 'right' }}>
                             {diff > 0 ? '+' : ''}{diff}%
                           </span>
                         </div>
                       );
                     })}
                 </div>
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px', fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '16px', fontFamily: 'var(--font-ui)' }}>
                   Showing top 10 states by win rate. National average: {Math.round(real.wr ?? winRate)}%. Green indicates above average, red below.
                 </p>
               </section>
@@ -768,17 +768,17 @@ export default async function ReportPage({
             {/* Circuit Win Rates */}
             {real?.circuit_rates && Object.keys(real.circuit_rates).length > 0 && (
               <section style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
                 boxShadow: 'var(--shadow-xs)',
               }}>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   Win Rates by Circuit
                 </h2>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
                   How case outcome rates vary across federal circuit courts
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -790,19 +790,19 @@ export default async function ReportPage({
                       const diff = Math.round((circuitWr - natAvg) * 10) / 10;
                       return (
                         <div key={circuit} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid var(--bdr)' }}>
-                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', width: '80px', fontFamily: 'var(--font-ui)' }}>{circuit}</span>
+                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', width: '80px', fontFamily: 'var(--font-ui)' }}>{circuit}</span>
                           <div style={{ flex: 1, height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
-                            <div style={{ height: '100%', width: `${Math.min(100, circuitWr)}%`, background: circuitWr >= natAvg ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
+                            <div style={{ height: '100%', width: `${Math.min(100, circuitWr)}%`, background: circuitWr >= natAvg ? 'var(--data-positive)' : 'var(--link)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
                           </div>
-                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(circuitWr)}%</span>
-                          <span style={{ fontSize: '12px', fontWeight: 600, color: diff > 0 ? 'var(--data-positive)' : diff < 0 ? 'var(--accent-primary)' : 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', width: '52px', textAlign: 'right' }}>
+                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(circuitWr)}%</span>
+                          <span style={{ fontSize: '12px', fontWeight: 600, color: diff > 0 ? 'var(--data-positive)' : diff < 0 ? 'var(--link)' : 'var(--text2)', fontFamily: 'var(--font-mono)', width: '52px', textAlign: 'right' }}>
                             {diff > 0 ? '+' : ''}{diff}%
                           </span>
                         </div>
                       );
                     })}
                 </div>
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px', fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '16px', fontFamily: 'var(--font-ui)' }}>
                   National average: {Math.round(real.wr ?? winRate)}%. Green indicates above average, red below.
                 </p>
               </section>
@@ -811,17 +811,17 @@ export default async function ReportPage({
             {/* Detailed Outcome Breakdown */}
             {real?.ends && real.ends.length > 0 && (
               <section style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
                 boxShadow: 'var(--shadow-xs)',
               }}>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   How Cases End
                 </h2>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
                   Detailed disposition breakdown
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -831,7 +831,7 @@ export default async function ReportPage({
                     const pct = end.p || (totalEnds > 0 ? ((count / totalEnds) * 100) : 0);
                     return (
                       <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                        <span style={{ fontSize: '14px', color: 'var(--color-text-primary)', fontWeight: 500, width: '180px', fontFamily: 'var(--font-ui)', flexShrink: 0 }}>
+                        <span style={{ fontSize: '14px', color: 'var(--text1)', fontWeight: 500, width: '180px', fontFamily: 'var(--font-ui)', flexShrink: 0 }}>
                           {end.label || end.l || `Outcome ${i + 1}`}
                         </span>
                         <div style={{ flex: 1, height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
@@ -843,10 +843,10 @@ export default async function ReportPage({
                             transition: 'width 0.5s ease',
                           }} />
                         </div>
-                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>
+                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>
                           {pct.toFixed(1)}%
                         </span>
-                        <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', width: '60px', textAlign: 'right' }}>
+                        <span style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-mono)', width: '60px', textAlign: 'right' }}>
                           {count.toLocaleString()}
                         </span>
                       </div>
@@ -875,15 +875,15 @@ export default async function ReportPage({
         ) : (
           /* ═══ PAYWALL: Upsell for free users ═══ */
           <section style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '48px 32px',
             textAlign: 'center',
             marginTop: 24,
             boxShadow: 'var(--shadow-xs)',
           }}>
-            <div style={{ fontSize: 40, marginBottom: 20, color: 'var(--accent-primary)' }}>
+            <div style={{ fontSize: 40, marginBottom: 20, color: 'var(--link)' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
@@ -892,7 +892,7 @@ export default async function ReportPage({
             <p style={{
               fontSize: 22,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
               margin: '0 0 12px',
               letterSpacing: '-0.3px',
@@ -900,7 +900,7 @@ export default async function ReportPage({
               Unlock the full report
             </p>
             <p style={{
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontSize: 16,
               fontFamily: 'var(--font-ui)',
               margin: '0 0 12px',
@@ -912,12 +912,12 @@ export default async function ReportPage({
               Settlement ranges, attorney impact data, representation analysis, and PDF export.
             </p>
             <p style={{
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontSize: 14,
               fontFamily: 'var(--font-ui)',
               margin: '0 0 28px',
             }}>
-              Starting at <strong style={{ color: 'var(--color-text-primary)', fontSize: 16 }}>$5.99</strong> for a single report
+              Starting at <strong style={{ color: 'var(--text1)', fontSize: 16 }}>$5.99</strong> for a single report
             </p>
             <Link href="/pricing" className="report-cta-btn">
               See Pricing →
@@ -928,30 +928,30 @@ export default async function ReportPage({
         {/* ═══ Related Court Records (CourtListener + RECAP) ═══ */}
         {(opinionResults.length > 0 || recapResults.length > 0) && (
           <section style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '32px',
             marginBottom: '24px',
             boxShadow: 'var(--shadow-xs)',
             marginTop: '24px',
           }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
               Related Court Records
             </h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
               Live from CourtListener · RECAP Archive · Public federal court records
             </p>
 
             {opinionResults.length > 0 && (
               <>
-                <p style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: 12, fontWeight: 600, color: 'var(--text2)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
                   Federal Opinions
                 </p>
                 {opinionResults.map((op: CourtRecord, i: number) => (
                   <div key={i} style={{
                     padding: '12px 0',
-                    borderBottom: i < opinionResults.length - 1 ? '1px solid var(--border-default)' : 'none',
+                    borderBottom: i < opinionResults.length - 1 ? '1px solid var(--bdr)' : 'none',
                   }}>
                     <a
                       href={op.absolute_url ? `https://www.courtlistener.com${op.absolute_url}` : '#'}
@@ -961,7 +961,7 @@ export default async function ReportPage({
                     >
                       {op.caseName || 'Federal Court Opinion'}
                     </a>
-                    <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: 12, color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       {op.court || ''}{op.dateFiled ? ` · ${new Date(op.dateFiled).getFullYear()}` : ''}
                       {op.status ? ` · ${op.status}` : ''}
                     </p>
@@ -975,7 +975,7 @@ export default async function ReportPage({
                 <p style={{
                   fontSize: 12,
                   fontWeight: 600,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   marginBottom: 12,
                   marginTop: opinionResults.length > 0 ? 20 : 0,
                   textTransform: 'uppercase',
@@ -987,7 +987,7 @@ export default async function ReportPage({
                 {recapResults.map((doc: CourtRecord, i: number) => (
                   <div key={i} style={{
                     padding: '12px 0',
-                    borderBottom: i < recapResults.length - 1 ? '1px solid var(--border-default)' : 'none',
+                    borderBottom: i < recapResults.length - 1 ? '1px solid var(--bdr)' : 'none',
                   }}>
                     <a
                       href={doc.absolute_url ? `https://www.courtlistener.com${doc.absolute_url}` : '#'}
@@ -997,7 +997,7 @@ export default async function ReportPage({
                     >
                       {doc.caseName || doc.docketNumber || 'Federal Court Docket'}
                     </a>
-                    <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: 12, color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       {doc.court || ''}{doc.dateFiled ? ` · ${new Date(doc.dateFiled).getFullYear()}` : ''}
                       {doc.docketNumber ? ` · ${doc.docketNumber}` : ''}
                     </p>
@@ -1006,7 +1006,7 @@ export default async function ReportPage({
               </>
             )}
 
-            <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginTop: 16, fontStyle: 'italic', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: 12, color: 'var(--text2)', marginTop: 16, fontStyle: 'italic', fontFamily: 'var(--font-ui)' }}>
               Court records provided by CourtListener.com and the RECAP Archive under open access principles.
               All documents are public federal court records.
             </p>
@@ -1016,23 +1016,23 @@ export default async function ReportPage({
         {/* ═══ Key Factors Affecting Outcome ═══ */}
         {real?.factors && real.factors.length > 0 && (
           <section style={{
-            background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px',
+            background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px',
             padding: '32px', marginBottom: '24px', boxShadow: 'var(--shadow-xs)', marginTop: '24px',
           }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
               Key factors affecting outcome
             </h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
               Common factors that influence case outcomes based on historical data
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 12 }}>
               {real.factors.map((factor: string, i: number) => (
                 <div key={i} style={{
-                  padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: 2, border: '1px solid #F0F3F5',
+                  padding: '12px 16px', background: 'var(--surf)', borderRadius: 2, border: '1px solid #F0F3F5',
                   display: 'flex', alignItems: 'center', gap: 8,
                 }}>
-                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent-primary)', flexShrink: 0 }} />
-                  <span style={{ fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>{factor}</span>
+                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--link)', flexShrink: 0 }} />
+                  <span style={{ fontSize: 14, color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>{factor}</span>
                 </div>
               ))}
             </div>
@@ -1045,32 +1045,32 @@ export default async function ReportPage({
           marginTop: 24, marginBottom: 24,
         }}>
           <Link href="/calculator" style={{
-            padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2,
+            padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
             textDecoration: 'none', transition: 'all 200ms',
           }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>Settlement Calculator</div>
-            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>Estimate your potential recovery</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>Settlement Calculator</div>
+            <div style={{ fontSize: 12, color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>Estimate your potential recovery</div>
           </Link>
           <Link href="/judges" style={{
-            padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2,
+            padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
             textDecoration: 'none', transition: 'all 200ms',
           }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>Judge Analytics</div>
-            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>Research judges in your district</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>Judge Analytics</div>
+            <div style={{ fontSize: 12, color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>Research judges in your district</div>
           </Link>
           <Link href="/translate" style={{
-            padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2,
+            padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
             textDecoration: 'none', transition: 'all 200ms',
           }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>Jargon Translator</div>
-            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>Decode legal language</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>Jargon Translator</div>
+            <div style={{ fontSize: 12, color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>Decode legal language</div>
           </Link>
           <Link href="/nos-explorer" style={{
-            padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2,
+            padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
             textDecoration: 'none', transition: 'all 200ms',
           }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>NOS Explorer</div>
-            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>Compare all case types</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>NOS Explorer</div>
+            <div style={{ fontSize: 12, color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>Compare all case types</div>
           </Link>
         </section>
 
@@ -1084,18 +1084,18 @@ export default async function ReportPage({
           if (related.length === 0) return null;
           return (
             <section style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: 'var(--shadow-xs)',
               marginTop: '24px',
             }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                 Related case types
               </h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
                 Other cases in this category
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
@@ -1140,18 +1140,18 @@ export default async function ReportPage({
           if (similar.length === 0) return null;
           return (
             <section style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: 'var(--shadow-xs)',
               marginTop: '24px',
             }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                 Similar case types
               </h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '24px', lineHeight: 1.5 }}>
                 Other {categoryLabel || 'federal'} cases with similar outcomes
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '16px' }}>
@@ -1162,8 +1162,8 @@ export default async function ReportPage({
                     className="similar-case-card"
                     style={{
                       padding: '16px',
-                      background: 'var(--color-surface-1)',
-                      border: '1px solid var(--border-default)',
+                      background: 'var(--surf)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       textDecoration: 'none',
                       transition: 'all 200ms ease',
@@ -1177,18 +1177,18 @@ export default async function ReportPage({
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px' }}>
                       <div>
-                        <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: '0 0 4px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+                        <p style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: '0 0 4px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                           Win Rate
                         </p>
-                        <p style={{ fontSize: '16px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: 0 }}>
+                        <p style={{ fontSize: '16px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)', margin: 0 }}>
                           {item.winRate}%
                         </p>
                       </div>
                       <div style={{ textAlign: 'right' }}>
-                        <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: '0 0 4px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+                        <p style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: '0 0 4px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                           Total Cases
                         </p>
-                        <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', margin: 0 }}>
+                        <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)', margin: 0 }}>
                           {(item.totalCases / 1000).toFixed(1)}K
                         </p>
                       </div>
@@ -1199,7 +1199,7 @@ export default async function ReportPage({
                   </Link>
                 ))}
               </div>
-              <style>{`.similar-case-card { background: var(--color-surface-1); border-color: #E8E9EA; } .similar-case-card:hover { background: #F0F3F5 !important; border-color: var(--border-default) !important; }`}</style>
+              <style>{`.similar-case-card { background: var(--surf); border-color: #E8E9EA; } .similar-case-card:hover { background: #F0F3F5 !important; border-color: var(--bdr) !important; }`}</style>
             </section>
           );
         })()}
@@ -1208,7 +1208,7 @@ export default async function ReportPage({
         <ShareToolbar nos={nos} />
 
         {/* Disclaimer */}
-        <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', textAlign: 'center', marginTop: 40, fontStyle: 'italic', fontFamily: 'var(--font-ui)', lineHeight: 1.7 }}>
+        <p style={{ fontSize: 14, color: 'var(--text2)', textAlign: 'center', marginTop: 40, fontStyle: 'italic', fontFamily: 'var(--font-ui)', lineHeight: 1.7 }}>
           This report shows aggregate historical data from public federal court records. Not legal advice. Results vary by individual case facts, evidence, representation, and jurisdiction.
         </p>
       </div>

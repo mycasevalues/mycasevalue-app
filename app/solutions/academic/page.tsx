@@ -145,13 +145,13 @@ export default function AcademicPage() {
       </section>
 
       {/* Features Grid */}
-      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--surf)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -165,17 +165,17 @@ export default function AcademicPage() {
 
               const card = (
                 <div key={f.title} style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '2px',
                   padding: '24px 16px',
                 }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                   <h3 style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '1rem',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '8px',
                   }}>
                     {f.title}
@@ -183,7 +183,7 @@ export default function AcademicPage() {
                   <p style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '0.875rem',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}>
@@ -194,7 +194,7 @@ export default function AcademicPage() {
                       display: 'inline-block',
                       marginTop: '12px',
                       fontSize: '0.8rem',
-                      color: 'var(--accent-primary)',
+                      color: 'var(--link)',
                       textDecoration: 'none',
                       fontWeight: 500,
                     }}>
@@ -213,13 +213,13 @@ export default function AcademicPage() {
       </section>
 
       {/* Get Started CTA */}
-      <section style={{ padding: '24px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+      <section style={{ padding: '24px 16px', background: 'var(--card)', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '16px',
           }}>
             Accelerate Legal Research and Scholarship
@@ -227,7 +227,7 @@ export default function AcademicPage() {
           <p style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             marginBottom: '32px',
             lineHeight: 1.6,
           }}>
@@ -235,8 +235,8 @@ export default function AcademicPage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
-              background: 'var(--accent-primary)',
-              color: 'var(--color-surface-1)',
+              background: 'var(--link)',
+              color: 'var(--surf)',
               padding: '0.875rem 2rem',
               borderRadius: '2px',
               textDecoration: 'none',
@@ -251,10 +251,10 @@ export default function AcademicPage() {
             </Link>
             <Link href="/calculator" style={{
               background: 'transparent',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               padding: '0.875rem 2rem',
               borderRadius: '2px',
-              border: '1.5px solid var(--border-default)',
+              border: '1.5px solid var(--bdr)',
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
@@ -270,13 +270,13 @@ export default function AcademicPage() {
       </section>
 
       {/* Related Solutions */}
-      <section style={{ padding: '24px 16px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '24px 16px', background: 'var(--surf)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -286,8 +286,8 @@ export default function AcademicPage() {
             <Link
               href="/solutions/government"
               style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 padding: '24px 16px',
                 textDecoration: 'none',
@@ -301,7 +301,7 @@ export default function AcademicPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: '8px',
               }}>
                 Government Agencies
@@ -309,7 +309,7 @@ export default function AcademicPage() {
               <p style={{
                 fontFamily: 'var(--font-ui)',
                 fontSize: '0.875rem',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 lineHeight: 1.6,
                 margin: 0,
               }}>
@@ -319,8 +319,8 @@ export default function AcademicPage() {
             <Link
               href="/solutions/api"
               style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 padding: '24px 16px',
                 textDecoration: 'none',
@@ -334,7 +334,7 @@ export default function AcademicPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: '8px',
               }}>
                 API & Integrations
@@ -342,7 +342,7 @@ export default function AcademicPage() {
               <p style={{
                 fontFamily: 'var(--font-ui)',
                 fontSize: '0.875rem',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 lineHeight: 1.6,
                 margin: 0,
               }}>
@@ -352,8 +352,8 @@ export default function AcademicPage() {
             <Link
               href="/solutions/legal-aid"
               style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '2px',
                 padding: '24px 16px',
                 textDecoration: 'none',
@@ -367,7 +367,7 @@ export default function AcademicPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: '8px',
               }}>
                 Legal Aid
@@ -375,7 +375,7 @@ export default function AcademicPage() {
               <p style={{
                 fontFamily: 'var(--font-ui)',
                 fontSize: '0.875rem',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 lineHeight: 1.6,
                 margin: 0,
               }}>

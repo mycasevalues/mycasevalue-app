@@ -53,7 +53,7 @@ export default async function Image({
             width: '100%',
             height: '100%',
             background: '#18181A',
-            color: 'var(--color-text-inverse)',
+            color: 'var(--chrome-text)',
             fontFamily: 'Inter, sans-serif',
             alignItems: 'center',
             justifyContent: 'center',
@@ -82,7 +82,7 @@ export default async function Image({
           width: '100%',
           height: '100%',
           background: '#18181A',
-          color: 'var(--color-text-inverse)',
+          color: 'var(--chrome-text)',
           fontFamily: 'Inter, sans-serif',
           padding: '60px',
           boxSizing: 'border-box',
@@ -117,7 +117,7 @@ export default async function Image({
               fontSize: '28px',
               fontWeight: '600',
               letterSpacing: '-0.5px',
-              color: 'var(--color-text-inverse)',
+              color: 'var(--chrome-text)',
             }}
           >
             MyCaseValue
@@ -151,7 +151,7 @@ export default async function Image({
               lineHeight: '1.2',
               maxWidth: '1200px',
               letterSpacing: '-1px',
-              color: 'var(--color-text-inverse)',
+              color: 'var(--chrome-text)',
             }}
           >
             {caseData.label}

@@ -13,18 +13,18 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
   const maxPct = Math.max(...data.map(d => d.pct));
 
   return (
-    <div className="w-full p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
+    <div className="w-full p-6" style={{ background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="20%">
           <CartesianGrid strokeDasharray="3 3" stroke="var(--bdr)" vertical={false} />
           <XAxis
             dataKey="range"
-            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
-            axisLine={{ stroke: 'var(--border-default)' }}
+            tick={{ fontSize: 12, fill: 'var(--text2)', fontFamily: 'var(--font-ui)' }}
+            axisLine={{ stroke: 'var(--bdr)' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)' }}
+            tick={{ fontSize: 12, fill: 'var(--text2)' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}%`}
@@ -32,14 +32,14 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
           <Tooltip
             cursor={{ fill: 'rgba(17,17,17,0.04)' }}
             contentStyle={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
               fontSize: '14px',
               fontFamily: 'var(--font-ui)',
               padding: '8px 14px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
             }}
             formatter={(value: number) => [`${value}%`, lang === 'es' ? 'Porcentaje' : 'Percentage']}
           />
@@ -48,9 +48,9 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
               <Cell
                 key={index}
                 fill={index === highlightIndex
-                  ? 'var(--accent-primary)'
+                  ? 'var(--link)'
                   : entry.pct === maxPct
-                    ? 'var(--accent-primary)'
+                    ? 'var(--link)'
                     : 'rgba(10, 102, 194, 0.15)'
                 }
               />

@@ -105,7 +105,7 @@ export default async function JudgesPage() {
 
             <h1 style={{
               fontSize: 28, fontWeight: 700, marginBottom: 16,
-              color: 'var(--color-text-primary)', letterSpacing: '-0.01em', fontFamily: 'var(--font-legal)', lineHeight: 1.2,
+              color: 'var(--text1)', letterSpacing: '-0.01em', fontFamily: 'var(--font-legal)', lineHeight: 1.2,
             }}>
               Judge Intelligence
             </h1>
@@ -137,7 +137,7 @@ export default async function JudgesPage() {
           }}>
             Advanced Metrics
           </div>
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 12, letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: 12, letterSpacing: '-0.01em' }}>
             Analytics Radar — Multi-dimensional Profiles
           </h2>
           <p style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontFamily: 'var(--font-ui)', maxWidth: 680, margin: '0 0 24px', lineHeight: 1.6 }}>

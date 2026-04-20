@@ -64,8 +64,8 @@ const AnchorNav = () => {
   return (
     <>
       <div className="anchor-nav" style={{
-        background: 'var(--color-surface-0)',
-        borderBottom: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        borderBottom: '1px solid var(--bdr)',
         position: 'sticky',
         top: '112px',
         zIndex: 50,
@@ -92,11 +92,11 @@ const AnchorNav = () => {
                   padding: '16px 24px',
                   fontSize: '14px',
                   fontWeight: 500,
-                  color: isTrialButton ? 'var(--accent-primary)' : isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  color: isTrialButton ? 'var(--link)' : isActive ? 'var(--text1)' : 'var(--text2)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
                   whiteSpace: 'nowrap',
-                  borderBottom: isActive && !isTrialButton ? '2px solid var(--accent-primary)' : '2px solid transparent',
+                  borderBottom: isActive && !isTrialButton ? '2px solid var(--link)' : '2px solid transparent',
                   transition: 'all 150ms',
                   cursor: 'pointer',
                 }}
@@ -110,7 +110,7 @@ const AnchorNav = () => {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .anchor-nav-link:hover { color: var(--color-text-primary) !important; border-bottom-color: var(--accent-primary) !important; }
+        .anchor-nav-link:hover { color: var(--text1) !important; border-bottom-color: var(--link) !important; }
         @media (max-width: 768px) {
           .anchor-nav { display: none !important; }
         }

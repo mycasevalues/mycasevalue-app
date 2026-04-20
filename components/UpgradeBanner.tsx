@@ -51,7 +51,7 @@ export default function UpgradeBanner() {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--accent-primary);
+          color: var(--link);
           font-weight: 600;
         }
         .upgrade-btn-primary {
@@ -104,7 +104,7 @@ export default function UpgradeBanner() {
           <div>
             <div style={{
               display: 'inline-flex', alignItems: 'center',
-              background: 'rgba(10, 102, 194, 0.2)', color: 'var(--accent-primary)',
+              background: 'rgba(10, 102, 194, 0.2)', color: 'var(--link)',
               fontSize: '12px', fontWeight: 500, textTransform: 'uppercase',
               padding: '6px 12px', borderRadius: '3px', marginBottom: '16px',
               letterSpacing: '0.5px',
@@ -113,7 +113,7 @@ export default function UpgradeBanner() {
             </div>
 
             <h2 style={{
-              fontSize: '20px', fontWeight: 600, color: 'var(--color-text-inverse)',
+              fontSize: '20px', fontWeight: 600, color: 'var(--chrome-text)',
               margin: '0 0 16px 0', fontFamily: 'var(--font-ui)', lineHeight: 1.2,
             }}>
               MyCaseValue Attorney Mode
@@ -156,19 +156,19 @@ export default function UpgradeBanner() {
           {/* Right Side — Prediction Card Mockup */}
           <div>
             <div style={{
-              background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px',
+              background: 'var(--card)', borderRadius: '4px', padding: '32px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
             }}>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Case Outcome Prediction
               </div>
-              <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--link)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
                 72%
               </div>
-              <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <div style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Favorable Outcome Probability
               </div>
-              <div style={{ height: '1px', background: 'var(--border-default)', marginBottom: '24px' }} />
+              <div style={{ height: '1px', background: 'var(--bdr)', marginBottom: '24px' }} />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {[
                   { label: 'Win Rate', value: '68%' },
@@ -179,8 +179,8 @@ export default function UpgradeBanner() {
                     display: 'flex', justifyContent: 'space-between',
                     fontSize: '14px', fontFamily: 'var(--font-ui)',
                   }}>
-                    <span style={{ color: 'var(--color-text-secondary)' }}>{m.label}</span>
-                    <span style={{ fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{m.value}</span>
+                    <span style={{ color: 'var(--text2)' }}>{m.label}</span>
+                    <span style={{ fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>{m.value}</span>
                   </div>
                 ))}
               </div>

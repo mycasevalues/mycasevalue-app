@@ -41,7 +41,7 @@ export default function MasterDetailLayout({
           width: `${masterWidth}%`,
           minWidth: hasSelection ? undefined : '100%',
           background: 'var(--card, #FFFFFF)',
-          borderRight: '1px solid var(--border-default, var(--bdr, #E2DFD8))',
+          borderRight: '1px solid var(--bdr, var(--bdr, #E2DFD8))',
         }}
       >
         <div className="lg:hidden w-full">{!hasSelection && masterPanel}</div>

@@ -69,8 +69,8 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
         onClick={() => setIsOpen(true)}
         style={{
           padding: '8px 24px',
-          background: 'var(--accent-primary)',
-          color: 'var(--color-surface-0)',
+          background: 'var(--link)',
+          color: 'var(--card)',
           border: 'none',
           borderRadius: '4px',
           fontSize: '14px',
@@ -88,7 +88,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
           e.currentTarget.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.25)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'var(--accent-primary)';
+          e.currentTarget.style.background = 'var(--link)';
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}
@@ -127,7 +127,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
         >
           <div
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
               padding: '32px',
               maxWidth: '420px',
@@ -150,10 +150,10 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
               }
             `}</style>
 
-            <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
               Set Judge Alert
             </h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', lineHeight: '1.6' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 24px 0', lineHeight: '1.6' }}>
               Get notified when Judge {judgeName} publishes new opinions.
             </p>
 
@@ -180,7 +180,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       display: 'block',
                       fontSize: '14px',
                       fontWeight: '600',
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       marginBottom: '8px',
                     }}
                   >
@@ -199,10 +199,10 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       width: '100%',
                       padding: '8px 16px',
                       fontSize: '14px',
-                      border: error ? '1px solid #CC1016' : '1px solid var(--border-default)',
+                      border: error ? '1px solid #CC1016' : '1px solid var(--bdr)',
                       borderRadius: '4px',
-                      background: 'var(--color-surface-0)',
-                      color: 'var(--color-text-primary)',
+                      background: 'var(--card)',
+                      color: 'var(--text1)',
                       outline: 'none',
                       boxSizing: 'border-box',
                       transition: 'border-color 150ms',
@@ -210,14 +210,14 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     }}
                     onFocus={(e) => {
                       if (!error) {
-                        e.currentTarget.style.borderColor = 'var(--accent-primary)';
+                        e.currentTarget.style.borderColor = 'var(--link)';
                         e.currentTarget.style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.1)';
                       }
                     }}
                     onBlur={(e) => {
                       e.currentTarget.style.boxShadow = 'none';
                       if (!error) {
-                        e.currentTarget.style.borderColor = 'var(--border-default)';
+                        e.currentTarget.style.borderColor = 'var(--bdr)';
                       }
                     }}
                   />
@@ -232,7 +232,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       flex: 1,
                       padding: '8px 16px',
                       background: 'rgba(255,255,255,0.05)',
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       border: 'none',
                       borderRadius: '4px',
                       fontSize: '14px',
@@ -242,7 +242,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       transition: 'all 150ms',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--border-default)';
+                      e.currentTarget.style.background = 'var(--bdr)';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
@@ -256,8 +256,8 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     style={{
                       flex: 1,
                       padding: '8px 16px',
-                      background: loading || !email.trim() ? 'var(--bdr, #E2DFD8)' : 'var(--accent-primary)',
-                      color: 'var(--color-surface-0)',
+                      background: loading || !email.trim() ? 'var(--bdr, #E2DFD8)' : 'var(--link)',
+                      color: 'var(--card)',
                       border: 'none',
                       borderRadius: '4px',
                       fontSize: '14px',
@@ -274,7 +274,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'var(--accent-primary)';
+                      e.currentTarget.style.background = 'var(--link)';
                       e.currentTarget.style.transform = 'translateY(0)';
                     }}
                   >

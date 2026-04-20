@@ -20,8 +20,8 @@ export default function InflationToggle() {
             alignItems: 'center',
             gap: '8px',
             padding: '8px 14px',
-            backgroundColor: inflationEnabled ? 'var(--accent-primary)' : 'var(--border-default)',
-            color: inflationEnabled ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
+            backgroundColor: inflationEnabled ? 'var(--link)' : 'var(--bdr)',
+            color: inflationEnabled ? 'var(--card)' : 'var(--text2)',
             border: 'none',
             borderRadius: '4px',
             fontSize: '14px',
@@ -38,7 +38,7 @@ export default function InflationToggle() {
             width: '16px',
             height: '16px',
             borderRadius: '4px',
-            backgroundColor: inflationEnabled ? 'var(--color-surface-0)' : 'var(--color-text-muted)',
+            backgroundColor: inflationEnabled ? 'var(--card)' : 'var(--color-text-muted)',
             position: 'relative',
           }}>
             {inflationEnabled && (
@@ -47,7 +47,7 @@ export default function InflationToggle() {
                 position: 'absolute',
                 left: '2px',
                 top: '0px',
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 fontSize: '12px',
                 fontWeight: 700,
               }}>
@@ -63,13 +63,13 @@ export default function InflationToggle() {
       {inflationEnabled && (
         <div style={{
           fontSize: '12px',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           fontStyle: 'italic',
           fontFamily: 'var(--font-ui)',
-          backgroundColor: 'var(--color-surface-0)',
+          backgroundColor: 'var(--card)',
           padding: '8px 12px',
           borderRadius: '4px',
-          borderLeft: '3px solid var(--accent-primary)',
+          borderLeft: '3px solid var(--link)',
           lineHeight: 1.5,
         }}>
           Inflation-adjusted to 2024 dollars using BLS CPI-U data.

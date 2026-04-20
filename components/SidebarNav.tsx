@@ -35,7 +35,7 @@ export default function SidebarNav() {
       display: 'flex',
       flexDirection: 'column',
       gap: '8px',
-      backgroundColor: 'var(--accent-primary)',
+      backgroundColor: 'var(--link)',
       padding: '12px',
       borderRadius: '4px',
     }}>
@@ -48,7 +48,7 @@ export default function SidebarNav() {
           border-radius: 4px;
           font-size: 14px;
           font-weight: 400;
-          color: var(--color-surface-0);
+          color: var(--card);
           text-decoration: none;
           font-family: var(--font-ui);
           transition: all 200ms ease;
@@ -58,12 +58,12 @@ export default function SidebarNav() {
         .sidebar-nav-item.active {
           font-weight: 600;
           background: rgba(232, 23, 31, 0.12);
-          border-left-color: var(--accent-primary);
-          color: var(--color-surface-0);
+          border-left-color: var(--link);
+          color: var(--card);
         }
         .sidebar-nav-item:hover:not(.active) {
           background: rgba(255, 255, 255, 0.08);
-          color: var(--border-default);
+          color: var(--bdr);
         }
         .sidebar-nav-icon {
           display: flex;
@@ -71,11 +71,11 @@ export default function SidebarNav() {
           justify-content: center;
           width: 20px;
           height: 20px;
-          color: var(--border-default);
+          color: var(--bdr);
           flex-shrink: 0;
         }
         .sidebar-nav-item.active .sidebar-nav-icon {
-          color: var(--accent-primary);
+          color: var(--link);
         }
       `}</style>
       {navItems.map((item, idx) => {

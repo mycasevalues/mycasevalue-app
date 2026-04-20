@@ -76,7 +76,7 @@ export default function DataAlertSubscribe({
     <div
       style={{
         padding: '16px',
-        backgroundColor: 'var(--color-surface-0)',
+        backgroundColor: 'var(--card)',
         border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '4px',
         fontFamily: 'var(--font-ui)',
@@ -103,8 +103,8 @@ export default function DataAlertSubscribe({
             style={{
               width: '100%',
               padding: '12px 16px',
-              backgroundColor: 'var(--accent-primary)',
-              color: 'var(--color-surface-0)',
+              backgroundColor: 'var(--link)',
+              color: 'var(--card)',
               border: 'none',
               borderRadius: '4px',
               fontSize: '14px',
@@ -121,7 +121,7 @@ export default function DataAlertSubscribe({
             }}
             onMouseLeave={(e) => {
               (e.target as HTMLButtonElement).style.backgroundColor =
-                'var(--accent-primary)';
+                'var(--link)';
             }}
           >
             <span>Get notified when data changes</span>
@@ -141,7 +141,7 @@ export default function DataAlertSubscribe({
               style={{
                 marginTop: '16px',
                 paddingTop: '16px',
-                borderTop: '1px solid var(--border-default)',
+                borderTop: '1px solid var(--bdr)',
               }}
             >
               <div style={{ marginBottom: '16px' }}>
@@ -150,7 +150,7 @@ export default function DataAlertSubscribe({
                     display: 'block',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '6px',
                   }}
                 >
@@ -169,8 +169,8 @@ export default function DataAlertSubscribe({
                     borderRadius: '4px',
                     fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
-                    backgroundColor: 'var(--color-surface-0)',
-                    color: 'var(--color-text-primary)',
+                    backgroundColor: 'var(--card)',
+                    color: 'var(--text1)',
                     boxSizing: 'border-box',
                   }}
                 />
@@ -182,7 +182,7 @@ export default function DataAlertSubscribe({
                     display: 'block',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '6px',
                   }}
                 >
@@ -198,8 +198,8 @@ export default function DataAlertSubscribe({
                     borderRadius: '4px',
                     fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
-                    backgroundColor: 'var(--color-surface-0)',
-                    color: 'var(--color-text-primary)',
+                    backgroundColor: 'var(--card)',
+                    color: 'var(--text1)',
                     boxSizing: 'border-box',
                   }}
                 >
@@ -214,7 +214,7 @@ export default function DataAlertSubscribe({
                   fontSize: '12px',
                   color: 'var(--color-text-muted)',
                   marginBottom: '16px',
-                  backgroundColor: 'var(--color-surface-0)',
+                  backgroundColor: 'var(--card)',
                   padding: '8px 10px',
                   borderRadius: '4px',
                 }}
@@ -251,7 +251,7 @@ export default function DataAlertSubscribe({
                   style={{
                     padding: '8px 14px',
                     backgroundColor: 'rgba(255,255,255,0.05)',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
                     fontSize: '14px',
@@ -261,7 +261,7 @@ export default function DataAlertSubscribe({
                   }}
                   onMouseEnter={(e) => {
                     (e.target as HTMLButtonElement).style.backgroundColor =
-                      'var(--border-default)';
+                      'var(--bdr)';
                   }}
                   onMouseLeave={(e) => {
                     (e.target as HTMLButtonElement).style.backgroundColor =
@@ -275,8 +275,8 @@ export default function DataAlertSubscribe({
                   disabled={isLoading}
                   style={{
                     padding: '8px 14px',
-                    backgroundColor: isLoading ? '#B0D0F5' : 'var(--accent-primary)',
-                    color: 'var(--color-surface-0)',
+                    backgroundColor: isLoading ? '#B0D0F5' : 'var(--link)',
+                    color: 'var(--card)',
                     border: 'none',
                     borderRadius: '4px',
                     fontSize: '14px',
@@ -293,7 +293,7 @@ export default function DataAlertSubscribe({
                   onMouseLeave={(e) => {
                     if (!isLoading) {
                       (e.target as HTMLButtonElement).style.backgroundColor =
-                        'var(--accent-primary)';
+                        'var(--link)';
                     }
                   }}
                 >

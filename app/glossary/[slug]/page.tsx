@@ -10,7 +10,7 @@ const styles = `
   }
   .glossary-nos-link:hover {
     background-color: rgba(10,80,162,0.08) !important;
-    border-color: var(--accent-primary) !important;
+    border-color: var(--link) !important;
   }
 
   .glossary-related-term {
@@ -18,7 +18,7 @@ const styles = `
   }
   .glossary-related-term:hover {
     background-color: rgba(10,80,162,0.08) !important;
-    border-color: var(--accent-primary) !important;
+    border-color: var(--link) !important;
   }
 
   .glossary-case-type-link {
@@ -32,7 +32,7 @@ const styles = `
     transition: all 200ms ease;
   }
   .glossary-back-link:hover {
-    border-color: var(--accent-primary) !important;
+    border-color: var(--link) !important;
   }
 `;
 
@@ -79,12 +79,12 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
   if (!term) {
     return (
-      <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+      <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
         <div className="max-w-3xl mx-auto px-6 py-24">
-          <h1 style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)' }}>
+          <h1 style={{ fontSize: 28, fontWeight: 700, color: 'var(--text1)' }}>
             Term not found
           </h1>
-          <p style={{ color: 'var(--color-text-secondary)', marginTop: '12px' }}>
+          <p style={{ color: 'var(--text2)', marginTop: '12px' }}>
             The glossary term you are looking for does not exist.
           </p>
           <Link
@@ -93,8 +93,8 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               display: 'inline-block',
               marginTop: '24px',
               padding: '8px 16px',
-              background: 'var(--accent-primary)',
-              color: 'var(--color-surface-0)',
+              background: 'var(--link)',
+              color: 'var(--card)',
               borderRadius: '4px',
               textDecoration: 'none',
               fontSize: '14px',
@@ -113,13 +113,13 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     .filter((t) => t !== undefined);
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       <style>{styles}</style>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--link)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb */}
-          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: 'var(--color-surface-0)' }}>
+          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: 'var(--card)' }}>
             <Link href="/" className="hover:opacity-80 transition-opacity">
               Home
             </Link>
@@ -136,7 +136,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
             style={{
               fontSize: '28px',
               fontWeight: 700,
-              color: 'var(--color-surface-0)',
+              color: 'var(--card)',
               letterSpacing: '-1.5px',
               marginBottom: '12px',
               fontFamily: 'var(--font-legal)',
@@ -165,68 +165,68 @@ export default async function GlossaryTermPage({ params }: PageProps) {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <div
           style={{
-            background: 'var(--color-surface-0)',
+            background: 'var(--card)',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             padding: '32px',
             boxShadow: 'var(--shadow-xs)',
           }}
         >
           {/* Definition Section */}
-          <section className="mb-8" style={{ borderBottom: '1px solid var(--border-default)', paddingBottom: '24px' }}>
+          <section className="mb-8" style={{ borderBottom: '1px solid var(--bdr)', paddingBottom: '24px' }}>
             <h2
               style={{
                 fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: '12px',
               }}
             >
               Definition
             </h2>
-            <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--color-text-primary)' }}>
+            <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--text1)' }}>
               {term.definition}
             </p>
           </section>
 
           {/* Federal Context Section */}
-          <section className="mb-8" style={{ borderBottom: '1px solid var(--border-default)', paddingBottom: '24px' }}>
+          <section className="mb-8" style={{ borderBottom: '1px solid var(--bdr)', paddingBottom: '24px' }}>
             <h2
               style={{
                 fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: '12px',
               }}
             >
               In Federal Court
             </h2>
-            <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--color-text-primary)' }}>
+            <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--text1)' }}>
               {term.federalContext}
             </p>
           </section>
 
           {/* Data Context Section */}
-          <section className="mb-8" style={{ borderBottom: '1px solid var(--border-default)', paddingBottom: '24px' }}>
+          <section className="mb-8" style={{ borderBottom: '1px solid var(--bdr)', paddingBottom: '24px' }}>
             <h2
               style={{
                 fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: '12px',
               }}
             >
               In the Data
             </h2>
-            <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--color-text-primary)', marginBottom: '12px' }}>
+            <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--text1)', marginBottom: '12px' }}>
               {term.dataContext}
             </p>
             {term.relatedNosCodes.length > 0 && (
               <div style={{ marginTop: '12px' }}>
-                <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '8px' }}>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text2)', marginBottom: '8px' }}>
                   Related NOS Codes:
                 </p>
                 <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -240,11 +240,11 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                         alignItems: 'center',
                         padding: '6px 12px',
                         background: 'var(--surf)',
-                        border: '1px solid var(--border-default)',
+                        border: '1px solid var(--bdr)',
                         borderRadius: '4px',
                         fontSize: '14px',
                         fontWeight: 600,
-                        color: 'var(--accent-primary)',
+                        color: 'var(--link)',
                         textDecoration: 'none',
                         transition: 'all 200ms ease',
                       }}
@@ -259,13 +259,13 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
           {/* Related Terms Section */}
           {relatedTermObjects.length > 0 && (
-            <section className="mb-8" style={{ borderBottom: '1px solid var(--border-default)', paddingBottom: '24px' }}>
+            <section className="mb-8" style={{ borderBottom: '1px solid var(--bdr)', paddingBottom: '24px' }}>
               <h2
                 style={{
                   fontSize: '20px',
                   fontWeight: 600,
                   fontFamily: 'var(--font-ui)',
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   marginBottom: '12px',
                 }}
               >
@@ -280,12 +280,12 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                     style={{
                       display: 'block',
                       padding: '12px 14px',
-                      background: 'var(--color-surface-1)',
-                      border: '1px solid var(--border-default)',
+                      background: 'var(--surf)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: 'var(--accent-primary)',
+                      color: 'var(--link)',
                       textDecoration: 'none',
                       transition: 'all 200ms ease',
                     }}
@@ -305,7 +305,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                   fontSize: '20px',
                   fontWeight: 600,
                   fontFamily: 'var(--font-ui)',
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   marginBottom: '12px',
                 }}
               >
@@ -321,8 +321,8 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                       display: 'inline-flex',
                       alignItems: 'center',
                       padding: '8px 14px',
-                      background: 'var(--accent-primary)',
-                      color: 'var(--color-surface-0)',
+                      background: 'var(--link)',
+                      color: 'var(--card)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       fontWeight: 600,
@@ -342,9 +342,9 @@ export default async function GlossaryTermPage({ params }: PageProps) {
             style={{
               marginTop: '32px',
               paddingTop: '24px',
-              borderTop: '1px solid var(--border-default)',
+              borderTop: '1px solid var(--bdr)',
               fontSize: '14px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
             }}
           >
             <p style={{ margin: 0 }}>
@@ -370,10 +370,10 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               alignItems: 'center',
               gap: '6px',
               padding: '8px 16px',
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: 600,

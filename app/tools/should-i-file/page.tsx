@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function ShouldIFileToolPage() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)' }}>
       <DecisionTree />
     </div>
   );

@@ -71,7 +71,7 @@ export default function ServerHero() {
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <a href="/search" className="hero-cta-primary" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '1rem 1.5rem', background: 'var(--accent-primary)', color: 'var(--color-surface-1)',
+                padding: '1rem 1.5rem', background: 'var(--link)', color: 'var(--surf)',
                 borderRadius: '0.25rem', fontWeight: 600, fontSize: '1.25rem',
                 fontFamily: 'var(--font-ui)', textDecoration: 'none',
                 transition: 'background 200ms',
@@ -81,7 +81,7 @@ export default function ServerHero() {
               </a>
               <a href="/cases" style={{
                 display: 'inline-flex', alignItems: 'center',
-                padding: '1rem 1.5rem', background: 'transparent', color: 'var(--color-surface-1)',
+                padding: '1rem 1.5rem', background: 'transparent', color: 'var(--surf)',
                 border: '2px solid rgba(255,255,255,0.4)', borderRadius: '0.25rem',
                 fontWeight: 600, fontSize: '1rem', fontFamily: 'var(--font-ui)',
                 textDecoration: 'none',
@@ -101,15 +101,15 @@ export default function ServerHero() {
 
           {/* Right: Quick lookup card */}
           <div style={{
-            background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px',
+            background: 'var(--card)', borderRadius: '4px', padding: '32px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
           }}>
             <div style={{ marginBottom: '24px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>
                 Quick Case Lookup
               </h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 Select a case type and district to see real outcome data.
               </p>
             </div>
@@ -144,18 +144,18 @@ export default function ServerHero() {
       <AnchorNav />
 
       {/* ── VISUAL 1.6: WHAT IS MYCASEVALUE? ───────────────── */}
-      <div id="what-is" data-section style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div id="what-is" data-section style={{ background: 'var(--card)', padding: '64px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px', marginBottom: '32px' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '0', lineHeight: 1.3 }}>
+          <div style={{ borderLeft: '3px solid var(--link)', paddingLeft: '24px', marginBottom: '32px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '0', lineHeight: 1.3 }}>
               What is MyCaseValue?
             </h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }} className="about-grid">
-            <p style={{ fontSize: '17px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.75, margin: 0 }}>
+            <p style={{ fontSize: '17px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', lineHeight: 1.75, margin: 0 }}>
               MyCaseValue is a federal court analytics platform that gives litigants, attorneys, and researchers instant access to real outcome data from over 5.1 million federal court cases. We combine data from the Federal Judicial Center, PACER, and CourtListener to deliver win rates, settlement ranges, timelines, and judge analytics — all in plain English.
             </p>
-            <p style={{ fontSize: '17px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.75, margin: 0 }}>
+            <p style={{ fontSize: '17px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', lineHeight: 1.75, margin: 0 }}>
               Whether you're evaluating a potential case, preparing for settlement negotiations, or researching judicial behavior, MyCaseValue delivers the data-driven insights that were previously only available to large law firms with expensive analytics subscriptions.
             </p>
           </div>
@@ -168,15 +168,15 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 1.7: PRODUCT TOOLS SHOWCASE ─────────────── */}
-      <div id="overview" data-section style={{ background: 'var(--color-surface-1)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div id="overview" data-section style={{ background: 'var(--surf)', padding: '64px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px', marginBottom: '8px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+            <div style={{ borderLeft: '3px solid var(--link)', paddingLeft: '24px', marginBottom: '8px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 Analytics Tools
               </h2>
             </div>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '560px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '24px' }}>
+            <p style={{ fontSize: '16px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', maxWidth: '560px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '24px' }}>
               Everything you need to research federal court outcomes in one platform.
             </p>
           </div>
@@ -189,13 +189,13 @@ export default function ServerHero() {
               { title: 'Case Predictor', desc: 'Data-driven outcome predictions based on historical federal case data', href: '/attorney' },
             ].map((tool, i) => (
               <a key={i} href={tool.href} style={{
-                display: 'block', background: 'var(--color-surface-0)', borderTop: '3px solid var(--accent-primary)',
-                border: '1px solid var(--border-default)', borderTopColor: 'var(--accent-primary)', borderTopWidth: '3px',
+                display: 'block', background: 'var(--card)', borderTop: '3px solid var(--link)',
+                border: '1px solid var(--bdr)', borderTopColor: 'var(--link)', borderTopWidth: '3px',
                 padding: '24px 20px', textDecoration: 'none',
                 transition: 'box-shadow 200ms',
               }} className="tool-card">
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{tool.title}</h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, margin: 0 }}>{tool.desc}</p>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{tool.title}</h3>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, margin: 0 }}>{tool.desc}</p>
               </a>
             ))}
           </div>
@@ -209,12 +209,12 @@ export default function ServerHero() {
 
       {/* ── VISUAL 2: DATA SOURCE ATTRIBUTION BAR ─────────── */}
       <div style={{
-        background: 'var(--color-surface-0)',
-        borderBottom: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        borderBottom: '1px solid var(--bdr)',
         padding: '16px 24px',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>Data sourced from:</span>
+          <span style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>Data sourced from:</span>
           {[
             { name: 'Federal Judicial Center', url: 'https://www.fjc.gov' },
             { name: 'PACER', url: 'https://pacer.uscourts.gov' },
@@ -222,7 +222,7 @@ export default function ServerHero() {
             { name: 'Bureau of Justice Statistics', url: 'https://bjs.ojp.gov' },
           ].map((source, i) => (
             <span key={source.name} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              {i > 0 && <span style={{ color: 'var(--color-text-secondary)' }}>·</span>}
+              {i > 0 && <span style={{ color: 'var(--text2)' }}>·</span>}
               <a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`Data sourced from ${source.name} (opens in new window)`} style={{
                 fontSize: '12px',
                 color: 'var(--accent-primary-hover)',
@@ -327,11 +327,11 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 8: PRODUCTIVITY FEATURES ────────────────── */}
-      <div style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderTop: '3px solid var(--accent-primary)', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--card)', padding: '64px 24px', borderTop: '3px solid var(--link)', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+            <div style={{ borderLeft: '3px solid var(--link)', paddingLeft: '24px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 Work Faster With Smart Analytics
               </h2>
             </div>
@@ -346,11 +346,11 @@ export default function ServerHero() {
               { title: 'Export and share', desc: 'Generate PDF reports with full analytics for client presentations, settlement negotiations, or case evaluation meetings.' },
             ].map((item, i) => (
               <div key={i} style={{
-                padding: '24px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
-                borderTop: '2px solid var(--accent-primary)',
+                padding: '24px', background: 'var(--surf)', border: '1px solid var(--bdr)',
+                borderTop: '2px solid var(--link)',
               }}>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{item.title}</h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -358,15 +358,15 @@ export default function ServerHero() {
       </div>
 
       {/* ── HOW IT WORKS ── */}
-      <div style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--card)', padding: '64px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px', marginBottom: '8px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+            <div style={{ borderLeft: '3px solid var(--link)', paddingLeft: '24px', marginBottom: '8px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 How It Works
               </h2>
             </div>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '500px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '24px' }}>
+            <p style={{ fontSize: '16px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', maxWidth: '500px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '24px' }}>
               Get reliable federal court outcome data in under 60 seconds.
             </p>
           </div>
@@ -399,8 +399,8 @@ export default function ServerHero() {
               <div
                 key={i}
                 style={{
-                  background: 'var(--color-surface-1)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--surf)',
+                  border: '1px solid var(--bdr)',
                   padding: '32px',
                 }}
               >
@@ -409,7 +409,7 @@ export default function ServerHero() {
                     fontFamily: 'var(--font-mono)',
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     lineHeight: 1,
                   }}>
                     {item.step}
@@ -419,7 +419,7 @@ export default function ServerHero() {
                   fontFamily: 'var(--font-ui)',
                   fontSize: '17px',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: '0 0 8px 0',
                 }}>
                   {item.title}
@@ -427,7 +427,7 @@ export default function ServerHero() {
                 <p style={{
                   fontFamily: 'var(--font-ui)',
                   fontSize: '14px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   lineHeight: 1.6,
                   margin: 0,
                 }}>
@@ -440,16 +440,16 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 6: FEATURE HIGHLIGHTS (LexisNexis-style) ── */}
-      <div style={{ background: 'var(--color-surface-0)', padding: '80px 24px', borderTop: '3px solid var(--accent-primary)', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--card)', padding: '80px 24px', borderTop: '3px solid var(--link)', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--link)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Analytics platform
             </p>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
               More Data, Better Outcomes
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '650px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300, fontStyle: 'italic' }}>
+            <p style={{ fontSize: '16px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', maxWidth: '650px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300, fontStyle: 'italic' }}>
               Broader coverage and greater depth than any other litigation analytics platform.
             </p>
           </div>
@@ -462,11 +462,11 @@ export default function ServerHero() {
               'High-value analytics for settlements, timing, and outcomes',
               'Exclusive comparisons via judge and district analytics',
             ].map((text, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '12px 16px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span style={{ fontSize: '14px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', lineHeight: 1.5 }}>{text}</span>
+                <span style={{ fontSize: '14px', color: 'var(--text1)', fontFamily: 'var(--font-ui)', lineHeight: 1.5 }}>{text}</span>
               </div>
             ))}
           </div>
@@ -509,8 +509,8 @@ export default function ServerHero() {
               },
             ].map((card, i) => (
               <div key={i} style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '32px 24px',
                 transition: 'border-color 200ms',
@@ -521,22 +521,22 @@ export default function ServerHero() {
                     background: 'rgba(10, 102, 194, 0.08)', border: '1px solid rgba(232,23,31,0.15)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                   }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d={card.icon} />
                     </svg>
                   </div>
-                  <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '17px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                  <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '17px', fontWeight: 600, color: 'var(--text1)', margin: 0 }}>
                     {card.title}
                   </h3>
                 </div>
-                <p style={{ fontFamily: 'var(--font-ui)', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
+                <p style={{ fontFamily: 'var(--font-ui)', fontSize: '14px', color: 'var(--text2)', lineHeight: 1.6, marginBottom: '16px' }}>
                   {card.desc}
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {card.details.map((detail, j) => (
-                    <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 0', borderTop: j === 0 ? '1px solid var(--border-default)' : 'none' }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                      <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>{detail}</span>
+                    <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 0', borderTop: j === 0 ? '1px solid var(--bdr)' : 'none' }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                      <span style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -547,16 +547,16 @@ export default function ServerHero() {
       </div>
 
       {/* ── WHO IS IT FOR — Segment Grid ────────────────── */}
-      <div id="who" data-section style={{ background: 'var(--color-surface-1)', padding: '80px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div id="who" data-section style={{ background: 'var(--surf)', padding: '80px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--link)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Solutions
             </p>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
               Who Is MyCaseValue For?
             </h2>
-            <p style={{ fontSize: '17px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '17px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
               Trusted by individuals, attorneys, and organizations who need data-driven federal court insights.
             </p>
           </div>
@@ -570,13 +570,13 @@ export default function ServerHero() {
               { title: 'Academic Researchers', desc: 'Datasets, analysis tools, and institutional licensing for law school faculty and research institutions.', href: '/solutions/academic', iconPath: 'M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c0 2 3 4 6 4s6-2 6-4v-5' },
             ].map((seg) => (
               <a key={seg.title} href={seg.href} style={{
-                display: 'block', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
+                display: 'block', background: 'var(--card)', border: '1px solid var(--bdr)',
                 padding: '32px 24px', textDecoration: 'none',
                 transition: 'box-shadow 200ms, border-color 200ms',
               }} className="who-card">
-                <div style={{ marginBottom: '12px' }}><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={seg.iconPath}/></svg></div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{seg.title}</h3>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, margin: 0 }}>{seg.desc}</p>
+                <div style={{ marginBottom: '12px' }}><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={seg.iconPath}/></svg></div>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{seg.title}</h3>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, margin: 0 }}>{seg.desc}</p>
               </a>
             ))}
           </div>
@@ -584,13 +584,13 @@ export default function ServerHero() {
       </div>
 
       {/* ── TESTIMONIALS ─────────────────────────────────── */}
-      <div style={{ background: 'var(--color-surface-0)', padding: '80px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--card)', padding: '80px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--link)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Testimonials
             </p>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
               What Legal Professionals Say
             </h2>
           </div>
@@ -606,15 +606,15 @@ export default function ServerHero() {
               { quote: 'As a litigation funder, the portfolio analytics help us make better investment decisions with objective data.', name: 'Victoria S.', role: 'Managing Director, Lit Finance' },
             ].map((t, i) => (
               <div key={i} style={{
-                background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
+                background: 'var(--surf)', border: '1px solid var(--bdr)',
                 padding: '32px', borderLeft: '3px solid var(--accent-primary-hover)',
               }}>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', lineHeight: 1.7, marginBottom: '16px', fontStyle: 'italic' }}>
+                <p style={{ fontSize: '14px', color: 'var(--text1)', fontFamily: 'var(--font-ui)', lineHeight: 1.7, marginBottom: '16px', fontStyle: 'italic' }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
-                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: 0 }}>{t.name}</p>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>{t.role}</p>
+                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', margin: 0 }}>{t.name}</p>
+                  <p style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>{t.role}</p>
                 </div>
               </div>
             ))}
@@ -661,7 +661,7 @@ export default function ServerHero() {
                 padding: '24px 16px', background: 'rgba(255,255,255,0.04)',
                 border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px',
               }}>
-                <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', margin: '0 0 4px' }}>{award.label}</p>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--chrome-text)', fontFamily: 'var(--font-ui)', margin: '0 0 4px' }}>{award.label}</p>
                 <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-ui)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{award.sub}</p>
               </div>
             ))}
@@ -670,13 +670,13 @@ export default function ServerHero() {
       </div>
 
       {/* ── COMPARISON TABLE — MyCaseValue vs. Others ──── */}
-      <div style={{ background: 'var(--color-surface-0)', padding: '80px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--card)', padding: '80px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
               How MyCaseValue Compares
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
               The most comprehensive federal court analytics available.
             </p>
           </div>
@@ -686,11 +686,11 @@ export default function ServerHero() {
               fontFamily: 'var(--font-ui)', fontSize: '14px',
             }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid var(--accent-primary)' }}>
-                  <th style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Feature</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-inverse)', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px', background: 'var(--accent-primary)' }}>MyCaseValue</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-secondary)', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>PACER Alone</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-secondary)', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Premium Platforms</th>
+                <tr style={{ borderBottom: '2px solid var(--link)' }}>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--text1)', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Feature</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--chrome-text)', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px', background: 'var(--link)' }}>MyCaseValue</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--text2)', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>PACER Alone</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--text2)', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Premium Platforms</th>
                 </tr>
               </thead>
               <tbody>
@@ -704,8 +704,8 @@ export default function ServerHero() {
                   { feature: 'No training required', mcv: true, pacer: false, premium: false },
                   { feature: 'API access', mcv: true, pacer: true, premium: true },
                 ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid var(--border-default)', background: i % 2 === 0 ? 'var(--color-surface-0)' : 'var(--color-surface-1)' }}>
-                    <td style={{ padding: '8px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{row.feature}</td>
+                  <tr key={i} style={{ borderBottom: '1px solid var(--bdr)', background: i % 2 === 0 ? 'var(--card)' : 'var(--surf)' }}>
+                    <td style={{ padding: '8px 16px', color: 'var(--text1)', fontWeight: 500 }}>{row.feature}</td>
                     <td style={{ padding: '8px 16px', textAlign: 'center', color: row.mcv ? 'var(--data-positive, #176438)' : '#B91C1C', fontWeight: 600 }}>{row.mcv ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
                     <td style={{ padding: '8px 16px', textAlign: 'center', color: row.pacer ? 'var(--data-positive, #176438)' : 'var(--color-text-muted)' }}>{row.pacer ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
                     <td style={{ padding: '8px 16px', textAlign: 'center', color: row.premium ? 'var(--data-positive, #176438)' : 'var(--color-text-muted)' }}>{row.premium ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
@@ -718,10 +718,10 @@ export default function ServerHero() {
       </div>
 
       {/* ── FAQ ACCORDION ────────────────────────────────── */}
-      <div id="faq" data-section style={{ background: 'var(--color-surface-1)', padding: '80px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div id="faq" data-section style={{ background: 'var(--surf)', padding: '80px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
               Frequently Asked Questions
             </h2>
           </div>
@@ -741,22 +741,22 @@ export default function ServerHero() {
               { q: 'How do I contact support?', a: 'Visit our contact page or email support directly. We offer email support for all users.' },
             ].map((faq, i) => (
               <details key={i} style={{
-                borderTop: i === 0 ? '1px solid var(--border-default)' : 'none',
-                borderBottom: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
+                borderTop: i === 0 ? '1px solid var(--bdr)' : 'none',
+                borderBottom: '1px solid var(--bdr)',
+                background: 'var(--card)',
               }}>
                 <summary style={{
                   padding: '16px 24px', cursor: 'pointer', fontSize: '14px',
-                  fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)',
+                  fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)',
                   listStyle: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 }}>
                   {faq.q}
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-secondary)" strokeWidth="2" style={{ flexShrink: 0, marginLeft: '16px', transition: 'transform 200ms' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text2)" strokeWidth="2" style={{ flexShrink: 0, marginLeft: '16px', transition: 'transform 200ms' }}>
                     <path d="M6 9l6 6 6-6" />
                   </svg>
                 </summary>
                 <div style={{ padding: '0 20px 16px' }}>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
+                  <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
                 </div>
               </details>
             ))}
@@ -765,9 +765,9 @@ export default function ServerHero() {
       </div>
 
       {/* ── RELATED SOLUTIONS ────────────────────────────── */}
-      <div style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--card)', padding: '64px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '32px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '32px' }}>
             Explore Solutions
           </h2>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -780,7 +780,7 @@ export default function ServerHero() {
             ].map((s) => (
               <a key={s.href} href={s.href} style={{
                 padding: '8px 24px', fontSize: '14px', fontWeight: 600,
-                color: 'var(--accent-primary-hover)', border: '1px solid var(--border-default)', borderRadius: '2px',
+                color: 'var(--accent-primary-hover)', border: '1px solid var(--bdr)', borderRadius: '2px',
                 textDecoration: 'none', fontFamily: 'var(--font-ui)',
                 textTransform: 'uppercase', letterSpacing: '0.5px',
                 transition: 'all 150ms',
@@ -847,10 +847,10 @@ export default function ServerHero() {
 
       {/* Responsive overrides */}
       <style dangerouslySetInnerHTML={{ __html: `
-        .anchor-nav-link:hover { color: var(--color-text-primary) !important; border-bottom-color: var(--accent-primary) !important; }
+        .anchor-nav-link:hover { color: var(--text1) !important; border-bottom-color: var(--link) !important; }
         .tool-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important; transform: translateY(-2px); }
         .who-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important; border-color: rgba(0,105,151,0.30) !important; }
-        .solution-pill:hover { background: var(--accent-primary-hover) !important; color: var(--color-text-inverse) !important; border-color: var(--accent-primary-hover) !important; }
+        .solution-pill:hover { background: var(--accent-primary-hover) !important; color: var(--chrome-text) !important; border-color: var(--accent-primary-hover) !important; }
         .productivity-grid { gap: 24px; }
         details summary::-webkit-details-marker { display: none; }
         details[open] summary svg { transform: rotate(180deg); }

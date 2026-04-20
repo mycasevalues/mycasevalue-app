@@ -62,7 +62,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               outline: 'none',
               fontSize: 14,
               fontFamily: 'var(--font-ui)',
-              color: dark ? 'var(--border-default)' : 'var(--text1, #18181A)',
+              color: dark ? 'var(--bdr)' : 'var(--text1, #18181A)',
             }}
           />
           <button
@@ -101,7 +101,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: dark ? 'var(--color-text-secondary)' : 'var(--text4, #8A8780)',
+            color: dark ? 'var(--text2)' : 'var(--text4, #8A8780)',
           }}
         >
           Try:

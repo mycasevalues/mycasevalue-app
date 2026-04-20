@@ -46,8 +46,8 @@ export default function AppealsPage() {
 
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
-    border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
+    border: '1px solid var(--bdr)', borderRadius: '2px', fontSize: '14px',
+    color: 'var(--text1)', backgroundColor: 'var(--card)', fontFamily: 'var(--font-ui)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -56,8 +56,8 @@ export default function AppealsPage() {
   const grounds = data?.grounds || ['Procedural error', 'Evidentiary ruling', 'Legal standard misapplication'];
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
-      <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: var(--shadow-focus); }`}</style>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+      <style>{`select:focus, input:focus { outline: none; border-color: var(--link); box-shadow: var(--shadow-focus); }`}</style>
 
       <div style={{
         background: 'var(--card)',
@@ -86,7 +86,7 @@ export default function AppealsPage() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Appeals Analytics
           </div>
-          <h1 style={{ fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Know Your Reversal Odds Before You File</h1>
+          <h1 style={{ fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--text1)', margin: '0 0 12px' }}>Know Your Reversal Odds Before You File</h1>
           <p style={{ fontSize: '14px', color: 'var(--text3)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
             Reversal probability and strategic insight — by case type, circuit, and trial outcome — derived from millions of federal appeals.
           </p>
@@ -96,11 +96,11 @@ export default function AppealsPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: showResult && data ? '380px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>Case Information</h2>
+          <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>Case Information</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>Case Category</label>
                 <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); setShowResult(false); }} style={selectStyle}>
                   <option value="">Select category...</option>
                   {SITS.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
@@ -108,7 +108,7 @@ export default function AppealsPage() {
               </div>
               {caseCategory && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type *</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>Case Type *</label>
                   <select value={caseType} onChange={e => { setCaseType(e.target.value); setShowResult(true); }} style={selectStyle}>
                     <option value="">Select type...</option>
                     {caseOptions.map(opt => <option key={opt.label} value={opt.nos}>{opt.label}</option>)}
@@ -116,21 +116,21 @@ export default function AppealsPage() {
                 </div>
               )}
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>District (optional)</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>District (optional)</label>
                 <select value={district} onChange={e => setDistrict(e.target.value)} style={selectStyle}>
                   <option value="">All districts</option>
                   {STATES.filter(s => s.id).map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
                 </select>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Trial Outcome *</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>Trial Outcome *</label>
                 <select value={trialOutcome} onChange={e => setTrialOutcome(e.target.value)} style={selectStyle}>
                   <option value="">Select outcome...</option>
                   {TRIAL_OUTCOMES.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                 </select>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Months Since Judgment (optional)</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px' }}>Months Since Judgment (optional)</label>
                 <input type="number" placeholder="e.g., 3" value={timeSinceJudgment} onChange={e => setTimeSinceJudgment(e.target.value)} style={{ ...selectStyle, appearance: 'auto' as const, backgroundImage: 'none' }} />
               </div>
             </div>
@@ -140,8 +140,8 @@ export default function AppealsPage() {
           {showResult && data && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Appeal Probability */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Probability of Appeal</div>
+              <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', textAlign: 'center' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Probability of Appeal</div>
                 <div style={{ fontSize: '64px', fontWeight: 600, color: getWinRateColor(appealProb).text, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                   {Math.min(95, appealProb)}%
                 </div>
@@ -152,39 +152,39 @@ export default function AppealsPage() {
 
               {/* Success Rate + Duration */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Reversal Rate</div>
+                <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '24px', border: '1px solid var(--bdr)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Reversal Rate</div>
                   <div style={{ fontSize: '28px', fontWeight: 600, color: getWinRateColor(reversalProb).text, fontFamily: 'var(--font-mono)' }}>
                     {reversalProb}%
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>of appeals in this circuit</div>
+                  <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: 4 }}>of appeals in this circuit</div>
                 </div>
-                <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Average Appeal Duration</div>
-                  <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '24px', border: '1px solid var(--bdr)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Average Appeal Duration</div>
+                  <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                     {data.avgDuration}
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>months to resolution</div>
+                  <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: 4 }}>months to resolution</div>
                 </div>
               </div>
 
               {/* Common Grounds for Reversal */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                   Most Common Grounds for Reversal
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {grounds.map((g, i) => (
                     <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                       <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'rgba(59,130,246,0.08)', color: 'var(--gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600 }}>{i + 1}</div>
-                      <span style={{ fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: 1.5 }}>{g}</span>
+                      <span style={{ fontSize: '14px', color: 'var(--text1)', lineHeight: 1.5 }}>{g}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Filing Deadline Notice */}
-              <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid var(--accent-primary)' }}>
+              <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid var(--link)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--gold)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Appeal Filing Deadline</h3>
                 <p style={{ fontSize: '14px', color: 'var(--gold)', margin: 0, lineHeight: 1.6 }}>
                   Under FRAP Rule 4(a)(1)(A), a notice of appeal must be filed within <strong>30 days</strong> after entry of judgment. If the United States is a party, the deadline extends to <strong>60 days</strong>. Post-trial motions (FRCP 50(b), 52(b), 59) toll this deadline until the motion is decided.
@@ -200,23 +200,23 @@ export default function AppealsPage() {
         </div>
 
         {/* Navigation */}
-        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--bdr)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/negotiation" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Negotiation Prep</p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Settlement strategy</p>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 4px' }}>Negotiation Prep</p>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>Settlement strategy</p>
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Case Predictor</p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Predict outcomes</p>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 4px' }}>Case Predictor</p>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>Predict outcomes</p>
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Demand Letter</p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Generate letters</p>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 4px' }}>Demand Letter</p>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>Generate letters</p>
             </div>
           </Link>
         </div>

@@ -84,7 +84,7 @@ export default function WidgetGenerator() {
           <h3 style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '16px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -105,7 +105,7 @@ export default function WidgetGenerator() {
                 width: '100%',
                 padding: '8px 12px',
                 fontSize: '14px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 boxSizing: 'border-box',
                 fontFamily: 'inherit',
@@ -118,7 +118,7 @@ export default function WidgetGenerator() {
                 left: 0,
                 right: 0,
                 backgroundColor: 'var(--card, #FFFFFF)',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 borderTop: 'none',
                 borderRadius: '0 0 6px 6px',
                 maxHeight: '300px',
@@ -139,11 +139,11 @@ export default function WidgetGenerator() {
                       borderBottom: '1px solid var(--bdr)',
                       cursor: 'pointer',
                       backgroundColor: selectedNos === type.nos ? 'var(--link-light)' : 'transparent',
-                      color: selectedNos === type.nos ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                      color: selectedNos === type.nos ? 'var(--link)' : 'var(--text2)',
                     }}
                     onMouseEnter={(e) => {
                       if (selectedNos !== type.nos) {
-                        e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
+                        e.currentTarget.style.backgroundColor = 'var(--card)';
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -167,7 +167,7 @@ export default function WidgetGenerator() {
               border: '1px solid var(--link-light, #BAE6FD)',
               borderRadius: '4px',
               fontSize: '14px',
-              color: 'var(--accent-primary)',
+              color: 'var(--link)',
             }}>
               Selected: {selectedCaseType.label}
             </div>
@@ -178,7 +178,7 @@ export default function WidgetGenerator() {
           <h3 style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '16px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -197,9 +197,9 @@ export default function WidgetGenerator() {
                   padding: '12px',
                   fontSize: '14px',
                   fontWeight: 500,
-                  border: displayStyle === style.value ? '2px solid var(--accent-primary)' : '1px solid #d1d5db',
+                  border: displayStyle === style.value ? '2px solid var(--link)' : '1px solid #d1d5db',
                   backgroundColor: displayStyle === style.value ? '#eff6ff' : 'var(--card, #FFFFFF)',
-                  color: displayStyle === style.value ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                  color: displayStyle === style.value ? 'var(--link)' : 'var(--text2)',
                   borderRadius: '4px',
                   cursor: 'pointer',
                   transition: 'all 200ms',
@@ -219,7 +219,7 @@ export default function WidgetGenerator() {
           <h3 style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '16px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -237,12 +237,12 @@ export default function WidgetGenerator() {
                   padding: '12px',
                   fontSize: '12px',
                   fontFamily: '"Courier New", monospace',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   boxSizing: 'border-box',
                   resize: 'none',
-                  color: 'var(--color-text-primary)',
-                  backgroundColor: 'var(--color-surface-0)',
+                  color: 'var(--text1)',
+                  backgroundColor: 'var(--card)',
                 }}
               />
               <button
@@ -252,8 +252,8 @@ export default function WidgetGenerator() {
                   padding: '8px 16px',
                   fontSize: '14px',
                   fontWeight: 500,
-                  backgroundColor: 'var(--accent-primary)',
-                  color: 'var(--color-surface-0)',
+                  backgroundColor: 'var(--link)',
+                  color: 'var(--card)',
                   border: 'none',
                   borderRadius: '4px',
                   cursor: 'pointer',
@@ -294,7 +294,7 @@ export default function WidgetGenerator() {
         <h3 style={{
           fontSize: '14px',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '16px',
           textTransform: 'uppercase',
           letterSpacing: '0.5px',
@@ -303,7 +303,7 @@ export default function WidgetGenerator() {
         </h3>
         <div style={{
           padding: '32px',
-          backgroundColor: 'var(--color-surface-0)',
+          backgroundColor: 'var(--card)',
           borderRadius: '4px',
           border: '1px solid rgba(255,255,255,0.08)',
           minHeight: '400px',

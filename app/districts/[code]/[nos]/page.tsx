@@ -174,16 +174,16 @@ export default async function DistrictNOSPage({ params }: PageProps) {
 
   if (!districtInfo || !nosInfo || !data) {
     return (
-      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ background: 'var(--surf)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center', padding: '2rem' }}>
-          <h1 style={{ color: 'var(--color-text-primary)', fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-heading)', margin: '0 0 12px' }}>
+          <h1 style={{ color: 'var(--text1)', fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-heading)', margin: '0 0 12px' }}>
             Case data not found
           </h1>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: 14, fontFamily: 'var(--font-ui)', margin: '0 0 24px' }}>
+          <p style={{ color: 'var(--text2)', fontSize: 14, fontFamily: 'var(--font-ui)', margin: '0 0 24px' }}>
             Unable to find case data for this combination.
           </p>
           <Link href="/districts" style={{
-            color: 'var(--accent-primary)',
+            color: 'var(--link)',
             textDecoration: 'none',
             fontWeight: 700,
             fontFamily: 'var(--font-ui)',
@@ -199,13 +199,13 @@ export default async function DistrictNOSPage({ params }: PageProps) {
   const confidenceLevel = getConfidenceLevel(data.caseCount);
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
       <style>{`
-        a.mcv-link { color: var(--accent-primary); text-decoration: none; font-weight: 500; }
+        a.mcv-link { color: var(--link); text-decoration: none; font-weight: 500; }
         a.mcv-link:hover { text-decoration: underline; }
         .metric-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 24px;
           display: flex;
@@ -213,7 +213,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
         }
         .metric-label {
           font-size: 12px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           text-transform: uppercase;
           letter-spacing: 0.3px;
           margin-bottom: 8px;
@@ -222,11 +222,11 @@ export default async function DistrictNOSPage({ params }: PageProps) {
         .metric-value {
           font-size: 28px;
           font-weight: 700;
-          color: var(--color-text-primary);
+          color: var(--text1);
           font-family: var(--font-heading);
         }
         .comparison-bar {
-          background: var(--color-surface-1);
+          background: var(--surf);
           height: 8px;
           border-radius: 4px;
           overflow: hidden;
@@ -241,27 +241,27 @@ export default async function DistrictNOSPage({ params }: PageProps) {
 
       {/* Breadcrumb */}
       <nav style={{
-        background: 'var(--color-surface-0)',
-        borderBottom: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        borderBottom: '1px solid var(--bdr)',
         padding: '12px 0',
         fontSize: 14,
         fontFamily: 'var(--font-ui)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <Link href="/" className="mcv-link">Home</Link>
-          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>{'>'}  </span>
+          <span style={{ color: 'var(--bdr)', margin: '0 8px' }}>{'>'}  </span>
           <Link href="/districts" className="mcv-link">Districts</Link>
-          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>{'>'}  </span>
+          <span style={{ color: 'var(--bdr)', margin: '0 8px' }}>{'>'}  </span>
           <Link href={`/districts/${district}`} className="mcv-link">{districtInfo.fullName}</Link>
-          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>{'>'}  </span>
-          <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>{nosInfo.label}</span>
+          <span style={{ color: 'var(--bdr)', margin: '0 8px' }}>{'>'}  </span>
+          <span style={{ color: 'var(--text1)', fontWeight: 600 }}>{nosInfo.label}</span>
         </div>
       </nav>
 
       {/* Hero Section */}
       <header style={{
-        background: 'var(--accent-primary)',
-        borderBottom: '1px solid var(--border-default)',
+        background: 'var(--link)',
+        borderBottom: '1px solid var(--bdr)',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
@@ -269,8 +269,8 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 8,
-            background: 'var(--accent-primary)',
-            color: 'var(--color-text-inverse)',
+            background: 'var(--link)',
+            color: 'var(--chrome-text)',
             padding: '4px 12px',
             borderRadius: 4,
             fontSize: 12,
@@ -284,7 +284,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           </div>
 
           <h1 style={{
-            color: 'var(--color-text-inverse)',
+            color: 'var(--chrome-text)',
             fontFamily: 'var(--font-heading)',
             letterSpacing: '-1.5px',
             fontSize: '28px',
@@ -296,7 +296,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           </h1>
 
           <p style={{
-            color: 'var(--border-default)',
+            color: 'var(--bdr)',
             fontFamily: 'var(--font-ui)',
             fontSize: 16,
             margin: '0 0 32px',
@@ -323,7 +323,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           <h2 style={{
             fontSize: 18,
             fontWeight: 700,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 24px',
             fontFamily: 'var(--font-heading)',
             letterSpacing: '-0.5px',
@@ -364,7 +364,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               </div>
               <div style={{
                 fontSize: 12,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 marginTop: 8,
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -378,7 +378,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               <div className="metric-value">${data.settlementRange.md}K</div>
               <div style={{
                 fontSize: 12,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 marginTop: 8,
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -392,7 +392,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               <div className="metric-value">{data.duration} mo</div>
               <div style={{
                 fontSize: 12,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 marginTop: 8,
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -406,7 +406,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               <div className="metric-value">{Math.round(data.settlementPct)}%</div>
               <div style={{
                 fontSize: 12,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 marginTop: 8,
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -421,7 +421,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           <h2 style={{
             fontSize: 16,
             fontWeight: 700,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 24px',
             fontFamily: 'var(--font-heading)',
           }}>
@@ -429,8 +429,8 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           </h2>
 
           <div style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '24px',
           }}>
@@ -440,19 +440,19 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               marginBottom: 16,
               fontFamily: 'var(--font-ui)',
             }}>
-              <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)' }}>
+              <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--text1)' }}>
                 Low: ${data.settlementRange.lo}K
               </div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--accent-primary)' }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--link)' }}>
                 Median: ${data.settlementRange.md}K
               </div>
-              <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)' }}>
+              <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--text1)' }}>
                 High: ${data.settlementRange.hi}K
               </div>
             </div>
 
             <div style={{
-              background: 'var(--color-surface-1)',
+              background: 'var(--surf)',
               height: 16,
               borderRadius: 4,
               overflow: 'hidden',
@@ -460,7 +460,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             }}>
               <div style={{
                 position: 'absolute',
-                background: 'var(--accent-primary)',
+                background: 'var(--link)',
                 height: '100%',
                 left: '0%',
                 right: '0%',
@@ -482,7 +482,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               background: 'var(--surf)',
               borderRadius: 4,
               fontSize: 14,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
             }}>
               Figures represent median settlement values in thousands of dollars for resolved cases.
@@ -495,7 +495,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           <h2 style={{
             fontSize: 16,
             fontWeight: 700,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 24px',
             fontFamily: 'var(--font-heading)',
           }}>
@@ -503,8 +503,8 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           </h2>
 
           <div style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '24px',
           }}>
@@ -515,10 +515,10 @@ export default async function DistrictNOSPage({ params }: PageProps) {
                 marginBottom: 8,
                 fontFamily: 'var(--font-ui)',
               }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)' }}>
                   {districtInfo.fullName}
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--accent-primary)' }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--link)' }}>
                   {Math.round(data.winRate * 10) / 10}%
                 </div>
               </div>
@@ -537,7 +537,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
                 marginBottom: 8,
                 fontFamily: 'var(--font-ui)',
               }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)' }}>
                   National Average ({nosInfo.label})
                 </div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--gold)' }}>
@@ -561,7 +561,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               background: 'var(--surf)',
               borderRadius: 4,
               fontSize: 12,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
             }}>
               {data.winRate > data.nationalWinRate
@@ -583,8 +583,8 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           }}>
             <Link href={`/districts/${district}`} style={{
               display: 'block',
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               textDecoration: 'none',
@@ -593,7 +593,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               <div style={{
                 fontSize: 14,
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: 8,
                 fontFamily: 'var(--font-heading)',
               }}>
@@ -601,7 +601,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               </div>
               <div style={{
                 fontSize: 14,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
               }}>
                 View outcomes across all case types in {districtInfo.name}
@@ -610,8 +610,8 @@ export default async function DistrictNOSPage({ params }: PageProps) {
 
             <Link href={`/nos/${nos}`} style={{
               display: 'block',
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               textDecoration: 'none',
@@ -620,7 +620,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               <div style={{
                 fontSize: 14,
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: 8,
                 fontFamily: 'var(--font-heading)',
               }}>
@@ -628,7 +628,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               </div>
               <div style={{
                 fontSize: 14,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
               }}>
                 View national win rates and settlement data
@@ -640,15 +640,15 @@ export default async function DistrictNOSPage({ params }: PageProps) {
         {/* Data Info Section */}
         <section>
           <div style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: 'clamp(24px, 4vw, 32px)',
           }}>
             <h2 style={{
               fontSize: 16,
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 16px',
               fontFamily: 'var(--font-heading)',
             }}>
@@ -657,7 +657,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
 
             <div style={{
               fontSize: 14,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               lineHeight: 1.7,
               margin: 0,
               fontFamily: 'var(--font-ui)',
@@ -677,8 +677,8 @@ export default async function DistrictNOSPage({ params }: PageProps) {
         {/* Placeholder Sections */}
         <section style={{ marginTop: 56 }}>
           <div style={{
-            background: 'var(--color-surface-1)',
-            border: '1px dashed var(--border-default)',
+            background: 'var(--surf)',
+            border: '1px dashed var(--bdr)',
             borderRadius: '4px',
             padding: '24px',
             textAlign: 'center',
@@ -686,7 +686,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             <div style={{
               fontSize: 14,
               fontWeight: 600,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               marginBottom: 8,
               fontFamily: 'var(--font-heading)',
             }}>

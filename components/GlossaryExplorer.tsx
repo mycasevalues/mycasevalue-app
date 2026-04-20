@@ -87,18 +87,18 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               width: '100%',
               padding: '12px 12px 12px 40px',
               fontSize: '14px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               outline: 'none',
               fontFamily: 'var(--font-ui)',
               transition: 'all 200ms ease',
             }}
             onFocus={(e) => {
-              e.currentTarget.style.borderColor = 'var(--accent-primary)';
+              e.currentTarget.style.borderColor = 'var(--link)';
               e.currentTarget.style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.1)';
             }}
             onBlur={(e) => {
-              e.currentTarget.style.borderColor = 'var(--border-default)';
+              e.currentTarget.style.borderColor = 'var(--bdr)';
               e.currentTarget.style.boxShadow = 'none';
             }}
           />
@@ -116,7 +116,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               fontSize: '20px',
               fontWeight: 600,
               fontFamily: 'var(--font-ui)',
-              color: 'var(--accent-primary)',
+              color: 'var(--link)',
               marginBottom: '16px',
             }}
           >
@@ -145,7 +145,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                 }}
                 onMouseOver={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.borderColor = 'var(--accent-primary)';
+                  el.style.borderColor = 'var(--link)';
                   el.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.12)';
                 }}
                 onMouseOut={(e) => {
@@ -158,7 +158,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   style={{
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     marginBottom: '8px',
                     fontFamily: 'var(--font-ui)',
                   }}
@@ -169,7 +169,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   style={{
                     fontSize: '14px',
                     lineHeight: 1.5,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                   }}
                 >
                   {term.definition.length > 90
@@ -181,7 +181,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
           </div>
           <div
             style={{
-              borderBottom: '1px solid var(--border-default)',
+              borderBottom: '1px solid var(--bdr)',
               marginBottom: '24px',
             }}
           />
@@ -207,8 +207,8 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   borderRadius: '4px',
                   textDecoration: 'none',
                   transition: 'all 200ms ease',
-                  color: lettersWithTerms.has(letter) ? 'var(--accent-primary)' : '#A9AEB3',
-                  background: lettersWithTerms.has(letter) ? 'transparent' : 'var(--color-surface-1)',
+                  color: lettersWithTerms.has(letter) ? 'var(--link)' : '#A9AEB3',
+                  background: lettersWithTerms.has(letter) ? 'transparent' : 'var(--surf)',
                   cursor: lettersWithTerms.has(letter) ? 'pointer' : 'default',
                 }}
               >
@@ -229,10 +229,10 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                 fontSize: '14px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: '16px',
                 paddingBottom: '8px',
-                borderBottom: '2px solid var(--border-default)',
+                borderBottom: '2px solid var(--bdr)',
               }}
             >
               {letter}
@@ -247,20 +247,20 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   style={{
                     display: 'block',
                     padding: '16px',
-                    background: 'var(--color-surface-0)',
-                    border: '1px solid var(--border-default)',
+                    background: 'var(--card)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     textDecoration: 'none',
                     transition: 'all 200ms ease',
                   }}
                   onMouseOver={(e) => {
                     const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.borderColor = 'var(--accent-primary)';
+                    el.style.borderColor = 'var(--link)';
                     el.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.12)';
                   }}
                   onMouseOut={(e) => {
                     const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.borderColor = 'var(--border-default)';
+                    el.style.borderColor = 'var(--bdr)';
                     el.style.boxShadow = 'none';
                   }}
                 >
@@ -269,7 +269,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                       fontSize: '14px',
                       fontWeight: 600,
                       fontFamily: 'var(--font-ui)',
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       marginBottom: '6px',
                       margin: 0,
                     }}
@@ -280,7 +280,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                     style={{
                       fontSize: '14px',
                       lineHeight: 1.6,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       margin: '6px 0 0 0',
                     }}
                   >
@@ -303,7 +303,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
           <p
             style={{
               fontSize: '16px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               marginBottom: '12px',
             }}
           >
@@ -313,8 +313,8 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
             onClick={() => setSearchQuery('')}
             style={{
               padding: '8px 16px',
-              background: 'var(--accent-primary)',
-              color: 'var(--color-surface-0)',
+              background: 'var(--link)',
+              color: 'var(--card)',
               border: 'none',
               borderRadius: '4px',
               fontSize: '14px',
@@ -326,7 +326,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               e.currentTarget.style.background = 'var(--accent-primary-hover)';
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.background = 'var(--accent-primary)';
+              e.currentTarget.style.background = 'var(--link)';
             }}
           >
             Clear Search

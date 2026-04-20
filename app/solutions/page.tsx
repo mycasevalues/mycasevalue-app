@@ -84,8 +84,8 @@ export default function SolutionsPage() {
       {/* Hero */}
       <section
         style={{
-          background: 'var(--accent-primary)',
-          color: 'var(--color-surface-1)',
+          background: 'var(--link)',
+          color: 'var(--surf)',
           padding: '40px 24px 32px',
         }}
       >
@@ -239,8 +239,8 @@ export default function SolutionsPage() {
       {/* Free During Beta Banner */}
       <section
         style={{
-          background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary) 100%)',
-          color: 'var(--color-surface-1)',
+          background: 'linear-gradient(135deg, var(--link) 0%, var(--link) 100%)',
+          color: 'var(--surf)',
           padding: '24px',
           textAlign: 'center',
         }}
@@ -262,7 +262,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Grid */}
-      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--surf)' }}>
         <div
           className="solutions-grid-wrap"
           style={{ maxWidth: '1120px', margin: '0 auto' }}
@@ -280,8 +280,8 @@ export default function SolutionsPage() {
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
                 style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   padding: '24px 16px',
                   textDecoration: 'none',
@@ -291,14 +291,14 @@ export default function SolutionsPage() {
                 className="solutions-card"
               >
                 <div style={{ marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
                 </div>
                 <h2
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '1.125rem',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '8px',
                   }}
                 >
@@ -308,7 +308,7 @@ export default function SolutionsPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '0.875rem',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -325,7 +325,7 @@ export default function SolutionsPage() {
       <section
         style={{
           padding: '32px 24px',
-          background: 'var(--color-surface-0)',
+          background: 'var(--card)',
           textAlign: 'center',
         }}
       >
@@ -335,7 +335,7 @@ export default function SolutionsPage() {
               fontFamily: 'var(--font-legal)',
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: '16px',
             }}
           >
@@ -345,7 +345,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-ui)',
               fontSize: '1rem',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               marginBottom: '32px',
               lineHeight: 1.6,
             }}
@@ -365,8 +365,8 @@ export default function SolutionsPage() {
               href="/search"
               style={{
                 background:
-                  'var(--accent-primary)',
-                color: 'var(--color-surface-1)',
+                  'var(--link)',
+                color: 'var(--surf)',
                 padding: '0.875rem 2rem',
                 borderRadius: '2px',
                 textDecoration: 'none',
@@ -384,10 +384,10 @@ export default function SolutionsPage() {
               href="/pricing"
               style={{
                 background: 'transparent',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 padding: '0.875rem 2rem',
                 borderRadius: '2px',
-                border: '1.5px solid var(--border-default)',
+                border: '1.5px solid var(--bdr)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 600,

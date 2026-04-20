@@ -13,7 +13,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
   const [dimensions, setDimensions] = useState({ width: 600, height: 60 });
 
   const colors: Record<string, string> = {
-    settled: 'var(--accent-primary)',
+    settled: 'var(--link)',
     plaintiffVerdict: 'var(--data-positive, #176438)',
     defenseVerdict: 'var(--data-negative, #B01E1E)',
     dismissed: 'var(--text4, #8A8780)',
@@ -115,7 +115,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
       .attr('y', height / 2)
       .attr('dy', '0.35em')
       .attr('text-anchor', 'middle')
-      .attr('fill', 'var(--color-surface-0)')
+      .attr('fill', 'var(--card)')
       .attr('font-size', '12px')
       .attr('font-weight', '600')
       .attr('font-family', 'var(--font-mono)')
@@ -165,7 +165,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
           gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
           gap: '16px',
           paddingTop: '16px',
-          borderTop: '1px solid var(--border-default)',
+          borderTop: '1px solid var(--bdr)',
         }}
       >
         {segments.map((segment) => (
@@ -177,7 +177,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
               gap: '8px',
               fontSize: '14px',
               fontFamily: 'var(--font-ui)',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
             }}
           >
             <div
@@ -190,7 +190,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
               }}
             />
             <span>
-              {labels[segment.key]}: <strong style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>{segment.percentage.toFixed(1)}%</strong>
+              {labels[segment.key]}: <strong style={{ color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>{segment.percentage.toFixed(1)}%</strong>
             </span>
           </div>
         ))}

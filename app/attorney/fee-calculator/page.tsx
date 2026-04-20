@@ -102,7 +102,7 @@ export default function FeeCalculatorPage() {
     display: 'block',
     fontSize: '14px',
     fontWeight: 600,
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
     marginBottom: '6px',
     fontFamily: 'var(--font-ui)',
   };
@@ -111,11 +111,11 @@ export default function FeeCalculatorPage() {
     width: '100%',
     padding: '12px 14px',
     height: 'auto',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     borderRadius: '4px',
     fontSize: '14px',
-    color: 'var(--color-text-primary)',
-    backgroundColor: 'var(--color-surface-0)',
+    color: 'var(--text1)',
+    backgroundColor: 'var(--card)',
     fontFamily: 'var(--font-ui)',
     transition: 'border-color 200ms',
     outline: 'none',
@@ -123,15 +123,15 @@ export default function FeeCalculatorPage() {
   };
 
   const cardStyle: React.CSSProperties = {
-    background: 'var(--color-surface-0)',
+    background: 'var(--card)',
     borderRadius: '4px',
     padding: '24px',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     boxShadow: 'var(--shadow-xs)',
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       {/* Header */}
       <div style={{
         background: 'var(--card)',
@@ -147,7 +147,7 @@ export default function FeeCalculatorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--text1)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Attorney Fee Calculator
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--text3)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
@@ -161,7 +161,7 @@ export default function FeeCalculatorPage() {
         <div style={{ display: 'grid', gridTemplateColumns: feeData ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
           <div style={{ ...cardStyle, boxShadow: 'var(--shadow-xs)' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Details
             </h2>
 
@@ -202,7 +202,7 @@ export default function FeeCalculatorPage() {
                   }}
                   style={inputStyle}
                 />
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                   Settlement value, judgment, or case evaluation
                 </p>
               </div>
@@ -227,9 +227,9 @@ export default function FeeCalculatorPage() {
                       style={{
                         padding: '12px 14px',
                         borderRadius: '4px',
-                        border: `1px solid ${feeArrangement === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                        backgroundColor: feeArrangement === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--color-surface-1)',
-                        color: feeArrangement === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                        border: `1px solid ${feeArrangement === opt.val ? 'var(--link)' : 'var(--bdr)'}`,
+                        backgroundColor: feeArrangement === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--surf)',
+                        color: feeArrangement === opt.val ? 'var(--link)' : 'var(--text2)',
                         fontSize: '14px',
                         fontWeight: 600,
                         cursor: 'pointer',
@@ -238,7 +238,7 @@ export default function FeeCalculatorPage() {
                         textAlign: 'left',
                       }}
                     >
-                      <div style={{ fontWeight: 600, color: feeArrangement === opt.val ? 'var(--accent-primary)' : 'var(--color-text-primary)' }}>
+                      <div style={{ fontWeight: 600, color: feeArrangement === opt.val ? 'var(--link)' : 'var(--text1)' }}>
                         {opt.label}
                       </div>
                       <div style={{ fontSize: '12px', fontWeight: 400, marginTop: '2px' }}>
@@ -258,8 +258,8 @@ export default function FeeCalculatorPage() {
 
               {/* Error */}
               {error && (
-                <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '14px', color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
+                <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--bdr)' }}>
+                  <p style={{ fontSize: '14px', color: 'var(--link)', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
                 </div>
               )}
 
@@ -270,8 +270,8 @@ export default function FeeCalculatorPage() {
                 style={{
                   width: '100%',
                   padding: '16px',
-                  backgroundColor: loading || !caseType || !caseValue ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse)',
+                  backgroundColor: loading || !caseType || !caseValue ? 'var(--bdr)' : 'var(--link)',
+                  color: 'var(--chrome-text)',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '14px',
@@ -292,9 +292,9 @@ export default function FeeCalculatorPage() {
                   style={{
                     width: '100%',
                     padding: '12px',
-                    backgroundColor: 'var(--color-surface-0)',
-                    color: 'var(--accent-primary)',
-                    border: '1px solid var(--accent-primary)',
+                    backgroundColor: 'var(--card)',
+                    color: 'var(--link)',
+                    border: '1px solid var(--link)',
                     borderRadius: '4px',
                     fontSize: '14px',
                     fontWeight: 600,
@@ -306,7 +306,7 @@ export default function FeeCalculatorPage() {
                     e.currentTarget.style.backgroundColor = 'rgba(10, 102, 194, 0.08)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
+                    e.currentTarget.style.backgroundColor = 'var(--card)';
                   }}
                 >
                   Back to Tools
@@ -321,7 +321,7 @@ export default function FeeCalculatorPage() {
               {/* Contingency Analysis */}
               {feeArrangement === 'contingency' && (
                 <div style={cardStyle}>
-                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Contingency Fee Tiers
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -329,7 +329,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         25% Contingency
                       </div>
-                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency25.toLocaleString()}
                       </div>
                     </div>
@@ -337,7 +337,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         33% Contingency (Typical)
                       </div>
-                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency33.toLocaleString()}
                       </div>
                     </div>
@@ -345,33 +345,33 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         40% Contingency (Higher Risk)
                       </div>
-                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency40.toLocaleString()}
                       </div>
                     </div>
                   </div>
 
                   {/* Net to Client */}
-                  <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--border-default)' }}>
-                    <h4 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
+                    <h4 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       Net to Client (33% arrangement)
                     </h4>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px' }}>
-                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                        <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>Low Range</div>
-                        <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--surf)', borderRadius: '4px' }}>
+                        <div style={{ fontSize: '12px', color: 'var(--text2)' }}>Low Range</div>
+                        <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)' }}>
                           ${feeData.contingencyNetToClient.low.toLocaleString()}
                         </div>
                       </div>
-                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                        <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>Median</div>
-                        <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--surf)', borderRadius: '4px' }}>
+                        <div style={{ fontSize: '12px', color: 'var(--text2)' }}>Median</div>
+                        <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)' }}>
                           ${feeData.contingencyNetToClient.mid.toLocaleString()}
                         </div>
                       </div>
-                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                        <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>High Range</div>
-                        <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--surf)', borderRadius: '4px' }}>
+                        <div style={{ fontSize: '12px', color: 'var(--text2)' }}>High Range</div>
+                        <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)' }}>
                           ${feeData.contingencyNetToClient.high.toLocaleString()}
                         </div>
                       </div>
@@ -383,7 +383,7 @@ export default function FeeCalculatorPage() {
               {/* Hourly Analysis */}
               {feeArrangement === 'hourly' && (
                 <div style={cardStyle}>
-                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Hourly Fee Estimate
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -391,7 +391,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         Estimated Hours (Case Phases)
                       </div>
-                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                         {feeData.hourly.estimatedHours} hours
                       </div>
                     </div>
@@ -402,7 +402,7 @@ export default function FeeCalculatorPage() {
                         <div style={{ fontSize: '14px', color: 'var(--link)', marginTop: '4px' }}>
                           ${feeData.hourly.lowRate}/hr
                         </div>
-                        <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--accent-primary)', marginTop: '6px' }}>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--link)', marginTop: '6px' }}>
                           ${feeData.hourly.totalLow.toLocaleString()}
                         </div>
                       </div>
@@ -411,7 +411,7 @@ export default function FeeCalculatorPage() {
                         <div style={{ fontSize: '14px', color: 'var(--link)', marginTop: '4px' }}>
                           ${feeData.hourly.highRate}/hr
                         </div>
-                        <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--accent-primary)', marginTop: '6px' }}>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--link)', marginTop: '6px' }}>
                           ${feeData.hourly.totalHigh.toLocaleString()}
                         </div>
                       </div>
@@ -423,7 +423,7 @@ export default function FeeCalculatorPage() {
               {/* Hybrid Analysis */}
               {feeArrangement === 'hybrid' && (
                 <div style={cardStyle}>
-                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Hybrid Arrangement
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -431,7 +431,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         Upfront Retainer
                       </div>
-                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.retainer.toLocaleString()}
                       </div>
                     </div>
@@ -439,7 +439,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         Ongoing Hourly Rate
                       </div>
-                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.hourlyRate}/hr
                       </div>
                     </div>
@@ -458,25 +458,25 @@ export default function FeeCalculatorPage() {
               {/* Lodestar (if applicable) */}
               {feeData.lodestar && (
                 <div style={{ ...cardStyle, borderColor: 'rgba(245,158,11,0.3)' }}>
-                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Lodestar Calculation (Fee-Shifting)
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '14px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--border-default)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--bdr)' }}>
                       <span>Total Billable Hours:</span>
                       <span style={{ fontWeight: 600 }}>{feeData.lodestar.totalHours} hrs</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--border-default)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--bdr)' }}>
                       <span>Hourly Rate:</span>
                       <span style={{ fontWeight: 600 }}>${feeData.lodestar.hourlyRate}/hr</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--border-default)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--bdr)' }}>
                       <span>Lodestar Base:</span>
                       <span style={{ fontWeight: 600 }}>
                         ${feeData.lodestar.baseAmount.toLocaleString()}
                       </span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--border-default)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--bdr)' }}>
                       <span>Multiplier:</span>
                       <span style={{ fontWeight: 600 }}>{feeData.lodestar.multiplier}x</span>
                     </div>
@@ -492,7 +492,7 @@ export default function FeeCalculatorPage() {
 
               {/* Beta Badge */}
               <div style={{ ...cardStyle, textAlign: 'center', border: 'none' }}>
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                   Free during public beta
                 </p>
               </div>
@@ -503,7 +503,7 @@ export default function FeeCalculatorPage() {
         {/* Comparison Table */}
         {feeData && showComparison && (
           <div style={{ marginTop: '32px', ...cardStyle }}>
-            <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
               Fee Arrangement Comparison
             </h3>
 
@@ -515,108 +515,108 @@ export default function FeeCalculatorPage() {
                 fontFamily: 'var(--font-ui)',
               }}>
                 <thead>
-                  <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
-                    <th style={{ textAlign: 'left', padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <tr style={{ borderBottom: '2px solid var(--bdr)' }}>
+                    <th style={{ textAlign: 'left', padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       Fee Type
                     </th>
-                    <th style={{ textAlign: 'right', padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                    <th style={{ textAlign: 'right', padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       Attorney Fee
                     </th>
-                    <th style={{ textAlign: 'right', padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                    <th style={{ textAlign: 'right', padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       Client Net
                     </th>
-                    <th style={{ textAlign: 'center', padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                    <th style={{ textAlign: 'center', padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       Best For
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)', background: 'var(--card)' }}>
+                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       25% Contingency
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${feeData.contingency25.toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${(parseInt(caseValue) - feeData.contingency25).toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-text-secondary)' }}>
+                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--text2)' }}>
                       Strong cases
                     </td>
                   </tr>
 
-                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)', background: 'var(--card)' }}>
+                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       33% Contingency
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${feeData.contingency33.toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${(parseInt(caseValue) - feeData.contingency33).toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-text-secondary)' }}>
+                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--text2)' }}>
                       Standard
                     </td>
                   </tr>
 
-                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)', background: 'var(--card)' }}>
+                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       40% Contingency
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${feeData.contingency40.toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${(parseInt(caseValue) - feeData.contingency40).toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-text-secondary)' }}>
+                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--text2)' }}>
                       High-risk
                     </td>
                   </tr>
 
-                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)', background: 'var(--card)' }}>
+                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       Hourly (Low)
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${feeData.hourly.totalLow.toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${(parseInt(caseValue) - feeData.hourly.totalLow).toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-text-secondary)' }}>
+                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--text2)' }}>
                       Fast cases
                     </td>
                   </tr>
 
-                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)', background: 'var(--card)' }}>
+                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       Hourly (High)
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${feeData.hourly.totalHigh.toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${(parseInt(caseValue) - feeData.hourly.totalHigh).toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-text-secondary)' }}>
+                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--text2)' }}>
                       Complex cases
                     </td>
                   </tr>
 
-                  <tr style={{ background: 'var(--color-surface-0)' }}>
-                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <tr style={{ background: 'var(--card)' }}>
+                    <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--text1)' }}>
                       Hybrid
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${feeData.hybrid.estimatedTotal.toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                    <td style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                       ${(parseInt(caseValue) - feeData.hybrid.estimatedTotal).toLocaleString()}
                     </td>
-                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-text-secondary)' }}>
+                    <td style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--text2)' }}>
                       Medium-risk
                     </td>
                   </tr>
@@ -630,39 +630,39 @@ export default function FeeCalculatorPage() {
         {!feeData && (
           <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z" />
               </svg>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Multiple Arrangement Types
               </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Compare contingency, hourly, and hybrid fee structures with real market rates.
               </p>
             </div>
 
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <polyline points="3 6 9 12 3 18" />
               </svg>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Lodestar Calculation
               </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Calculate fee awards for cases with fee-shifting statutes (civil rights, consumer).
               </p>
             </div>
 
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6v6H9z" />
               </svg>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Case-Type Data
               </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Rates and estimates based on 5.1M+ federal case outcomes and settlement data.
               </p>
             </div>
@@ -670,33 +670,33 @@ export default function FeeCalculatorPage() {
         )}
 
         {/* Navigation */}
-        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--bdr)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/intake-forms" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Intake Forms
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Generate intake questionnaires
               </p>
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Demand Letter
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Generate demand letters
               </p>
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Predictor
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Predict case outcomes
               </p>
             </div>

@@ -127,7 +127,7 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
       .datum(density)
       .attr('d', area)
       .attr('fill', 'rgba(10, 102, 194, 0.3)')
-      .attr('stroke', 'var(--accent-primary)')
+      .attr('stroke', 'var(--link)')
       .attr('stroke-width', 1.5);
 
     // Median marker
@@ -165,10 +165,10 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
       .selectAll('text')
       .attr('font-size', '10px')
       .attr('font-family', 'var(--font-mono)')
-      .attr('fill', 'var(--color-text-secondary)');
+      .attr('fill', 'var(--text2)');
 
-    g.selectAll('.domain').attr('stroke', 'var(--border-default)');
-    g.selectAll('.tick line').attr('stroke', 'var(--border-default)');
+    g.selectAll('.domain').attr('stroke', 'var(--bdr)');
+    g.selectAll('.tick line').attr('stroke', 'var(--bdr)');
 
   }, [nosCode, width, height]);
 

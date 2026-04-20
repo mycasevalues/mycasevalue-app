@@ -99,7 +99,7 @@ export default function KeyboardShortcutsHelp() {
           <h2 className="text-lg font-semibold text-[var(--color-text-muted)]">Keyboard Shortcuts</h2>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-1 text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] rounded"
+            className="p-1 text-[var(--color-text-muted)] hover:text-[var(--text2)] rounded"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M6 18L18 6M6 6l12 12" />
@@ -122,7 +122,7 @@ export default function KeyboardShortcutsHelp() {
                       {shortcut.keys.map((key, ki) => (
                         <span key={ki}>
                           {ki > 0 && <span className="text-[var(--color-text-muted)] text-xs mx-0.5">+</span>}
-                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-[var(--color-text-secondary)] bg-[rgba(255,255,255,0.04)] border border-[var(--bdr, #E2DFD8)] rounded">
+                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-[var(--text2)] bg-[rgba(255,255,255,0.04)] border border-[var(--bdr, #E2DFD8)] rounded">
                             {key}
                           </kbd>
                         </span>

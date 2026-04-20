@@ -91,7 +91,7 @@ export default async function ChangelogPage() {
         }
         .changelog-link-pill:hover {
           background-color: rgba(10,80,162,0.08);
-          color: var(--accent-primary);
+          color: var(--link);
           text-decoration: none;
         }
         .changelog-date-pill {
@@ -125,7 +125,7 @@ export default async function ChangelogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
         {/* Institutional Dark Hero */}
         <div style={{
           background: 'var(--card)',
@@ -206,8 +206,8 @@ export default async function ChangelogPage() {
                         key={entry.id}
                         className="changelog-entry"
                         style={{
-                          background: 'var(--color-surface-0)',
-                          border: '1px solid var(--border-default)',
+                          background: 'var(--card)',
+                          border: '1px solid var(--bdr)',
                           borderRadius: 4,
                           padding: '32px',
                           boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -233,7 +233,7 @@ export default async function ChangelogPage() {
                         <h2 style={{
                           fontSize: 20,
                           fontWeight: 700,
-                          color: 'var(--color-text-primary)',
+                          color: 'var(--text1)',
                           fontFamily: 'var(--font-legal)',
                           margin: '0 0 12px 0',
                           letterSpacing: '-0.5px',
@@ -244,7 +244,7 @@ export default async function ChangelogPage() {
                         {/* Description */}
                         <p style={{
                           fontSize: 14,
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                           fontFamily: 'var(--font-ui)',
                           lineHeight: 1.7,
                           margin: '0 0 20px 0',
@@ -313,15 +313,15 @@ export default async function ChangelogPage() {
                 </div>
               ) : (
                 <div style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: 4,
                   padding: '48px 32px',
                   textAlign: 'center',
                 }}>
                   <p style={{
                     fontSize: 16,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                     margin: 0,
                   }}>
@@ -333,10 +333,10 @@ export default async function ChangelogPage() {
 
             {/* Subscribe Section */}
             <div style={{
-              background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold) 100%)',
+              background: 'linear-gradient(135deg, var(--link) 0%, var(--gold) 100%)',
               borderRadius: 4,
               padding: '48px 32px',
-              color: 'var(--color-surface-0)',
+              color: 'var(--card)',
               marginBottom: 64,
             }}>
               <h2 style={{
@@ -371,7 +371,7 @@ export default async function ChangelogPage() {
                     borderRadius: 4,
                     border: '1px solid rgba(255,255,255,0.2)',
                     background: 'rgba(255,255,255,0.1)',
-                    color: 'var(--color-surface-0)',
+                    color: 'var(--card)',
                     fontFamily: 'var(--font-ui)',
                     fontSize: 14,
                   }}
@@ -384,8 +384,8 @@ export default async function ChangelogPage() {
                     padding: '12px 28px',
                     borderRadius: 4,
                     border: 'none',
-                    background: 'var(--color-surface-0)',
-                    color: 'var(--accent-primary)',
+                    background: 'var(--card)',
+                    color: 'var(--link)',
                     fontWeight: 600,
                     fontSize: 14,
                     fontFamily: 'var(--font-ui)',
@@ -410,14 +410,14 @@ export default async function ChangelogPage() {
 
             {/* Disclaimer Section */}
             <div style={{
-              background: 'var(--color-surface-1)',
+              background: 'var(--surf)',
               border: '1px solid var(--link-light, #BAE6FD)',
               borderRadius: 4,
               padding: '24px 28px',
             }}>
               <p style={{
                 fontSize: 14,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.6,
                 margin: 0,

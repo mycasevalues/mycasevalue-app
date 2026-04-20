@@ -50,7 +50,7 @@ export default function MapFallbackList({
       style={{
         display: 'none', // Will be shown by CSS media query
         padding: '24px 16px',
-        backgroundColor: 'var(--color-surface-0)',
+        backgroundColor: 'var(--card)',
         borderRadius: '4px',
         marginTop: '24px',
       }}
@@ -67,7 +67,7 @@ export default function MapFallbackList({
         style={{
           fontSize: '20px',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '16px',
           marginTop: 0,
         }}
@@ -94,7 +94,7 @@ export default function MapFallbackList({
               style={{
                 display: 'block',
                 padding: '12px',
-                backgroundColor: 'var(--color-surface-0)',
+                backgroundColor: 'var(--card)',
                 border: `1px solid ${colorObj.border}`,
                 borderRadius: '4px',
                 textDecoration: 'none',
@@ -120,7 +120,7 @@ export default function MapFallbackList({
                   style={{
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                   }}
                 >
                   {state.name}
@@ -144,7 +144,7 @@ export default function MapFallbackList({
       <p
         style={{
           fontSize: '12px',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           marginTop: '16px',
           marginBottom: 0,
           textAlign: 'center',

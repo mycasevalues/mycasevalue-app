@@ -131,8 +131,8 @@ export default function DepositionPrepPage() {
 
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
-    border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
+    border: '1px solid var(--bdr)', borderRadius: '4px', fontSize: '14px',
+    color: 'var(--text1)', backgroundColor: 'var(--card)', fontFamily: 'var(--font-ui)',
     transition: 'border-color 200ms', appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -140,14 +140,14 @@ export default function DepositionPrepPage() {
 
   const labelStyle: React.CSSProperties = {
     display: 'block', fontSize: '14px', fontWeight: 600,
-    color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)',
+    color: 'var(--text1)', marginBottom: '6px', fontFamily: 'var(--font-ui)',
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: var(--shadow-focus); }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--link); box-shadow: var(--shadow-focus); }
         @media (max-width: 768px) {
           .depo-form-grid { grid-template-columns: 1fr !important; }
         }
@@ -171,7 +171,7 @@ export default function DepositionPrepPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--text1)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Master Every Deposition in Days, Not Weeks
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--text3)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
@@ -184,8 +184,8 @@ export default function DepositionPrepPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: outlineText ? '380px 1fr' : '1fr', gap: '24px' }} className="depo-form-grid">
           {/* Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+          <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Deposition Details
             </h2>
 
@@ -218,9 +218,9 @@ export default function DepositionPrepPage() {
                       onClick={() => setDeponentRole(role.value)}
                       style={{
                         padding: '8px', borderRadius: '4px',
-                        border: `1px solid ${deponentRole === role.value ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                        backgroundColor: deponentRole === role.value ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)',
-                        color: deponentRole === role.value ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                        border: `1px solid ${deponentRole === role.value ? 'var(--link)' : 'var(--bdr)'}`,
+                        backgroundColor: deponentRole === role.value ? 'rgba(10,102,194,0.08)' : 'var(--surf)',
+                        color: deponentRole === role.value ? 'var(--link)' : 'var(--text2)',
                         fontSize: '14px', fontWeight: 600, cursor: 'pointer',
                         transition: 'all 200ms', fontFamily: 'var(--font-ui)',
                       }}
@@ -239,19 +239,19 @@ export default function DepositionPrepPage() {
                   value={deponentPosition}
                   onChange={e => setDeponentPosition(e.target.value.slice(0, 200))}
                   style={{
-                    width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
-                    borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
+                    width: '100%', padding: '12px 14px', border: '1px solid var(--bdr)',
+                    borderRadius: '4px', fontSize: '14px', color: 'var(--text1)',
+                    backgroundColor: 'var(--card)', fontFamily: 'var(--font-ui)',
                     minHeight: '80px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
                 />
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '4px 0 0' }}>
                   {deponentPosition.length}/200 characters
                 </p>
               </div>
 
               {error && (
-                <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--bdr)' }}>
                   <p style={{ fontSize: '14px', color: 'var(--data-negative)', margin: 0 }}>{error}</p>
                 </div>
               )}
@@ -261,8 +261,8 @@ export default function DepositionPrepPage() {
                 disabled={loading || !caseType || !deponentRole}
                 style={{
                   width: '100%', padding: '16px',
-                  backgroundColor: loading || !caseType || !deponentRole ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px',
+                  backgroundColor: loading || !caseType || !deponentRole ? 'var(--bdr)' : 'var(--link)',
+                  color: 'var(--text1)', border: 'none', borderRadius: '4px',
                   fontSize: '14px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.5px',
                   cursor: loading || !caseType || !deponentRole ? 'not-allowed' : 'pointer',
@@ -276,19 +276,19 @@ export default function DepositionPrepPage() {
           {/* Output */}
           {outlineText && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
+              <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: 8 }}>
-                  <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                  <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                     Deposition Outline
-                    {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
+                    {loading && <span style={{ fontSize: 12, color: 'var(--link)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
                     <button
                       onClick={copyToClipboard}
                       disabled={loading}
                       style={{
-                        padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)',
-                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
+                        padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--link)',
+                        color: 'var(--chrome-text)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer',
                         opacity: loading ? 0.5 : 1, fontFamily: 'var(--font-ui)',
                       }}
@@ -300,7 +300,7 @@ export default function DepositionPrepPage() {
                       disabled={loading || exporting}
                       style={{
                         padding: '8px 12px', background: 'var(--gold)',
-                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
+                        color: 'var(--chrome-text)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting ? 'not-allowed' : 'pointer',
                         opacity: loading || exporting ? 0.5 : 1, fontFamily: 'var(--font-ui)',
@@ -315,13 +315,13 @@ export default function DepositionPrepPage() {
                   ref={outputRef}
                   style={{
                     maxHeight: '600px', overflowY: 'auto', padding: '16px',
-                    background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)',
-                    fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: '1.7',
+                    background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)',
+                    fontSize: '14px', color: 'var(--text1)', lineHeight: '1.7',
                     fontFamily: 'var(--font-ui)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
                   }}
                 >
                   {outlineText}
-                  {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--accent-primary)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
+                  {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--link)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                 </div>
               </div>
 
@@ -334,23 +334,23 @@ export default function DepositionPrepPage() {
         </div>
 
         {/* Navigation */}
-        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--bdr)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Demand Letter</p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Generate demand letters</p>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 4px' }}>Demand Letter</p>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>Generate demand letters</p>
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Case Predictor</p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Predict outcomes</p>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 4px' }}>Case Predictor</p>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>Predict outcomes</p>
             </div>
           </Link>
           <Link href="/attorney/venue-optimizer" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Venue Optimizer</p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Find optimal districts</p>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 4px' }}>Venue Optimizer</p>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>Find optimal districts</p>
             </div>
           </Link>
         </div>

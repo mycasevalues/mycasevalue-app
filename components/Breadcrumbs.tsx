@@ -125,7 +125,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   className="breadcrumbs-current"
                   style={{
                     fontSize: '12px',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontWeight: '500',
                     fontFamily: 'var(--font-ui)',
                     letterSpacing: '-0.005em',
@@ -160,7 +160,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           font-family: var(--font-ui);
         }
         .breadcrumbs-link:hover {
-          color: var(--accent-primary) !important;
+          color: var(--link) !important;
           text-decoration: none;
         }
       `}</style>

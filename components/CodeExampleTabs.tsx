@@ -70,9 +70,9 @@ export default function CodeExampleTabs() {
   return (
     <div
       style={{
-        background: 'var(--color-surface-0)',
+        background: 'var(--card)',
         borderRadius: '4px',
-        border: '1px solid var(--border-default)',
+        border: '1px solid var(--bdr)',
         overflow: 'hidden',
         boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
       }}
@@ -81,8 +81,8 @@ export default function CodeExampleTabs() {
       <div
         style={{
           display: 'flex',
-          borderBottom: '1px solid var(--border-default)',
-          background: 'var(--color-surface-1)',
+          borderBottom: '1px solid var(--bdr)',
+          background: 'var(--surf)',
         }}
       >
         {Object.keys(codeExamples).map((lang) => (
@@ -94,10 +94,10 @@ export default function CodeExampleTabs() {
               padding: '12px 16px',
               fontSize: '14px',
               fontWeight: activeTab === lang ? 600 : 500,
-              color: activeTab === lang ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
-              background: activeTab === lang ? 'var(--color-surface-0)' : 'transparent',
+              color: activeTab === lang ? 'var(--link)' : 'var(--text2)',
+              background: activeTab === lang ? 'var(--card)' : 'transparent',
               border: 'none',
-              borderBottom: activeTab === lang ? '2px solid var(--accent-primary)' : 'none',
+              borderBottom: activeTab === lang ? '2px solid var(--link)' : 'none',
               cursor: 'pointer',
               transition: 'all 200ms ease',
               fontFamily: 'var(--font-heading)',

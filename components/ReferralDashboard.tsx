@@ -131,16 +131,16 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
   };
 
   const cardStyle: React.CSSProperties = {
-    background: 'var(--color-surface-0)',
+    background: 'var(--card)',
     borderRadius: '4px',
     padding: '24px',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
   };
 
   if (loading) {
     return (
       <div style={{ padding: '16px', textAlign: 'center' }}>
-        <p style={{ color: 'var(--color-text-secondary)' }}>Loading referral information...</p>
+        <p style={{ color: 'var(--text2)' }}>Loading referral information...</p>
       </div>
     );
   }
@@ -171,10 +171,10 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           border: '1px solid rgba(59,130,246,0.15)',
         }}
       >
-        <h3 style={{ margin: '0 0 8px 0', color: 'var(--accent-primary)', fontFamily: 'var(--font-heading)' }}>
+        <h3 style={{ margin: '0 0 8px 0', color: 'var(--link)', fontFamily: 'var(--font-heading)' }}>
           Referral Link Not Set
         </h3>
-        <p style={{ margin: '0 0 16px 0', color: 'var(--accent-primary)', fontSize: '14px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ margin: '0 0 16px 0', color: 'var(--link)', fontSize: '14px', fontFamily: 'var(--font-ui)' }}>
           Your referral link hasn't been generated yet.
         </p>
         <button
@@ -201,8 +201,8 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             }
           }}
           style={{
-            backgroundColor: 'var(--accent-primary)',
-            color: 'var(--color-text-inverse)',
+            backgroundColor: 'var(--link)',
+            color: 'var(--chrome-text)',
             padding: '8px 16px',
             border: 'none',
             borderRadius: '4px',
@@ -225,13 +225,13 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
       {/* Referral Link Section */}
       <div style={cardStyle}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-heading)' }}>
+          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-heading)' }}>
             Your Referral Link
           </h3>
           {hasBetaPioneerBadge && (
             <span style={{
-              backgroundColor: 'var(--accent-primary)',
-              color: 'var(--color-text-inverse)',
+              backgroundColor: 'var(--link)',
+              color: 'var(--chrome-text)',
               padding: '4px 8px',
               borderRadius: '4px',
               fontSize: '12px',
@@ -250,9 +250,9 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             gap: '8px',
             marginBottom: '16px',
             padding: '12px',
-            backgroundColor: 'var(--color-surface-1)',
+            backgroundColor: 'var(--surf)',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
           }}
         >
           <input
@@ -264,7 +264,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               border: 'none',
               outline: 'none',
               fontSize: '14px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-mono)',
               backgroundColor: 'transparent',
             }}
@@ -272,8 +272,8 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           <button
             onClick={handleCopyLink}
             style={{
-              backgroundColor: copied ? 'var(--color-success)' : 'var(--accent-primary)',
-              color: 'var(--color-text-inverse)',
+              backgroundColor: copied ? 'var(--color-success)' : 'var(--link)',
+              color: 'var(--chrome-text)',
               padding: '6px 12px',
               border: 'none',
               borderRadius: '4px',
@@ -302,9 +302,9 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             <div
               style={{
                 padding: '12px',
-                backgroundColor: 'var(--color-surface-1)',
+                backgroundColor: 'var(--surf)',
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 textAlign: 'center',
               }}
             >
@@ -312,7 +312,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                 style={{
                   fontSize: '24px',
                   fontWeight: '700',
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   marginBottom: '4px',
                   fontFamily: 'var(--font-mono)',
                 }}
@@ -333,9 +333,9 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             <div
               style={{
                 padding: '12px',
-                backgroundColor: 'var(--color-surface-1)',
+                backgroundColor: 'var(--surf)',
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 textAlign: 'center',
               }}
             >
@@ -366,21 +366,21 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
 
       {/* LinkedIn Share Section */}
       <div style={cardStyle}>
-        <h3 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-heading)' }}>
+        <h3 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-heading)' }}>
           Share on LinkedIn
         </h3>
         <div style={{ marginBottom: '12px' }}>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text2)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
             Pre-written message:
           </p>
           <div
             style={{
               padding: '12px',
-              backgroundColor: 'var(--color-surface-1)',
+              backgroundColor: 'var(--surf)',
               borderRadius: '4px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               fontSize: '14px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
               lineHeight: '1.5',
               marginBottom: '12px',
@@ -392,8 +392,8 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
         <button
           onClick={handleCopyLinkedInMessage}
           style={{
-            backgroundColor: linkedInCopied ? 'var(--color-success)' : 'var(--accent-primary)',
-            color: 'var(--color-text-inverse)',
+            backgroundColor: linkedInCopied ? 'var(--color-success)' : 'var(--link)',
+            color: 'var(--chrome-text)',
             padding: '8px 16px',
             border: 'none',
             borderRadius: '4px',
@@ -411,7 +411,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
       {/* Referral List Section */}
       {referralHistory.length > 0 && (
         <div style={cardStyle}>
-          <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-heading)' }}>
+          <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-heading)' }}>
             Your Referrals
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
@@ -420,7 +420,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                 key={index}
                 style={{
                   padding: '12px 0',
-                  borderBottom: index < referralHistory.length - 1 ? '1px solid var(--border-default)' : 'none',
+                  borderBottom: index < referralHistory.length - 1 ? '1px solid var(--bdr)' : 'none',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
@@ -428,10 +428,10 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                 }}
               >
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                     {referral.referred_user_id.substring(0, 8)}...
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
                     Referred on {new Date(referral.created_at).toLocaleDateString()}
                   </div>
                 </div>

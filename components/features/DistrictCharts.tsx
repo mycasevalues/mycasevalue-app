@@ -37,15 +37,15 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
         <div
           className="p-6 sm:p-8"
           style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
           }}
         >
           <h3
             className="text-lg font-bold mb-6"
             style={{
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
             }}
           >
@@ -57,19 +57,19 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               layout="vertical"
               margin={{ top: 4, right: 32, left: 200, bottom: 5 }}
             >
-              <XAxis type="number" stroke="var(--color-text-secondary)" />
-              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
+              <XAxis type="number" stroke="var(--text2)" />
+              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: 'var(--text2)', fontFamily: 'var(--font-ui)' }} />
               <Tooltip
                 contentStyle={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   fontSize: '14px',
                 }}
               />
-              <Bar dataKey="count" fill="var(--accent-primary)" radius={[0, 8, 8, 0]} />
+              <Bar dataKey="count" fill="var(--link)" radius={[0, 8, 8, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

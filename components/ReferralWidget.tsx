@@ -97,7 +97,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
   if (loading) {
     return (
       <div style={{ padding: '16px', textAlign: 'center' }}>
-        <p style={{ color: 'var(--color-text-secondary)' }}>Loading referral information...</p>
+        <p style={{ color: 'var(--text2)' }}>Loading referral information...</p>
       </div>
     );
   }
@@ -157,7 +157,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
             }
           }}
           style={{
-            backgroundColor: 'var(--accent-primary)',
+            backgroundColor: 'var(--link)',
             color: 'white',
             padding: '8px 16px',
             border: 'none',
@@ -178,11 +178,11 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
       style={{
         padding: '24px',
         borderRadius: '4px',
-        backgroundColor: 'var(--color-surface-1)',
-        border: '1px solid var(--border-default)',
+        backgroundColor: 'var(--surf)',
+        border: '1px solid var(--bdr)',
       }}
     >
-      <h3 style={{ margin: '0 0 16px 0', color: 'var(--color-text-primary)', fontSize: '16px' }}>
+      <h3 style={{ margin: '0 0 16px 0', color: 'var(--text1)', fontSize: '16px' }}>
         Share Your Referral Link
       </h3>
 
@@ -193,7 +193,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           padding: '12px',
           backgroundColor: 'white',
           borderRadius: '4px',
-          border: '1px solid var(--border-default)',
+          border: '1px solid var(--bdr)',
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
@@ -215,7 +215,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         <button
           onClick={handleCopyClick}
           style={{
-            backgroundColor: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
+            backgroundColor: copied ? 'var(--data-positive, #176438)' : 'var(--link)',
             color: 'white',
             padding: '8px 12px',
             border: 'none',
@@ -245,7 +245,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
               padding: '12px',
               backgroundColor: 'white',
               borderRadius: '4px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               textAlign: 'center',
             }}
           >
@@ -253,7 +253,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
               style={{
                 fontSize: '24px',
                 fontWeight: '700',
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: '4px',
               }}
             >
@@ -274,7 +274,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
               padding: '12px',
               backgroundColor: 'white',
               borderRadius: '4px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               textAlign: 'center',
             }}
           >

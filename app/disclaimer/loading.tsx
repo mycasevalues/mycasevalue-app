@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="h-4 w-32 bg-[rgba(255,255,255,0.08)] mb-6 animate-pulse" style={{ borderRadius: '4px' }} />
         <div className="h-8 w-2/3 bg-[rgba(255,255,255,0.08)] mb-4 animate-pulse" style={{ borderRadius: '4px' }} />

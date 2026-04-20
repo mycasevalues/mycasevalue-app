@@ -595,14 +595,14 @@ export default function IntakeFormGenerator() {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: selectedInfo ? '1fr 1fr' : '1fr', gap: '24px' }}>
-      <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-        <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+      <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
           Form Configuration
         </h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div>
-            <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Case Type *
             </label>
             <select
@@ -611,11 +611,11 @@ export default function IntakeFormGenerator() {
               style={{
                 width: '100%',
                 padding: '12px 14px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 fontSize: '14px',
-                color: 'var(--color-text-primary)',
-                backgroundColor: 'var(--color-surface-0)',
+                color: 'var(--text1)',
+                backgroundColor: 'var(--card)',
                 fontFamily: 'var(--font-ui)',
                 outline: 'none',
               }}
@@ -641,8 +641,8 @@ export default function IntakeFormGenerator() {
             style={{
               width: '100%',
               padding: '16px',
-              backgroundColor: !selectedCaseType || loading ? 'var(--border-default)' : 'var(--accent-primary)',
-              color: 'var(--color-surface-0)',
+              backgroundColor: !selectedCaseType || loading ? 'var(--bdr)' : 'var(--link)',
+              color: 'var(--card)',
               border: 'none',
               borderRadius: '2px',
               fontSize: '14px',
@@ -663,9 +663,9 @@ export default function IntakeFormGenerator() {
               style={{
                 width: '100%',
                 padding: '12px',
-                backgroundColor: 'var(--color-surface-0)',
-                color: 'var(--accent-primary)',
-                border: '1px solid var(--accent-primary)',
+                backgroundColor: 'var(--card)',
+                color: 'var(--link)',
+                border: '1px solid var(--link)',
                 borderRadius: '2px',
                 fontSize: '14px',
                 fontWeight: 600,
@@ -677,7 +677,7 @@ export default function IntakeFormGenerator() {
                 e.currentTarget.style.backgroundColor = 'rgba(10, 102, 194, 0.08)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
+                e.currentTarget.style.backgroundColor = 'var(--card)';
               }}
             >
               Back to Tools
@@ -687,16 +687,16 @@ export default function IntakeFormGenerator() {
       </div>
 
       {selectedInfo && (
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
+        <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
             Preview
           </h2>
 
-          <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', borderBottom: '2px solid var(--accent-primary)', paddingBottom: '8px' }}>
+          <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '16px', background: 'var(--surf)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', borderBottom: '2px solid var(--link)', paddingBottom: '8px' }}>
               Form Sections:
             </h3>
-            <ul style={{ margin: 0, paddingLeft: '24px', fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: '1.8', fontFamily: 'var(--font-ui)' }}>
+            <ul style={{ margin: 0, paddingLeft: '24px', fontSize: '14px', color: 'var(--text1)', lineHeight: '1.8', fontFamily: 'var(--font-ui)' }}>
               {selectedInfo.sections.map((section, idx) => (
                 <li key={idx}>{section}</li>
               ))}

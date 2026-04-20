@@ -118,7 +118,7 @@ export default function MotionRateExplorer() {
   const titleStyle: React.CSSProperties = {
     fontSize: '28px',
     fontWeight: 700,
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
     marginBottom: '8px',
     lineHeight: 1.2,
   };
@@ -141,10 +141,10 @@ export default function MotionRateExplorer() {
     width: '100%',
     padding: '12px 14px',
     height: '48px',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     borderRadius: '4px',
     fontSize: '14px',
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
     backgroundColor: 'var(--card, #FFFFFF)',
     fontFamily: 'var(--font-ui)',
     cursor: 'pointer',
@@ -155,13 +155,13 @@ export default function MotionRateExplorer() {
     marginBottom: '8px',
     fontSize: '14px',
     fontWeight: 600,
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
   };
 
   const tableWrapperStyle: React.CSSProperties = {
     overflowX: 'auto',
     borderRadius: '4px',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     marginBottom: '32px',
   };
 
@@ -172,8 +172,8 @@ export default function MotionRateExplorer() {
   };
 
   const theadStyle: React.CSSProperties = {
-    backgroundColor: 'var(--color-surface-0)',
-    borderBottom: '1px solid var(--border-default)',
+    backgroundColor: 'var(--card)',
+    borderBottom: '1px solid var(--bdr)',
   };
 
   const thStyle: React.CSSProperties = {
@@ -181,7 +181,7 @@ export default function MotionRateExplorer() {
     textAlign: 'left',
     fontSize: '14px',
     fontWeight: 600,
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
     cursor: 'pointer',
     userSelect: 'none',
     transition: 'background-color 200ms',
@@ -190,8 +190,8 @@ export default function MotionRateExplorer() {
   const tdStyle: React.CSSProperties = {
     padding: '16px 16px',
     fontSize: '14px',
-    color: 'var(--color-text-primary)',
-    borderBottom: '1px solid var(--border-default)',
+    color: 'var(--text1)',
+    borderBottom: '1px solid var(--bdr)',
   };
 
   const sortIndicatorStyle: React.CSSProperties = {
@@ -206,7 +206,7 @@ export default function MotionRateExplorer() {
     cursor: 'pointer',
     padding: '4px 8px',
     fontSize: '14px',
-    color: 'var(--accent-primary)',
+    color: 'var(--link)',
     fontWeight: 600,
     transition: 'color 200ms',
   };
@@ -215,13 +215,13 @@ export default function MotionRateExplorer() {
     width: '100%',
     borderCollapse: 'collapse',
     fontSize: '14px',
-    backgroundColor: 'var(--color-surface-0)',
+    backgroundColor: 'var(--card)',
   };
 
   const circuitTdStyle: React.CSSProperties = {
     padding: '8px 16px',
-    borderBottom: '1px solid var(--border-default)',
-    color: 'var(--color-text-primary)',
+    borderBottom: '1px solid var(--bdr)',
+    color: 'var(--text1)',
   };
 
   const disclaimerStyle: React.CSSProperties = {
@@ -300,7 +300,7 @@ export default function MotionRateExplorer() {
                   style={thStyle}
                   onClick={() => handleSort('motion')}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-0)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--card)')}
                 >
                   Motion Type
                   {sortKey === 'motion' && (
@@ -313,7 +313,7 @@ export default function MotionRateExplorer() {
                   style={thStyle}
                   onClick={() => handleSort('caseType')}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-0)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--card)')}
                 >
                   Case Type
                   {sortKey === 'caseType' && (
@@ -326,7 +326,7 @@ export default function MotionRateExplorer() {
                   style={thStyle}
                   onClick={() => handleSort('grantRate')}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-0)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--card)')}
                 >
                   Grant Rate
                   {sortKey === 'grantRate' && (
@@ -339,7 +339,7 @@ export default function MotionRateExplorer() {
                   style={thStyle}
                   onClick={() => handleSort('sampleSize')}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-0)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--card)')}
                 >
                   Sample Size
                   {sortKey === 'sampleSize' && (
@@ -359,7 +359,7 @@ export default function MotionRateExplorer() {
 
                 return (
                   <tbody key={rowId}>
-                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                    <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
                       <td style={{ ...tdStyle, textAlign: 'center' }}>
                         <button
                           style={expandButtonStyle}
@@ -389,14 +389,14 @@ export default function MotionRateExplorer() {
                     </tr>
                     {isExpanded && (
                       <tr>
-                        <td colSpan={5} style={{ padding: '16px', backgroundColor: 'var(--color-surface-0)' }}>
+                        <td colSpan={5} style={{ padding: '16px', backgroundColor: 'var(--card)' }}>
                           <div style={{ marginBottom: '12px' }}>
-                            <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
+                            <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px 0' }}>
                               Circuit Breakdown
                             </h4>
                             <table style={circuitTableStyle}>
                               <thead>
-                                <tr style={{ backgroundColor: 'var(--color-surface-0)' }}>
+                                <tr style={{ backgroundColor: 'var(--card)' }}>
                                   <th style={{ ...circuitTdStyle, fontWeight: 600 }}>Circuit</th>
                                   <th style={{ ...circuitTdStyle, fontWeight: 600 }}>Grant Rate</th>
                                 </tr>

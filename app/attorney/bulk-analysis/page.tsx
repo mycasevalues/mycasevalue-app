@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function BulkAnalysisPage() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
       <div style={{
         background: 'var(--card)',
         color: 'var(--card)',
@@ -29,7 +29,7 @@ export default function BulkAnalysisPage() {
               fontFamily: 'var(--font-legal)',
               fontSize: '28px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 8px 0',
             }}
           >

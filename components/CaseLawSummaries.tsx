@@ -11,7 +11,7 @@ interface CaseLawSummariesProps {
 
 const relevanceColors: Record<string, string> = {
   Landmark: 'bg-red-100 text-red-800',
-  'Frequently Cited': 'bg-[var(--color-surface-1)] text-blue-800',
+  'Frequently Cited': 'bg-[var(--surf)] text-blue-800',
   Recent: 'bg-green-100 text-[var(--data-positive)]',
   Distinguishing: 'bg-yellow-100 text-[var(--wrn-txt)]',
 };

@@ -149,7 +149,7 @@ export default function DistrictsExplorer({
     <>
       <style>{`
         .district-card {
-          border: 1px solid var(--border-default);
+          border: 1px solid var(--bdr);
           transition: border-color 150ms, transform 150ms, box-shadow 150ms;
           text-decoration: none;
           display: block;
@@ -160,8 +160,8 @@ export default function DistrictsExplorer({
           box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         .circuit-card {
-          border: 1px solid var(--border-default);
-          background: var(--color-surface-0);
+          border: 1px solid var(--bdr);
+          background: var(--card);
           border-radius: 4px;
           padding: 16px;
           cursor: pointer;
@@ -175,28 +175,28 @@ export default function DistrictsExplorer({
           box-shadow: var(--shadow-sm);
         }
         .circuit-card.active {
-          background: var(--accent-primary);
-          border-color: var(--accent-primary);
-          color: var(--color-surface-0);
+          background: var(--link);
+          border-color: var(--link);
+          color: var(--card);
         }
         .circuit-card.active .circuit-card-name {
-          color: var(--color-surface-0);
+          color: var(--card);
         }
         .circuit-card.active .circuit-card-count {
           color: rgba(255,255,255,0.7);
         }
         .circuit-card.active .circuit-card-rate {
-          color: var(--accent-primary);
+          color: var(--link);
         }
         .circuit-card-name {
           font-size: 12px;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 8px;
         }
         .circuit-card-count {
           font-size: 12px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           margin-bottom: 6px;
         }
         .circuit-card-rate {
@@ -216,10 +216,10 @@ export default function DistrictsExplorer({
           height: 6px;
         }
         .circuits-scroll::-webkit-scrollbar-track {
-          background: var(--color-surface-1);
+          background: var(--surf);
         }
         .circuits-scroll::-webkit-scrollbar-thumb {
-          background: var(--border-default);
+          background: var(--bdr);
           border-radius: 3px;
         }
         .stats-grid {
@@ -229,8 +229,8 @@ export default function DistrictsExplorer({
           margin-bottom: 32px;
         }
         .stat-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 24px;
         }
@@ -239,19 +239,19 @@ export default function DistrictsExplorer({
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.3px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           margin-bottom: 8px;
         }
         .stat-value {
           font-size: 16px;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           font-family: var(--font-mono);
           margin-bottom: 4px;
         }
         .stat-meta {
           font-size: 12px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
         }
         .controls-row {
           display: grid;
@@ -261,13 +261,13 @@ export default function DistrictsExplorer({
         }
         .control-input,
         .control-select {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 8px 12px;
           font-size: 14px;
           font-family: var(--font-ui);
-          color: var(--color-text-primary);
+          color: var(--text1);
         }
         .control-input::placeholder {
           color: var(--text4, #8A8780);
@@ -323,7 +323,7 @@ export default function DistrictsExplorer({
             fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.3px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             marginBottom: 12,
             fontFamily: 'var(--font-ui)',
           }}
@@ -335,20 +335,20 @@ export default function DistrictsExplorer({
             onClick={() => setSelectedCircuit(null)}
             className="circuit-card"
             style={{
-              background: selectedCircuit === null ? 'var(--accent-primary)' : 'var(--color-surface-0)',
-              borderColor: selectedCircuit === null ? 'var(--accent-primary)' : 'var(--border-default)',
-              color: selectedCircuit === null ? 'var(--color-surface-0)' : 'var(--color-text-primary)',
+              background: selectedCircuit === null ? 'var(--link)' : 'var(--card)',
+              borderColor: selectedCircuit === null ? 'var(--link)' : 'var(--bdr)',
+              color: selectedCircuit === null ? 'var(--card)' : 'var(--text1)',
             }}
           >
-            <div className="circuit-card-name" style={{ color: selectedCircuit === null ? 'var(--color-surface-0)' : 'var(--color-text-primary)' }}>
+            <div className="circuit-card-name" style={{ color: selectedCircuit === null ? 'var(--card)' : 'var(--text1)' }}>
               All Circuits
             </div>
-            <div className="circuit-card-count" style={{ color: selectedCircuit === null ? 'rgba(255,255,255,0.7)' : 'var(--color-text-secondary)' }}>
+            <div className="circuit-card-count" style={{ color: selectedCircuit === null ? 'rgba(255,255,255,0.7)' : 'var(--text2)' }}>
               {circuits.reduce((sum, c) => sum + c.districts.length, 0)} districts
             </div>
             <div
               className="circuit-card-rate"
-              style={{ color: selectedCircuit === null ? 'var(--accent-primary)' : 'var(--accent-primary-hover)' }}
+              style={{ color: selectedCircuit === null ? 'var(--link)' : 'var(--accent-primary-hover)' }}
             >
               {stats.avgWinRate}%
             </div>
@@ -369,13 +369,13 @@ export default function DistrictsExplorer({
                   className="circuit-card-rate"
                   style={{
                     color: isActive
-                      ? 'var(--accent-primary)'
+                      ? 'var(--link)'
                       : rate !== null
                       ? rate >= 50
                         ? 'var(--data-positive, #176438)'
                         : rate >= 35
                         ? 'var(--wrn-txt, #7A5800)'
-                        : 'var(--accent-primary)'
+                        : 'var(--link)'
                       : 'var(--text4, #8A8780)',
                   }}
                 >
@@ -407,7 +407,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Lowest Win Rate</div>
           {stats.lowestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: 'var(--accent-primary)' }}>
+              <div className="stat-value" style={{ color: 'var(--link)' }}>
                 {stats.lowestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.lowestWinRate.name}</div>
@@ -447,14 +447,14 @@ export default function DistrictsExplorer({
         }}
       >
         {filteredDistricts.map((d) => {
-          const wrColor = d.winRate >= 50 ? 'var(--data-positive, #176438)' : d.winRate >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)';
+          const wrColor = d.winRate >= 50 ? 'var(--data-positive, #176438)' : d.winRate >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--link)';
           return (
             <Link
               key={d.slug}
               href={`/districts/${d.slug}`}
               className="district-card"
               style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 borderRadius: 2,
                 padding: '16px 16px',
               }}
@@ -465,7 +465,7 @@ export default function DistrictsExplorer({
                     style={{
                       fontSize: 14,
                       fontWeight: 600,
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       fontFamily: 'var(--font-ui)',
                       marginBottom: 4,
                     }}
@@ -475,7 +475,7 @@ export default function DistrictsExplorer({
                   <div
                     style={{
                       fontSize: 12,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       fontFamily: 'var(--font-ui)',
                     }}
                   >
@@ -497,7 +497,7 @@ export default function DistrictsExplorer({
                   <div
                     style={{
                       fontSize: 12,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
                       marginTop: 2,
@@ -512,7 +512,7 @@ export default function DistrictsExplorer({
               <div
                 style={{
                   height: 3,
-                  background: 'var(--color-surface-1)',
+                  background: 'var(--surf)',
                   borderRadius: 2,
                   overflow: 'hidden',
                   marginBottom: 10,
@@ -532,8 +532,8 @@ export default function DistrictsExplorer({
               <div style={{ display: 'flex', gap: 8, fontSize: 12, flexWrap: 'wrap' }}>
                 <span
                   style={{
-                    background: 'var(--color-surface-1)',
-                    color: 'var(--color-text-secondary)',
+                    background: 'var(--surf)',
+                    color: 'var(--text2)',
                     padding: '2px 8px',
                     borderRadius: 2,
                     fontWeight: 500,
@@ -555,7 +555,7 @@ export default function DistrictsExplorer({
           style={{
             textAlign: 'center',
             padding: '48px 20px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
           }}
         >
           <p style={{ fontSize: 14, margin: 0 }}>
@@ -569,8 +569,8 @@ export default function DistrictsExplorer({
         style={{
           marginTop: 48,
           padding: 'clamp(24px, 4vw, 32px)',
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: 2,
         }}
       >
@@ -578,7 +578,7 @@ export default function DistrictsExplorer({
           style={{
             fontSize: 14,
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 16px',
             textTransform: 'uppercase',
             letterSpacing: '0.3px',

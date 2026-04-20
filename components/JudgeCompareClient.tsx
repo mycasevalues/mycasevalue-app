@@ -34,7 +34,7 @@ interface CompareSlot {
   radarData: JudgeRadarData | null;
 }
 
-const JUDGES_COLORS = ['var(--accent-primary)', 'var(--data-negative, #B01E1E)', 'var(--data-positive, #176438)'];
+const JUDGES_COLORS = ['var(--link)', 'var(--data-negative, #B01E1E)', 'var(--data-positive, #176438)'];
 
 export default function JudgeCompareClient({ preselectedJudgeId }: { preselectedJudgeId?: string }) {
   const [slots, setSlots] = useState<CompareSlot[]>([
@@ -278,7 +278,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', padding: '32px 24px' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', padding: '32px 24px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         {/* Header */}
         <div style={{ marginBottom: '48px' }}>
@@ -287,7 +287,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
               fontSize: '28px',
               fontWeight: 900,
               marginBottom: 16,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               letterSpacing: '-1.5px',
               fontFamily: 'var(--font-legal)',
               lineHeight: 1.2,
@@ -300,7 +300,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
               fontSize: '14px',
               lineHeight: 1.6,
               maxWidth: 640,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
             }}
           >
@@ -321,8 +321,8 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
             <div
               key={idx}
               style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 4,
                 padding: '24px',
               }}
@@ -334,7 +334,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                       display: 'block',
                       fontSize: 12,
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       marginBottom: 8,
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
@@ -371,7 +371,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                           top: '100%',
                           left: 0,
                           right: 0,
-                          background: 'var(--color-surface-0)',
+                          background: 'var(--card)',
                           border: '1px solid rgba(255,255,255,0.1)',
                           borderTop: 'none',
                           borderRadius: '0 0 4px 4px',
@@ -396,13 +396,13 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                               fontSize: 14,
                             }}
                             onMouseEnter={(e) => {
-                              (e.target as HTMLElement).style.background = 'var(--color-surface-0)';
+                              (e.target as HTMLElement).style.background = 'var(--card)';
                             }}
                             onMouseLeave={(e) => {
                               (e.target as HTMLElement).style.background = 'none';
                             }}
                           >
-                            <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                            <div style={{ fontWeight: 600, color: 'var(--text1)' }}>
                               {result.full_name}
                             </div>
                             <div style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>
@@ -443,7 +443,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         margin: '0 0 12px 0',
                         fontSize: 16,
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                         fontFamily: 'var(--font-ui)',
                       }}
                     >
@@ -474,8 +474,8 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
             {/* Radar Chart Overlay */}
             <div
               style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 4,
                 padding: '32px',
                 marginBottom: '48px',
@@ -485,7 +485,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                 style={{
                   fontSize: 20,
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   marginBottom: '24px',
                 }}
@@ -507,7 +507,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                           style={{
                             fontSize: 14,
                             fontWeight: 600,
-                            color: 'var(--color-text-primary)',
+                            color: 'var(--text1)',
                             fontFamily: 'var(--font-ui)',
                             marginBottom: '16px',
                             textAlign: 'center',
@@ -530,8 +530,8 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
             {/* Side-by-Side Statistics Comparison */}
             <div
               style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--card)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 4,
                 overflow: 'hidden',
                 marginBottom: '48px',
@@ -541,7 +541,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                 style={{
                   display: 'grid',
                   gridTemplateColumns: `repeat(${selectedJudges.length}, 1fr)`,
-                  borderBottom: '1px solid var(--border-default)',
+                  borderBottom: '1px solid var(--bdr)',
                 }}
               >
                 {selectedJudges.map((slot, idx) => (
@@ -549,8 +549,8 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                     key={idx}
                     style={{
                       padding: '24px',
-                      borderRight: idx < selectedJudges.length - 1 ? '1px solid var(--border-default)' : 'none',
-                      background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--color-surface-0)',
+                      borderRight: idx < selectedJudges.length - 1 ? '1px solid var(--bdr)' : 'none',
+                      background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--card)',
                     }}
                   >
                     <h3
@@ -558,7 +558,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         margin: 0,
                         fontSize: 16,
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                         fontFamily: 'var(--font-ui)',
                       }}
                     >
@@ -592,7 +592,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                   style={{
                     display: 'grid',
                     gridTemplateColumns: `auto repeat(${selectedJudges.length}, 1fr)`,
-                    borderBottom: '1px solid var(--border-default)',
+                    borderBottom: '1px solid var(--bdr)',
                   }}
                 >
                   <div
@@ -600,8 +600,8 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                       padding: '16px 24px',
                       fontWeight: 600,
                       fontSize: 14,
-                      color: 'var(--color-text-primary)',
-                      background: 'var(--color-surface-0)',
+                      color: 'var(--text1)',
+                      background: 'var(--card)',
                       fontFamily: 'var(--font-ui)',
                       minWidth: 160,
                     }}
@@ -618,11 +618,11 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         style={{
                           padding: '16px 24px',
                           textAlign: 'right',
-                          background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--color-surface-0)',
+                          background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--card)',
                           fontFamily: 'var(--font-ui)',
                           fontSize: 14,
                           fontWeight: 500,
-                          color: 'var(--color-text-primary)',
+                          color: 'var(--text1)',
                         }}
                       >
                         {displayValue}
@@ -639,8 +639,8 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                 onClick={exportPDF}
                 style={{
                   padding: '12px 24px',
-                  background: 'var(--accent-primary)',
-                  color: 'var(--color-surface-0)',
+                  background: 'var(--link)',
+                  color: 'var(--card)',
                   border: 'none',
                   borderRadius: 4,
                   fontSize: 14,

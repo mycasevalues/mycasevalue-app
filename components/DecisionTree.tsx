@@ -504,11 +504,11 @@ export default function DecisionTree() {
             marginBottom: '0.5rem',
             fontSize: '0.875rem',
             fontWeight: '500',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
           }}
         >
           <span>Step {currentStep} of 4</span>
-          <span style={{ color: 'var(--color-text-secondary)' }}>
+          <span style={{ color: 'var(--text2)' }}>
             {currentStep === 1 && 'Category Selection'}
             {currentStep === 2 && 'Your Situation'}
             {currentStep === 3 && 'Jurisdiction Check'}
@@ -519,7 +519,7 @@ export default function DecisionTree() {
           style={{
             width: '100%',
             height: '8px',
-            backgroundColor: 'var(--border-default)',
+            backgroundColor: 'var(--bdr)',
             borderRadius: '4px',
             overflow: 'hidden',
           }}
@@ -528,7 +528,7 @@ export default function DecisionTree() {
             style={{
               height: '100%',
               width: `${(currentStep / 4) * 100}%`,
-              backgroundColor: 'var(--accent-primary)',
+              backgroundColor: 'var(--link)',
               transition: 'width 0.3s ease-in-out',
             }}
           />
@@ -543,7 +543,7 @@ export default function DecisionTree() {
               fontSize: '2rem',
               fontWeight: '700',
               marginBottom: '0.5rem',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
             }}
           >
             What happened?
@@ -571,9 +571,9 @@ export default function DecisionTree() {
                 onClick={() => handleCategorySelect(category.id)}
                 style={{
                   padding: '1.5rem',
-                  border: '2px solid var(--border-default)',
+                  border: '2px solid var(--bdr)',
                   borderRadius: '4px',
-                  backgroundColor: 'var(--color-surface-0)',
+                  backgroundColor: 'var(--card)',
                   cursor: 'pointer',
                   transition:
                     'all 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
@@ -583,12 +583,12 @@ export default function DecisionTree() {
                   gap: '0.75rem',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--accent-primary)';
+                  e.currentTarget.style.borderColor = 'var(--link)';
                   e.currentTarget.style.boxShadow =
                     '0 4px 12px rgba(10, 102, 194, 0.1)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--border-default)';
+                  e.currentTarget.style.borderColor = 'var(--bdr)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
@@ -599,7 +599,7 @@ export default function DecisionTree() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                   }}
                 >
                   {category.icon}
@@ -609,7 +609,7 @@ export default function DecisionTree() {
                     fontSize: '1.125rem',
                     fontWeight: '600',
                     margin: '0',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                   }}
                 >
                   {category.title}
@@ -637,7 +637,7 @@ export default function DecisionTree() {
               fontSize: '2rem',
               fontWeight: '700',
               marginBottom: '2rem',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
             }}
           >
             {currentCategoryConfig.title}
@@ -652,7 +652,7 @@ export default function DecisionTree() {
                     fontSize: '1rem',
                     fontWeight: '600',
                     marginBottom: '1rem',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                   }}
                 >
                   {question.question}
@@ -683,10 +683,10 @@ export default function DecisionTree() {
                             width: '18px',
                             height: '18px',
                             cursor: 'pointer',
-                            accentColor: 'var(--accent-primary)',
+                            accentColor: 'var(--link)',
                           }}
                         />
-                        <span style={{ color: 'var(--color-text-primary)', fontSize: '0.95rem' }}>
+                        <span style={{ color: 'var(--text1)', fontSize: '0.95rem' }}>
                           {option.label}
                         </span>
                       </label>
@@ -703,11 +703,11 @@ export default function DecisionTree() {
                     style={{
                       width: '100%',
                       padding: '0.75rem',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       fontSize: '0.95rem',
                       boxSizing: 'border-box',
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                     }}
                   />
                 )}
@@ -725,7 +725,7 @@ export default function DecisionTree() {
               fontSize: '2rem',
               fontWeight: '700',
               marginBottom: '2rem',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
             }}
           >
             Understanding Jurisdiction
@@ -744,7 +744,7 @@ export default function DecisionTree() {
                 fontSize: '1.125rem',
                 fontWeight: '600',
                 marginBottom: '0.75rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
               }}
             >
               Federal vs. State Court
@@ -752,7 +752,7 @@ export default function DecisionTree() {
             <p
               style={{
                 fontSize: '0.95rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 lineHeight: '1.6',
                 margin: '0 0 1rem 0',
               }}
@@ -763,7 +763,7 @@ export default function DecisionTree() {
               style={{
                 margin: '0',
                 paddingLeft: '1.5rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontSize: '0.95rem',
                 lineHeight: '1.8',
               }}
@@ -808,7 +808,7 @@ export default function DecisionTree() {
               fontSize: '2rem',
               fontWeight: '700',
               marginBottom: '2rem',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
             }}
           >
             Your Results
@@ -855,7 +855,7 @@ export default function DecisionTree() {
           {/* Case Type Details */}
           <div
             style={{
-              backgroundColor: 'var(--color-surface-0)',
+              backgroundColor: 'var(--card)',
               border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '4px',
               padding: '1.5rem',
@@ -867,7 +867,7 @@ export default function DecisionTree() {
                 fontSize: '1.125rem',
                 fontWeight: '600',
                 marginBottom: '1rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
               }}
             >
               {nosData.label} Cases
@@ -896,7 +896,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     margin: '0',
                   }}
                 >
@@ -919,7 +919,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     margin: '0',
                   }}
                 >
@@ -942,7 +942,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     margin: '0',
                   }}
                 >
@@ -965,7 +965,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '0.95rem',
                     fontWeight: '600',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0',
                   }}
                 >
@@ -979,8 +979,8 @@ export default function DecisionTree() {
               style={{
                 display: 'inline-block',
                 padding: '0.75rem 1.5rem',
-                backgroundColor: 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
+                backgroundColor: 'var(--link)',
+                color: 'var(--card)',
                 textDecoration: 'none',
                 borderRadius: '4px',
                 fontWeight: '500',
@@ -991,7 +991,7 @@ export default function DecisionTree() {
                 e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--accent-primary)';
+                e.currentTarget.style.backgroundColor = 'var(--link)';
               }}
             >
               View Full Case Type Report
@@ -1001,7 +1001,7 @@ export default function DecisionTree() {
           {/* Next Steps */}
           <div
             style={{
-              backgroundColor: 'var(--color-surface-0)',
+              backgroundColor: 'var(--card)',
               border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '4px',
               padding: '1.5rem',
@@ -1013,7 +1013,7 @@ export default function DecisionTree() {
                 fontSize: '1.125rem',
                 fontWeight: '600',
                 marginBottom: '1rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
               }}
             >
               Recommended Next Steps
@@ -1022,7 +1022,7 @@ export default function DecisionTree() {
               style={{
                 margin: '0',
                 paddingLeft: '1.5rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontSize: '0.95rem',
                 lineHeight: '1.8',
               }}
@@ -1042,7 +1042,7 @@ export default function DecisionTree() {
           {/* Attorney Resources */}
           <div
             style={{
-              backgroundColor: 'var(--color-surface-0)',
+              backgroundColor: 'var(--card)',
               border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '4px',
               padding: '1.5rem',
@@ -1054,7 +1054,7 @@ export default function DecisionTree() {
                 fontSize: '1.125rem',
                 fontWeight: '600',
                 marginBottom: '1rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
               }}
             >
               Finding Attorney Help
@@ -1063,7 +1063,7 @@ export default function DecisionTree() {
               style={{
                 margin: '0',
                 paddingLeft: '1.5rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontSize: '0.95rem',
                 lineHeight: '1.8',
               }}
@@ -1087,7 +1087,7 @@ export default function DecisionTree() {
           <div
             style={{
               backgroundColor: 'rgba(255,255,255,0.05)',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '1.5rem',
             }}
@@ -1095,7 +1095,7 @@ export default function DecisionTree() {
             <p
               style={{
                 fontSize: '0.85rem',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: '0',
                 lineHeight: '1.6',
               }}
@@ -1120,9 +1120,9 @@ export default function DecisionTree() {
           onClick={handleReset}
           style={{
             padding: '0.75rem 1.5rem',
-            border: '1px solid var(--border-default)',
-            backgroundColor: 'var(--color-surface-0)',
-            color: 'var(--color-text-primary)',
+            border: '1px solid var(--bdr)',
+            backgroundColor: 'var(--card)',
+            color: 'var(--text1)',
             borderRadius: '4px',
             cursor: 'pointer',
             fontWeight: '500',
@@ -1133,7 +1133,7 @@ export default function DecisionTree() {
             e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
+            e.currentTarget.style.backgroundColor = 'var(--card)';
           }}
         >
           Start Over
@@ -1145,9 +1145,9 @@ export default function DecisionTree() {
               onClick={handlePreviousStep}
               style={{
                 padding: '0.75rem 1.5rem',
-                border: '1px solid var(--border-default)',
-                backgroundColor: 'var(--color-surface-0)',
-                color: 'var(--color-text-primary)',
+                border: '1px solid var(--bdr)',
+                backgroundColor: 'var(--card)',
+                color: 'var(--text1)',
                 borderRadius: '4px',
                 cursor: 'pointer',
                 fontWeight: '500',
@@ -1158,7 +1158,7 @@ export default function DecisionTree() {
                 e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
+                e.currentTarget.style.backgroundColor = 'var(--card)';
               }}
             >
               Back
@@ -1174,8 +1174,8 @@ export default function DecisionTree() {
                 backgroundColor:
                   currentStep === 2 && !isStep2Complete
                     ? '#d1d5db'
-                    : 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
+                    : 'var(--link)',
+                color: 'var(--card)',
                 border: 'none',
                 borderRadius: '4px',
                 cursor:
@@ -1193,7 +1193,7 @@ export default function DecisionTree() {
               }}
               onMouseLeave={(e) => {
                 if (currentStep !== 2 || isStep2Complete) {
-                  e.currentTarget.style.backgroundColor = 'var(--accent-primary)';
+                  e.currentTarget.style.backgroundColor = 'var(--link)';
                 }
               }}
             >

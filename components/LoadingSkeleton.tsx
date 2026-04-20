@@ -29,7 +29,7 @@ function SkeletonLine({ width = '100%' }: { width?: string }) {
 
 function StatSkeleton() {
   return (
-    <div style={{ padding: 24, borderRadius: '4px', border: '1px solid var(--surf, #F6F5F2)', background: 'var(--color-surface-1)' }}>
+    <div style={{ padding: 24, borderRadius: '4px', border: '1px solid var(--surf, #F6F5F2)', background: 'var(--surf)' }}>
       <SkeletonLine width="40%" />
       <div style={{ height: 32, backgroundColor: 'var(--surf, #F6F5F2)', borderRadius: 4, marginBottom: 8, position: 'relative', overflow: 'hidden' }}>
         <motion.div
@@ -46,7 +46,7 @@ function StatSkeleton() {
 
 function CardSkeleton() {
   return (
-    <div style={{ padding: 24, borderRadius: '4px', border: '1px solid var(--surf, #F6F5F2)', background: 'var(--color-surface-1)' }}>
+    <div style={{ padding: 24, borderRadius: '4px', border: '1px solid var(--surf, #F6F5F2)', background: 'var(--surf)' }}>
       <SkeletonLine width="70%" />
       <SkeletonLine width="100%" />
       <SkeletonLine width="85%" />
@@ -64,7 +64,7 @@ function CardSkeleton() {
 
 function ChartSkeleton() {
   return (
-    <div style={{ padding: 24, borderRadius: '4px', border: '1px solid var(--surf, #F6F5F2)', background: 'var(--color-surface-1)' }}>
+    <div style={{ padding: 24, borderRadius: '4px', border: '1px solid var(--surf, #F6F5F2)', background: 'var(--surf)' }}>
       <SkeletonLine width="50%" />
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 200, marginTop: 16 }}>
         {Array.from({ length: 12 }).map((_, i) => {
@@ -89,7 +89,7 @@ function ChartSkeleton() {
 function TableSkeleton({ lines = 5 }: { lines: number }) {
   return (
     <div style={{ borderRadius: '4px', border: '1px solid var(--surf, #F6F5F2)', overflow: 'hidden' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 16, padding: '12px 16px', backgroundColor: 'var(--color-surface-0)' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 16, padding: '12px 16px', backgroundColor: 'var(--card)' }}>
         <SkeletonLine width="80%" />
         <SkeletonLine width="60%" />
         <SkeletonLine width="70%" />

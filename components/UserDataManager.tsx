@@ -17,22 +17,22 @@ export function SavedReportsSection() {
     <section
       className="rounded-sm p-6"
       style={{
-        border: '1px solid var(--border-default)',
-        backgroundColor: 'var(--color-surface-0)',
+        border: '1px solid var(--bdr)',
+        backgroundColor: 'var(--card)',
       }}
     >
       <h2
         className="text-xl font-bold mb-4"
-        style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}
+        style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}
       >
         Saved Reports
       </h2>
-      <p style={{ color: 'var(--color-text-secondary)', fontSize: 14, marginBottom: 16 }}>
+      <p style={{ color: 'var(--text2)', fontSize: 14, marginBottom: 16 }}>
         Reports you've downloaded or viewed recently
       </p>
 
       {loading && (
-        <div style={{ color: 'var(--color-text-secondary)', textAlign: 'center', padding: 20 }}>
+        <div style={{ color: 'var(--text2)', textAlign: 'center', padding: 20 }}>
           Loading...
         </div>
       )}
@@ -55,7 +55,7 @@ export function SavedReportsSection() {
 
       {!loading && reports.length === 0 && (
         <div style={{ textAlign: 'center', padding: 32 }}>
-          <p style={{ color: 'var(--color-text-secondary)', marginBottom: 16 }}>
+          <p style={{ color: 'var(--text2)', marginBottom: 16 }}>
             No saved reports yet
           </p>
           <Link
@@ -63,7 +63,7 @@ export function SavedReportsSection() {
             style={{
               display: 'inline-block',
               padding: '8px 16px',
-              backgroundColor: 'var(--accent-primary)',
+              backgroundColor: 'var(--link)',
               color: 'white',
               textDecoration: 'none',
               borderRadius: 4,
@@ -83,8 +83,8 @@ export function SavedReportsSection() {
               key={report.id}
               style={{
                 padding: 12,
-                backgroundColor: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                backgroundColor: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 4,
                 display: 'flex',
                 justifyContent: 'space-between',
@@ -96,7 +96,7 @@ export function SavedReportsSection() {
                 <Link
                   href={`/report/${report.category}`}
                   style={{
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     textDecoration: 'none',
                     fontWeight: 600,
                     fontSize: 14,
@@ -104,7 +104,7 @@ export function SavedReportsSection() {
                 >
                   {report.category}
                 </Link>
-                <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '4px 0 0' }}>
+                <p style={{ fontSize: 12, color: 'var(--text2)', margin: '4px 0 0' }}>
                   {report.district} · {new Date(report.viewedAt).toLocaleDateString()}
                 </p>
               </div>
@@ -113,9 +113,9 @@ export function SavedReportsSection() {
                 style={{
                   padding: '6px 12px',
                   backgroundColor: 'transparent',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: 3,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   fontSize: 12,
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -127,7 +127,7 @@ export function SavedReportsSection() {
                 }}
                 onMouseLeave={e => {
                   (e.target as HTMLButtonElement).style.backgroundColor = 'transparent';
-                  (e.target as HTMLButtonElement).style.borderColor = 'var(--border-default)';
+                  (e.target as HTMLButtonElement).style.borderColor = 'var(--bdr)';
                 }}
               >
                 Remove
@@ -153,19 +153,19 @@ export function SearchHistorySection() {
     <section
       className="rounded-sm p-6"
       style={{
-        border: '1px solid var(--border-default)',
-        backgroundColor: 'var(--color-surface-0)',
+        border: '1px solid var(--bdr)',
+        backgroundColor: 'var(--card)',
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         <div>
           <h2
             className="text-xl font-bold"
-            style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}
+            style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}
           >
             Search History
           </h2>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: 14, marginTop: 4 }}>
+          <p style={{ color: 'var(--text2)', fontSize: 14, marginTop: 4 }}>
             Your recent searches are saved locally and synced when you're logged in
           </p>
         </div>
@@ -175,9 +175,9 @@ export function SearchHistorySection() {
             style={{
               padding: '8px 16px',
               backgroundColor: 'transparent',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               borderRadius: 4,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontSize: 14,
               fontWeight: 600,
               cursor: 'pointer',
@@ -205,7 +205,7 @@ export function SearchHistorySection() {
             borderRadius: 4,
           }}
         >
-          <p style={{ color: 'var(--color-text-primary)', fontSize: 14, marginBottom: 8 }}>
+          <p style={{ color: 'var(--text1)', fontSize: 14, marginBottom: 8 }}>
             Clear all search history? This cannot be undone.
           </p>
           <div style={{ display: 'flex', gap: 8 }}>
@@ -229,9 +229,9 @@ export function SearchHistorySection() {
               style={{
                 padding: '6px 12px',
                 backgroundColor: 'transparent',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 3,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -244,7 +244,7 @@ export function SearchHistorySection() {
       )}
 
       {loading && (
-        <div style={{ color: 'var(--color-text-secondary)', textAlign: 'center', padding: 20 }}>
+        <div style={{ color: 'var(--text2)', textAlign: 'center', padding: 20 }}>
           Loading...
         </div>
       )}
@@ -267,7 +267,7 @@ export function SearchHistorySection() {
 
       {!loading && history.length === 0 && (
         <div style={{ textAlign: 'center', padding: 32 }}>
-          <p style={{ color: 'var(--color-text-secondary)' }}>
+          <p style={{ color: 'var(--text2)' }}>
             No search history yet
           </p>
         </div>
@@ -280,12 +280,12 @@ export function SearchHistorySection() {
               key={item.id}
               style={{
                 padding: 12,
-                backgroundColor: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                backgroundColor: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 4,
               }}
             >
-              <div style={{ color: 'var(--color-text-primary)', fontSize: 14, fontWeight: 500 }}>
+              <div style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 500 }}>
                 {item.query}
               </div>
               <div style={{ display: 'flex', gap: 8, marginTop: 6 }}>
@@ -294,7 +294,7 @@ export function SearchHistorySection() {
                     style={{
                       fontSize: 12,
                       padding: '2px 8px',
-                      backgroundColor: 'var(--accent-primary)',
+                      backgroundColor: 'var(--link)',
                       color: 'white',
                       borderRadius: 2,
                     }}
@@ -302,7 +302,7 @@ export function SearchHistorySection() {
                     {item.category}
                   </span>
                 )}
-                <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>
+                <span style={{ fontSize: 12, color: 'var(--text2)' }}>
                   {new Date(item.searchedAt).toLocaleDateString()}
                 </span>
               </div>
@@ -339,13 +339,13 @@ export function UserPreferencesSection() {
     <section
       className="rounded-sm p-6"
       style={{
-        border: '1px solid var(--border-default)',
-        backgroundColor: 'var(--color-surface-0)',
+        border: '1px solid var(--bdr)',
+        backgroundColor: 'var(--card)',
       }}
     >
       <h2
         className="text-xl font-bold mb-6"
-        style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}
+        style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}
       >
         Preferences
       </h2>
@@ -358,7 +358,7 @@ export function UserPreferencesSection() {
               display: 'block',
               fontSize: 14,
               fontWeight: 600,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               marginBottom: 8,
             }}
           >
@@ -373,7 +373,7 @@ export function UserPreferencesSection() {
                   alignItems: 'center',
                   gap: 8,
                   fontSize: 14,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   cursor: 'pointer',
                 }}
               >
@@ -400,7 +400,7 @@ export function UserPreferencesSection() {
               display: 'block',
               fontSize: 14,
               fontWeight: 600,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               marginBottom: 8,
             }}
           >
@@ -412,7 +412,7 @@ export function UserPreferencesSection() {
               alignItems: 'center',
               gap: 8,
               fontSize: 14,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               cursor: 'pointer',
             }}
           >

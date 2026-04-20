@@ -80,7 +80,7 @@ export function LogoMark({
         x="-100" y="-100"
         width="200" height="200"
         rx={rx}
-        fill="var(--accent-primary)"
+        fill="var(--link)"
       />
 
       {/* Isometric cube — 12° rotation, face opacities fixed */}
@@ -137,8 +137,8 @@ export function LogoLockup({
   const fontSize = Math.round(size * 0.55)
   const letterSpacing = `-${(size * 0.02).toFixed(1)}px`
 
-  const inkColor    = variant === 'dark' ? 'var(--color-surface-0)' : '#060d1a'
-  const blueColor   = variant === 'dark' ? '#378ADD' : 'var(--accent-primary)'
+  const inkColor    = variant === 'dark' ? 'var(--card)' : '#060d1a'
+  const blueColor   = variant === 'dark' ? '#378ADD' : 'var(--link)'
 
   return (
     <div className={cn('flex items-center', className)} style={{ gap: size * 0.38 }}>

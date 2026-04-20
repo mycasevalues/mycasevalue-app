@@ -111,7 +111,7 @@ export default function CourtRulesPage() {
     display: 'block',
     fontSize: '14px',
     fontWeight: 600,
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
     marginBottom: '6px',
     fontFamily: 'var(--font-ui)',
   };
@@ -119,17 +119,17 @@ export default function CourtRulesPage() {
   const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '12px 14px',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     borderRadius: '2px',
     fontSize: '14px',
-    color: 'var(--color-text-primary)',
-    backgroundColor: 'var(--color-surface-0)',
+    color: 'var(--text1)',
+    backgroundColor: 'var(--card)',
     fontFamily: 'var(--font-ui)',
     boxSizing: 'border-box' as const,
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       {/* Header */}
       <div style={{
         background: 'var(--card)',
@@ -145,7 +145,7 @@ export default function CourtRulesPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--text1)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Never Miss a Local Rule Again
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--text3)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
@@ -157,8 +157,8 @@ export default function CourtRulesPage() {
       {/* Main Content */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Filters */}
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: 'var(--shadow-xs)' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
+        <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', marginBottom: '32px', boxShadow: 'var(--shadow-xs)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
             Find Your District
           </h2>
 
@@ -193,85 +193,85 @@ export default function CourtRulesPage() {
         {/* Results */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '24px' }}>
           {filteredDistricts.map((district) => (
-            <div key={`${district.circuit}-${district.districtCode}`} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div key={`${district.circuit}-${district.districtCode}`} style={{ background: 'var(--card)', borderRadius: '4px', padding: '24px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--link)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                   {district.circuit} Circuit
                 </p>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                   {district.districtName}
                 </h3>
               </div>
 
-              <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ borderTop: '1px solid var(--bdr)', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                     Brief Page Limit
                   </p>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text1)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                     {district.briefPageLimit} pages
                   </p>
                 </div>
 
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                     Motion Page Limit
                   </p>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text1)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                     {district.motionPageLimit} pages
                   </p>
                 </div>
 
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                     CM/ECF Filing
                   </p>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text1)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                     {district.cmecfRequirement}
                   </p>
                 </div>
 
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                     Discovery Disputes
                   </p>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text1)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                     {district.discoveryDisputeResolution}
                   </p>
                 </div>
 
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                     Initial Disclosures
                   </p>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text1)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                     {district.schedulingOrderDefault}
                   </p>
                 </div>
 
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                     Pro Hac Vice
                   </p>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text1)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                     {district.proHacViceRequirement}
                   </p>
                 </div>
 
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                     ADR/Mediation
                   </p>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text1)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                     {district.adrRequirement}
                   </p>
                 </div>
 
-                <div style={{ background: 'var(--color-surface-1)', padding: '12px', borderRadius: '4px' }}>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                <div style={{ background: 'var(--surf)', padding: '12px', borderRadius: '4px' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                     Judge-Specific Practices
                   </p>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text1)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                     {district.judgeInfo}
                   </p>
                 </div>
@@ -279,10 +279,10 @@ export default function CourtRulesPage() {
 
               {/* Links */}
               <div style={{ display: 'flex', gap: '8px', flexDirection: 'column', marginTop: '8px' }}>
-                <a href={district.ecfUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '8px 12px', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', border: '1px solid rgba(10, 102, 194, 0.2)', borderRadius: '2px', fontSize: '12px', fontWeight: 600, textDecoration: 'none', textAlign: 'center', fontFamily: 'var(--font-ui)', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.12)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)'; }}>
+                <a href={district.ecfUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '8px 12px', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--link)', border: '1px solid rgba(10, 102, 194, 0.2)', borderRadius: '2px', fontSize: '12px', fontWeight: 600, textDecoration: 'none', textAlign: 'center', fontFamily: 'var(--font-ui)', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.12)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)'; }}>
                   ECF Portal
                 </a>
-                <a href={district.rulesUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '8px 12px', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', border: '1px solid rgba(10, 102, 194, 0.2)', borderRadius: '2px', fontSize: '12px', fontWeight: 600, textDecoration: 'none', textAlign: 'center', fontFamily: 'var(--font-ui)', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.12)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)'; }}>
+                <a href={district.rulesUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '8px 12px', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--link)', border: '1px solid rgba(10, 102, 194, 0.2)', borderRadius: '2px', fontSize: '12px', fontWeight: 600, textDecoration: 'none', textAlign: 'center', fontFamily: 'var(--font-ui)', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.12)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)'; }}>
                   Local Rules
                 </a>
               </div>
@@ -291,50 +291,50 @@ export default function CourtRulesPage() {
         </div>
 
         {filteredDistricts.length === 0 && (
-          <div style={{ textAlign: 'center', padding: '60px 24px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-            <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+          <div style={{ textAlign: 'center', padding: '60px 24px', background: 'var(--card)', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+            <p style={{ fontSize: '16px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
               No districts match your search. Try a different search term or filter.
             </p>
           </div>
         )}
 
         {/* Beta Badge */}
-        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)' }}>
+        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--bdr)' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 12px', borderRadius: '3px', background: 'rgba(10, 102, 194, 0.08)', border: '1px solid rgba(10, 102, 194, 0.2)' }}>
-            <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
+            <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--link)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
               Free during public beta
             </span>
           </div>
         </div>
 
         {/* Navigation */}
-        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--bdr)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Back to Attorney Mode
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Explore more tools
               </p>
             </div>
           </Link>
           <Link href="/attorney/case-timeline" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Timeline Generator
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Generate timelines
               </p>
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Predictor
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Predict outcomes
               </p>
             </div>

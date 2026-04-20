@@ -62,7 +62,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
         }
       `}</style>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '4px', border: '1px solid var(--border-default)', overflow: 'hidden' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '4px', border: '1px solid var(--bdr)', overflow: 'hidden' }}>
         {items.map((item, index) => {
           const isOpen = openIndex === index;
           const isLast = index === items.length - 1;
@@ -72,8 +72,8 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
               key={index}
               className={`faq-item ${isOpen ? 'active' : ''}`}
               style={{
-                borderBottom: isLast ? 'none' : '1px solid var(--border-default)',
-                backgroundColor: isOpen ? 'var(--gold-light, #FAF3E6)' : 'var(--color-surface-0)',
+                borderBottom: isLast ? 'none' : '1px solid var(--bdr)',
+                backgroundColor: isOpen ? 'var(--gold-light, #FAF3E6)' : 'var(--card)',
                 overflow: 'hidden',
               }}
             >
@@ -96,14 +96,14 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   fontFamily: 'var(--font-ui)',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-                  borderLeft: isOpen ? '4px solid var(--accent-primary)' : '4px solid transparent',
+                  borderLeft: isOpen ? '4px solid var(--link)' : '4px solid transparent',
                   paddingLeft: '16px',
                 }}
                 onMouseEnter={(e) => {
                   if (!isOpen) {
-                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--color-surface-1)';
+                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--surf)';
                   }
                 }}
                 onMouseLeave={(e) => {
@@ -123,7 +123,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  style={{ flexShrink: 0, color: 'var(--color-text-primary)' }}
+                  style={{ flexShrink: 0, color: 'var(--text1)' }}
                 >
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
@@ -143,11 +143,11 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   style={{
                     padding: '0 20px 20px 20px',
                     paddingLeft: '24px',
-                    borderTop: '1px solid var(--border-default)',
+                    borderTop: '1px solid var(--bdr)',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '16px',
                     fontWeight: 400,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     lineHeight: '1.6',
                   }}
                 >

@@ -52,11 +52,11 @@ const userTypeBarData = userTypeData.map((d) => ({
 
 export default function AnalyticsPage() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)' }}>
       <style>{`
         .metric-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 2px;
           padding: 24px;
           display: flex;
@@ -66,14 +66,14 @@ export default function AnalyticsPage() {
         .metric-value {
           font-size: 32px;
           font-weight: bold;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 8px;
           font-family: var(--font-ui);
         }
 
         .metric-label {
           font-size: 14px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           font-family: var(--font-ui);
         }
 
@@ -85,8 +85,8 @@ export default function AnalyticsPage() {
         }
 
         .chart-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 2px;
           padding: 24px;
           margin-bottom: 24px;
@@ -95,7 +95,7 @@ export default function AnalyticsPage() {
         .chart-title {
           font-size: 18px;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 20px;
           font-family: var(--font-ui);
         }
@@ -192,7 +192,7 @@ export default function AnalyticsPage() {
         }
 
         .back-link:hover {
-          color: var(--color-surface-0);
+          color: var(--card);
         }
 
         .charts-grid {
@@ -236,8 +236,8 @@ export default function AnalyticsPage() {
         }
 
         .tooltip-content {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 12px;
           font-size: 12px;
@@ -245,15 +245,15 @@ export default function AnalyticsPage() {
         }
 
         .legend-item {
-          color: var(--color-text-secondary) !important;
+          color: var(--text2) !important;
           font-size: 12px !important;
           font-family: var(--font-ui) !important;
         }
 
         .info-banner {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
-          border-left: 4px solid var(--accent-primary);
+          background: var(--card);
+          border: 1px solid var(--bdr);
+          border-left: 4px solid var(--link);
           border-radius: 2px;
           padding: 24px;
           margin-bottom: 40px;
@@ -262,14 +262,14 @@ export default function AnalyticsPage() {
         .info-banner h3 {
           font-size: 16px;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin: 0 0 8px 0;
           font-family: var(--font-ui);
         }
 
         .info-banner p {
           font-size: 14px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           margin: 0;
           font-family: var(--font-ui);
           line-height: 1.5;
@@ -333,18 +333,18 @@ export default function AnalyticsPage() {
             <div className="chart-title">Daily Searches (Last 30 Days)</div>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={dailySearchData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--border-default)" />
-                <XAxis dataKey="day" stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
-                <YAxis stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--bdr)" />
+                <XAxis dataKey="day" stroke="var(--text2)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
+                <YAxis stroke="var(--text2)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
                 <Tooltip
                   contentStyle={{
-                    background: 'var(--color-surface-0)',
-                    border: '1px solid var(--border-default)',
+                    background: 'var(--card)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '2px',
                     padding: '12px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '12px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                   }}
                   formatter={(value) => value.toLocaleString()}
                 />
@@ -352,7 +352,7 @@ export default function AnalyticsPage() {
                 <Line
                   type="monotone"
                   dataKey="searches"
-                  stroke="var(--accent-primary)"
+                  stroke="var(--link)"
                   strokeWidth={2}
                   dot={false}
                   isAnimationActive={true}
@@ -366,22 +366,22 @@ export default function AnalyticsPage() {
             <div className="chart-title">Top Case Types Searched</div>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={caseTypeData} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--border-default)" />
-                <XAxis type="number" stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
-                <YAxis dataKey="name" type="category" width={150} stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--bdr)" />
+                <XAxis type="number" stroke="var(--text2)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
+                <YAxis dataKey="name" type="category" width={150} stroke="var(--text2)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
                 <Tooltip
                   contentStyle={{
-                    background: 'var(--color-surface-0)',
-                    border: '1px solid var(--border-default)',
+                    background: 'var(--card)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '2px',
                     padding: '12px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '12px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                   }}
                   formatter={(value) => value.toLocaleString()}
                 />
-                <Bar dataKey="value" fill="var(--accent-primary)" radius={[0, 12, 12, 0]} />
+                <Bar dataKey="value" fill="var(--link)" radius={[0, 12, 12, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -407,11 +407,11 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Footer Info */}
-        <div style={{ marginTop: '48px', padding: '24px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-legal)' }}>
+        <div style={{ marginTop: '48px', padding: '24px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 8px 0', fontFamily: 'var(--font-legal)' }}>
             Have questions about the data?
           </h3>
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 16px 0', fontFamily: 'var(--font-ui)' }}>
             Contact our research team or visit our documentation for more details about platform usage and federal court analytics.
           </p>
           <a
@@ -419,8 +419,8 @@ export default function AnalyticsPage() {
             style={{
               display: 'inline-block',
               padding: '8px 24px',
-              background: 'var(--accent-primary)',
-              color: 'var(--color-surface-0)',
+              background: 'var(--link)',
+              color: 'var(--card)',
               borderRadius: '2px',
               textDecoration: 'none',
               fontSize: '14px',

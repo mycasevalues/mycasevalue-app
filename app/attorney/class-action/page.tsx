@@ -67,21 +67,21 @@ const DISTRICT_RANKINGS = [
 ];
 
 export default function ClassActionPage() {
-  const accentColor = 'var(--accent-primary)';
+  const accentColor = 'var(--link)';
   const secondaryColor = 'var(--gold)';
-  const textColor = 'var(--color-text-primary)';
-  const bgColor = 'var(--color-surface-1)';
-  const borderColor = 'var(--border-default)';
+  const textColor = 'var(--text1)';
+  const bgColor = 'var(--surf)';
+  const borderColor = 'var(--bdr)';
 
   return (
     <div style={{ minHeight: '100vh', background: bgColor, fontFamily: 'var(--font-ui)', color: textColor }}>
       {/* Header */}
       <div style={{ background: 'var(--card)', padding: '40px 24px 32px', borderBottom: `1px solid ${borderColor}` }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px 0', color: 'var(--text1)', fontFamily: 'var(--font-legal)', letterSpacing: '-0.02em' }}>
             Class Action Intelligence
           </h1>
-          <p style={{ fontSize: '14px', margin: '0', color: 'var(--color-text-secondary)', letterSpacing: '-0.01em' }}>
+          <p style={{ fontSize: '14px', margin: '0', color: 'var(--text2)', letterSpacing: '-0.01em' }}>
             Certification rates, settlement trends, and strategic insights for class action litigation
           </p>
         </div>
@@ -91,7 +91,7 @@ export default function ClassActionPage() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Section 1: Top Case Types */}
         <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
             Top Case Types for Class Actions
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
@@ -102,7 +102,7 @@ export default function ClassActionPage() {
                 <div
                   key={caseType.nos}
                   style={{
-                    background: 'var(--color-surface-0)',
+                    background: 'var(--card)',
                     border: `1px solid ${borderColor}`,
                     borderRadius: '4px',
                     padding: '24px',
@@ -114,7 +114,7 @@ export default function ClassActionPage() {
                   </h3>
                   <div style={{ display: 'flex', gap: '16px', marginBottom: '12px' }}>
                     <div>
-                      <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '0 0 4px' }}>Certification Rate</p>
+                      <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '0 0 4px' }}>Certification Rate</p>
                       <div
                         style={{
                           display: 'inline-block',
@@ -131,7 +131,7 @@ export default function ClassActionPage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: '1.5', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--text2)', lineHeight: '1.5', marginBottom: '12px' }}>
                     <p style={{ margin: '4px 0' }}>
                       <strong>Avg per member:</strong> ${stats?.avgPerMember.toLocaleString() || 'N/A'}
                     </p>
@@ -152,10 +152,10 @@ export default function ClassActionPage() {
 
         {/* Section 2: Recent Class Settlements */}
         <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
             Recent Class Action Settlements
           </h2>
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
+          <div style={{ background: 'var(--card)', borderRadius: '4px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
@@ -189,10 +189,10 @@ export default function ClassActionPage() {
 
         {/* Section 3: Certification by District */}
         <section>
-          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
             Class Certification Approval Rates by District
           </h2>
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
+          <div style={{ background: 'var(--card)', borderRadius: '4px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
@@ -236,7 +236,7 @@ export default function ClassActionPage() {
               </table>
             </div>
           </div>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '12px' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '12px' }}>
             Based on class certification motions filed and decided in federal district courts (2018-2025)
           </p>
         </section>

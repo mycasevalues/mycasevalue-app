@@ -63,7 +63,7 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{
           background: 'var(--card)',
@@ -95,7 +95,7 @@ export default function ContactPage() {
               style={{
                 fontSize: '28px',
                 fontWeight: 700,
-                color: 'var(--color-text-inverse, #FFFFFF)',
+                color: 'var(--chrome-text, #FFFFFF)',
                 fontFamily: 'var(--font-legal)',
                 letterSpacing: '-0.025em',
                 marginBottom: 8,
@@ -107,7 +107,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 16,
-                color: 'var(--color-text-inverse, #FFFFFF)',
+                color: 'var(--chrome-text, #FFFFFF)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.65,
                 maxWidth: 560,
@@ -119,14 +119,14 @@ export default function ContactPage() {
         </div>
 
         {/* Breadcrumb Navigation */}
-        <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
+        <div style={{ borderBottom: '1px solid var(--bdr)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--surf)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-ui)' }}>
               <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
                 Home
               </Link>
-              <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
-              <span style={{ color: 'var(--color-text-secondary)' }}>Contact</span>
+              <span style={{ color: 'var(--text2)' }}>/</span>
+              <span style={{ color: 'var(--text2)' }}>Contact</span>
             </nav>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
             style={{
               fontSize: 24,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
               marginBottom: 24,
             }}
@@ -175,8 +175,8 @@ export default function ContactPage() {
                 style={{
                   padding: 24,
                   borderRadius: '4px',
-                  border: '1px solid var(--border-default)',
-                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--bdr)',
+                  background: 'var(--card)',
                   boxShadow: 'var(--shadow-xs)',
                   textDecoration: 'none',
                   color: 'inherit',
@@ -191,7 +191,7 @@ export default function ContactPage() {
                   style={{
                     fontSize: 16,
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-ui)',
                     margin: 0,
                   }}
@@ -201,7 +201,7 @@ export default function ContactPage() {
                 <p
                   style={{
                     fontSize: 14,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                     lineHeight: 1.5,
                     margin: 0,
@@ -230,8 +230,8 @@ export default function ContactPage() {
               style={{
                 padding: 32,
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
+                border: '1px solid var(--bdr)',
+                background: 'var(--card)',
                 boxShadow: 'var(--shadow-xs)',
               }}
             >
@@ -239,7 +239,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   marginBottom: 8,
                 }}
@@ -249,7 +249,7 @@ export default function ContactPage() {
               <p
                 style={{
                   fontSize: 14,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   fontFamily: 'var(--font-ui)',
                   lineHeight: 1.6,
                   marginBottom: 16,
@@ -265,7 +265,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 16,
                   fontWeight: 600,
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
                 }}
@@ -283,8 +283,8 @@ export default function ContactPage() {
               style={{
                 padding: 32,
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
+                border: '1px solid var(--bdr)',
+                background: 'var(--card)',
                 boxShadow: 'var(--shadow-xs)',
               }}
             >
@@ -292,7 +292,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   marginBottom: 8,
                 }}
@@ -302,7 +302,7 @@ export default function ContactPage() {
               <p
                 style={{
                   fontSize: 14,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   fontFamily: 'var(--font-ui)',
                   lineHeight: 1.6,
                   marginBottom: 16,
@@ -318,7 +318,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 16,
                   fontWeight: 600,
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
                 }}
@@ -336,8 +336,8 @@ export default function ContactPage() {
               style={{
                 padding: 32,
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
+                border: '1px solid var(--bdr)',
+                background: 'var(--card)',
                 boxShadow: 'var(--shadow-xs)',
               }}
             >
@@ -345,7 +345,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   marginBottom: 8,
                 }}
@@ -355,7 +355,7 @@ export default function ContactPage() {
               <p
                 style={{
                   fontSize: 14,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   fontFamily: 'var(--font-ui)',
                   lineHeight: 1.6,
                   marginBottom: 16,
@@ -371,7 +371,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 16,
                   fontWeight: 600,
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
                 }}
@@ -400,7 +400,7 @@ export default function ContactPage() {
             marginTop: 48,
             marginBottom: 24,
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             backgroundColor: 'rgba(0,105,151,0.05)',
             textAlign: 'center',
           }}
@@ -417,7 +417,7 @@ export default function ContactPage() {
           <p
             style={{
               fontSize: 14,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontFamily: 'var(--font-ui)',
               margin: 0,
               lineHeight: 1.6,
@@ -430,14 +430,14 @@ export default function ContactPage() {
         <p
           style={{
             fontSize: 14,
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             fontFamily: 'var(--font-ui)',
             textAlign: 'center',
             marginTop: 24,
             lineHeight: 1.6,
           }}
         >
-          You can also reach out via email at <a href="mailto:support@mycasevalues.com" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalues.com</a> or <a href="mailto:enterprise@mycasevalues.com" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalues.com</a>
+          You can also reach out via email at <a href="mailto:support@mycasevalues.com" style={{ color: 'var(--link)', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalues.com</a> or <a href="mailto:enterprise@mycasevalues.com" style={{ color: 'var(--link)', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalues.com</a>
         </p>
         </div>
       </div>

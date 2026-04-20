@@ -35,7 +35,7 @@ export default function BackToTop() {
         width: '44px',
         height: '44px',
         backgroundColor: 'rgba(255,255,255,0.1)',
-        color: 'var(--color-surface-0)',
+        color: 'var(--card)',
         border: '1px solid rgba(255,255,255,0.15)',
         borderRadius: '4px',
         cursor: 'pointer',

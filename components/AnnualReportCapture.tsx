@@ -43,7 +43,7 @@ export default function AnnualReportCapture() {
 
     const addHeader = (text: string) => {
       doc.setFontSize(14);
-      doc.setTextColor(10, 102, 194); // var(--accent-primary)
+      doc.setTextColor(10, 102, 194); // var(--link)
       doc.text(text, margin, yPosition);
       yPosition += 10;
     };
@@ -472,8 +472,8 @@ export default function AnnualReportCapture() {
     return (
       <div style={{
         padding: '48px 32px',
-        background: 'var(--color-surface-0)',
-        border: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        border: '1px solid var(--bdr)',
         borderRadius: '4px',
         textAlign: 'center',
         boxShadow: 'var(--shadow-xs)',
@@ -482,18 +482,18 @@ export default function AnnualReportCapture() {
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
-        <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
           Report Downloaded
         </h3>
-        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, marginBottom: '16px' }}>
+        <p style={{ fontSize: '14px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, marginBottom: '16px' }}>
           Your 2026 Federal Court Statistics Annual Report is ready. Check your downloads folder and your email for confirmation.
         </p>
         <button
           onClick={() => setSubmitted(false)}
           style={{
             padding: '8px 24px',
-            background: 'var(--accent-primary)',
-            color: 'var(--color-surface-0)',
+            background: 'var(--link)',
+            color: 'var(--card)',
             border: 'none',
             borderRadius: '4px',
             fontSize: '14px',
@@ -518,8 +518,8 @@ export default function AnnualReportCapture() {
           display: block;
           padding: 0 32px;
           height: 48px;
-          background: var(--accent-primary);
-          color: var(--color-surface-0);
+          background: var(--link);
+          color: var(--card);
           border: none;
           border-radius: 4px;
           font-size: 15px;
@@ -549,7 +549,7 @@ export default function AnnualReportCapture() {
           <h2 style={{
             fontSize: '22px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
           }}>
@@ -557,7 +557,7 @@ export default function AnnualReportCapture() {
           </h2>
           <p style={{
             fontSize: '14px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             lineHeight: 1.6,
             marginBottom: '24px',
           }}>
@@ -566,8 +566,8 @@ export default function AnnualReportCapture() {
 
           <form onSubmit={handleSubmit} style={{
             padding: '24px',
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             display: 'flex',
             flexDirection: 'column',
@@ -579,7 +579,7 @@ export default function AnnualReportCapture() {
                 display: 'block',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-ui)',
                 marginBottom: '8px',
               }}>
@@ -599,10 +599,10 @@ export default function AnnualReportCapture() {
                   padding: '12px 14px',
                   fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
-                  color: 'var(--color-text-primary)',
-                  border: '1px solid var(--border-default)',
+                  color: 'var(--text1)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   outline: 'none',
                   transition: 'border-color 200ms',
                   boxSizing: 'border-box',
@@ -647,7 +647,7 @@ export default function AnnualReportCapture() {
           <h2 style={{
             fontSize: '22px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
           }}>
@@ -656,8 +656,8 @@ export default function AnnualReportCapture() {
 
           <div style={{
             padding: '24px',
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             boxShadow: 'var(--shadow-xs)',
           }}>
@@ -665,7 +665,7 @@ export default function AnnualReportCapture() {
               <div style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 letterSpacing: '0.5px',
                 marginBottom: '8px',
               }}>
@@ -674,14 +674,14 @@ export default function AnnualReportCapture() {
               <h3 style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: '12px',
               }}>
                 Table of Contents
               </h3>
               <ol style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 lineHeight: 1.8,
                 paddingLeft: '24px',
                 margin: 0,
@@ -698,18 +698,18 @@ export default function AnnualReportCapture() {
               </ol>
             </div>
 
-            <div style={{ paddingTop: '16px', borderTop: '1px solid var(--border-default)' }}>
+            <div style={{ paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
               <h4 style={{
                 fontSize: '14px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: '12px',
               }}>
                 Key Highlights
               </h4>
               <ul style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 lineHeight: 1.8,
                 paddingLeft: '24px',
                 margin: 0,
@@ -726,7 +726,7 @@ export default function AnnualReportCapture() {
             <div style={{
               marginTop: '16px',
               paddingTop: '16px',
-              borderTop: '1px solid var(--border-default)',
+              borderTop: '1px solid var(--bdr)',
               fontSize: '12px',
               color: 'var(--color-text-muted)',
             }}>

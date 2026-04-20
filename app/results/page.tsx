@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function ResultsPage() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)' }}>
       <style>{`
         .cta-button {
           transition: all 200ms ease;
@@ -36,7 +36,7 @@ export default function ResultsPage() {
           transition: all 200ms ease;
         }
         .secondary-button:hover {
-          background-color: var(--color-surface-1);
+          background-color: var(--surf);
           border-color: var(--bdr);
         }
         .info-card {
@@ -49,14 +49,14 @@ export default function ResultsPage() {
       `}</style>
 
       {/* Breadcrumb */}
-      <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '12px 0' }}>
+      <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '12px 0' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-          <nav style={{ fontSize: '14px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}>
+          <nav style={{ fontSize: '14px', fontFamily: 'var(--font-ui)', color: 'var(--text2)' }}>
             <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
               Home
             </Link>
             <span style={{ margin: '0 8px', color: 'var(--text-placeholder)' }}>&gt;</span>
-            <span style={{ color: 'var(--color-text-primary)', fontWeight: '600' }}>Case Results</span>
+            <span style={{ color: 'var(--text1)', fontWeight: '600' }}>Case Results</span>
           </nav>
         </div>
       </div>
@@ -119,14 +119,14 @@ export default function ResultsPage() {
         <div style={{
           padding: '24px',
           borderRadius: '4px',
-          border: '1px solid var(--border-default)',
-          background: 'var(--color-surface-0)',
+          border: '1px solid var(--bdr)',
+          background: 'var(--card)',
           textAlign: 'center'
         }}>
           <h2 style={{
             fontSize: '20px',
             fontWeight: '600',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 12px 0',
             fontFamily: 'var(--font-ui)'
           }}>
@@ -134,7 +134,7 @@ export default function ResultsPage() {
           </h2>
           <p style={{
             fontSize: '14px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             margin: '0 0 24px 0',
             lineHeight: '1.6',
             fontFamily: 'var(--font-ui)'
@@ -179,11 +179,11 @@ export default function ResultsPage() {
                 borderRadius: '4px',
                 fontSize: '14px',
                 fontWeight: '600',
-                background: 'var(--color-surface-0)',
-                color: 'var(--color-text-primary)',
+                background: 'var(--card)',
+                color: 'var(--text1)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-ui)',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 cursor: 'pointer'
               }}>
               Browse by Type
@@ -197,13 +197,13 @@ export default function ResultsPage() {
           <div className="info-card" style={{
             padding: '12px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
-            background: 'var(--color-surface-0)'
+            border: '1px solid var(--bdr)',
+            background: 'var(--card)'
           }}>
             <h3 style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-ui)',
               letterSpacing: '0.5px',
@@ -213,7 +213,7 @@ export default function ResultsPage() {
             </h3>
             <p style={{
               fontSize: '14px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               margin: '0',
               lineHeight: '1.5',
               fontFamily: 'var(--font-ui)'
@@ -224,13 +224,13 @@ export default function ResultsPage() {
           <div className="info-card" style={{
             padding: '12px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
-            background: 'var(--color-surface-0)'
+            border: '1px solid var(--bdr)',
+            background: 'var(--card)'
           }}>
             <h3 style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-ui)',
               letterSpacing: '0.5px',
@@ -240,7 +240,7 @@ export default function ResultsPage() {
             </h3>
             <p style={{
               fontSize: '14px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               margin: '0',
               lineHeight: '1.5',
               fontFamily: 'var(--font-ui)'
@@ -251,13 +251,13 @@ export default function ResultsPage() {
           <div className="info-card" style={{
             padding: '12px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
-            background: 'var(--color-surface-0)'
+            border: '1px solid var(--bdr)',
+            background: 'var(--card)'
           }}>
             <h3 style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-ui)',
               letterSpacing: '0.5px',
@@ -267,7 +267,7 @@ export default function ResultsPage() {
             </h3>
             <p style={{
               fontSize: '14px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               margin: '0',
               lineHeight: '1.5',
               fontFamily: 'var(--font-ui)'
@@ -278,13 +278,13 @@ export default function ResultsPage() {
           <div className="info-card" style={{
             padding: '12px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
-            background: 'var(--color-surface-0)'
+            border: '1px solid var(--bdr)',
+            background: 'var(--card)'
           }}>
             <h3 style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-ui)',
               letterSpacing: '0.5px',
@@ -294,7 +294,7 @@ export default function ResultsPage() {
             </h3>
             <p style={{
               fontSize: '14px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               margin: '0',
               lineHeight: '1.5',
               fontFamily: 'var(--font-ui)'
@@ -306,10 +306,10 @@ export default function ResultsPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center', marginTop: '24px', background: 'var(--color-surface-0)' }}>
+      <div style={{ borderTop: '1px solid var(--bdr)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center', marginTop: '24px', background: 'var(--card)' }}>
         <p style={{
           fontSize: '12px',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           maxWidth: '600px',
           margin: '0 auto',
           paddingLeft: '24px',

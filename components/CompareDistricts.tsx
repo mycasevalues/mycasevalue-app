@@ -79,7 +79,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
     <div
       style={{
         padding: '24px',
-        backgroundColor: 'var(--color-surface-0)',
+        backgroundColor: 'var(--card)',
         border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '4px',
         fontFamily: 'var(--font-ui)',
@@ -89,7 +89,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
         style={{
           fontSize: '20px',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '16px',
           fontFamily: 'var(--font-heading)',
         }}
@@ -103,7 +103,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             display: 'block',
             fontSize: '14px',
             fontWeight: 500,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '8px',
           }}
         >
@@ -133,8 +133,8 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
               fontSize: '14px',
               minHeight: '100px',
               fontFamily: 'var(--font-ui)',
-              backgroundColor: 'var(--color-surface-0)',
-              color: 'var(--color-text-primary)',
+              backgroundColor: 'var(--card)',
+              color: 'var(--text1)',
             }}
           >
             {availableDistricts.map((district) => (
@@ -161,7 +161,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
           style={{
             padding: '6px 12px',
             backgroundColor: 'rgba(255,255,255,0.05)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             border: '1px solid rgba(255,255,255,0.1)',
             borderRadius: '4px',
             fontSize: '12px',
@@ -171,7 +171,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             transition: 'all 200ms',
           }}
           onMouseEnter={(e) => {
-            (e.target as HTMLButtonElement).style.backgroundColor = 'var(--border-default)';
+            (e.target as HTMLButtonElement).style.backgroundColor = 'var(--bdr)';
           }}
           onMouseLeave={(e) => {
             (e.target as HTMLButtonElement).style.backgroundColor = 'rgba(255,255,255,0.05)';
@@ -197,7 +197,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'left',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -208,7 +208,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'center',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -219,7 +219,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'center',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -230,7 +230,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'center',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -241,7 +241,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'center',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -258,16 +258,16 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     style={{
                       borderBottom:
                         idx < comparisonData.length - 1
-                          ? '1px solid var(--border-default)'
+                          ? '1px solid var(--bdr)'
                           : 'none',
-                      backgroundColor: idx % 2 === 0 ? 'var(--color-surface-0)' : 'var(--surf, #F6F5F2)',
+                      backgroundColor: idx % 2 === 0 ? 'var(--card)' : 'var(--surf, #F6F5F2)',
                     }}
                   >
                     <td
                       style={{
                         padding: '12px 8px',
                         fontWeight: 500,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                       }}
                     >
                       {district.name}
@@ -296,7 +296,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                       style={{
                         padding: '12px 8px',
                         textAlign: 'center',
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                         fontFamily: 'var(--font-mono)',
                       }}
                     >
@@ -306,7 +306,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                       style={{
                         padding: '12px 8px',
                         textAlign: 'center',
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                         fontFamily: 'var(--font-mono)',
                       }}
                     >

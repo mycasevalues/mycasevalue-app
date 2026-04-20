@@ -20,7 +20,7 @@ export default function Error({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'var(--color-surface-1)',
+      background: 'var(--surf)',
       fontFamily: 'var(--font-ui)',
       padding: '24px',
       position: 'relative',
@@ -32,14 +32,14 @@ export default function Error({
         left: 0,
         right: 0,
         height: '8px',
-        background: 'var(--accent-primary)',
+        background: 'var(--link)',
       }} />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
         <div style={{
           maxWidth: 480,
           textAlign: 'center',
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           padding: '48px 32px',
           boxShadow: 'var(--shadow-sm)',
@@ -65,7 +65,7 @@ export default function Error({
           <h1 style={{
             fontSize: '28px',
             fontWeight: 700,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 8px',
             letterSpacing: '-0.01em',
           }}>
@@ -74,7 +74,7 @@ export default function Error({
 
           <p style={{
             fontSize: '14px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             lineHeight: 1.6,
             margin: '0 0 24px',
             maxWidth: 400,
@@ -93,8 +93,8 @@ export default function Error({
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
+                background: 'var(--link)',
+                color: 'var(--card)',
                 border: 'none',
                 borderRadius: '4px',
                 fontSize: '14px',
@@ -118,9 +118,9 @@ export default function Error({
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: 'var(--color-surface-1)',
-                color: 'var(--color-text-primary)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                color: 'var(--text1)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 fontSize: '14px',
                 fontWeight: 700,

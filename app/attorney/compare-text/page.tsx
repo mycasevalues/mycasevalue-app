@@ -624,7 +624,7 @@ ${docB}
               fontSize: '28px',
               fontWeight: 700,
               fontFamily: 'var(--font-legal)',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: '8px',
             }}
           >

@@ -1,6 +1,6 @@
 export default function CategoryLoading() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
       {/* Hero header skeleton */}
       <div style={{ background: 'var(--card)', padding: '48px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -19,16 +19,16 @@ export default function CategoryLoading() {
         }}>
           {[1, 2, 3, 4, 5, 6].map(i => (
             <div key={i} style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               minHeight: '160px',
               boxShadow: 'var(--shadow-xs)'
             }}>
-              <div style={{ height: '24px', width: '80%', background: 'var(--border-default)', borderRadius: '4px', marginBottom: '12px' }} />
-              <div style={{ height: '14px', width: '100%', background: 'var(--color-surface-1)', borderRadius: '4px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '90%', background: 'var(--color-surface-1)', borderRadius: '4px' }} />
+              <div style={{ height: '24px', width: '80%', background: 'var(--bdr)', borderRadius: '4px', marginBottom: '12px' }} />
+              <div style={{ height: '14px', width: '100%', background: 'var(--surf)', borderRadius: '4px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '90%', background: 'var(--surf)', borderRadius: '4px' }} />
             </div>
           ))}
         </div>

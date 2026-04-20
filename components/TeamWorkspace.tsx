@@ -234,7 +234,7 @@ const roleColors: Record<string, string> = {
 };
 
 const statusColors: Record<string, string> = {
-  Researching: 'var(--accent-primary)',
+  Researching: 'var(--link)',
   Active: 'var(--data-positive, #176438)',
   Settled: '#B86E00',
   Closed: 'var(--color-text-muted)',
@@ -337,23 +337,23 @@ export default function TeamWorkspace() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, textarea:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
-        select:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, textarea:focus { border-color: var(--link) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        select:focus { border-color: var(--link) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: 20px; } }
       `}</style>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '32px 20px' }}>
+      <div style={{ background: 'var(--link)', borderBottom: '1px solid var(--bdr)', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link
             href="/attorney"
             style={{
               fontSize: '14px',
-              color: 'var(--accent-primary)',
+              color: 'var(--link)',
               textDecoration: 'none',
               fontWeight: 500,
               display: 'inline-flex',
@@ -387,7 +387,7 @@ export default function TeamWorkspace() {
                   justifyContent: 'center',
                 }}
               >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                   <circle cx="9" cy="7" r="4" />
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -397,7 +397,7 @@ export default function TeamWorkspace() {
               <div>
                 <h1
                   className="font-legal"
-                  style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-inverse)', margin: 0 }}
+                  style={{ fontSize: '28px', fontWeight: 700, color: 'var(--chrome-text)', margin: 0 }}
                 >
                   Team Workspace
                 </h1>
@@ -408,7 +408,7 @@ export default function TeamWorkspace() {
                 background: 'rgba(10, 102, 194, 0.15)',
                 padding: '6px 14px',
                 borderRadius: '4px',
-                border: '1px solid var(--accent-primary)',
+                border: '1px solid var(--link)',
               }}
             >
               <span
@@ -416,7 +416,7 @@ export default function TeamWorkspace() {
                 style={{
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                 }}
@@ -445,9 +445,9 @@ export default function TeamWorkspace() {
             display: 'flex',
             gap: '4px',
             marginBottom: '24px',
-            background: 'var(--color-surface-1)',
+            background: 'var(--surf)',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             padding: '3px',
             width: 'fit-content',
             flexWrap: 'wrap',
@@ -464,8 +464,8 @@ export default function TeamWorkspace() {
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',
-                backgroundColor: activeTab === tab ? 'var(--accent-primary)' : 'transparent',
-                color: activeTab === tab ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
+                backgroundColor: activeTab === tab ? 'var(--link)' : 'transparent',
+                color: activeTab === tab ? 'var(--card)' : 'var(--text2)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 transition: 'all 200ms ease',
@@ -488,14 +488,14 @@ export default function TeamWorkspace() {
             {DEMO_REPORTS.length === 0 ? (
               <div
                 style={{
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   borderRadius: '4px',
                   padding: '40px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   textAlign: 'center',
                 }}
               >
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>No shared reports yet</p>
+                <p style={{ fontSize: '14px', color: 'var(--text2)' }}>No shared reports yet</p>
               </div>
             ) : (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
@@ -503,17 +503,17 @@ export default function TeamWorkspace() {
                   <div
                     key={report.id}
                     style={{
-                      background: 'var(--color-surface-0)',
+                      background: 'var(--card)',
                       borderRadius: '4px',
                       padding: '16px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                       display: 'flex',
                       flexDirection: 'column',
                       gap: '8px',
                     }}
                   >
-                    <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                    <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: 0 }}>
                       {report.title}
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -522,7 +522,7 @@ export default function TeamWorkspace() {
                           padding: '2px 8px',
                           borderRadius: '4px',
                           backgroundColor: 'rgba(10, 102, 194, 0.12)',
-                          color: 'var(--accent-primary)',
+                          color: 'var(--link)',
                           fontSize: '12px',
                           fontWeight: 600,
                         }}
@@ -530,11 +530,11 @@ export default function TeamWorkspace() {
                         {report.type}
                       </span>
                     </div>
-                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                    <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>
                       Shared by {report.sharedBy} · {new Date(report.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                     </p>
                     {report.note && (
-                      <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: '8px 0 0', fontStyle: 'italic' }}>
+                      <p style={{ fontSize: '12px', color: 'var(--text1)', margin: '8px 0 0', fontStyle: 'italic' }}>
                         {report.note}
                       </p>
                     )}
@@ -551,16 +551,16 @@ export default function TeamWorkspace() {
             {/* Add Note Form */}
             <div
               style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 borderRadius: '4px',
                 padding: '24px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
               <h3
                 className="font-legal"
-                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 14px' }}
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 14px' }}
               >
                 Add Note
               </h3>
@@ -570,7 +570,7 @@ export default function TeamWorkspace() {
                     style={{
                       fontSize: '12px',
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       display: 'block',
                       marginBottom: '6px',
                     }}
@@ -585,12 +585,12 @@ export default function TeamWorkspace() {
                     style={{
                       width: '100%',
                       padding: '8px 12px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
-                      backgroundColor: 'var(--color-surface-0)',
-                      color: 'var(--color-text-primary)',
+                      backgroundColor: 'var(--card)',
+                      color: 'var(--text1)',
                       boxSizing: 'border-box',
                     }}
                   />
@@ -600,7 +600,7 @@ export default function TeamWorkspace() {
                     style={{
                       fontSize: '12px',
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       display: 'block',
                       marginBottom: '6px',
                     }}
@@ -614,12 +614,12 @@ export default function TeamWorkspace() {
                     style={{
                       width: '100%',
                       padding: '8px 12px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
-                      backgroundColor: 'var(--color-surface-0)',
-                      color: 'var(--color-text-primary)',
+                      backgroundColor: 'var(--card)',
+                      color: 'var(--text1)',
                       minHeight: '100px',
                       resize: 'vertical',
                       boxSizing: 'border-box',
@@ -631,8 +631,8 @@ export default function TeamWorkspace() {
                   disabled={!newNoteText.trim() || !newNoteNOS.trim()}
                   style={{
                     padding: '8px 16px',
-                    backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
-                    color: 'var(--color-text-inverse)',
+                    backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+                    color: 'var(--chrome-text)',
                     border: 'none',
                     borderRadius: '4px',
                     fontSize: '14px',
@@ -652,14 +652,14 @@ export default function TeamWorkspace() {
             {localNotes.length === 0 ? (
               <div
                 style={{
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   borderRadius: '4px',
                   padding: '40px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   textAlign: 'center',
                 }}
               >
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>No shared notes yet</p>
+                <p style={{ fontSize: '14px', color: 'var(--text2)' }}>No shared notes yet</p>
               </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -667,10 +667,10 @@ export default function TeamWorkspace() {
                   <div
                     key={note.id}
                     style={{
-                      background: 'var(--color-surface-0)',
+                      background: 'var(--card)',
                       borderRadius: '4px',
                       padding: '16px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                     }}
                   >
@@ -681,7 +681,7 @@ export default function TeamWorkspace() {
                           padding: '2px 8px',
                           borderRadius: '4px',
                           backgroundColor: 'rgba(10, 102, 194, 0.12)',
-                          color: 'var(--accent-primary)',
+                          color: 'var(--link)',
                           fontSize: '12px',
                           fontWeight: 600,
                         }}
@@ -689,10 +689,10 @@ export default function TeamWorkspace() {
                         {note.attachedTo}
                       </span>
                     </div>
-                    <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: '1.5' }}>
+                    <p style={{ fontSize: '14px', color: 'var(--text1)', margin: '0 0 8px', lineHeight: '1.5' }}>
                       {note.text}
                     </p>
-                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                    <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>
                       By {note.author} • {new Date(note.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
                     </p>
                   </div>
@@ -708,16 +708,16 @@ export default function TeamWorkspace() {
             {/* Add Case Form */}
             <div
               style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 borderRadius: '4px',
                 padding: '24px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
               <h3
                 className="font-legal"
-                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 14px' }}
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 14px' }}
               >
                 Add Case
               </h3>
@@ -727,7 +727,7 @@ export default function TeamWorkspace() {
                     style={{
                       fontSize: '12px',
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       display: 'block',
                       marginBottom: '6px',
                     }}
@@ -742,12 +742,12 @@ export default function TeamWorkspace() {
                     style={{
                       width: '100%',
                       padding: '8px 12px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
-                      backgroundColor: 'var(--color-surface-0)',
-                      color: 'var(--color-text-primary)',
+                      backgroundColor: 'var(--card)',
+                      color: 'var(--text1)',
                       boxSizing: 'border-box',
                     }}
                   />
@@ -757,7 +757,7 @@ export default function TeamWorkspace() {
                     style={{
                       fontSize: '12px',
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       display: 'block',
                       marginBottom: '6px',
                     }}
@@ -770,12 +770,12 @@ export default function TeamWorkspace() {
                     style={{
                       width: '100%',
                       padding: '8px 12px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
-                      backgroundColor: 'var(--color-surface-0)',
-                      color: 'var(--color-text-primary)',
+                      backgroundColor: 'var(--card)',
+                      color: 'var(--text1)',
                       boxSizing: 'border-box',
                     }}
                   >
@@ -792,7 +792,7 @@ export default function TeamWorkspace() {
                     style={{
                       fontSize: '12px',
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       display: 'block',
                       marginBottom: '6px',
                     }}
@@ -805,12 +805,12 @@ export default function TeamWorkspace() {
                     style={{
                       width: '100%',
                       padding: '8px 12px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
-                      backgroundColor: 'var(--color-surface-0)',
-                      color: 'var(--color-text-primary)',
+                      backgroundColor: 'var(--card)',
+                      color: 'var(--text1)',
                       boxSizing: 'border-box',
                     }}
                   >
@@ -827,7 +827,7 @@ export default function TeamWorkspace() {
                     style={{
                       fontSize: '12px',
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       display: 'block',
                       marginBottom: '6px',
                     }}
@@ -840,12 +840,12 @@ export default function TeamWorkspace() {
                     style={{
                       width: '100%',
                       padding: '8px 12px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid var(--bdr)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
-                      backgroundColor: 'var(--color-surface-0)',
-                      color: 'var(--color-text-primary)',
+                      backgroundColor: 'var(--card)',
+                      color: 'var(--text1)',
                       boxSizing: 'border-box',
                     }}
                   >
@@ -863,8 +863,8 @@ export default function TeamWorkspace() {
                   marginTop: '12px',
                   padding: '8px 16px',
                   backgroundColor:
-                    newCaseName.trim() && newCaseType && newCaseDistrict ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
-                  color: 'var(--color-surface-0)',
+                    newCaseName.trim() && newCaseType && newCaseDistrict ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+                  color: 'var(--card)',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '14px',
@@ -882,21 +882,21 @@ export default function TeamWorkspace() {
             {localCases.length === 0 ? (
               <div
                 style={{
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   borderRadius: '4px',
                   padding: '40px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   textAlign: 'center',
                 }}
               >
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>No cases yet</p>
+                <p style={{ fontSize: '14px', color: 'var(--text2)' }}>No cases yet</p>
               </div>
             ) : (
               <div
                 style={{
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   borderRadius: '4px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   overflow: 'hidden',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                 }}
@@ -910,20 +910,20 @@ export default function TeamWorkspace() {
                     }}
                   >
                     <thead>
-                      <tr style={{ backgroundColor: 'var(--color-surface-1)', borderBottom: '1px solid var(--border-default)' }}>
-                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
+                      <tr style={{ backgroundColor: 'var(--surf)', borderBottom: '1px solid var(--bdr)' }}>
+                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text2)' }}>
                           Case Name
                         </th>
-                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
+                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text2)' }}>
                           Type
                         </th>
-                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
+                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text2)' }}>
                           District
                         </th>
-                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
+                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text2)' }}>
                           Status
                         </th>
-                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
+                        <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text2)' }}>
                           Notes
                         </th>
                       </tr>
@@ -933,15 +933,15 @@ export default function TeamWorkspace() {
                         <tr
                           key={caseItem.id}
                           style={{
-                            backgroundColor: idx % 2 === 0 ? 'var(--color-surface-0)' : 'var(--color-surface-1)',
-                            borderBottom: '1px solid var(--border-default)',
+                            backgroundColor: idx % 2 === 0 ? 'var(--card)' : 'var(--surf)',
+                            borderBottom: '1px solid var(--bdr)',
                           }}
                         >
-                          <td style={{ padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>
+                          <td style={{ padding: '12px 16px', color: 'var(--text1)', fontWeight: 500 }}>
                             {caseItem.relatedNOS ? (
                               <Link
                                 href={`/nos/${caseItem.relatedNOS}`}
-                                style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}
+                                style={{ color: 'var(--link)', textDecoration: 'none' }}
                               >
                                 {caseItem.name}
                               </Link>
@@ -949,8 +949,8 @@ export default function TeamWorkspace() {
                               caseItem.name
                             )}
                           </td>
-                          <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{caseItem.type}</td>
-                          <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{caseItem.district}</td>
+                          <td style={{ padding: '12px 16px', color: 'var(--text2)' }}>{caseItem.type}</td>
+                          <td style={{ padding: '12px 16px', color: 'var(--text2)' }}>{caseItem.district}</td>
                           <td style={{ padding: '12px 16px' }}>
                             <span
                               style={{
@@ -966,7 +966,7 @@ export default function TeamWorkspace() {
                               {caseItem.status}
                             </span>
                           </td>
-                          <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{caseItem.notes || '—'}</td>
+                          <td style={{ padding: '12px 16px', color: 'var(--text2)' }}>{caseItem.notes || '—'}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -984,10 +984,10 @@ export default function TeamWorkspace() {
               <div
                 key={activity.id}
                 style={{
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   borderRadius: '4px',
                   padding: '16px 24px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '12px',
@@ -1023,7 +1023,7 @@ export default function TeamWorkspace() {
                       activity.icon === 'share'
                         ? 'var(--accent-primary-hover)'
                         : activity.icon === 'comment'
-                        ? 'var(--accent-primary)'
+                        ? 'var(--link)'
                         : activity.icon === 'predict'
                         ? 'var(--data-positive, #176438)'
                         : activity.icon === 'note'
@@ -1078,7 +1078,7 @@ export default function TeamWorkspace() {
                   </svg>
                 </div>
                 <div style={{ flex: 1 }}>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text1)', margin: 0 }}>
                     <strong>{activity.who}</strong> {activity.action}{' '}
                     <span style={{ color: 'var(--accent-primary-hover)' }}>{activity.target}</span>
                   </p>
@@ -1093,8 +1093,8 @@ export default function TeamWorkspace() {
       {/* Team Members Sidebar */}
       <div
         style={{
-          borderTop: '1px solid var(--border-default)',
-          background: 'var(--color-surface-0)',
+          borderTop: '1px solid var(--bdr)',
+          background: 'var(--card)',
           padding: '24px 20px',
           marginTop: '40px',
         }}
@@ -1104,14 +1104,14 @@ export default function TeamWorkspace() {
             <div>
               <h3
                 className="font-legal"
-                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: 0 }}
               >
                 Team Members
               </h3>
               <p
                 style={{
                   fontSize: '12px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   margin: '4px 0 0',
                 }}
               >
@@ -1121,7 +1121,7 @@ export default function TeamWorkspace() {
                     padding: '2px 8px',
                     borderRadius: '4px',
                     backgroundColor: 'rgba(10, 102, 194, 0.12)',
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     fontSize: '12px',
                     fontWeight: 600,
                     marginTop: '4px',
@@ -1136,7 +1136,7 @@ export default function TeamWorkspace() {
           {/* Invite Section */}
           <div
             style={{
-              background: 'var(--color-surface-1)',
+              background: 'var(--surf)',
               borderRadius: '4px',
               padding: '16px',
               marginBottom: '24px',
@@ -1152,12 +1152,12 @@ export default function TeamWorkspace() {
               style={{
                 flex: 1,
                 padding: '8px 12px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
-                backgroundColor: 'var(--color-surface-0)',
-                color: 'var(--color-text-primary)',
+                backgroundColor: 'var(--card)',
+                color: 'var(--text1)',
                 boxSizing: 'border-box',
               }}
             />
@@ -1166,8 +1166,8 @@ export default function TeamWorkspace() {
               disabled={!inviteEmail.trim()}
               style={{
                 padding: '8px 16px',
-                backgroundColor: inviteEmail.trim() ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
-                color: 'var(--color-text-inverse)',
+                backgroundColor: inviteEmail.trim() ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+                color: 'var(--chrome-text)',
                 border: 'none',
                 borderRadius: '4px',
                 fontSize: '12px',
@@ -1209,10 +1209,10 @@ export default function TeamWorkspace() {
               <div
                 key={member.id}
                 style={{
-                  background: 'var(--color-surface-1)',
+                  background: 'var(--surf)',
                   borderRadius: '4px',
                   padding: '12px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -1230,13 +1230,13 @@ export default function TeamWorkspace() {
                     justifyContent: 'center',
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     marginBottom: '8px',
                   }}
                 >
                   {member.avatar}
                 </div>
-                <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 2px' }}>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 2px' }}>
                   {member.name}
                 </p>
                 <span

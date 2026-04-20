@@ -82,13 +82,13 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
         .attr('fill', (d: any) => {
           const fips = String(d.id).padStart(2, '0');
           const sd = stateMap.get(fips);
-          return sd ? colorScale(sd.winRate) : 'var(--border-default)';
+          return sd ? colorScale(sd.winRate) : 'var(--bdr)';
         })
-        .attr('stroke', 'var(--color-surface-0)')
+        .attr('stroke', 'var(--card)')
         .attr('stroke-width', 1)
         .attr('cursor', 'pointer')
         .on('mouseenter', function (event: MouseEvent, d: any) {
-          d3.select(this).attr('stroke', 'var(--accent-primary)').attr('stroke-width', 2);
+          d3.select(this).attr('stroke', 'var(--link)').attr('stroke-width', 2);
           const fips = String(d.id).padStart(2, '0');
           const sd = stateMap.get(fips);
           if (sd) {
@@ -113,7 +113,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
           }
         })
         .on('mouseleave', function () {
-          d3.select(this).attr('stroke', 'var(--color-surface-0)').attr('stroke-width', 1);
+          d3.select(this).attr('stroke', 'var(--card)').attr('stroke-width', 1);
           setTooltip({ x: 0, y: 0, data: null });
         })
         .on('click', function (_event: MouseEvent, d: any) {
@@ -126,7 +126,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
       g.append('path')
         .datum(topojson.mesh(us, us.objects.states, (a: any, b: any) => a !== b))
         .attr('fill', 'none')
-        .attr('stroke', 'var(--color-surface-0)')
+        .attr('stroke', 'var(--card)')
         .attr('stroke-width', 0.5)
         .attr('d', path as any);
     });
@@ -151,8 +151,8 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
             left: tooltip.x,
             top: tooltip.y,
             transform: 'translate(-50%, -100%)',
-            background: 'var(--accent-primary)',
-            color: 'var(--color-surface-0)',
+            background: 'var(--link)',
+            color: 'var(--card)',
             padding: '12px 16px',
             borderRadius: '4px',
             fontSize: '14px',
@@ -187,7 +187,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
         marginTop: '16px',
         fontSize: '12px',
         fontFamily: 'var(--font-ui)',
-        color: 'var(--color-text-secondary)',
+        color: 'var(--text2)',
       }}>
         <span>Lower win rate</span>
         {COLOR_RANGE.map((c, i) => (

@@ -106,25 +106,25 @@ export default function TranslatePage() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--link)' }}>
         <div className="max-w-4xl mx-auto px-6 py-4">
           {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-2 mb-12 text-sm" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)' }}>
             <Link href="/" className="hover:opacity-100 opacity-80 transition-opacity">Home</Link>
             <span>/</span>
-            <span style={{ color: 'var(--color-surface-0)' }}>Translate</span>
+            <span style={{ color: 'var(--card)' }}>Translate</span>
           </div>
 
           {/* Header Content */}
           <div className="pb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '4px' }}>
+              style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               TRANSLATE
             </div>
-            <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--color-surface-0)', letterSpacing: '-2px', marginBottom: '1rem' }}>
+            <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--card)', letterSpacing: '-2px', marginBottom: '1rem' }}>
               Legal Jargon Translator
             </h1>
             <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)' }}>
@@ -137,7 +137,7 @@ export default function TranslatePage() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Translator Form */}
-        <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
+        <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
           {/* Free Access Banner */}
           <div className="mb-8 p-4 flex items-center gap-3" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)', borderRadius: '4px' }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--data-positive)', flexShrink: 0 }} />
@@ -148,7 +148,7 @@ export default function TranslatePage() {
 
           {/* Text Area */}
           <div className="mb-6">
-            <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+            <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
               Legal Text to Translate (English or Spanish)
             </label>
             <textarea
@@ -162,22 +162,22 @@ export default function TranslatePage() {
               className="w-full px-4 py-4 border text-sm transition-all focus:outline-none focus:ring-2 resize-none"
               style={{
                 borderRadius: '4px',
-                borderColor: 'var(--border-default)',
-                background: 'var(--color-surface-1)',
-                color: 'var(--color-text-primary)',
+                borderColor: 'var(--bdr)',
+                background: 'var(--surf)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-ui)',
                 minHeight: '140px',
               }}
             />
-            <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-[11px] mt-2" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
               Minimum 10 characters, maximum 3,000 characters. Supports English and Spanish input.
             </p>
           </div>
 
           {/* Error Display */}
           {error && (
-            <div className="mb-6 p-4" style={{ background: 'rgba(10, 102, 194, 0.06)', border: '1px solid var(--accent-primary)', borderRadius: '4px' }}>
-              <p className="text-sm" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-ui)' }}>
+            <div className="mb-6 p-4" style={{ background: 'rgba(10, 102, 194, 0.06)', border: '1px solid var(--link)', borderRadius: '4px' }}>
+              <p className="text-sm" style={{ color: 'var(--link)', fontFamily: 'var(--font-ui)' }}>
                 {error}
               </p>
             </div>
@@ -192,12 +192,12 @@ export default function TranslatePage() {
               borderRadius: '4px',
               background:
                 !input.trim() || loading
-                  ? 'var(--border-default)'
-                  : 'var(--accent-primary)',
+                  ? 'var(--bdr)'
+                  : 'var(--link)',
               color:
                 !input.trim() || loading
-                  ? 'var(--color-text-secondary)'
-                  : 'var(--color-surface-0)',
+                  ? 'var(--text2)'
+                  : 'var(--card)',
               fontFamily: 'var(--font-ui)',
               cursor:
                 !input.trim() || loading
@@ -226,19 +226,19 @@ export default function TranslatePage() {
         {/* Translation Result */}
         {translation && (
           <>
-            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: 'var(--accent-primary)', background: 'var(--color-surface-0)', boxShadow: 'var(--shadow-xs)', borderLeft: '4px solid var(--accent-primary)', borderRadius: '4px' }}>
-              <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: 'var(--link)', background: 'var(--card)', boxShadow: 'var(--shadow-xs)', borderLeft: '4px solid var(--link)', borderRadius: '4px' }}>
+              <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
                 Plain English Translation
               </h2>
               <div className="prose prose-sm max-w-none"
                 style={{
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   lineHeight: '1.6',
                 }}>
                 <p className="whitespace-pre-wrap">{translation}</p>
               </div>
-              <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', borderColor: 'var(--border-default)' }}>
+              <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', borderColor: 'var(--bdr)' }}>
                 Unlimited translations available. Paste more legal text above to translate.
               </p>
             </div>
@@ -266,7 +266,7 @@ export default function TranslatePage() {
                         onClick={() => setInput(term)}
                         style={{
                           padding: '8px 12px',
-                          background: 'var(--color-surface-0)',
+                          background: 'var(--card)',
                           border: '1px solid var(--link-light, #BAE6FD)',
                           borderRadius: '4px',
                           fontSize: '12px',
@@ -281,7 +281,7 @@ export default function TranslatePage() {
                           e.currentTarget.style.borderColor = 'var(--link-hover)';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.background = 'var(--color-surface-0)';
+                          e.currentTarget.style.background = 'var(--card)';
                           e.currentTarget.style.borderColor = 'var(--bdr)';
                         }}
                       >
@@ -297,7 +297,7 @@ export default function TranslatePage() {
 
         {/* Example Phrases Section */}
         <div className="mt-12">
-          <h2 className="text-sm font-semibold mb-4" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 className="text-sm font-semibold mb-4" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
             Try These Examples
           </h2>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -308,9 +308,9 @@ export default function TranslatePage() {
                 className="p-4 border text-left transition-all hover:border-2 hover:shadow-sm active:scale-[0.98]"
                 style={{
                   borderRadius: '4px',
-                  borderColor: 'var(--border-default)',
-                  background: 'var(--color-surface-0)',
-                  color: 'var(--color-text-primary)',
+                  borderColor: 'var(--bdr)',
+                  background: 'var(--card)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   fontSize: '14px',
                   lineHeight: '1.5',
@@ -324,7 +324,7 @@ export default function TranslatePage() {
 
         {/* Common Legal Terms Quick Reference */}
         <div className="mt-12">
-          <h2 className="text-sm font-semibold mb-4" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 className="text-sm font-semibold mb-4" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
             Common Legal Terms Quick Reference
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -332,35 +332,35 @@ export default function TranslatePage() {
               <div
                 key={i}
                 style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   padding: '16px',
                   cursor: 'pointer',
                   transition: 'all 150ms',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--accent-primary)';
+                  e.currentTarget.style.borderColor = 'var(--link)';
                   e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--border-default)';
+                  e.currentTarget.style.borderColor = 'var(--bdr)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
-                <p className="font-bold text-[13px] mb-1" style={{ color: 'var(--color-text-primary)' }}>
+                <p className="font-bold text-[13px] mb-1" style={{ color: 'var(--text1)' }}>
                   {item.term}
                 </p>
                 {item.pronunciation && (
-                  <p className="text-[11px] mb-2" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', fontStyle: 'italic' }}>
+                  <p className="text-[11px] mb-2" style={{ color: 'var(--link)', fontFamily: 'var(--font-mono)', fontStyle: 'italic' }}>
                     {item.pronunciation}
                   </p>
                 )}
-                <p className="text-[11px] mb-3" style={{ color: 'var(--color-text-secondary)', lineHeight: '1.4' }}>
+                <p className="text-[11px] mb-3" style={{ color: 'var(--text2)', lineHeight: '1.4' }}>
                   {item.definition}
                 </p>
                 {item.related && (
-                  <div style={{ paddingTop: '8px', borderTop: '1px solid var(--border-default)' }}>
+                  <div style={{ paddingTop: '8px', borderTop: '1px solid var(--bdr)' }}>
                     <p className="text-[10px] font-semibold mb-2" style={{ color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '8px 0 4px' }}>
                       Related Terms:
                     </p>
@@ -394,7 +394,7 @@ export default function TranslatePage() {
             <button
               onClick={() => setHistoryExpanded(!historyExpanded)}
               className="flex items-center gap-2 text-sm font-semibold mb-4 transition-opacity hover:opacity-70"
-              style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}
+              style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}
             >
               <span>Recent Translations</span>
               <svg
@@ -416,17 +416,17 @@ export default function TranslatePage() {
                     key={i}
                     className="p-4 border"
                     style={{
-                      borderColor: 'var(--border-default)',
-                      background: 'var(--color-surface-0)',
+                      borderColor: 'var(--bdr)',
+                      background: 'var(--card)',
                       borderRadius: '4px',
                     }}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <p className="text-[13px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+                        <p className="text-[13px] mb-2" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
                           {item.input.substring(0, 80)}{item.input.length > 80 ? '...' : ''}
                         </p>
-                        <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                        <p className="text-[11px]" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
                           {item.timestamp.toLocaleTimeString()}
                         </p>
                       </div>
@@ -435,7 +435,7 @@ export default function TranslatePage() {
                         className="px-3 py-2 text-[11px] font-semibold whitespace-nowrap transition-all hover:shadow-sm active:scale-[0.98]"
                         style={{
                           background: 'var(--gold)',
-                          color: 'var(--color-surface-0)',
+                          color: 'var(--card)',
                           borderRadius: '4px',
                           border: 'none',
                           cursor: 'pointer',
@@ -458,15 +458,15 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '4px',
-              borderColor: 'var(--border-default)',
-              background: 'var(--color-surface-0)',
+              borderColor: 'var(--bdr)',
+              background: 'var(--card)',
               boxShadow: 'var(--shadow-xs)',
             }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
               Case Search
             </p>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-sm" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
               Search federal court cases by nature of suit or keyword.
             </p>
           </Link>
@@ -475,15 +475,15 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '4px',
-              borderColor: 'var(--border-default)',
-              background: 'var(--color-surface-0)',
+              borderColor: 'var(--bdr)',
+              background: 'var(--card)',
               boxShadow: 'var(--shadow-xs)',
             }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
               Settlement Calculator
             </p>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-sm" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
               Estimate settlement ranges based on case data.
             </p>
           </Link>
@@ -492,15 +492,15 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '4px',
-              borderColor: 'var(--border-default)',
-              background: 'var(--color-surface-0)',
+              borderColor: 'var(--bdr)',
+              background: 'var(--card)',
               boxShadow: 'var(--shadow-xs)',
             }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
               Legal Glossary
             </p>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-sm" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
               Browse all federal court term definitions.
             </p>
           </Link>
@@ -509,26 +509,26 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '4px',
-              borderColor: 'var(--border-default)',
-              background: 'var(--color-surface-0)',
+              borderColor: 'var(--bdr)',
+              background: 'var(--card)',
               boxShadow: 'var(--shadow-xs)',
             }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
               Odds Checker
             </p>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+            <p className="text-sm" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
               Check your case type win probability.
             </p>
           </Link>
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
-          <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+        <div className="mt-8 p-6 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
+          <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
             Important Disclaimer
           </h2>
-          <p className="text-[11px] leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+          <p className="text-[11px] leading-relaxed" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
             This translator provides informal explanations of legal terminology and should not be considered legal advice. Legal language can have nuanced meanings depending on context, jurisdiction, and specific case facts. Always consult with a qualified attorney for authoritative interpretations of legal documents. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>

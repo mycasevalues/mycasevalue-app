@@ -50,8 +50,8 @@ export function ToolPageLayout({
                 </h1>
                 {requiresPro && (
                   <span
-                    className="inline-flex items-center px-3 py-1 rounded text-sm font-medium bg-[var(--color-surface-1)]"
-                    style={{ color: 'var(--accent-primary)' }}
+                    className="inline-flex items-center px-3 py-1 rounded text-sm font-medium bg-[var(--surf)]"
+                    style={{ color: 'var(--link)' }}
                   >
                     Pro
                   </span>

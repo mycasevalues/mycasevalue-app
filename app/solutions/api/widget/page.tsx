@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function WidgetGeneratorPage() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-0)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--card)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 24px' }}>
         <div style={{ marginBottom: '48px' }}>
           <h1 style={{

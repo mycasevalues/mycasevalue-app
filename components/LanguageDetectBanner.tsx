@@ -87,7 +87,7 @@ export default function LanguageDetectBanner() {
         style={{
           fontSize: '14px',
           fontFamily: 'var(--font-ui)',
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           flex: 1,
         }}
       >
@@ -100,7 +100,7 @@ export default function LanguageDetectBanner() {
           style={{
             background: 'none',
             border: 'none',
-            color: 'var(--accent-primary)',
+            color: 'var(--link)',
             fontWeight: 600,
             fontSize: '14px',
             fontFamily: 'var(--font-ui)',
@@ -113,7 +113,7 @@ export default function LanguageDetectBanner() {
             (e.currentTarget as HTMLButtonElement).style.color = 'var(--accent-primary-hover)';
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color = 'var(--accent-primary)';
+            (e.currentTarget as HTMLButtonElement).style.color = 'var(--link)';
           }}
           aria-label="Cambiar a español"
         >
@@ -134,7 +134,7 @@ export default function LanguageDetectBanner() {
             transition: 'color 150ms',
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color = 'var(--color-text-secondary)';
+            (e.currentTarget as HTMLButtonElement).style.color = 'var(--text2)';
           }}
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLButtonElement).style.color = 'var(--text3, #4A4940)';

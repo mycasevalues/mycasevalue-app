@@ -18,13 +18,13 @@ export const metadata: Metadata = {
 
 export default function AnnualReportPage() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)' }}>
       {/* Dark Navy Hero Header */}
       <div style={{
-        backgroundColor: 'var(--accent-primary)',
+        backgroundColor: 'var(--link)',
         padding: '40px 24px',
-        color: 'var(--color-surface-0)',
-        borderBottom: '4px solid var(--accent-primary)',
+        color: 'var(--card)',
+        borderBottom: '4px solid var(--link)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ marginBottom: '8px', fontSize: '14px', fontWeight: 600, color: 'var(--chrome-text-muted)', letterSpacing: '0.5px' }}>

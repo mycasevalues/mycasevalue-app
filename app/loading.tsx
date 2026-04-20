@@ -7,7 +7,7 @@ export default function Loading() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--color-surface-1)',
+        background: 'var(--surf)',
         gap: '24px',
         position: 'relative',
       }}
@@ -39,7 +39,7 @@ export default function Loading() {
         style={{
           width: '48px',
           height: '48px',
-          border: '3px solid var(--border-default)',
+          border: '3px solid var(--bdr)',
           borderTop: '3px solid var(--link)',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite',
@@ -50,7 +50,7 @@ export default function Loading() {
       <p
         style={{
           fontSize: '14px',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           margin: 0,
           fontFamily: 'var(--font-ui)',
         }}

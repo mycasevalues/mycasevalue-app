@@ -200,13 +200,13 @@ export default function PlatformPage() {
         }
 
         .tech-box {
-          background: var(--color-surface-1);
-          border: 1px solid var(--border-default);
+          background: var(--surf);
+          border: 1px solid var(--bdr);
           padding: 16px 24px;
           border-radius: 4px;
           font-size: 14px;
           font-weight: 500;
-          color: var(--color-text-primary);
+          color: var(--text1);
           min-width: 120px;
           text-align: center;
         }
@@ -225,8 +225,8 @@ export default function PlatformPage() {
         }
 
         .flow-item {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           padding: 24px;
           border-radius: 4px;
           text-align: center;
@@ -234,7 +234,7 @@ export default function PlatformPage() {
 
         .flow-title {
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           font-size: 14px;
           margin-bottom: 8px;
         }
@@ -250,7 +250,7 @@ export default function PlatformPage() {
           border-collapse: collapse;
           margin: 40px 0;
           background: white;
-          border: 1px solid var(--border-default);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           overflow: hidden;
         }
@@ -262,7 +262,7 @@ export default function PlatformPage() {
           text-align: left;
           font-weight: 600;
           font-size: 14px;
-          border-bottom: 2px solid var(--accent-primary);
+          border-bottom: 2px solid var(--link);
         }
 
         .comparison-table td {
@@ -277,7 +277,7 @@ export default function PlatformPage() {
 
         .comparison-table .feature-name {
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           min-width: 180px;
         }
 
@@ -293,7 +293,7 @@ export default function PlatformPage() {
 
         .comparison-table .price {
           font-weight: 600;
-          color: var(--accent-primary);
+          color: var(--link);
         }
 
         .features-grid {
@@ -305,14 +305,14 @@ export default function PlatformPage() {
 
         .feature-card {
           background: white;
-          border: 1px solid var(--border-default);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 24px;
           transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-          border-color: var(--accent-primary);
+          border-color: var(--link);
           box-shadow: 0 10px 25px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
@@ -320,7 +320,7 @@ export default function PlatformPage() {
         .feature-icon {
           width: 48px;
           height: 48px;
-          background: var(--accent-primary);
+          background: var(--link);
           border-radius: 4px;
           display: flex;
           align-items: center;
@@ -332,14 +332,14 @@ export default function PlatformPage() {
 
         .feature-title {
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 8px;
           font-size: 16px;
         }
 
         .feature-desc {
           font-size: 14px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           line-height: 1.6;
         }
 
@@ -349,7 +349,7 @@ export default function PlatformPage() {
           gap: 24px;
           margin: 40px 0;
           padding: 32px;
-          background: var(--chrome-bg, var(--accent-primary));
+          background: var(--chrome-bg, var(--link));
           border-radius: 4px;
         }
 
@@ -361,14 +361,14 @@ export default function PlatformPage() {
         .stat-number {
           font-size: 20px;
           font-weight: 700;
-          color: var(--accent-primary);
+          color: var(--link);
           margin-bottom: 8px;
           font-family: var(--font-mono);
         }
 
         .stat-label {
           font-size: 14px;
-          color: var(--border-default);
+          color: var(--bdr);
           font-weight: 500;
         }
 
@@ -381,14 +381,14 @@ export default function PlatformPage() {
 
         .roadmap-phase {
           background: white;
-          border: 2px solid var(--accent-primary);
+          border: 2px solid var(--link);
           border-radius: 4px;
           padding: 32px;
           position: relative;
         }
 
         .roadmap-phase.current {
-          background: var(--color-surface-1);
+          background: var(--surf);
         }
 
         .phase-badge {
@@ -407,7 +407,7 @@ export default function PlatformPage() {
         .phase-title {
           font-size: 18px;
           font-weight: 700;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-top: 8px;
           margin-bottom: 12px;
         }
@@ -421,7 +421,7 @@ export default function PlatformPage() {
         .phase-list li {
           padding: 8px 0;
           font-size: 14px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           display: flex;
           align-items: baseline;
           gap: 8px;
@@ -445,7 +445,7 @@ export default function PlatformPage() {
         }
 
         .market-card {
-          background: var(--accent-primary);
+          background: var(--link);
           padding: 32px;
           border-radius: 4px;
           color: white;
@@ -535,7 +535,7 @@ export default function PlatformPage() {
         }
       `}</style>
 
-      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
           background: 'var(--card)',
@@ -589,7 +589,7 @@ export default function PlatformPage() {
         </div>
 
         {/* Stats Bar */}
-        <div style={{ padding: '60px 24px', background: 'var(--color-surface-1)' }}>
+        <div style={{ padding: '60px 24px', background: 'var(--surf)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="stats-bar">
               <div className="stat-item">
@@ -613,13 +613,13 @@ export default function PlatformPage() {
         </div>
 
         {/* Technology Stack */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--card)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 Modern Technology Stack
@@ -638,8 +638,8 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: 'var(--color-surface-1)',
-                  color: 'var(--accent-primary)',
+                  background: 'var(--surf)',
+                  color: 'var(--link)',
                   borderRadius: '2px',
                   fontSize: '12px',
                   fontWeight: 600,
@@ -663,8 +663,8 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: 'var(--color-surface-1)',
-                  color: 'var(--accent-primary)',
+                  background: 'var(--surf)',
+                  color: 'var(--link)',
                   borderRadius: '2px',
                   fontSize: '12px',
                   fontWeight: 600,
@@ -688,8 +688,8 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: 'var(--color-surface-1)',
-                  color: 'var(--accent-primary)',
+                  background: 'var(--surf)',
+                  color: 'var(--link)',
                   borderRadius: '2px',
                   fontSize: '12px',
                   fontWeight: 600,
@@ -708,13 +708,13 @@ export default function PlatformPage() {
         </div>
 
         {/* Data Pipeline */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--surf)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 Data Pipeline Architecture
@@ -750,12 +750,12 @@ export default function PlatformPage() {
             <div style={{
               marginTop: 40,
               padding: 24,
-              background: 'var(--color-surface-1)',
+              background: 'var(--surf)',
               borderRadius: 4,
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
             }}>
               <p style={{
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 fontSize: 14,
                 lineHeight: 1.6,
                 margin: 0,
@@ -767,13 +767,13 @@ export default function PlatformPage() {
         </div>
 
         {/* Competitive Analysis */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--card)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 Market Position
@@ -862,13 +862,13 @@ export default function PlatformPage() {
         </div>
 
         {/* Features */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--surf)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 Platform Features
@@ -915,13 +915,13 @@ export default function PlatformPage() {
         </div>
 
         {/* Market Opportunity */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--card)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 Market Opportunity
@@ -957,12 +957,12 @@ export default function PlatformPage() {
             <div style={{
               marginTop: 40,
               padding: 32,
-              background: 'var(--color-surface-1)',
+              background: 'var(--surf)',
               borderRadius: 4,
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
             }}>
               <h3 style={{
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 fontSize: 16,
                 fontWeight: 600,
                 marginBottom: 16,
@@ -973,7 +973,7 @@ export default function PlatformPage() {
                 listStyle: 'none',
                 margin: 0,
                 padding: 0,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 fontSize: 14,
               }}>
                 <li style={{ marginBottom: 12, display: 'flex', gap: 8 }}>
@@ -998,13 +998,13 @@ export default function PlatformPage() {
         </div>
 
         {/* Roadmap */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--surf)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 Product Roadmap
@@ -1062,13 +1062,13 @@ export default function PlatformPage() {
         </div>
 
         {/* The Problem Section */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--card)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 The Problem We're Solving
@@ -1097,15 +1097,15 @@ export default function PlatformPage() {
                   key={idx}
                   style={{
                     padding: 24,
-                    background: 'var(--color-surface-1)',
+                    background: 'var(--surf)',
                     borderRadius: 4,
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                   }}
                 >
                   <div style={{
                     fontSize: '20px',
                     fontWeight: 700,
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     marginBottom: 8,
                     fontFamily: 'var(--font-mono)',
                   }}>
@@ -1124,13 +1124,13 @@ export default function PlatformPage() {
         </div>
 
         {/* The Data Section */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--surf)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 The Data: 5.1M+ Cases from 5 Official Sources
@@ -1154,9 +1154,9 @@ export default function PlatformPage() {
                   key={source.name}
                   style={{
                     padding: 32,
-                    background: 'var(--color-surface-0)',
+                    background: 'var(--card)',
                     borderRadius: 4,
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     transition: 'all 0.3s ease',
                   }}
                   className="data-source-card"
@@ -1164,7 +1164,7 @@ export default function PlatformPage() {
                   <h4 style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: 8,
                     margin: 0,
                   }}>
@@ -1191,7 +1191,7 @@ export default function PlatformPage() {
                       rel="noopener noreferrer"
                       style={{
                         fontSize: 14,
-                        color: 'var(--accent-primary)',
+                        color: 'var(--link)',
                         textDecoration: 'none',
                         fontWeight: 500,
                       }}
@@ -1213,13 +1213,13 @@ export default function PlatformPage() {
         </div>
 
         {/* AI Layer Section */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--card)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 The AI Layer: Four Core Capabilities
@@ -1243,9 +1243,9 @@ export default function PlatformPage() {
                   key={cap.title}
                   style={{
                     padding: 32,
-                    background: 'var(--color-surface-1)',
+                    background: 'var(--surf)',
                     borderRadius: 4,
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                   }}
                 >
                   <div style={{
@@ -1257,7 +1257,7 @@ export default function PlatformPage() {
                   <h4 style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: 8,
                     margin: 0,
                   }}>
@@ -1278,13 +1278,13 @@ export default function PlatformPage() {
         </div>
 
         {/* Tools Section */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--surf)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 The Tools: Organized by Role
@@ -1308,15 +1308,15 @@ export default function PlatformPage() {
                   key={group.category}
                   style={{
                     padding: 32,
-                    background: 'var(--color-surface-0)',
+                    background: 'var(--card)',
                     borderRadius: 4,
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                   }}
                 >
                   <h4 style={{
                     fontSize: 14,
                     fontWeight: 700,
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     marginBottom: 16,
                     margin: 0,
                     textTransform: 'uppercase',
@@ -1337,7 +1337,7 @@ export default function PlatformPage() {
                           style={{
                             padding: '8px 0',
                             fontSize: 14,
-                            color: href ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                            color: href ? 'var(--link)' : 'var(--text2)',
                             display: 'flex',
                             alignItems: 'center',
                             gap: 8,
@@ -1347,11 +1347,11 @@ export default function PlatformPage() {
                             display: 'inline-block',
                             width: 6,
                             height: 6,
-                            background: 'var(--accent-primary)',
+                            background: 'var(--link)',
                             borderRadius: '50%',
                           }} />
                           {href ? (
-                            <Link href={href} style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            <Link href={href} style={{ color: 'var(--link)', textDecoration: 'none' }}>
                               {tool}
                             </Link>
                           ) : (
@@ -1368,13 +1368,13 @@ export default function PlatformPage() {
         </div>
 
         {/* Audiences Section */}
-        <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--card)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 marginBottom: 12,
               }}>
                 Six Key Audiences
@@ -1398,15 +1398,15 @@ export default function PlatformPage() {
                   key={audience.segment}
                   style={{
                     padding: 32,
-                    background: 'var(--color-surface-1)',
+                    background: 'var(--surf)',
                     borderRadius: 4,
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                   }}
                 >
                   <h4 style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: 12,
                     margin: 0,
                   }}>
@@ -1465,8 +1465,8 @@ export default function PlatformPage() {
               <a href="/sign-up" style={{
                 display: 'inline-block',
                 padding: '12px 32px',
-                background: 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
+                background: 'var(--link)',
+                color: 'var(--card)',
                 textDecoration: 'none',
                 borderRadius: '4px',
                 fontWeight: 600,
@@ -1480,8 +1480,8 @@ export default function PlatformPage() {
                 display: 'inline-block',
                 padding: '12px 32px',
                 background: 'transparent',
-                color: 'var(--accent-primary)',
-                border: '2px solid var(--accent-primary)',
+                color: 'var(--link)',
+                border: '2px solid var(--link)',
                 textDecoration: 'none',
                 borderRadius: '4px',
                 fontWeight: 600,

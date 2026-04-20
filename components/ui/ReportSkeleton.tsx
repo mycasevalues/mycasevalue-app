@@ -3,7 +3,7 @@ export default function ReportSkeleton() {
     <div style={{
       width: w,
       height: h,
-      background: 'var(--border-default)',
+      background: 'var(--bdr)',
       borderRadius: '4px',
       animation: 'pulse-skeleton 2s ease-in-out infinite',
     }} />
@@ -29,9 +29,9 @@ export default function ReportSkeleton() {
         }
       `}</style>
 
-      <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
+      <div style={{ minHeight: '100vh', background: 'var(--surf)' }}>
         {/* Dark Navy Header Skeleton */}
-        <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
+        <div style={{ background: 'var(--link)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 32px) 24px' }}>
             {/* Breadcrumb skeleton */}
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
@@ -68,7 +68,7 @@ export default function ReportSkeleton() {
                   style={{
                     height: '28px',
                     width: '140px',
-                    background: 'var(--accent-primary)',
+                    background: 'var(--link)',
                     borderRadius: '4px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -79,7 +79,7 @@ export default function ReportSkeleton() {
         </div>
 
         {/* White Subheader Section Skeleton */}
-        <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)' }}>
+        <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
             {/* Description line skeleton */}
             <div style={{ marginBottom: '24px' }}>
@@ -97,7 +97,7 @@ export default function ReportSkeleton() {
                   style={{
                     width: '100px',
                     height: '36px',
-                    background: 'var(--border-default)',
+                    background: 'var(--bdr)',
                     borderRadius: '4px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -113,9 +113,9 @@ export default function ReportSkeleton() {
                   style={{
                     width: '150px',
                     height: '28px',
-                    background: 'var(--border-default)',
+                    background: 'var(--bdr)',
                     borderRadius: '4px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />
@@ -129,8 +129,8 @@ export default function ReportSkeleton() {
           {/* Win Rate Section */}
           <section
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
@@ -152,16 +152,16 @@ export default function ReportSkeleton() {
                   style={{
                     textAlign: 'center',
                     padding: '32px 24px',
-                    background: 'var(--color-surface-1)',
+                    background: 'var(--surf)',
                     borderRadius: '4px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                   }}
                 >
                   <div
                     style={{
                       height: '40px',
                       width: '70%',
-                      background: 'var(--border-default)',
+                      background: 'var(--bdr)',
                       margin: '0 auto 12px',
                       borderRadius: '4px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -171,7 +171,7 @@ export default function ReportSkeleton() {
                     style={{
                       height: '14px',
                       width: '80%',
-                      background: 'var(--border-default)',
+                      background: 'var(--bdr)',
                       margin: '0 auto 8px',
                       borderRadius: '4px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -181,7 +181,7 @@ export default function ReportSkeleton() {
                     style={{
                       height: '12px',
                       width: '70%',
-                      background: 'var(--border-default)',
+                      background: 'var(--bdr)',
                       margin: '0 auto',
                       borderRadius: '4px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -196,7 +196,7 @@ export default function ReportSkeleton() {
                 marginTop: '24px',
                 height: '12px',
                 width: '50%',
-                background: 'var(--border-default)',
+                background: 'var(--bdr)',
                 margin: '24px auto 0',
                 borderRadius: '4px',
                 animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -207,8 +207,8 @@ export default function ReportSkeleton() {
           {/* Case Timeline Section */}
           <section
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
@@ -229,16 +229,16 @@ export default function ReportSkeleton() {
                   key={i}
                   style={{
                     padding: '24px',
-                    background: 'var(--color-surface-1)',
+                    background: 'var(--surf)',
                     borderRadius: '4px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                   }}
                 >
                   <div
                     style={{
                       height: '14px',
                       width: '40%',
-                      background: 'var(--border-default)',
+                      background: 'var(--bdr)',
                       marginBottom: '8px',
                       borderRadius: '4px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -248,7 +248,7 @@ export default function ReportSkeleton() {
                     style={{
                       height: '12px',
                       width: '60%',
-                      background: 'var(--border-default)',
+                      background: 'var(--bdr)',
                       borderRadius: '4px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
@@ -261,8 +261,8 @@ export default function ReportSkeleton() {
           {/* Settlement Section */}
           <section
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '32px',
               boxShadow: 'var(--shadow-xs)',
@@ -283,7 +283,7 @@ export default function ReportSkeleton() {
                   style={{
                     height: '16px',
                     width: i === 4 ? '30%' : '100%',
-                    background: 'var(--border-default)',
+                    background: 'var(--bdr)',
                     borderRadius: '4px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}

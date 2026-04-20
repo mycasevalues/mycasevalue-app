@@ -156,7 +156,7 @@ export default function EmailCapture({ heading, subtext, source, variant }: Emai
         </div>
         {formRow}
         {status === 'error' && (
-          <p style={{ fontSize: 12, color: 'var(--accent-primary, #dc2626)', margin: '6px 0 0', fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: 12, color: 'var(--link, #dc2626)', margin: '6px 0 0', fontFamily: 'var(--font-ui)' }}>
             {errorMsg}
           </p>
         )}
@@ -199,7 +199,7 @@ export default function EmailCapture({ heading, subtext, source, variant }: Emai
       </p>
       {formRow}
       {status === 'error' && (
-        <p style={{ fontSize: 12, color: 'var(--accent-primary, #dc2626)', margin: '8px 0 0', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ fontSize: 12, color: 'var(--link, #dc2626)', margin: '8px 0 0', fontFamily: 'var(--font-ui)' }}>
           {errorMsg}
         </p>
       )}
