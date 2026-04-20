@@ -29,7 +29,10 @@ function getActiveSection(pathname: string): string {
   if (pathname.startsWith('/analytics') || pathname.startsWith('/trends') || pathname.startsWith('/compare') || pathname.startsWith('/map')) return 'districts';
   if (pathname.startsWith('/attorney')) return 'tools';
   if (pathname.startsWith('/calculator')) return 'settlement';
-  if (pathname.startsWith('/methodology') || pathname.startsWith('/glossary') || pathname.startsWith('/about')) return 'guidance';
+  // /about is a company/mission page, not a methodology page — don't highlight
+  // the Methodology tab when on /about. (Glossary is still rolled up under
+  // Methodology since they're conceptually the same "how the data works" cohort.)
+  if (pathname.startsWith('/methodology') || pathname.startsWith('/glossary')) return 'guidance';
   if (pathname.startsWith('/account') || pathname.startsWith('/dashboard') || pathname.startsWith('/settings')) return 'saved';
   return '';
 }
@@ -112,7 +115,10 @@ export default function BrowseNav() {
                   fontSize: 12,
                   fontFamily: 'var(--font-sans, var(--font-ui))',
                   fontWeight: isActive ? 600 : 400,
-                  color: isActive ? 'var(--card, #FFFFFF)' : 'var(--chrome-text-muted)',
+                  // Active tab text on the dark navy chrome bar should always be
+                  // white — --chrome-text is #FFFFFF in both light and dark modes.
+                  // (Using --card here broke in dark mode where --card is #242424.)
+                  color: isActive ? 'var(--chrome-text)' : 'var(--chrome-text-muted)',
                   cursor: 'pointer',
                   borderBottom: isActive ? '3px solid var(--gold)' : '3px solid transparent',
                   whiteSpace: 'nowrap',

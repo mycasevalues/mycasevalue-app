@@ -30,7 +30,13 @@ import TrustSignals from '@/components/TrustSignals';
 import Testimonials from '@/components/Testimonials';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Intelligence Platform',
+  // Use absolute so the rendered <title> is exactly this string, unaffected by
+  // the parent layout's title.template ('%s — MyCaseValue'). Without this, the
+  // homepage tab rendered as just 'Federal Court Intelligence Platform' with
+  // the brand suffix missing — confirmed via `curl`.
+  title: {
+    absolute: 'MyCaseValue — Federal Court Intelligence Platform',
+  },
   description:
     'Litigation intelligence from public federal court records. Case outcomes, judge analytics, venue analysis, and settlement data across all 94 federal districts.',
   openGraph: {
