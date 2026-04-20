@@ -163,7 +163,8 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
  style={{
  color: partyColor,
  background: partyColor ? `${partyColor}15` : undefined,
- }} style={{ fontWeight: 600 }}
+ fontWeight: 600,
+ }}
  >
                       <span
                         className="w-1.5 h-1.5 rounded-full"
