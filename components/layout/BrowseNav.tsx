@@ -7,8 +7,8 @@
  * Background: var(--chrome-bg-dark) = #121F32
  * Border-bottom: 1px solid #1A2E48
  *
- * Items: Home | Court Records | Judicial Analytics | District Intelligence |
- *        Settlement Data | Litigation Tools [AI badge] | Practical Guidance
+ * Items: Home | Cases | Judges | Districts |
+ *        Calculator | Attorney Tools [AI badge] | Methodology
  * Right-aligned: My Research
  *
  * Active item: color white, border-bottom: 3px solid var(--gold)
@@ -48,14 +48,14 @@ interface BrowseNavItem {
 const NAV_ITEMS: BrowseNavItem[] = [
   { id: 'home', label: 'Home', href: '/' },
   { id: '_sep1', label: '', href: '', separator: true },
-  { id: 'court', label: 'Court Records', href: '/cases' },
-  { id: 'judges', label: 'Judicial Analytics', href: '/judges' },
-  { id: 'districts', label: 'District Intelligence', href: '/districts' },
-  { id: 'settlement', label: 'Settlement Data', href: '/calculator' },
+  { id: 'court', label: 'Cases', href: '/cases' },
+  { id: 'judges', label: 'Judges', href: '/judges' },
+  { id: 'districts', label: 'Districts', href: '/districts' },
+  { id: 'settlement', label: 'Calculator', href: '/calculator' },
   { id: '_sep2', label: '', href: '', separator: true },
-  { id: 'tools', label: 'Litigation Tools', href: '/attorney', badge: 'AI' },
-  { id: 'research', label: 'Research Tools', href: '/attorney/advanced-search' },
-  { id: 'guidance', label: 'Practical Guidance', href: '/methodology' },
+  { id: 'tools', label: 'Attorney Tools', href: '/attorney', badge: 'AI' },
+  { id: 'research', label: 'Advanced Search', href: '/attorney/advanced-search' },
+  { id: 'guidance', label: 'Methodology', href: '/methodology' },
   { id: '_sep3', label: '', href: '', separator: true },
   { id: 'saved', label: 'My Research', href: '/dashboard', rightAlign: true },
 ];

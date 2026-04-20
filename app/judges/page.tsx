@@ -84,7 +84,7 @@ export default async function JudgesPage() {
           <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, fontFamily: 'var(--font-ui)' }}>
             <Link href="/" style={{ color: 'var(--text3, #4A4940)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'var(--bdr-strong, #C8C4B8)' }}>›</span>
-            <span style={{ color: 'var(--text2, #42403C)' }}>Judicial Analytics</span>
+            <span style={{ color: 'var(--text2, #42403C)' }}>Judges</span>
           </div>
 
           <div style={{ paddingTop: 20, paddingBottom: 24 }}>
@@ -100,7 +100,7 @@ export default async function JudgesPage() {
               color: 'var(--text3, #4A4940)',
             }}>
               <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--pos, #176438)' }} />
-              Judicial Analytics
+              Judges
             </div>
 
             <h1 style={{

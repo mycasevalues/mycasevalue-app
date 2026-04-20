@@ -164,7 +164,7 @@ export default function HomePage() {
               margin: '0 0 8px',
             }}
           >
-            MyCaseValue — Federal Court Intelligence Platform
+            FEDERAL COURT DATA
           </p>
 
           {/* Headline */}
@@ -301,10 +301,10 @@ export default function HomePage() {
           </label>
         ))}
         {/* Static nav links (navigate to other pages — styled differently from tabs) */}
-        {['Federal Courts', 'Practice Areas', 'Analytics Tools'].map((t) => (
+        {['Districts', 'Cases', 'Attorney Tools'].map((t) => (
           <Link
             key={t}
-            href={t === 'Federal Courts' ? '/districts' : t === 'Practice Areas' ? '/cases' : '/analytics'}
+            href={t === 'Districts' ? '/districts' : t === 'Cases' ? '/cases' : '/attorney'}
             className="hp-nav-link"
             style={{
               height: 39,

@@ -152,7 +152,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
           <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 6 }}>
             <Link href="/" style={{ color: 'var(--text3)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'var(--bdr-strong)' }}>›</span>
-            <Link href="/judges" style={{ color: 'var(--text3)', textDecoration: 'none' }}>Judicial Analytics</Link>
+            <Link href="/judges" style={{ color: 'var(--text3)', textDecoration: 'none' }}>Judges</Link>
             <span style={{ color: 'var(--bdr-strong)' }}>›</span>
             {judge.district_id && (
               <>

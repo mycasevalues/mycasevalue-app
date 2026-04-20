@@ -12,14 +12,14 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 
 const DEFAULT_SHORTCUTS: { label: string; href: string }[] = [
-  { label: 'Court Records', href: '/cases' },
-  { label: 'Judge Profiles', href: '/judges' },
-  { label: 'District Analytics', href: '/districts' },
-  { label: 'Settlement Data', href: '/cases' },
+  { label: 'Cases', href: '/cases' },
+  { label: 'Judges', href: '/judges' },
+  { label: 'Districts', href: '/districts' },
+  { label: 'Calculator', href: '/calculator' },
   { label: 'Citation Check', href: '/attorney/citation-check' },
   { label: 'Research Organizer', href: '/attorney/folders' },
   { label: 'Case Alerts', href: '/dashboard' },
-  { label: 'Practical Guidance', href: '/attorney/secondary-sources' },
+  { label: 'Methodology', href: '/methodology' },
 ];
 
 interface ShortcutItem {
