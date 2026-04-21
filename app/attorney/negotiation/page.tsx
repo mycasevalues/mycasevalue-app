@@ -251,15 +251,15 @@ export default function NegotiationPage() {
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Recommended Negotiation Range</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }} className="negotiation-range-grid">
                   <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(176,30,30,0.08)', borderRadius: 4 }}>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2, #42403C)', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2, #525252)', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.floor)}</div>
                   </div>
                   <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(10,80,162,0.06)', borderRadius: 4, border: '2px solid var(--link)' }}>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2, #42403C)', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2, #525252)', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
                   </div>
                   <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(23,100,56,0.08)', borderRadius: 4 }}>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2, #42403C)', textTransform: 'uppercase', marginBottom: 4 }}>Ceiling</div>
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2, #525252)', textTransform: 'uppercase', marginBottom: 4 }}>Ceiling</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-positive)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.ceiling)}</div>
                   </div>
                 </div>

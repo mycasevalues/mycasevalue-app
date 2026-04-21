@@ -451,14 +451,14 @@ export default function NaturalLanguageSearch() {
               boxSizing: 'border-box',
             }}
             onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--link)')}
-            onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--bdr, #E2DFD8)')}
+            onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--bdr, #E5E7EB)')}
           />
           <button
             type="submit"
             disabled={isLoading || !query.trim()}
             style={{
               padding: '12px 24px',
-              background: isLoading || !query.trim() ? 'var(--bdr, #E2DFD8)' : 'var(--link)',
+              background: isLoading || !query.trim() ? 'var(--bdr, #E5E7EB)' : 'var(--link)',
               color: 'var(--card)',
               fontSize: '14px',
               fontWeight: '600',

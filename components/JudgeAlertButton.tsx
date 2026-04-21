@@ -256,7 +256,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     style={{
                       flex: 1,
                       padding: '8px 16px',
-                      background: loading || !email.trim() ? 'var(--bdr, #E2DFD8)' : 'var(--link)',
+                      background: loading || !email.trim() ? 'var(--bdr, #E5E7EB)' : 'var(--link)',
                       color: 'var(--card)',
                       border: 'none',
                       borderRadius: '4px',

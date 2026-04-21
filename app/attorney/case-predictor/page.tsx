@@ -57,7 +57,7 @@ const ScoreRing = ({ value, label, color, size = 80 }: { value: number; label: s
           {value}%
         </text>
       </svg>
-      <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>{label}</div>
+      <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>{label}</div>
     </div>
   );
 };
@@ -500,7 +500,7 @@ export default function CasePredictorPage() {
                     <div style={{ width: 80, height: 80, borderRadius: '50%', border: '6px solid var(--link)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <span className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1, #333333)' }}>{p.predictedDurationMonths}mo</span>
                     </div>
-                    <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
                   </div>
                 </div>
 

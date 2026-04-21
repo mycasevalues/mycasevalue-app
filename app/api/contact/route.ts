@@ -121,7 +121,7 @@ export async function POST(req: NextRequest) {
           <style>
             body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
             .container { max-width: 600px; margin: 0 auto; background: #f9fafb; }
-            .header { background: #18181A; color: white; padding: 24px; text-align: center; }
+            .header { background: #333333; color: white; padding: 24px; text-align: center; }
             .content { background: white; padding: 32px 24px; }
             .field { margin-bottom: 24px; }
             .label { font-weight: 600; color: #1A73E8; margin-bottom: 8px; font-size: 14px; }

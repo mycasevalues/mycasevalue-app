@@ -12,8 +12,8 @@
  * - Only renders for authenticated users who have not completed the tour
  *
  * Design tokens:
- *   --chrome-bg: #1B2D45, --gold: #C4882A, --surf: #F6F5F2
- *   --bdr: #E2DFD8, --card: #FFFFFF, --font-legal, --font-ui
+ *   --chrome-bg: #1B2D45, --gold: #C4882A, --surf: #FFFFFF
+ *   --bdr: #E5E7EB, --card: #FFFFFF, --font-legal, --font-ui
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
@@ -312,7 +312,7 @@ export default function Onboarding() {
             left: tooltipPos.left,
             width: TOOLTIP_WIDTH,
             backgroundColor: 'var(--card, #FFFFFF)',
-            border: '1px solid var(--bdr, #E2DFD8)',
+            border: '1px solid var(--bdr, #E5E7EB)',
             borderRadius: 4,
             boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
             zIndex: 9999,
@@ -369,7 +369,7 @@ export default function Onboarding() {
                 margin: 0,
                 fontSize: 14,
                 fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
-                color: 'var(--text2, #42403C)',
+                color: 'var(--text2, #525252)',
                 lineHeight: 1.55,
               }}
             >
@@ -396,7 +396,7 @@ export default function Onboarding() {
                 padding: '4px 0',
                 fontSize: 12,
                 fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
-                color: 'var(--text2, #42403C)',
+                color: 'var(--text2, #525252)',
                 cursor: 'pointer',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
@@ -418,7 +418,7 @@ export default function Onboarding() {
                     fontWeight: 600,
                     color: 'var(--text1, #333333)',
                     backgroundColor: 'transparent',
-                    border: '1px solid var(--bdr, #E2DFD8)',
+                    border: '1px solid var(--bdr, #E5E7EB)',
                     borderRadius: 2,
                     cursor: 'pointer',
                   }}
@@ -474,7 +474,7 @@ export default function Onboarding() {
                   backgroundColor:
                     i === currentStep
                       ? 'var(--gold, #C4882A)'
-                      : 'var(--bdr, #E2DFD8)',
+                      : 'var(--bdr, #E5E7EB)',
                   transition: 'width 200ms ease, background-color 200ms ease',
                 }}
               />

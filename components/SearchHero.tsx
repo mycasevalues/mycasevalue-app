@@ -41,7 +41,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             height: 38,
             borderRadius: 2,
             overflow: 'hidden',
-            border: dark ? '1px solid rgba(255,255,255,0.10)' : '1px solid var(--bdr, #E2DFD8)',
+            border: dark ? '1px solid rgba(255,255,255,0.10)' : '1px solid var(--bdr, #E5E7EB)',
             background: dark ? 'rgba(255,255,255,0.04)' : 'var(--card, #FFFFFF)',
             transition: 'border-color 120ms',
           }}
@@ -114,7 +114,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               fontSize: 12,
               padding: '4px 8px',
               borderRadius: 2,
-              border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid var(--bdr, #E2DFD8)',
+              border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid var(--bdr, #E5E7EB)',
               color: dark ? 'var(--color-text-muted)' : 'var(--link, #1A73E8)',
               background: 'transparent',
               cursor: 'pointer',

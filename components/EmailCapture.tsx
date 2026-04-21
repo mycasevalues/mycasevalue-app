@@ -148,7 +148,7 @@ export default function EmailCapture({ heading, subtext, source, variant }: Emai
             style={{
               fontSize: 12,
               fontFamily: 'var(--font-ui)',
-              color: 'var(--text2, #42403C)',
+              color: 'var(--text2, #525252)',
             }}
           >
             {subtext}
@@ -190,7 +190,7 @@ export default function EmailCapture({ heading, subtext, source, variant }: Emai
         style={{
           fontSize: 14,
           fontFamily: 'var(--font-ui)',
-          color: 'var(--text2, #42403C)',
+          color: 'var(--text2, #525252)',
           lineHeight: 1.6,
           margin: '0 0 16px',
         }}

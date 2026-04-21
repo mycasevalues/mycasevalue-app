@@ -145,7 +145,7 @@ function ContextBar({ pathname }: { pathname: string }) {
         display: 'flex',
         alignItems: 'center',
         background: 'var(--surf, #FFFFFF)',
-        borderBottom: '1px solid var(--bdr, #E2DFD8)',
+        borderBottom: '1px solid var(--bdr, #E5E7EB)',
         padding: '0 16px',
         overflow: 'hidden',
       }}
@@ -255,7 +255,7 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
             top: 94,
             height: 40,
             background: 'var(--card, #FFFFFF)',
-            borderBottom: '1px solid var(--bdr, #E2DFD8)',
+            borderBottom: '1px solid var(--bdr, #E5E7EB)',
           }}
         >
           <button
@@ -263,7 +263,7 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
             style={{
               padding: 6,
               marginLeft: -6,
-              color: 'var(--text2, #42403C)',
+              color: 'var(--text2, #525252)',
               background: 'none',
               border: 'none',
               cursor: 'pointer',

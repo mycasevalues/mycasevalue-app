@@ -74,7 +74,7 @@ export default function Error({
 
           <p style={{
             fontSize: '14px',
-            color: 'var(--text2, #42403C)',
+            color: 'var(--text2, #525252)',
             lineHeight: 1.6,
             margin: '0 0 24px',
             maxWidth: 400,

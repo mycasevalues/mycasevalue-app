@@ -282,7 +282,7 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
               borderRadius: '50%',
               border: 'none',
               cursor: 'pointer',
-              backgroundColor: idx === currentIndex ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+              backgroundColor: idx === currentIndex ? 'var(--link)' : 'var(--bdr, #E5E7EB)',
               transition: 'background-color 0.3s ease',
             }}
             whileHover={{ scale: 1.2 }}

@@ -132,7 +132,7 @@ export function RealtimeStatus({ isConnected, lastUpdated }: { isConnected: bool
           width: '8px',
           height: '8px',
           borderRadius: '50%',
-          background: isConnected ? '#15803D' : 'var(--bdr, #E2DFD8)',
+          background: isConnected ? '#15803D' : 'var(--bdr, #E5E7EB)',
           display: 'inline-block',
           animation: isConnected ? 'pulse 2s infinite' : 'none',
         }}

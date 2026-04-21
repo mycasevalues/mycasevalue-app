@@ -131,7 +131,7 @@ export default function SemanticCaseSearch() {
               padding: '12px',
               fontSize: '14px',
               fontFamily: 'var(--font-ui)',
-              border: isOverLimit ? '1px solid #CC1016' : '1px solid var(--bdr, #E2DFD8)',
+              border: isOverLimit ? '1px solid #CC1016' : '1px solid var(--bdr, #E5E7EB)',
               borderRadius: '4px',
               outline: 'none',
               transition: 'border-color 200ms',
@@ -166,7 +166,7 @@ export default function SemanticCaseSearch() {
           disabled={isLoading || !description.trim() || isOverLimit}
           style={{
             padding: '12px 24px',
-            background: isLoading || !description.trim() || isOverLimit ? 'var(--bdr, #E2DFD8)' : 'var(--link)',
+            background: isLoading || !description.trim() || isOverLimit ? 'var(--bdr, #E5E7EB)' : 'var(--link)',
             color: 'var(--card)',
             fontSize: '14px',
             fontWeight: '600',

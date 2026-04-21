@@ -82,7 +82,7 @@ function getStatusColor(
       };
     default:
       return {
-        bg: 'var(--tbl-hdr, #EDEAE4)',
+        bg: 'var(--tbl-hdr, #F0F2F5)',
         text: '#5F5F5F',
         indicator: '#5F5F5F',
       };

@@ -41,7 +41,7 @@ const labelStyle: React.CSSProperties = {
 const valueStyle: React.CSSProperties = {
   fontSize: 12,
   fontFamily: 'var(--font-ui)',
-  color: 'var(--text2, #42403C)',
+  color: 'var(--text2, #525252)',
   lineHeight: 1.4,
 };
 
@@ -206,7 +206,7 @@ function PartialCoverage({ data }: { data: AnalyticsBoxData }) {
         style={{
           fontSize: 12,
           fontFamily: 'var(--font-ui)',
-          color: 'var(--text2, #42403C)',
+          color: 'var(--text2, #525252)',
           lineHeight: 1.5,
           margin: '0 0 6px 0',
         }}

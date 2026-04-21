@@ -68,13 +68,13 @@ export default function TrustSignals() {
           font-family: var(--font-ui);
           font-size: 14px;
           font-weight: 500;
-          color: var(--text2, #42403C);
+          color: var(--text2, #525252);
           white-space: nowrap;
         }
 
         .trust-signal-badge svg {
           flex-shrink: 0;
-          color: var(--text2, #42403C);
+          color: var(--text2, #525252);
         }
 
         @media (max-width: 900px) {

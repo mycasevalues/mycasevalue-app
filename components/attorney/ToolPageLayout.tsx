@@ -37,7 +37,7 @@ export function ToolPageLayout({
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="border-b border-[var(--bdr, #E2DFD8)]">
+      <div className="border-b border-[var(--bdr, #E5E7EB)]">
         <div className="max-w-4xl mx-auto px-6 py-4 sm:py-6">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
@@ -68,7 +68,7 @@ export function ToolPageLayout({
       {/* Auth Gate \u2014 only shown when requiresPro and not authenticated */}
       {requiresPro && !isAuthenticated ? (
         <div className="max-w-4xl mx-auto px-6 py-12">
-          <div className="rounded border border-[var(--bdr, #E2DFD8)] p-8 sm:p-12 text-center bg-[var(--color-surface-2)]">
+          <div className="rounded border border-[var(--bdr, #E5E7EB)] p-8 sm:p-12 text-center bg-[var(--color-surface-2)]">
             <h2 className="sm: text-[var(--color-text-muted)] mb-3" style={{ fontSize: 20, fontWeight: 600 }}>
               Sign in to access this tool
             </h2>
@@ -91,7 +91,7 @@ export function ToolPageLayout({
           </div>
 
           {/* Footer Disclaimer */}
-          <div className="border-t border-[var(--bdr, #E2DFD8)] bg-[var(--color-surface-2)] mt-12">
+          <div className="border-t border-[var(--bdr, #E5E7EB)] bg-[var(--color-surface-2)] mt-12">
             <div className="max-w-4xl mx-auto px-6 py-8">
               <p className="text-[var(--color-text-muted)] leading-relaxed" style={{ fontSize: 14 }}>
                 This tool is provided for informational and analytical purposes only and does not

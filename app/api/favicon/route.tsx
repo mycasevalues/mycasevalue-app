@@ -24,7 +24,7 @@ export async function GET(request: Request) {
           justifyContent: 'center',
           width: '100%',
           height: '100%',
-          backgroundColor: '#18181A',
+          backgroundColor: '#333333',
           borderRadius: '4px',
           color: '#C4882A',
           fontFamily: 'monospace',

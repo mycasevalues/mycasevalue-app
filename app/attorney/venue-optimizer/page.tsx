@@ -271,7 +271,7 @@ export default function VenueOptimizerPage() {
                     fontSize: '14px',
                     fontWeight: 600,
                     textAlign: 'right',
-                    color: v.advantage > 0 ? 'var(--data-positive)' : v.advantage < 0 ? 'var(--link)' : 'var(--text2, #42403C)',
+                    color: v.advantage > 0 ? 'var(--data-positive)' : v.advantage < 0 ? 'var(--link)' : 'var(--text2, #525252)',
                   }}>
                     {v.advantage > 0 ? '+' : ''}{v.advantage}%
                   </span>

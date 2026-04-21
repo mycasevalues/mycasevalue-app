@@ -63,8 +63,8 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
         background: 'var(--surf, #FFFFFF)',
         display: 'flex',
         alignItems: 'center',
-        borderTop: '1px solid var(--bdr, #E2DFD8)',
-        borderBottom: '1px solid var(--bdr, #E2DFD8)',
+        borderTop: '1px solid var(--bdr, #E5E7EB)',
+        borderBottom: '1px solid var(--bdr, #E5E7EB)',
         padding: '0 18px',
         gap: 6,
         overflowX: 'auto',
@@ -102,7 +102,7 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
             background: 'var(--card, #FFFFFF)',
             fontSize: 12,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text2, #42403C)',
+            color: 'var(--text2, #525252)',
             cursor: 'pointer',
             whiteSpace: 'nowrap',
             flexShrink: 0,
@@ -114,7 +114,7 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = 'var(--bdr-strong, #C8C4B8)';
-            e.currentTarget.style.color = 'var(--text2, #42403C)';
+            e.currentTarget.style.color = 'var(--text2, #525252)';
           }}
         >
           {item.label}

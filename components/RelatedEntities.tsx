@@ -28,7 +28,7 @@ interface RelatedEntitiesProps {
 
 function SectionHeader({ title, count }: { title: string; count?: number }) {
   return (
-    <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--bdr, #E2DFD8)]">
+    <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--bdr, #E5E7EB)]">
       <span className="uppercase tracking-wider text-[var(--color-text-muted)]" style={{ fontSize: 12, fontWeight: 600 }}>{title}</span>
       {count != null && <span className="text-[10px] text-[var(--color-text-muted)] bg-[rgba(255,255,255,0.04)] px-1.5 py-0.5 rounded">{count}</span>}
     </div>
@@ -68,10 +68,10 @@ export default function RelatedEntities({ context }: RelatedEntitiesProps) {
   if (relatedCaseTypes.length === 0 && relatedDistricts.length === 0) return null;
 
   return (
-    <div className="border-l border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)]" style={{ width: '260px', minWidth: '260px', flexShrink: 0 }}>
+    <div className="border-l border-[var(--bdr, #E5E7EB)] bg-[var(--surf,#FFFFFF)]" style={{ width: '260px', minWidth: '260px', flexShrink: 0 }}>
       <div className="sticky top-[80px] h-[calc(100vh-120px)] overflow-y-auto">
         {/* Header */}
-        <div className="px-4 py-3 border-b border-[var(--bdr, #E2DFD8)]">
+        <div className="px-4 py-3 border-b border-[var(--bdr, #E5E7EB)]">
           <h3 className="uppercase tracking-wider text-[var(--color-text-muted)]" style={{ fontSize: 12, fontWeight: 700 }}>Related</h3>
         </div>
 

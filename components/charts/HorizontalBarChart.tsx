@@ -110,7 +110,7 @@ function BarRow({
           width: 148,
           flexShrink: 0,
           fontSize: 12,
-          color: 'var(--text2, #42403C)',
+          color: 'var(--text2, #525252)',
           fontFamily: 'var(--font-ui)',
           textAlign: 'right',
           overflow: 'hidden',
@@ -191,7 +191,7 @@ export default function HorizontalBarChart({
             fontSize: 12,
             fontWeight: 600,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text2, #42403C)',
+            color: 'var(--text2, #525252)',
             marginBottom: 8,
           }}
         >

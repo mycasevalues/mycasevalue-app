@@ -90,7 +90,7 @@ export default function ResearchBreadcrumb() {
               height="10"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="var(--bdr, #E2DFD8)"
+              stroke="var(--bdr, #E5E7EB)"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"

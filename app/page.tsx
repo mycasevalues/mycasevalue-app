@@ -195,7 +195,7 @@ export default function HomePage() {
             style={{
               fontSize: 14,
               fontFamily: 'var(--font-ui)',
-              color: 'var(--text2, #42403C)',
+              color: 'var(--text2, #525252)',
               lineHeight: 1.6,
               maxWidth: 600,
               margin: '8px 0 12px',
@@ -369,7 +369,7 @@ export default function HomePage() {
               style={{
                 fontSize: 12,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--text2, #42403C)',
+                color: 'var(--text2, #525252)',
                 lineHeight: 1.6,
                 margin: '0 0 12px',
               }}
@@ -464,7 +464,7 @@ export default function HomePage() {
               <div
                 style={{
                   padding: '16px',
-                  background: 'var(--sidebar2, #F4F3EF)',
+                  background: 'var(--sidebar2, #F7F8FA)',
                   border: '1px solid var(--bdr)',
                   borderRadius: 2,
                   textAlign: 'center',
@@ -502,7 +502,7 @@ export default function HomePage() {
             {/* My Alerts panel */}
             <div
               style={{
-                background: 'var(--sidebar2, #F4F3EF)',
+                background: 'var(--sidebar2, #F7F8FA)',
                 border: '1px solid var(--bdr)',
                 borderRadius: 2,
                 padding: 8,
@@ -555,7 +555,7 @@ export default function HomePage() {
             {/* Platform Statistics */}
             <div
               style={{
-                background: 'var(--sidebar2, #F4F3EF)',
+                background: 'var(--sidebar2, #F7F8FA)',
                 border: '1px solid var(--bdr)',
                 borderRadius: 2,
                 padding: 8,
@@ -773,7 +773,7 @@ export default function HomePage() {
         style={{
           padding: '32px 24px',
           borderTop: '1px solid var(--bdr)',
-          background: 'var(--surf, var(--sidebar2, #F4F3EF))',
+          background: 'var(--surf, var(--sidebar2, #F7F8FA))',
         }}
       >
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
@@ -796,7 +796,7 @@ export default function HomePage() {
               fontSize: 14,
               fontWeight: 400,
               lineHeight: 1.6,
-              color: 'var(--text2, #42403C)',
+              color: 'var(--text2, #525252)',
               margin: '0 0 14px',
               maxWidth: 560,
             }}

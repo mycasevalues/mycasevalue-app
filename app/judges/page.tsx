@@ -84,7 +84,7 @@ export default async function JudgesPage() {
           <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, fontFamily: 'var(--font-ui)' }}>
             <Link href="/" style={{ color: 'var(--text3, #4A4940)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'var(--bdr-strong, #C8C4B8)' }}>›</span>
-            <span style={{ color: 'var(--text2, #42403C)' }}>Judges</span>
+            <span style={{ color: 'var(--text2, #525252)' }}>Judges</span>
           </div>
 
           <div style={{ paddingTop: 20, paddingBottom: 24 }}>
@@ -94,7 +94,7 @@ export default async function JudgesPage() {
               padding: '2px 8px', marginBottom: 12,
               borderRadius: 3,
               border: '1px solid var(--bdr-strong, #C8C4B8)',
-              background: 'var(--tbl-hdr, #EDEAE4)',
+              background: 'var(--tbl-hdr, #F0F2F5)',
               fontFamily: 'var(--font-mono)', fontSize: 12,
               fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase' as const,
               color: 'var(--text3, #4A4940)',
@@ -112,7 +112,7 @@ export default async function JudgesPage() {
 
             <p style={{
               fontSize: 14, lineHeight: 1.65, maxWidth: 640,
-              color: 'var(--text2, #42403C)', fontFamily: 'var(--font-ui)',
+              color: 'var(--text2, #525252)', fontFamily: 'var(--font-ui)',
             }}>
               Ruling patterns, case duration, and outcome tendencies across all 94 federal districts. Data from 5.1M+ public federal cases.
             </p>
@@ -140,7 +140,7 @@ export default async function JudgesPage() {
           <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', marginBottom: 12, letterSpacing: '-0.01em' }}>
             Analytics Radar — Multi-dimensional Profiles
           </h2>
-          <p style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontFamily: 'var(--font-ui)', maxWidth: 680, margin: '0 0 24px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: 12, color: 'var(--text2, #525252)', fontFamily: 'var(--font-ui)', maxWidth: 680, margin: '0 0 24px', lineHeight: 1.6 }}>
             Explore detailed judge profiles with motion grant rates, settlement patterns, and disposition metrics derived from PACER and FJC records.
           </p>
 
@@ -149,7 +149,7 @@ export default async function JudgesPage() {
         </section>
 
         {/* Disclaimer */}
-        <div style={{ padding: '12px 16px', border: '1px solid var(--bdr)', borderRadius: 3, background: 'var(--tbl-hdr, #EDEAE4)' }}>
+        <div style={{ padding: '12px 16px', border: '1px solid var(--bdr)', borderRadius: 3, background: 'var(--tbl-hdr, #F0F2F5)' }}>
           <h3 style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text3, #4A4940)', fontFamily: 'var(--font-mono)', marginBottom: 8 }}>
             Data Methodology
           </h3>

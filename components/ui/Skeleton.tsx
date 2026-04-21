@@ -16,8 +16,8 @@ interface SkeletonProps {
 /**
  * Reusable skeleton placeholder with a left-to-right shimmer animation.
  * Uses the Westlaw Precision design tokens:
- *   - Base color: var(--surf) #F6F5F2
- *   - Shimmer sweep: slightly darker via var(--bdr) #E2DFD8
+ *   - Base color: var(--surf) #FFFFFF
+ *   - Shimmer sweep: slightly darker via var(--bdr) #E5E7EB
  *
  * The shimmer keyframe is defined in styles/components.css as
  * `@keyframes mcv-shimmer`. This component references it by class name.

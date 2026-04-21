@@ -88,7 +88,7 @@ export default function PressPage() {
   const brandColors = [
     { name: 'Navy', hex: '#1B2D45' },
     { name: 'Gold', hex: '#C4882A' },
-    { name: 'Cream', hex: '#F6F5F2' },
+    { name: 'Cream', hex: '#FFFFFF' },
   ];
 
   return (

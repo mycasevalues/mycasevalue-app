@@ -191,7 +191,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             }}
           >
             <thead>
-              <tr style={{ borderBottom: '2px solid var(--bdr, #E2DFD8)' }}>
+              <tr style={{ borderBottom: '2px solid var(--bdr, #E5E7EB)' }}>
                 <th
                   style={{
                     padding: '12px 8px',

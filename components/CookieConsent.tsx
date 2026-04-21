@@ -42,7 +42,7 @@ export default function CookieConsent() {
         right: 0,
         zIndex: 9999,
         background: 'var(--card, #FFFFFF)',
-        borderTop: '1px solid var(--bdr, #E2DFD8)',
+        borderTop: '1px solid var(--bdr, #E5E7EB)',
         boxShadow: '0 -1px 8px rgba(0,0,0,0.06)',
         fontFamily: 'var(--font-ui)',
         animation: 'slideUp 400ms cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -66,7 +66,7 @@ export default function CookieConsent() {
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="var(--text2, #42403C)"
+            stroke="var(--text2, #525252)"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -115,9 +115,9 @@ export default function CookieConsent() {
               fontWeight: 600,
               fontSize: '12px',
               fontFamily: 'var(--font-ui)',
-              border: '1px solid var(--bdr, #E2DFD8)',
+              border: '1px solid var(--bdr, #E5E7EB)',
               background: 'transparent',
-              color: 'var(--text2, #42403C)',
+              color: 'var(--text2, #525252)',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',

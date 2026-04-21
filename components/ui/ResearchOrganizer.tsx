@@ -45,8 +45,8 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
   return (
     <div
       style={{
-        background: 'var(--sidebar2, #F4F3EF)',
-        border: '1px solid var(--bdr, #E2DFD8)',
+        background: 'var(--sidebar2, #F7F8FA)',
+        border: '1px solid var(--bdr, #E5E7EB)',
         borderRadius: 2,
         padding: 8,
       }}

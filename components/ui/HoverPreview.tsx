@@ -49,7 +49,7 @@ export default function HoverPreview({ children, preview, delay = 300 }: HoverPr
       {show && (
         <div
           className={`
-            absolute z-50 w-72 bg-[var(--surf,#F6F5F2)] border border-[var(--bdr, #E2DFD8)] rounded shadow-lg
+            absolute z-50 w-72 bg-[var(--surf,#FFFFFF)] border border-[var(--bdr, #E5E7EB)] rounded shadow-lg
             animate-fade-in pointer-events-auto
             ${position === 'above' ? 'bottom-full mb-2' : 'top-full mt-2'}
           `}
@@ -91,7 +91,7 @@ export function JudgePreviewCard({ name, district, circuit, winRate, totalCases,
           </span>
         )}
       </div>
-      <div className="flex gap-4 mt-3 pt-3 border-t border-[var(--bdr, #E2DFD8)]">
+      <div className="flex gap-4 mt-3 pt-3 border-t border-[var(--bdr, #E5E7EB)]">
         {winRate != null && (
           <div>
             <div className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>Win Rate</div>
@@ -124,7 +124,7 @@ export function CaseTypePreviewCard({ label, nos, totalCases, winRate, settlemen
     <div className="p-4">
       <div className="text-[var(--color-text-muted)] mb-1" style={{ fontSize: 14, fontWeight: 600 }}>{label}</div>
       <div className="text-[var(--color-text-muted)] mb-3" style={{ fontSize: 12 }}>NOS Code: {nos}</div>
-      <div className="grid grid-cols-2 gap-3 pt-3 border-t border-[var(--bdr, #E2DFD8)]">
+      <div className="grid grid-cols-2 gap-3 pt-3 border-t border-[var(--bdr, #E5E7EB)]">
         {totalCases != null && (
           <div>
             <div className="text-[10px] text-[var(--color-text-muted)]">Cases</div>

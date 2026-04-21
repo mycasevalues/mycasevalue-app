@@ -108,7 +108,7 @@ export default function StateCourtContext({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
+        className="rounded border border-[var(--bdr, #E5E7EB)] bg-[var(--surf,#FFFFFF)] p-6"
       >
         <div className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
           <p className="text-[var(--color-text-muted)] mb-2" style={{ fontWeight: 600 }}>State Court Comparison</p>
@@ -126,7 +126,7 @@ export default function StateCourtContext({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
+      className="rounded border border-[var(--bdr, #E5E7EB)] bg-[var(--surf,#FFFFFF)] p-6"
     >
       <div className="mb-6">
         <h2 className="text-[var(--color-text-muted)]" style={{ fontSize: 16, fontWeight: 600 }}>Federal vs State Court Outcomes</h2>
@@ -170,7 +170,7 @@ export default function StateCourtContext({
               </div>
             </div>
 
-            <div className="pt-2 border-t border-[var(--bdr, #E2DFD8)]">
+            <div className="pt-2 border-t border-[var(--bdr, #E5E7EB)]">
               <div className="flex justify-between mb-2" style={{ fontSize: 14 }}>
                 <span className="text-[var(--color-text-muted)]">Median Award</span>
                 <span className="font-mono text-[var(--color-text-muted)]" style={{ fontWeight: 600 }}>{federalMedianAward}</span>
@@ -219,7 +219,7 @@ export default function StateCourtContext({
               </div>
             </div>
 
-            <div className="pt-2 border-t border-[var(--bdr, #E2DFD8)]">
+            <div className="pt-2 border-t border-[var(--bdr, #E5E7EB)]">
               <div className="flex justify-between mb-2" style={{ fontSize: 14 }}>
                 <span className="text-[var(--color-text-muted)]">Median Award</span>
                 <span className="font-mono text-[var(--color-text-muted)]" style={{ fontWeight: 600 }}>{stateData.medianAward}</span>
@@ -234,7 +234,7 @@ export default function StateCourtContext({
       </div>
 
       {/* Key Difference Callout */}
-      <div className="mt-6 pt-6 border-t border-[var(--bdr, #E2DFD8)]">
+      <div className="mt-6 pt-6 border-t border-[var(--bdr, #E5E7EB)]">
         <div className="bg-[var(--surf)] rounded p-4">
           <p className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
             <span className="text-[var(--color-text-muted)]" style={{ fontWeight: 600 }}>Key Difference:</span>{' '}

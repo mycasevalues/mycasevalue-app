@@ -30,13 +30,13 @@ export default function JudgesLoading() {
               <div style={{ height: '20px', width: '75%', background: 'var(--bdr)', borderRadius: '4px', marginBottom: '16px' }} />
 
               {/* Judge details */}
-              <div style={{ height: '12px', width: '100%', background: 'var(--tbl-hdr, #EDEAE4)', borderRadius: '4px', marginBottom: '8px' }} />
-              <div style={{ height: '12px', width: '90%', background: 'var(--tbl-hdr, #EDEAE4)', borderRadius: '4px', marginBottom: '8px' }} />
+              <div style={{ height: '12px', width: '100%', background: 'var(--tbl-hdr, #F0F2F5)', borderRadius: '4px', marginBottom: '8px' }} />
+              <div style={{ height: '12px', width: '90%', background: 'var(--tbl-hdr, #F0F2F5)', borderRadius: '4px', marginBottom: '8px' }} />
 
               {/* Statistics */}
               <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
                 <div style={{ height: '12px', width: '60%', background: 'var(--bdr)', borderRadius: '4px', marginBottom: '6px' }} />
-                <div style={{ height: '12px', width: '50%', background: 'var(--tbl-hdr, #EDEAE4)', borderRadius: '4px' }} />
+                <div style={{ height: '12px', width: '50%', background: 'var(--tbl-hdr, #F0F2F5)', borderRadius: '4px' }} />
               </div>
             </div>
           ))}

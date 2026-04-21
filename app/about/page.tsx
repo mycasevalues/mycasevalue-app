@@ -396,7 +396,7 @@ export default function AboutPage() {
           <div className="section">
             <div
               style={{
-                background: 'var(--surf, var(--sidebar2, #F4F3EF))',
+                background: 'var(--surf, var(--sidebar2, #F7F8FA))',
                 border: '1px solid var(--bdr)',
                 borderRadius: 4,
                 padding: '2rem',

@@ -96,7 +96,7 @@ function TableSkeleton({ lines = 5 }: { lines: number }) {
         <SkeletonLine width="50%" />
       </div>
       {Array.from({ length: lines }).map((_, i) => (
-        <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 16, padding: '12px 16px', borderTop: '1px solid var(--bdr, #E2DFD8)' }}>
+        <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 16, padding: '12px 16px', borderTop: '1px solid var(--bdr, #E5E7EB)' }}>
           <SkeletonLine width={`${70 + Math.random() * 20}%`} />
           <SkeletonLine width={`${50 + Math.random() * 30}%`} />
           <SkeletonLine width={`${40 + Math.random() * 40}%`} />

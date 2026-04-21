@@ -144,7 +144,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
             fontFamily: 'var(--font-ui)',
             fontSize: '12px',
             lineHeight: 1.55,
-            color: 'var(--bdr, #E2DFD8)',
+            color: 'var(--bdr, #E5E7EB)',
             margin: 0,
           }}>
             {displayBody}

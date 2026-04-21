@@ -160,7 +160,7 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
         style={{
           background: 'var(--card, #FFFFFF)',
           borderRadius: '4px',
-          border: '1px solid var(--bdr, #E2DFD8)',
+          border: '1px solid var(--bdr, #E5E7EB)',
           boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)',
         }}
       >
@@ -227,7 +227,7 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
  style={{ fontFamily: 'var(--font-mono, "IBM Plex Mono", monospace)',
  color: 'var(--text-primary, #1B2D45)',
  background: 'var(--card, #FFFFFF)',
- border: '1px solid var(--bdr, #E2DFD8)',
+ border: '1px solid var(--bdr, #E5E7EB)',
  borderRadius: '2px',
  boxShadow: '0 1px 2px rgba(0,0,0,0.06)', fontSize: 12, fontWeight: 500 }}
  >
@@ -247,7 +247,7 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
         <div
           className="px-6 py-3 text-center"
           style={{
-            borderTop: '1px solid var(--bdr, #E2DFD8)',
+            borderTop: '1px solid var(--bdr, #E5E7EB)',
             background: 'var(--card, #FFFFFF)',
           }}
         >
@@ -257,7 +257,7 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
  className="px-1 py-0.5 text-[10px]"
  style={{ fontFamily: 'var(--font-mono, "IBM Plex Mono", monospace)',
  background: 'var(--surf, #FFFFFF)',
- border: '1px solid var(--bdr, #E2DFD8)',
+ border: '1px solid var(--bdr, #E5E7EB)',
  borderRadius: '2px', fontWeight: 500 }}
  >
               ?

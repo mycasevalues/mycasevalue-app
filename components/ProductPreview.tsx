@@ -37,7 +37,7 @@ const SAMPLE_CATEGORIES = [
 
 export default function ProductPreview() {
   return (
-    <section className="px-4 md:px-8 py-14 md:py-20 bg-[var(--surf,#F6F5F2)]">
+    <section className="px-4 md:px-8 py-14 md:py-20 bg-[var(--surf,#FFFFFF)]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <p className="text-brand-blue uppercase tracking-widest mb-3" style={{ fontSize: 12, fontWeight: 600 }}>
@@ -67,13 +67,13 @@ export default function ProductPreview() {
             </div>
           </div>
 
-          <div className="bg-[var(--surf,#F6F5F2)] border border-t-0 border-[var(--bdr, #E2DFD8)] rounded-b-xl p-6 md:p-8 shadow-xl">
+          <div className="bg-[var(--surf,#FFFFFF)] border border-t-0 border-[var(--bdr, #E5E7EB)] rounded-b-xl p-6 md:p-8 shadow-xl">
             {/* Category cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {SAMPLE_CATEGORIES.map((cat) => (
                 <div
                   key={cat.title}
-                  className="border border-[var(--bdr, #E2DFD8)] rounded p-4 hover:shadow-sm transition-shadow"
+                  className="border border-[var(--bdr, #E5E7EB)] rounded p-4 hover:shadow-sm transition-shadow"
                 >
                   <h4 className="text-[var(--color-text-muted)] mb-3" style={{ fontSize: 14, fontWeight: 600 }}>
                     {cat.title}
@@ -119,7 +119,7 @@ export default function ProductPreview() {
               ))}
             </div>
 
-            <div className="mt-4 pt-4 border-t border-[var(--bdr, #E2DFD8)] flex items-center justify-between">
+            <div className="mt-4 pt-4 border-t border-[var(--bdr, #E5E7EB)] flex items-center justify-between">
               <span className="text-[11px] text-[var(--color-text-muted)]">
                 Showing 3 of 84 case type categories
               </span>

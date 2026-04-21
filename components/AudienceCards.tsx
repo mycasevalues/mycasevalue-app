@@ -71,7 +71,7 @@ export default function AudienceCards() {
   const secondaryCards = AUDIENCE_CARDS.slice(3);
 
   return (
-    <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-[var(--surf,#F6F5F2)]">
+    <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-[var(--surf,#FFFFFF)]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="md: text-[var(--color-text-muted)] mb-3" style={{ fontSize: 20, fontWeight: 700 }}>
@@ -87,7 +87,7 @@ export default function AudienceCards() {
           {primaryCards.map((card) => (
             <div
               key={card.title}
-              className="bg-[var(--surf,#F6F5F2)] border border-[var(--bdr, #E2DFD8)] rounded p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-[var(--surf,#FFFFFF)] border border-[var(--bdr, #E5E7EB)] rounded p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-brand-blue mb-4">
                 {card.icon}
@@ -114,7 +114,7 @@ export default function AudienceCards() {
           {secondaryCards.map((card) => (
             <div
               key={card.title}
-              className="bg-[var(--surf,#F6F5F2)] border border-[var(--bdr, #E2DFD8)] rounded p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-[var(--surf,#FFFFFF)] border border-[var(--bdr, #E5E7EB)] rounded p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-brand-blue mb-4">
                 {card.icon}

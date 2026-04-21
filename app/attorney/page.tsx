@@ -168,7 +168,7 @@ const FeatureCard = ({
           style={{
             margin: 0,
             fontSize: '14px',
-            color: 'var(--text2, #42403C)',
+            color: 'var(--text2, #525252)',
             lineHeight: '1.5',
             fontFamily: 'var(--font-ui)',
           }}
@@ -614,7 +614,7 @@ export default function AttorneyPage() {
             style={{
               margin: 0,
               fontSize: '14px',
-              color: 'var(--text2, #42403C)',
+              color: 'var(--text2, #525252)',
               lineHeight: '1.5',
               maxWidth: '700px',
               fontFamily: 'var(--font-ui)',
@@ -657,7 +657,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: 'var(--text2, #42403C)',
+                color: 'var(--text2, #525252)',
                 fontFamily: 'var(--font-ui)',
               }}
             >
@@ -745,7 +745,7 @@ export default function AttorneyPage() {
                       style={{
                         margin: 0,
                         fontSize: '14px',
-                        color: 'var(--text2, #42403C)',
+                        color: 'var(--text2, #525252)',
                         lineHeight: '1.5',
                         fontFamily: 'var(--font-ui)',
                       }}
@@ -798,7 +798,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: 'var(--text2, #42403C)',
+                color: 'var(--text2, #525252)',
                 fontFamily: 'var(--font-ui)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
@@ -877,7 +877,7 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '14px',
-                    color: 'var(--text2, #42403C)',
+                    color: 'var(--text2, #525252)',
                     lineHeight: '1.6',
                     fontFamily: 'var(--font-ui)',
                   }}
@@ -922,7 +922,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: 'var(--text2, #42403C)',
+                color: 'var(--text2, #525252)',
                 fontFamily: 'var(--font-ui)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
@@ -981,7 +981,7 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '14px',
-                    color: 'var(--text2, #42403C)',
+                    color: 'var(--text2, #525252)',
                     lineHeight: '1.6',
                     fontFamily: 'var(--font-ui)',
                   }}
@@ -1035,7 +1035,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: 'var(--text2, #42403C)',
+                color: 'var(--text2, #525252)',
                 fontFamily: 'var(--font-ui)',
               }}
             >
@@ -1090,7 +1090,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: 'var(--text2, #42403C)',
+                color: 'var(--text2, #525252)',
                 fontFamily: 'var(--font-ui)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
@@ -1163,7 +1163,7 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '14px',
-                    color: 'var(--text2, #42403C)',
+                    color: 'var(--text2, #525252)',
                     lineHeight: '1.5',
                     fontFamily: 'var(--font-ui)',
                   }}

@@ -7,7 +7,7 @@
  * Tablet: Master list (40%) | Detail panel (60%)
  * Mobile: Full-screen list, tap to see detail (overlay)
  *
- * Light mode: white backgrounds, var(--bdr, #E2DFD8) borders, Westlaw palette.
+ * Light mode: white backgrounds, var(--bdr, #E5E7EB) borders, Westlaw palette.
  */
 
 import { ReactNode } from 'react';
@@ -41,7 +41,7 @@ export default function MasterDetailLayout({
           width: `${masterWidth}%`,
           minWidth: hasSelection ? undefined : '100%',
           background: 'var(--card, #FFFFFF)',
-          borderRight: '1px solid var(--bdr, var(--bdr, #E2DFD8))',
+          borderRight: '1px solid var(--bdr, var(--bdr, #E5E7EB))',
         }}
       >
         <div className="lg:hidden w-full">{!hasSelection && masterPanel}</div>
@@ -62,7 +62,7 @@ export default function MasterDetailLayout({
             className="lg:hidden sticky top-0 z-10"
             style={{
               background: 'var(--card, #FFFFFF)',
-              borderBottom: '1px solid var(--bdr, #E2DFD8)',
+              borderBottom: '1px solid var(--bdr, #E5E7EB)',
               padding: '8px 16px',
             }}
           >
@@ -105,13 +105,13 @@ export default function MasterDetailLayout({
                 height="48"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="var(--bdr, #E2DFD8)"
+                stroke="var(--bdr, #E5E7EB)"
                 strokeWidth="1"
                 style={{ margin: '0 auto 16px' }}
               >
                 <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" />
               </svg>
-              <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--text2, #42403C)' }}>
+              <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--text2, #525252)' }}>
                 Select an item to see details
               </p>
               <p style={{ fontSize: 12, marginTop: 4, color: 'var(--text4, #8A8780)' }}>

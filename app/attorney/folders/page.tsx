@@ -251,7 +251,7 @@ export default function FoldersPage() {
         {/* Sidebar - Folder Tree */}
         <div style={{ background: 'var(--card)', borderRadius: '4px', border: '1px solid var(--bdr)', padding: '16px', height: 'fit-content', maxHeight: '80vh', overflowY: 'auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
-            <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #42403C)' }}>
+            <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #525252)' }}>
               Folders
             </div>
             <button
@@ -317,7 +317,7 @@ export default function FoldersPage() {
                           e.stopPropagation();
                           toggleFolder(folder.id);
                         }}
-                        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'var(--text2, #42403C)' }}
+                        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'var(--text2, #525252)' }}
                       >
                         {isExpanded ? <ChevronDownIcon size={14} /> : <ChevronRightIcon size={14} />}
                       </button>
@@ -325,7 +325,7 @@ export default function FoldersPage() {
                     {childFolders.length === 0 && <div style={{ width: '14px' }} />}
                     <FolderIcon size={16} />
                     <span style={{ flex: 1, textAlign: 'left' }}>{folder.name}</span>
-                    <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 400 }}>
+                    <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 400 }}>
                       {folder.itemCount}
                     </div>
                   </button>
@@ -361,7 +361,7 @@ export default function FoldersPage() {
                     >
                       <FolderIcon size={16} />
                       <span style={{ flex: 1, textAlign: 'left' }}>{child.name}</span>
-                      <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 400 }}>
+                      <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 400 }}>
                         {child.itemCount}
                       </div>
                     </button>
@@ -384,7 +384,7 @@ export default function FoldersPage() {
                     {currentFolder.name}
                   </h2>
                   {currentFolder.description && (
-                    <p style={{ fontSize: '14px', color: 'var(--text2, #42403C)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '14px', color: 'var(--text2, #525252)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       {currentFolder.description}
                     </p>
                   )}
@@ -476,7 +476,7 @@ export default function FoldersPage() {
                   <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>
                     {currentFolder.itemCount}
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Total Items
                   </div>
                 </div>
@@ -484,7 +484,7 @@ export default function FoldersPage() {
                   <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                     {analysis.totalAnnotations}
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Annotations
                   </div>
                 </div>
@@ -492,7 +492,7 @@ export default function FoldersPage() {
                   <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-positive)', fontFamily: 'var(--font-mono)' }}>
                     {analysis.dateRange.oldest}
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Date Range Start
                   </div>
                 </div>
@@ -501,7 +501,7 @@ export default function FoldersPage() {
                     <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                       {currentFolder.sharedWith.length}
                     </div>
-                    <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       Team Members
                     </div>
                   </div>
@@ -519,7 +519,7 @@ export default function FoldersPage() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="folders-analysis-grid">
                 {/* Content Type Breakdown */}
                 <div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #42403C)', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #525252)', marginBottom: '12px' }}>
                     Content Type Distribution
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -561,18 +561,18 @@ export default function FoldersPage() {
 
                 {/* Jurisdiction & Date Stats */}
                 <div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #42403C)', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #525252)', marginBottom: '12px' }}>
                     Quick Stats
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                     <div style={{ padding: '12px', background: 'var(--surf)', borderRadius: '3px' }}>
-                      <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500 }}>Date Range</div>
+                      <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 500 }}>Date Range</div>
                       <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', marginTop: '4px' }}>
                         {analysis.dateRange.oldest} to {analysis.dateRange.newest}
                       </div>
                     </div>
                     <div style={{ padding: '12px', background: 'var(--surf)', borderRadius: '3px' }}>
-                      <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500 }}>Total Annotations</div>
+                      <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 500 }}>Total Annotations</div>
                       <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginTop: '4px' }}>
                         {analysis.totalAnnotations}
                       </div>
@@ -588,7 +588,7 @@ export default function FoldersPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 140px 140px 140px', gap: '12px', alignItems: 'flex-end' }} className="folders-filter-grid">
               {/* Search */}
               <div style={{ position: 'relative' }}>
-                <span style={{ position: 'absolute', left: '12px', top: '12px', color: 'var(--text2, #42403C)', display: 'flex' }}><SearchIcon size={16} /></span>
+                <span style={{ position: 'absolute', left: '12px', top: '12px', color: 'var(--text2, #525252)', display: 'flex' }}><SearchIcon size={16} /></span>
                 <input
                   type="text"
                   placeholder="Search by title or citation..."
@@ -653,7 +653,7 @@ export default function FoldersPage() {
               </select>
 
               {/* Results Count */}
-              <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textAlign: 'right' }}>
+              <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontWeight: 500, textAlign: 'right' }}>
                 {filteredItems.length} of {folderItems.length}
               </div>
             </div>
@@ -736,14 +736,14 @@ export default function FoldersPage() {
                   accentColor: 'var(--link)',
                 }}
               />
-              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2, #42403C)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2, #525252)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 {filteredItems.length === 0 ? 'No items' : `${filteredItems.length} item${filteredItems.length !== 1 ? 's' : ''}`}
               </span>
             </div>
 
             {/* Items */}
             {filteredItems.length === 0 ? (
-              <div style={{ padding: '48px 24px', textAlign: 'center', color: 'var(--text2, #42403C)' }}>
+              <div style={{ padding: '48px 24px', textAlign: 'center', color: 'var(--text2, #525252)' }}>
                 <p style={{ fontSize: '14px', margin: 0, fontFamily: 'var(--font-ui)' }}>
                   {folderItems.length === 0 ? 'This folder is empty' : 'No items match your filters'}
                 </p>
@@ -814,7 +814,7 @@ export default function FoldersPage() {
                             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                               {item.title}
                             </div>
-                            <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '12px', overflow: 'hidden' }}>
+                            <div style={{ fontSize: '12px', color: 'var(--text2, #525252)', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '12px', overflow: 'hidden' }}>
                               {item.citation && (
                                 <>
                                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -885,7 +885,7 @@ export default function FoldersPage() {
                                   fontWeight: 600,
                                   textTransform: 'capitalize',
                                   background: item.keyCiteStatus === 'positive' ? 'var(--data-positive-bg, #EAF4EF)' : item.keyCiteStatus === 'negative' ? 'var(--data-negative-bg, #FAEAEA)' : 'rgba(100, 100, 100, 0.1)',
-                                  color: item.keyCiteStatus === 'positive' ? 'var(--data-positive)' : item.keyCiteStatus === 'negative' ? 'var(--data-negative)' : 'var(--text2, #42403C)',
+                                  color: item.keyCiteStatus === 'positive' ? 'var(--data-positive)' : item.keyCiteStatus === 'negative' ? 'var(--data-negative)' : 'var(--text2, #525252)',
                                   fontFamily: 'var(--font-ui)',
                                 }}
                               >
@@ -903,11 +903,11 @@ export default function FoldersPage() {
                                 cursor: 'pointer',
                                 display: 'flex',
                                 alignItems: 'center',
-                                color: 'var(--text2, #42403C)',
+                                color: 'var(--text2, #525252)',
                                 transition: 'color 200ms',
                               }}
                               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
-                              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text2, #42403C)')}
+                              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text2, #525252)')}
                             >
                               <MoreIcon size={16} />
                             </button>
@@ -1029,7 +1029,7 @@ export default function FoldersPage() {
               Quick Save to {currentFolder?.name}
             </h3>
             <div style={{ marginBottom: '16px' }}>
-              <label style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text2, #42403C)', display: 'block', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
+              <label style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text2, #525252)', display: 'block', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
                 Case Citation or Title
               </label>
               <input

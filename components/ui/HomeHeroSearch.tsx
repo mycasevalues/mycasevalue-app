@@ -87,7 +87,7 @@ export default function HomeHeroSearch() {
             borderLeft: '1px solid var(--bdr)',
             fontSize: 12,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text2, #42403C)',
+            color: 'var(--text2, #525252)',
             cursor: 'pointer',
             flexShrink: 0,
           }}

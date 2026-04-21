@@ -100,7 +100,7 @@ export default function PACERMonitor() {
       case 'closed':
         return { bg: '#F0F0F0', text: '#5F5F5F' };
       default:
-        return { bg: 'var(--tbl-hdr, #EDEAE4)', text: '#333333' };
+        return { bg: 'var(--tbl-hdr, #F0F2F5)', text: '#333333' };
     }
   };
 
@@ -163,7 +163,7 @@ export default function PACERMonitor() {
             style={{
               flex: 1,
               padding: '8px 12px',
-              border: error ? '1px solid #CC1016' : '1px solid var(--bdr, #E2DFD8)',
+              border: error ? '1px solid #CC1016' : '1px solid var(--bdr, #E5E7EB)',
               borderRadius: '4px',
               fontSize: '14px',
               fontFamily: 'var(--font-mono)',

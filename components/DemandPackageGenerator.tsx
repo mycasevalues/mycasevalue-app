@@ -264,7 +264,7 @@ export default function DemandPackageGenerator() {
                 style={{
                   width: '100%',
                   padding: '8px',
-                  border: '1px solid var(--bdr, #E2DFD8)',
+                  border: '1px solid var(--bdr, #E5E7EB)',
                   borderRadius: '4px',
                   fontSize: '14px',
                   fontFamily: 'inherit',
@@ -289,7 +289,7 @@ export default function DemandPackageGenerator() {
                 style={{
                   width: '100%',
                   padding: '8px',
-                  border: '1px solid var(--bdr, #E2DFD8)',
+                  border: '1px solid var(--bdr, #E5E7EB)',
                   borderRadius: '4px',
                   fontSize: '14px',
                   fontFamily: 'inherit',

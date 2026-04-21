@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
               <style>
                 body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
                 .email-container { max-width: 600px; margin: 0 auto; }
-                .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
+                .header { background-color: #333333; color: white; padding: 24px; text-align: center; }
                 .header-text { font-size: 24px; font-weight: bold; margin: 0; }
                 .body-content { background-color: white; padding: 32px 24px; }
                 .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
