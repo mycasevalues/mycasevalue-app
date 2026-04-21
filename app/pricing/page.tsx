@@ -191,21 +191,28 @@ export default function PricingPage() {
           box-shadow: var(--shadow-sm);
         }
 
+        /* Tier name is the primary visual anchor for each pricing card.
+           Was 1.0625rem / weight 600 — the eyebrow below (tracked uppercase gold)
+           was reading louder than the name. Increased to 1.5rem / weight 700
+           so the name reads first, eyebrow reads second. */
         .card-name {
           font-family: var(--font-ui);
-          font-size: 1.0625rem;
-          font-weight: 600;
-          letter-spacing: -0.01em;
+          font-size: 1.5rem;
+          font-weight: 700;
+          letter-spacing: -0.015em;
           color: var(--text1);
           margin-bottom: 0.375rem;
         }
 
+        /* Eyebrow ("Best for …"). Softened from weight 600 / tracking 0.12em
+           to weight 500 / 0.08em and reduced to 11px so the tier name above
+           dominates the visual hierarchy. Gold color retained for brand. */
         .card-best-for {
           font-family: var(--font-mono);
-          font-size: 12px;
+          font-size: 11px;
           color: var(--link, #C4882A);
-          font-weight: 600;
-          letter-spacing: 0.12em;
+          font-weight: 500;
+          letter-spacing: 0.08em;
           text-transform: uppercase;
           margin-bottom: 1.25rem;
         }

@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     default: 'MyCaseValue — Federal Court Intelligence',
     template: '%s — MyCaseValue',
   },
-  description: 'Search millions of federal court records for case outcomes, judge analytics, settlement data, and litigation intelligence. Built entirely from public federal court and agency records.',
+  description: 'Know what your case is worth before you file. 5.1M+ federal court cases, win rates by judge and district, settlement ranges by case type — from public records, open to everyone.',
   openGraph: {
     title: 'MyCaseValue — Federal Court Intelligence',
-    description: 'Federal court intelligence platform. Case outcomes, judge analytics, and litigation data from public records.',
+    description: 'Know what your case is worth before you file. 5.1M+ federal cases across 94 districts — win rates, settlement ranges, judge analytics, case timelines. Open to everyone.',
     type: 'website',
     siteName: 'MyCaseValue',
     url: SITE_URL,
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'MyCaseValue — Federal Court Intelligence',
-    description: 'Federal court intelligence platform. Case outcomes, judge analytics, and litigation data from public records.',
+    description: 'Know what your case is worth before you file. 5.1M+ federal cases, win rates by judge, settlement ranges by district. Open to everyone.',
     images: [`${SITE_URL}/og-image.png`],
   },
   alternates: {
