@@ -57,6 +57,7 @@ export default function CaseDetailPage() {
   const [caseData, setCaseData] = useState<CaseDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (!caseId) return;
@@ -137,6 +138,25 @@ export default function CaseDetailPage() {
     existing.push(t);
     tagsByCategory.set(t.category, existing);
   });
+
+  const keyIssues = c.tags.filter((t) => t.category === 'practice_area' || t.category === 'claim_type');
+  const otherTags = c.tags.filter((t) => t.category !== 'practice_area' && t.category !== 'claim_type');
+
+  const citationText = [
+    c.caseName,
+    c.docketNumber ? `No. ${c.docketNumber}` : '',
+    c.court?.abbreviation ? `(${c.court.abbreviation}${c.filingDate ? ` ${new Date(c.filingDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}` : ''})` : '',
+  ].filter(Boolean).join(', ');
+  const handleCopyCitation = async () => {
+    try {
+      await navigator.clipboard.writeText(citationText);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Silent fail — clipboard API may be blocked
+    }
+  };
+  const handlePrint = () => { if (typeof window !== 'undefined') window.print(); };
 
   // Status badge palette — Westlaw/KeyCite-style semantic colors
   const statusStyle = (() => {
@@ -222,6 +242,7 @@ export default function CaseDetailPage() {
               marginBottom: 12,
             }}
           >
+            <CaseCiteFlag status={c.status} size={20} />
             {c.caseName}
           </h1>
 
@@ -269,6 +290,25 @@ export default function CaseDetailPage() {
               />
             )}
           </div>
+
+          <div className="flex items-center gap-2 mt-4 pt-3" style={{ borderTop: '1px dashed var(--bdr)' }}>
+            <button
+              onClick={handleCopyCitation}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border transition-colors hover:bg-[#EBF5FF]"
+              style={{ fontSize: 12, fontWeight: 500, color: copied ? '#166534' : 'var(--link)', borderColor: copied ? '#BBE5C6' : 'var(--bdr)', background: copied ? '#F0F9F3' : '#FFFFFF', fontFamily: 'var(--font-ui)' }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              {copied ? 'Copied' : 'Copy Citation'}
+            </button>
+            <button
+              onClick={handlePrint}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border transition-colors hover:bg-[#EBF5FF]"
+              style={{ fontSize: 12, fontWeight: 500, color: 'var(--link)', borderColor: 'var(--bdr)', background: '#FFFFFF', fontFamily: 'var(--font-ui)' }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print
+            </button>
+          </div>
         </div>
 
         {/* ── SECTION 2: AI SUMMARY ── */}
@@ -288,8 +328,36 @@ export default function CaseDetailPage() {
           </Section>
         )}
 
+        {/* ── SECTION 2b: KEY ISSUES ── */}
+        {keyIssues.length > 0 && (
+          <Section title="Key Issues">
+            <div className="flex flex-wrap gap-2">
+              {keyIssues.map((t) => (
+                <Link
+                  key={`${t.category}-${t.tag}`}
+                  href={`/case-search?caseType=${encodeURIComponent(t.tag)}`}
+                  className="inline-flex items-center px-3 py-1.5 rounded border transition-colors hover:bg-[#EBF5FF]"
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 500,
+                    fontFamily: 'var(--font-legal)',
+                    color: 'var(--link)',
+                    borderColor: '#B6D4F7',
+                    background: '#FFFFFF',
+                  }}
+                >
+                  {t.tag}
+                </Link>
+              ))}
+            </div>
+            <p className="mt-3" style={{ fontSize: 11, color: 'var(--text-tertiary)' }}>
+              Click to find more cases on the same issue.
+            </p>
+          </Section>
+        )}
+
         {/* ── SECTION 3: KEY DETAILS / TAGS ── */}
-        {(c.tags.length > 0 || c.caseType || c.proceduralPosture || c.natureOfSuit) && (
+        {(otherTags.length > 0 || c.caseType || c.proceduralPosture || c.natureOfSuit) && (
           <Section title="Classification">
             <div className="space-y-3">
               {c.caseType && (
@@ -305,10 +373,10 @@ export default function CaseDetailPage() {
                 <DetailRow label="Circuit" value={`${c.court.circuit}${ordinalSuffix(c.court.circuit)} Circuit`} />
               )}
 
-              {c.tags.length > 0 && (
+              {otherTags.length > 0 && (
                 <div className="pt-2">
                   <div className="flex flex-wrap gap-1.5">
-                    {c.tags.map((t) => {
+                    {otherTags.map((t) => {
                       const tagStyle =
                         t.category === 'practice_area'
                           ? { bg: '#EBF5FF', fg: '#1557B0', border: '#B6D4F7' }
@@ -607,6 +675,22 @@ function MetaPair({
       </span>
       <span style={{ fontSize: 13, color: 'var(--text-secondary)', ...valueStyle }}>{value}</span>
     </span>
+  );
+}
+
+function CaseCiteFlag({ status, size = 14 }: { status?: string | null; size?: number }) {
+  const s = (status || '').toLowerCase();
+  let color = '#9CA3AF';
+  let label = 'Status unknown';
+  if (s === 'closed' || s === 'terminated') { color = '#16A34A'; label = 'Closed'; }
+  else if (s === 'open' || s === 'pending' || s === 'active') { color = '#1A73E8'; label = 'Open'; }
+  else if (s === 'stayed' || s === 'remanded') { color = '#C4882A'; label = 'Stayed'; }
+  const w = size * (10 / 14);
+  return (
+    <svg aria-label={`CaseCite flag: ${label}`} role="img" width={w} height={size} viewBox="0 0 10 14" style={{ display: 'inline-block', verticalAlign: '-2px', marginRight: 8, flexShrink: 0 }}>
+      <rect x="1" y="0" width="1.5" height="14" fill="#6B7280" />
+      <path d="M2.5 0 L9 0 L7.5 3 L9 6 L2.5 6 Z" fill={color} />
+    </svg>
   );
 }
 
