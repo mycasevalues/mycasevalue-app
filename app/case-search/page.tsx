@@ -160,15 +160,31 @@ function CaseSearchContent() {
     window.history.replaceState({}, '', '/case-search');
   };
 
-  const hasFilters = court || caseType || yearFrom || yearTo || status;
+  const hasFilters = Boolean(court || caseType || yearFrom || yearTo || status);
+
+  // Build active-filter chips for the Westlaw-style toolbar (audit #45)
+  const activeFilters: Array<{ key: string; label: string; value: string; onRemove: () => void }> = [];
+  if (court) {
+    activeFilters.push({ key: 'court', label: 'Court', value: court, onRemove: () => { setCourt(''); setTimeout(() => performSearch(1), 0); } });
+  }
+  if (caseType) {
+    activeFilters.push({ key: 'caseType', label: 'Case Type', value: caseType, onRemove: () => { setCaseType(''); setTimeout(() => performSearch(1), 0); } });
+  }
+  if (yearFrom || yearTo) {
+    const label = yearFrom && yearTo ? `${yearFrom}–${yearTo}` : yearFrom ? `from ${yearFrom}` : `until ${yearTo}`;
+    activeFilters.push({ key: 'years', label: 'Years', value: label, onRemove: () => { setYearFrom(''); setYearTo(''); setTimeout(() => performSearch(1), 0); } });
+  }
+  if (status) {
+    activeFilters.push({ key: 'status', label: 'Status', value: status, onRemove: () => { setStatus(''); setTimeout(() => performSearch(1), 0); } });
+  }
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       {/* Header */}
       <div className="border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-          <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--text1)', marginBottom: '0.25rem' }}>Search Federal Cases</h1>
-          <p className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--text-primary)', marginBottom: '0.25rem' }}>Search Federal Cases</h1>
+          <p style={{ fontSize: 14, color: 'var(--text-secondary)' }}>
             Search individual case records from public federal court data.
           </p>
         </div>
@@ -308,7 +324,16 @@ function CaseSearchContent() {
               {/* Apply button */}
               <button
                 onClick={() => performSearch(1)}
-                className="w-full h-9 rounded-md bg-[rgba(255,255,255,0.04)] text-[var(--color-text-muted)] hover:bg-[rgba(255,255,255,0.08)] transition-colors"
+                className="w-full h-9 rounded transition-colors"
+                style={{
+                  background: 'var(--gold)',
+                  color: '#FFFFFF',
+                  fontSize: 13,
+                  fontWeight: 600,
+                  border: 'none',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--gold-hover)')}
+                onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--gold)')}
               >
                 Apply Filters
               </button>
@@ -317,42 +342,154 @@ function CaseSearchContent() {
 
           {/* Results Area */}
           <div className="flex-1 min-w-0">
-            {/* Results header */}
+            {/* Westlaw-style Results Toolbar (audit #43, #45) */}
             {hasSearched && (
-              <div className="flex items-center justify-between mb-4">
-                <p className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
-                  {loading ? (
-                    'Searching...'
-                  ) : total > 0 ? (
-                    <>
-                      <span className="text-[var(--color-text-muted)]" style={{ fontWeight: 600 }}>{total.toLocaleString()}</span>{' '}
-                      result{total !== 1 ? 's' : ''}
-                      {query ? (
-                        <>
-                          {' '}for &ldquo;<span className="text-[var(--color-text-muted)]" style={{ fontWeight: 500 }}>{query}</span>&rdquo;
-                        </>
-                      ) : null}
-                    </>
-                  ) : (
-                    'No results found'
-                  )}
-                </p>
-
-                <select
-                  value={sort}
-                  onChange={(e) => {
-                    setSort(e.target.value);
-                    performSearch(1);
-                  }}
-                  className="h-8 px-3 rounded-md border"
-                  style={{ borderColor: 'var(--bdr)' }}
+              <div
+                className="mb-4 rounded border"
+                style={{ borderColor: 'var(--bdr)', background: '#FFFFFF' }}
+              >
+                {/* Row 1: count + query + sort */}
+                <div
+                  className="flex items-center justify-between gap-3 px-4 py-2.5"
+                  style={{ borderBottom: activeFilters.length > 0 ? '1px solid var(--bdr)' : 'none' }}
                 >
-                  {SORT_OPTIONS.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
+                  <div className="flex items-baseline gap-2 min-w-0">
+                    {loading ? (
+                      <span style={{ fontSize: 13, color: 'var(--text-tertiary)', fontStyle: 'italic' }}>
+                        Searching…
+                      </span>
+                    ) : total > 0 ? (
+                      <>
+                        <span
+                          style={{
+                            fontSize: 16,
+                            fontWeight: 700,
+                            color: 'var(--text-primary)',
+                            fontFamily: 'var(--font-mono)',
+                          }}
+                        >
+                          {total.toLocaleString()}
+                        </span>
+                        <span style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
+                          result{total !== 1 ? 's' : ''}
+                          {query ? (
+                            <>
+                              {' '}for{' '}
+                              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
+                                &ldquo;{query}&rdquo;
+                              </span>
+                            </>
+                          ) : null}
+                        </span>
+                      </>
+                    ) : (
+                      <span style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
+                        No results found
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <label
+                      className="uppercase hidden sm:inline"
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 600,
+                        letterSpacing: '0.08em',
+                        color: 'var(--text-tertiary)',
+                      }}
+                    >
+                      Sort
+                    </label>
+                    <select
+                      value={sort}
+                      onChange={(e) => {
+                        setSort(e.target.value);
+                        setTimeout(() => performSearch(1), 0);
+                      }}
+                      className="h-8 px-2.5 rounded border"
+                      style={{
+                        borderColor: 'var(--bdr)',
+                        fontSize: 13,
+                        color: 'var(--text-primary)',
+                        background: '#FFFFFF',
+                        fontWeight: 500,
+                      }}
+                    >
+                      {SORT_OPTIONS.map((opt) => (
+                        <option key={opt.value} value={opt.value}>
+                          {opt.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Row 2: Active-filter chips (only when filters applied) */}
+                {activeFilters.length > 0 && (
+                  <div
+                    className="flex flex-wrap items-center gap-2 px-4 py-2"
+                    style={{ background: '#FAFBFC' }}
+                  >
+                    <span
+                      className="uppercase"
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 600,
+                        letterSpacing: '0.08em',
+                        color: 'var(--text-tertiary)',
+                      }}
+                    >
+                      Filters
+                    </span>
+                    {activeFilters.map((f) => (
+                      <button
+                        key={f.key}
+                        type="button"
+                        onClick={f.onRemove}
+                        className="inline-flex items-center gap-1.5 rounded transition-colors hover:opacity-80"
+                        style={{
+                          padding: '3px 8px 3px 10px',
+                          fontSize: 12,
+                          fontWeight: 500,
+                          color: 'var(--text-primary)',
+                          background: '#EBF5FF',
+                          border: '1px solid #B6D4F7',
+                        }}
+                        aria-label={`Remove ${f.label} filter: ${f.value}`}
+                      >
+                        <span style={{ color: 'var(--text-tertiary)', fontWeight: 600 }}>
+                          {f.label}:
+                        </span>
+                        <span>{f.value}</span>
+                        <span
+                          aria-hidden
+                          style={{
+                            marginLeft: 2,
+                            color: 'var(--text-tertiary)',
+                            fontWeight: 700,
+                            fontSize: 14,
+                            lineHeight: 1,
+                          }}
+                        >
+                          ×
+                        </span>
+                      </button>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={handleReset}
+                      className="hover:underline ml-1"
+                      style={{
+                        fontSize: 12,
+                        color: 'var(--link)',
+                        fontWeight: 500,
+                      }}
+                    >
+                      Clear all
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 
@@ -363,12 +500,12 @@ function CaseSearchContent() {
                   <div
                     key={i}
                     className="rounded border p-5 animate-pulse"
-                    style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
+                    style={{ borderColor: 'var(--bdr)', background: '#FFFFFF' }}
                   >
-                    <div className="h-5 bg-[rgba(255,255,255,0.08)] rounded w-3/4 mb-3" />
-                    <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-1/2 mb-4" />
-                    <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-full mb-2" />
-                    <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-2/3" />
+                    <div className="h-5 rounded w-3/4 mb-3" style={{ background: '#F0F1F4' }} />
+                    <div className="h-3 rounded w-1/2 mb-4" style={{ background: '#F0F1F4' }} />
+                    <div className="h-3 rounded w-full mb-2" style={{ background: '#F7F8FA' }} />
+                    <div className="h-3 rounded w-2/3" style={{ background: '#F7F8FA' }} />
                   </div>
                 ))}
               </div>
@@ -394,13 +531,20 @@ function CaseSearchContent() {
             {!hasSearched && !loading && (
               <div
                 className="rounded border p-8 text-center"
-                style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
+                style={{ borderColor: 'var(--bdr)', background: '#FFFFFF' }}
               >
-                
-                <h3 className="text-[var(--color-text-muted)] mb-2" style={{ fontSize: 14, fontWeight: 600 }}>
+                <h3
+                  className="mb-2"
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                    fontFamily: 'var(--font-legal)',
+                  }}
+                >
                   Search Federal Court Records
                 </h3>
-                <p className="text-[var(--color-text-muted)] mb-5 max-w-md mx-auto" style={{ fontSize: 14 }}>
+                <p className="mb-5 max-w-md mx-auto" style={{ fontSize: 14, color: 'var(--text-secondary)' }}>
                   Search by case name, docket number, court, or legal topic.
                   Results include AI-generated summaries and classification tags.
                 </p>
@@ -412,8 +556,21 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link)] hover:text-[var(--link)] hover:bg-white/5 transition-all"
-                      style={{ borderColor: 'var(--bdr)' }}
+                      className="px-3 py-1.5 rounded border transition-all"
+                      style={{
+                        borderColor: 'var(--bdr)',
+                        fontSize: 13,
+                        color: 'var(--text-primary)',
+                        background: '#F7F8FA',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--link)';
+                        e.currentTarget.style.color = 'var(--link)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--bdr)';
+                        e.currentTarget.style.color = 'var(--text-primary)';
+                      }}
                     >
                       {eq}
                     </button>
@@ -426,10 +583,20 @@ function CaseSearchContent() {
             {hasSearched && !loading && !error && total === 0 && (
               <div
                 className="rounded border p-8 text-center"
-                style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
+                style={{ borderColor: 'var(--bdr)', background: '#FFFFFF' }}
               >
-                <h3 className="text-[var(--color-text-muted)] mb-2" style={{ fontSize: 14, fontWeight: 600 }}>No Cases Found</h3>
-                <p className="text-[var(--color-text-muted)] mb-4" style={{ fontSize: 14 }}>
+                <h3
+                  className="mb-2"
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                    fontFamily: 'var(--font-legal)',
+                  }}
+                >
+                  No Cases Found
+                </h3>
+                <p className="mb-4" style={{ fontSize: 14, color: 'var(--text-secondary)' }}>
                   No cases match your search. Try broadening your query or adjusting filters.
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
@@ -440,8 +607,21 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link)] hover:text-[var(--link)] transition-all"
-                      style={{ borderColor: 'var(--bdr)' }}
+                      className="px-3 py-1.5 rounded border transition-all"
+                      style={{
+                        borderColor: 'var(--bdr)',
+                        fontSize: 13,
+                        color: 'var(--text-primary)',
+                        background: '#F7F8FA',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--link)';
+                        e.currentTarget.style.color = 'var(--link)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--bdr)';
+                        e.currentTarget.style.color = 'var(--text-primary)';
+                      }}
                     >
                       Try: {eq}
                     </button>
@@ -470,7 +650,10 @@ function CaseSearchContent() {
                 >
                   Previous
                 </button>
-                <span className="text-[var(--color-text-muted)] px-2" style={{ fontSize: 12 }}>
+                <span
+                  className="px-2 tabular-nums"
+                  style={{ fontSize: 12, color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
+                >
                   Page {page} of {totalPages}
                 </span>
                 <button
@@ -495,53 +678,95 @@ function CaseSearchContent() {
 function CaseResultCard({ result }: { result: SearchResult }) {
   const filingYear = result.filingDate ? new Date(result.filingDate).getFullYear() : null;
 
+  // Westlaw-style semantic status palette
+  const statusStyle = (() => {
+    const s = (result.status || '').toLowerCase();
+    if (s === 'open' || s === 'pending' || s === 'active') {
+      return { bg: '#EBF5FF', fg: '#1557B0', border: '#B6D4F7' };
+    }
+    if (s === 'closed' || s === 'terminated' || s === 'settled') {
+      return { bg: '#F0F9F3', fg: '#166534', border: '#BBE5C6' };
+    }
+    if (s === 'dismissed') {
+      return { bg: '#FAF3E6', fg: '#8A6020', border: '#E8D09C' };
+    }
+    return { bg: '#F3F4F6', fg: '#525252', border: '#E5E7EB' };
+  })();
+
   return (
     <Link
       href={`/case/${result.id}`}
-      className="block rounded border p-5 hover:shadow-md transition-all group"
-      style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
+      className="block rounded border p-5 transition-all group"
+      style={{
+        borderColor: 'var(--bdr)',
+        background: '#FFFFFF',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = 'var(--link)';
+        e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = 'var(--bdr)';
+        e.currentTarget.style.boxShadow = 'none';
+      }}
     >
       {/* Top row: case name + status */}
-      <div className="flex items-start justify-between gap-3 mb-2">
-        <h3 className="text-[var(--text1)] group-hover:text-[var(--link)] transition-colors leading-snug" style={{ fontSize: 14, fontWeight: 600 }}>
+      <div className="flex items-start justify-between gap-3 mb-1.5">
+        <h3
+          className="group-hover:underline transition-colors leading-snug"
+          style={{
+            fontFamily: 'var(--font-legal)',
+            fontSize: 16,
+            fontWeight: 600,
+            color: 'var(--link)',
+          }}
+        >
           {result.caseName}
         </h3>
         {result.status && (
           <span
- className="flex-shrink-0 text-[10px] px-2 py-0.5 rounded uppercase tracking-wider"
- style={{ background:
- result.status === 'open'
- ? 'rgba(30,64,175,0.15)'
- : result.status === 'closed'
- ? 'rgba(22,101,52,0.15)'
- : 'rgba(255,255,255,0.05)',
- color:
- result.status === 'open'
- ? '#60a5fa'
- : result.status === 'closed'
- ? '#4ade80'
- : '#9ca3af', fontWeight: 500 }}
- >
+            className="flex-shrink-0 inline-flex items-center uppercase"
+            style={{
+              fontSize: 10,
+              letterSpacing: '0.08em',
+              fontWeight: 700,
+              padding: '2px 6px',
+              borderRadius: 3,
+              background: statusStyle.bg,
+              color: statusStyle.fg,
+              border: `1px solid ${statusStyle.border}`,
+            }}
+          >
             {result.status}
           </span>
         )}
       </div>
 
       {/* Meta row */}
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[var(--color-text-muted)] mb-3" style={{ fontSize: 12 }}>
+      <div
+        className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2.5"
+        style={{ fontSize: 12, color: 'var(--text-tertiary)' }}
+      >
         {result.court && (
-          <span style={{ fontWeight: 500 }} >{result.court.abbreviation}</span>
+          <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>
+            {result.court.abbreviation}
+          </span>
         )}
-        {result.docketNumber && <span>{result.docketNumber}</span>}
+        {result.docketNumber && (
+          <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+            {result.docketNumber}
+          </span>
+        )}
         {filingYear && <span>Filed {filingYear}</span>}
-        {result.caseType && (
-          <span className="text-[var(--color-text-muted)]">{result.caseType}</span>
-        )}
+        {result.caseType && <span>{result.caseType}</span>}
       </div>
 
       {/* Summary preview */}
       {result.summaryPreview && (
-        <p className="text-[var(--color-text-muted)] leading-relaxed mb-3 line-clamp-2" style={{ fontSize: 12 }}>
+        <p
+          className="leading-relaxed mb-3 line-clamp-2"
+          style={{ fontSize: 13, color: 'var(--text-primary)' }}
+        >
           {result.summaryPreview}
         </p>
       )}
@@ -552,10 +777,14 @@ function CaseResultCard({ result }: { result: SearchResult }) {
           {result.tags.slice(0, 5).map((t) => (
             <span
               key={`${t.category}-${t.tag}`}
-              className="text-[10px] px-2 py-0.5 rounded border"
+              className="rounded border"
               style={{
+                fontSize: 11,
+                padding: '2px 8px',
                 borderColor: 'var(--bdr)',
-                color: 'var(--text2)',
+                color: 'var(--text-secondary)',
+                background: '#F7F8FA',
+                fontWeight: 500,
               }}
             >
               {t.tag}
