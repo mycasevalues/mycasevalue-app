@@ -375,14 +375,14 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             {/* Median Settlement Card */}
             <div className="metric-card">
               <div className="metric-label">Median Settlement</div>
-              <div className="metric-value">${data.settlementRange.md}K</div>
+              <div className="metric-value">{fmtK(data.settlementRange.md)}</div>
               <div style={{
                 fontSize: 12,
                 color: 'var(--text2)',
                 marginTop: 8,
                 fontFamily: 'var(--font-ui)',
               }}>
-                Range: ${data.settlementRange.lo}K - ${data.settlementRange.hi}K
+                Range: {fmtK(data.settlementRange.lo)} - {fmtK(data.settlementRange.hi)}
               </div>
             </div>
 
@@ -441,13 +441,13 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               fontFamily: 'var(--font-ui)',
             }}>
               <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--text1)' }}>
-                Low: ${data.settlementRange.lo}K
+                Low: {fmtK(data.settlementRange.lo)}
               </div>
               <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--link)' }}>
-                Median: ${data.settlementRange.md}K
+                Median: {fmtK(data.settlementRange.md)}
               </div>
               <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--text1)' }}>
-                High: ${data.settlementRange.hi}K
+                High: {fmtK(data.settlementRange.hi)}
               </div>
             </div>
 

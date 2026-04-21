@@ -404,7 +404,7 @@ const faqs = [
       },
       {
         q: 'How is a plaintiff win defined?',
-        a: 'A plaintiff win is defined as a case resolved by plaintiff verdict — a judgment entered in favor of the plaintiff. This includes both jury verdicts and bench trial decisions. Win rates do not include settlements, dismissals, or transfers. For more details, see our <a href="/methodology" style={{ color: "var(--link)", textDecoration: "underline" }}>methodology page</a>.',
+        a: 'A plaintiff win is defined as a case resolved by plaintiff verdict — a judgment entered in favor of the plaintiff. This includes both jury verdicts and bench trial decisions. Win rates do not include settlements, dismissals, or transfers. For more details, see our <a href="/methodology" class="faq-inline-link">methodology page</a>.',
       },
       {
         q: 'Why are settlement amounts underreported?',
@@ -412,7 +412,7 @@ const faqs = [
       },
       {
         q: 'What is the minimum sample size?',
-        a: 'We require a minimum of 30 cases in a category before publishing statistics. This ensures data reliability and prevents misleading conclusions from small datasets. For more details on our confidence methodology, see our <a href="/methodology" style={{ color: "var(--link)", textDecoration: "underline" }}>methodology page</a>.',
+        a: 'We require a minimum of 30 cases in a category before publishing statistics. This ensures data reliability and prevents misleading conclusions from small datasets. For more details on our confidence methodology, see our <a href="/methodology" class="faq-inline-link">methodology page</a>.',
       },
       {
         q: 'What does "dismissal rate" mean?',
@@ -509,7 +509,7 @@ const faqs = [
       },
       {
         q: 'Do you offer an API?',
-        a: 'Yes, during beta we offer API access for qualified users. <a href="/contact" style={{ color: "var(--link)", textDecoration: "underline" }}>Contact us</a> to learn about API availability and integration options.',
+        a: 'Yes, during beta we offer API access for qualified users. <a href="/contact" class="faq-inline-link">Contact us</a> to learn about API availability and integration options.',
       },
       {
         q: 'Do you have an API?',
@@ -552,6 +552,8 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       <JsonLd data={jsonLd} />
+      {/* Scoped styles for inline links embedded in FAQ answer HTML */}
+      <style>{`.faq-inline-link{color:var(--link);text-decoration:underline}`}</style>
 
       {/* Header */}
       <div className="relative overflow-hidden border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}>
@@ -623,9 +625,11 @@ export default function FAQPage() {
                       </svg>
                     </summary>
                     <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--bdr)' }}>
-                      <p className="text-[13px] leading-[1.65]" style={{ color: 'var(--text2)' }}>
-                        {faq.a}
-                      </p>
+                      <p
+                        className="text-[13px] leading-[1.65]"
+                        style={{ color: 'var(--text2)' }}
+                        dangerouslySetInnerHTML={{ __html: faq.a }}
+                      />
                     </div>
                   </details>
                 ))}

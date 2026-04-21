@@ -11,6 +11,7 @@ import SaveButton from '../../../components/ui/SaveButton';
 import HorizontalBarChart from '../../../components/charts/HorizontalBarChart';
 import ResearchOrganizer from '../../../components/ui/ResearchOrganizer';
 import FreeReportCTA from '../../../components/FreeReportCTA';
+import { fmtK } from '../../../lib/format';
 
 /**
  * District Detail Page — Westlaw Precision three-column layout.
@@ -218,7 +219,7 @@ function getTopCaseTypesForDistrict(code: string) {
         nosCode: nosCode,
         winRate: circuitRate,
         settlementRangeText: data.rng
-          ? `$${data.rng.lo}K - $${data.rng.hi}K (median: $${data.rng.md}K)`
+          ? `${fmtK(data.rng.lo)} - ${fmtK(data.rng.hi)} (median: ${fmtK(data.rng.md)})`
           : 'Settlement range unavailable',
         count: data.total || 0,
       };
@@ -288,12 +289,12 @@ export default async function DistrictPage({ params }: PageProps) {
     percentage: Math.round((ct.count / Math.max(1, caseTypes.reduce((s, c) => s + c.count, 0))) * 100),
   }));
 
-  // Settlement stat blocks
+  // Settlement stat blocks (values in thousands — use fmtK so large amounts render as $M)
   const settlementMedian = caseTypes.length > 0 && caseTypes[0].count > 0
-    ? `$${Math.round(45 + deterministic * 200)}K`
+    ? fmtK(Math.round(45 + deterministic * 200))
     : '—';
   const settlementMean = caseTypes.length > 0
-    ? `$${Math.round(80 + deterministic * 350)}K`
+    ? fmtK(Math.round(80 + deterministic * 350))
     : '—';
 
   return (
@@ -591,8 +592,8 @@ export default async function DistrictPage({ params }: PageProps) {
               {[
                 { label: 'Median', value: settlementMedian },
                 { label: 'Mean', value: settlementMean },
-                { label: '10th Percentile', value: `$${Math.round(10 + deterministic * 30)}K` },
-                { label: '90th Percentile', value: `$${Math.round(300 + deterministic * 900)}K` },
+                { label: '10th Percentile', value: fmtK(Math.round(10 + deterministic * 30)) },
+                { label: '90th Percentile', value: fmtK(Math.round(300 + deterministic * 900)) },
               ].map(s => (
                 <div key={s.label} style={{
                   background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2, padding: '8px 12px',
