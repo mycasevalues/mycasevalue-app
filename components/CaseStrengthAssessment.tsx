@@ -691,7 +691,7 @@ export default function CaseStrengthAssessment() {
                 disabled={!isAnswered}
                 style={{
                   padding: '12px 32px',
-                  backgroundColor: isAnswered ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+                  backgroundColor: isAnswered ? 'var(--link)' : 'var(--bdr, #E5E7EB)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '4px',
@@ -723,7 +723,7 @@ export default function CaseStrengthAssessment() {
                 disabled={!isAnswered}
                 style={{
                   padding: '12px 32px',
-                  backgroundColor: isAnswered ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+                  backgroundColor: isAnswered ? 'var(--link)' : 'var(--bdr, #E5E7EB)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '4px',

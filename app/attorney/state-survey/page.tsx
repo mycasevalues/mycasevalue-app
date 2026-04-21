@@ -1172,7 +1172,7 @@ Platform: MyCaseValue Legal Research
       {/* Footer */}
       <div style={{
         background: 'var(--surface-warm, #FAF3E6)',
-        color: 'var(--text2, #42403C)',
+        color: 'var(--text2, #525252)',
         padding: '40px 24px',
         fontSize: '14px',
         lineHeight: '1.6',

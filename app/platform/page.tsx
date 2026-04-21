@@ -256,7 +256,7 @@ export default function PlatformPage() {
         }
 
         .comparison-table th {
-          background: var(--text1, #18181A);
+          background: var(--text1, #333333);
           color: white;
           padding: 16px;
           text-align: left;

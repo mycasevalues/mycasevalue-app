@@ -21,7 +21,7 @@ export default function RootError({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--surf, #F6F5F2)',
+        background: 'var(--surf, #FFFFFF)',
         fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
         padding: 0,
         position: 'relative',
@@ -53,7 +53,7 @@ export default function RootError({
             width: '100%',
             textAlign: 'center',
             background: 'var(--card)',
-            border: '1px solid var(--bdr, #E2DFD8)',
+            border: '1px solid var(--bdr, #E5E7EB)',
             borderRadius: 4,
             padding: '48px 36px',
             boxShadow: '0 2px 8px rgba(27, 45, 69, 0.07)',
@@ -204,7 +204,7 @@ export default function RootError({
                 padding: '10px 24px',
                 background: 'transparent',
                 color: 'var(--chrome-bg, #1B2D45)',
-                border: '1px solid var(--bdr, #E2DFD8)',
+                border: '1px solid var(--bdr, #E5E7EB)',
                 borderRadius: 2,
                 fontSize: 14,
                 fontWeight: 600,
@@ -246,7 +246,7 @@ export default function RootError({
             <a
               href="mailto:support@mycasevalues.com?subject=Error%20Report"
               style={{
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
               }}

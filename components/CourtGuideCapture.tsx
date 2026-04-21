@@ -641,7 +641,7 @@ export default function CourtGuideCapture() {
                 }))
               }
               placeholder="you@example.com"
-              className="mt-2 block w-full rounded-md border border-[var(--bdr, #E2DFD8)] px-4 py-2 text-[var(--color-text-muted)] placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-2 block w-full rounded-md border border-[var(--bdr, #E5E7EB)] px-4 py-2 text-[var(--color-text-muted)] placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={state.loading}
             />
           </div>

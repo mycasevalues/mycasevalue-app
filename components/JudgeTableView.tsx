@@ -60,7 +60,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
       <div ref={tableRef} className="overflow-x-auto" tabIndex={0} role="grid" aria-label="Judge directory table">
         <table className="w-full" style={{ borderCollapse: 'separate', borderSpacing: 0, fontSize: 14 }}>
         <thead>
-          <tr className="bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E2DFD8)]">
+          <tr className="bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E5E7EB)]">
             <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
  style={{ fontSize: 12, fontWeight: 600 }}
                 onClick={() => onSort?.('name')}>
@@ -102,7 +102,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
             return (
               <tr
                 key={judge.id}
-                className={`border-b border-[var(--bdr, #E2DFD8)] hover:bg-white/5 transition-colors cursor-pointer ${
+                className={`border-b border-[var(--bdr, #E5E7EB)] hover:bg-white/5 transition-colors cursor-pointer ${
                   selectedIdx === idx ? 'bg-[var(--surf)] ring-1 ring-inset ring-brand-blue/30' : idx % 2 === 0 ? '' : 'bg-[var(--surf)]'
                 }`}
                 onClick={() => setSelectedIdx(idx)}

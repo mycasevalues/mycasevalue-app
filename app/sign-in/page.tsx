@@ -7,7 +7,7 @@ import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', background: 'var(--surf, #F6F5F2)' }} />}>
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: 'var(--surf, #FFFFFF)' }} />}>
       <SignInForm />
     </Suspense>
   );

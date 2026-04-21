@@ -93,7 +93,7 @@ export default function PricingPage() {
       <style>{`
         .pricing-header {
           background: var(--surface-warm, #FAF3E6);
-          color: var(--text-primary, #18181A);
+          color: var(--text-primary, #333333);
           padding: 3rem 1.5rem 3.5rem;
           text-align: center;
           position: relative;
@@ -133,7 +133,7 @@ export default function PricingPage() {
           letter-spacing: -0.025em;
           line-height: 1.1;
           margin-bottom: 0.75rem;
-          color: var(--text-primary, #18181A);
+          color: var(--text-primary, #333333);
         }
 
         .pricing-subtitle {

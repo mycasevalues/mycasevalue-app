@@ -65,7 +65,7 @@ export default function TrustSection() {
                   fontSize: 14,
                   fontFamily: 'var(--font-ui)',
                   fontWeight: 600,
-                  color: 'var(--text1, #18181A)',
+                  color: 'var(--text1, #333333)',
                   marginBottom: 4,
                 }}
               >

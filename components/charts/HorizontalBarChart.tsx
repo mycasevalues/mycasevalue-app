@@ -28,7 +28,7 @@ interface HorizontalBarChartProps {
 /* ── Confidence Legend ── */
 function ConfidenceLegend() {
   const tiers = [
-    { color: 'var(--link, #0A50A2)', label: 'High confidence' },
+    { color: 'var(--link, #1A73E8)', label: 'High confidence' },
     { color: 'var(--link)', label: 'Medium' },
     { color: 'var(--ab-border)', label: 'Limited' },
   ];
@@ -93,7 +93,7 @@ function BarRow({
     return () => clearTimeout(timer);
   }, [shouldAnimate, datum.percentage, index]);
 
-  const fillColor = datum.color || 'var(--link, #0A50A2)';
+  const fillColor = datum.color || 'var(--link, #1A73E8)';
 
   return (
     <div
@@ -110,7 +110,7 @@ function BarRow({
           width: 148,
           flexShrink: 0,
           fontSize: 12,
-          color: 'var(--text2, #42403C)',
+          color: 'var(--text2, #525252)',
           fontFamily: 'var(--font-ui)',
           textAlign: 'right',
           overflow: 'hidden',
@@ -154,7 +154,7 @@ function BarRow({
           flexShrink: 0,
           fontFamily: 'var(--font-mono)',
           fontSize: 12,
-          color: 'var(--text1, #18181A)',
+          color: 'var(--text1, #333333)',
           textAlign: 'right',
         }}
       >
@@ -191,7 +191,7 @@ export default function HorizontalBarChart({
             fontSize: 12,
             fontWeight: 600,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text2, #42403C)',
+            color: 'var(--text2, #525252)',
             marginBottom: 8,
           }}
         >

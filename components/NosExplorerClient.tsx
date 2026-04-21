@@ -227,13 +227,13 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                           </div>
                           <div>
                             <div style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase', color: 'var(--text2)', marginBottom: 4 }}>Win Rate</div>
-                            <div style={{ height: 8, background: 'var(--bdr, #E2DFD8)', borderRadius: 4, overflow: 'hidden', marginTop: 6 }}>
+                            <div style={{ height: 8, background: 'var(--bdr, #E5E7EB)', borderRadius: 4, overflow: 'hidden', marginTop: 6 }}>
                               <div style={{ width: `${row.wr}%`, height: '100%', background: wrColor(row.wr), borderRadius: 4 }} />
                             </div>
                           </div>
                           <div>
                             <div style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase', color: 'var(--text2)', marginBottom: 4 }}>Settlement Rate</div>
-                            <div style={{ height: 8, background: 'var(--bdr, #E2DFD8)', borderRadius: 4, overflow: 'hidden', marginTop: 6 }}>
+                            <div style={{ height: 8, background: 'var(--bdr, #E5E7EB)', borderRadius: 4, overflow: 'hidden', marginTop: 6 }}>
                               <div style={{ width: `${row.sp}%`, height: '100%', background: 'var(--accent-primary-hover)', borderRadius: 4 }} />
                             </div>
                           </div>

@@ -679,7 +679,7 @@ function SearchPageInner() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                e.currentTarget.style.color = 'var(--text1, #18181A)';
+                e.currentTarget.style.color = 'var(--text1, #333333)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'transparent';

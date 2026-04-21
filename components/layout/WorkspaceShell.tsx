@@ -144,8 +144,8 @@ function ContextBar({ pathname }: { pathname: string }) {
         height: 32,
         display: 'flex',
         alignItems: 'center',
-        background: 'var(--surf, #F6F5F2)',
-        borderBottom: '1px solid var(--bdr, #E2DFD8)',
+        background: 'var(--surf, #FFFFFF)',
+        borderBottom: '1px solid var(--bdr, #E5E7EB)',
         padding: '0 16px',
         overflow: 'hidden',
       }}
@@ -169,17 +169,17 @@ function ContextBar({ pathname }: { pathname: string }) {
               <span style={{ color: 'var(--text4, #8A8780)', fontSize: 12 }}>›</span>
             )}
             {i === crumbs.length - 1 ? (
-              <span style={{ color: 'var(--text1, #18181A)', fontWeight: 500 }}>{crumb.label}</span>
+              <span style={{ color: 'var(--text1, #333333)', fontWeight: 500 }}>{crumb.label}</span>
             ) : (
               <Link
                 href={crumb.href}
                 style={{
-                  color: 'var(--link, #0A50A2)',
+                  color: 'var(--link, #1A73E8)',
                   textDecoration: 'none',
                   transition: 'color 120ms',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--link-hover, #083A7A)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--link, #0A50A2)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--link-hover, #1557B0)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--link, #1A73E8)'; }}
               >
                 {crumb.label}
               </Link>
@@ -255,7 +255,7 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
             top: 94,
             height: 40,
             background: 'var(--card, #FFFFFF)',
-            borderBottom: '1px solid var(--bdr, #E2DFD8)',
+            borderBottom: '1px solid var(--bdr, #E5E7EB)',
           }}
         >
           <button
@@ -263,7 +263,7 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
             style={{
               padding: 6,
               marginLeft: -6,
-              color: 'var(--text2, #42403C)',
+              color: 'var(--text2, #525252)',
               background: 'none',
               border: 'none',
               cursor: 'pointer',
@@ -279,7 +279,7 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
               fontSize: 12,
               fontWeight: 600,
               fontFamily: 'var(--font-ui)',
-              color: 'var(--text1, #18181A)',
+              color: 'var(--text1, #333333)',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',

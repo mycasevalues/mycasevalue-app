@@ -4,11 +4,11 @@ export default function LoadingPage() {
   const shimmerStyle = {
     animation: 'shimmer 2s infinite',
     backgroundSize: '200% 100%',
-    backgroundImage: 'linear-gradient(90deg, var(--tbl-hdr, #EDEAE4) 0%, var(--bdr) 50%, var(--tbl-hdr, #EDEAE4) 100%)',
+    backgroundImage: 'linear-gradient(90deg, var(--tbl-hdr, #F0F2F5) 0%, var(--bdr) 50%, var(--tbl-hdr, #F0F2F5) 100%)',
   };
 
   return (
-    <div style={{ background: 'var(--surf, #F6F5F2)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--surf, #FFFFFF)', minHeight: '100vh' }}>
       <style>{`
         @keyframes shimmer {
           0% { background-position: -200% 0; }

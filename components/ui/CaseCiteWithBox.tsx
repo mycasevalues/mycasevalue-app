@@ -65,7 +65,7 @@ export default function CaseCiteWithBox({ cases }: CaseCiteWithBoxProps) {
               style={{
                 fontFamily: 'var(--font-legal)',
                 fontSize: 12,
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 textDecoration: 'none',
                 lineHeight: 1.4,
               }}

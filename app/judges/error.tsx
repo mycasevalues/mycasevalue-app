@@ -20,7 +20,7 @@ export default function Error({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'var(--surf, #F6F5F2)',
+      background: 'var(--surf, #FFFFFF)',
       fontFamily: 'var(--font-ui)',
       padding: '24px',
       position: 'relative',
@@ -65,7 +65,7 @@ export default function Error({
           <h1 style={{
             fontSize: '28px',
             fontWeight: 700,
-            color: 'var(--text1, #18181A)',
+            color: 'var(--text1, #333333)',
             margin: '0 0 8px',
             letterSpacing: '-0.01em',
           }}>
@@ -74,7 +74,7 @@ export default function Error({
 
           <p style={{
             fontSize: '14px',
-            color: 'var(--text2, #42403C)',
+            color: 'var(--text2, #525252)',
             lineHeight: 1.6,
             margin: '0 0 24px',
             maxWidth: 400,
@@ -118,8 +118,8 @@ export default function Error({
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: 'var(--surf, #F6F5F2)',
-                color: 'var(--text1, #18181A)',
+                background: 'var(--surf, #FFFFFF)',
+                color: 'var(--text1, #333333)',
                 border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 fontSize: '14px',

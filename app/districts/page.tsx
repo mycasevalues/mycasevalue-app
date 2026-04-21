@@ -376,7 +376,7 @@ export default function DistrictsPage() {
             }}>
               <thead>
                 <tr style={{
-                  background: 'var(--surf, #F4F3EF)',
+                  background: 'var(--surf, #F7F8FA)',
                   borderBottom: '1px solid var(--bdr)',
                 }}>
                   <th style={thStyle({ width: 280, textAlign: 'left' })}>District Name</th>
@@ -540,7 +540,7 @@ function thStyle(overrides: React.CSSProperties = {}): React.CSSProperties {
     letterSpacing: '0.5px',
     textTransform: 'uppercase' as const,
     color: 'var(--color-text-muted, var(--text-tertiary))',
-    backgroundColor: 'var(--surf, #F4F3EF)',
+    backgroundColor: 'var(--surf, #F7F8FA)',
     whiteSpace: 'nowrap' as const,
     ...overrides,
   };

@@ -721,7 +721,7 @@ export default function AlertsPage() {
                             height: '20px',
                             display: 'inline-flex',
                             alignItems: 'center',
-                            background: 'rgba(10,80,160,0.08)',
+                            background: 'rgba(26,115,232,0.08)',
                             color: 'var(--link)',
                             borderRadius: '3px'
                           }}
@@ -829,7 +829,7 @@ export default function AlertsPage() {
                         height: '24px',
                         display: 'inline-flex',
                         alignItems: 'center',
-                        background: 'rgba(10,80,160,0.08)',
+                        background: 'rgba(26,115,232,0.08)',
                         color: 'var(--link)',
                         borderRadius: '3px'
                       }}

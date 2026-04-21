@@ -21,7 +21,7 @@ export default function ExportDropdown() {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[var(--text2)] hover:text-[var(--color-text-muted)] border border-[var(--bdr, #E2DFD8)] hover:border-[var(--bdr, #E2DFD8)] rounded transition-colors duration-150 hover:bg-[var(--color-surface-2)]"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[var(--text2)] hover:text-[var(--color-text-muted)] border border-[var(--bdr, #E5E7EB)] hover:border-[var(--bdr, #E5E7EB)] rounded transition-colors duration-150 hover:bg-[var(--color-surface-2)]"
         title="Export judge data"
       >
         <span>↓</span>
@@ -29,10 +29,10 @@ export default function ExportDropdown() {
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-40 bg-[#FFFFFF] border border-[var(--bdr, #E2DFD8)] rounded shadow-lg z-10">
+        <div className="absolute right-0 mt-2 w-40 bg-[#FFFFFF] border border-[var(--bdr, #E5E7EB)] rounded shadow-lg z-10">
           <button
             onClick={() => handleExport('csv')}
-            className="block w-full text-left px-4 py-2 text-[var(--color-text-muted)] hover:bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E2DFD8)]"
+            className="block w-full text-left px-4 py-2 text-[var(--color-text-muted)] hover:bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E5E7EB)]"
           >
             Export CSV
           </button>

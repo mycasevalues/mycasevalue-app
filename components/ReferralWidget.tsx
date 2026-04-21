@@ -128,7 +128,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           border: '1px solid rgba(59,130,246,0.15)',
         }}
       >
-        <h3 style={{ margin: '0 0 8px 0', color: 'var(--link, #0A50A2)' }}>
+        <h3 style={{ margin: '0 0 8px 0', color: 'var(--link, #1A73E8)' }}>
           Referral Link Not Set
         </h3>
         <p style={{ margin: '0 0 16px 0', color: 'var(--link)', fontSize: '14px' }}>

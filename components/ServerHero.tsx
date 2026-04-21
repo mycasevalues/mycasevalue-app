@@ -38,7 +38,7 @@ export default function ServerHero() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 12,
               fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
-              color: 'var(--link, #0A50A2)',
+              color: 'var(--link, #1A73E8)',
             }}>
               <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
               Federal Court Analytics · Live Data
@@ -301,7 +301,7 @@ export default function ServerHero() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 12,
             fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link, #1A73E8)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Integrated Workflow
@@ -638,7 +638,7 @@ export default function ServerHero() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 12,
             fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link, #1A73E8)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Data Provenance
@@ -808,7 +808,7 @@ export default function ServerHero() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 12,
             fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link, #1A73E8)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Free · No Account Required

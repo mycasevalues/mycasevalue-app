@@ -550,7 +550,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                     style={{
                       padding: '24px',
                       borderRight: idx < selectedJudges.length - 1 ? '1px solid var(--bdr)' : 'none',
-                      background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--card)',
+                      background: idx % 2 === 0 ? 'var(--surf, #FFFFFF)' : 'var(--card)',
                     }}
                   >
                     <h3
@@ -618,7 +618,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         style={{
                           padding: '16px 24px',
                           textAlign: 'right',
-                          background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--card)',
+                          background: idx % 2 === 0 ? 'var(--surf, #FFFFFF)' : 'var(--card)',
                           fontFamily: 'var(--font-ui)',
                           fontSize: 14,
                           fontWeight: 500,

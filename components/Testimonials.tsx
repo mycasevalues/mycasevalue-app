@@ -52,7 +52,7 @@ export default function Testimonials() {
           font-family: var(--font-legal);
           font-size: 14px;
           font-style: italic;
-          color: var(--text2, #42403C);
+          color: var(--text2, #525252);
           line-height: 1.65;
           margin: 0 0 14px;
         }
@@ -61,7 +61,7 @@ export default function Testimonials() {
           font-family: var(--font-ui);
           font-size: 14px;
           font-weight: 600;
-          color: var(--text1, #18181A);
+          color: var(--text1, #333333);
           margin: 0 0 2px;
         }
 

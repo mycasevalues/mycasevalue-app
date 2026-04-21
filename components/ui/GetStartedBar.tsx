@@ -60,11 +60,11 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
     <div
       style={{
         height: 42,
-        background: 'var(--surf, #F6F5F2)',
+        background: 'var(--surf, #FFFFFF)',
         display: 'flex',
         alignItems: 'center',
-        borderTop: '1px solid var(--bdr, #E2DFD8)',
-        borderBottom: '1px solid var(--bdr, #E2DFD8)',
+        borderTop: '1px solid var(--bdr, #E5E7EB)',
+        borderBottom: '1px solid var(--bdr, #E5E7EB)',
         padding: '0 18px',
         gap: 6,
         overflowX: 'auto',
@@ -102,19 +102,19 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
             background: 'var(--card, #FFFFFF)',
             fontSize: 12,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text2, #42403C)',
+            color: 'var(--text2, #525252)',
             cursor: 'pointer',
             whiteSpace: 'nowrap',
             flexShrink: 0,
             transition: 'border-color 150ms ease, color 150ms ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'var(--link, #0A50A2)';
-            e.currentTarget.style.color = 'var(--link, #0A50A2)';
+            e.currentTarget.style.borderColor = 'var(--link, #1A73E8)';
+            e.currentTarget.style.color = 'var(--link, #1A73E8)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = 'var(--bdr-strong, #C8C4B8)';
-            e.currentTarget.style.color = 'var(--text2, #42403C)';
+            e.currentTarget.style.color = 'var(--text2, #525252)';
           }}
         >
           {item.label}

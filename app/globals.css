@@ -41,12 +41,13 @@ html, body {
 
 body {
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 14px;           /* audit #28 — compact, information-dense baseline */
+  line-height: 1.5;          /* audit #29 */
   color: var(--text-primary);
-  background: var(--surface-secondary);
+  background: var(--surf);   /* audit #13 — white workspace, not cream/warm */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
 }
 
 /* ============================================================
@@ -64,8 +65,9 @@ h5 { font-family: var(--font-ui); font-size: 14px; font-weight: 600; }
 p  { margin-bottom: 1rem; }
 p:last-child { margin-bottom: 0; }
 
-a { color: var(--link); text-decoration: none; transition: color var(--transition-fast); }
-a:hover { color: var(--link-hover); text-decoration: none; }
+/* audit #34 — link text weight 500 to distinguish from body without relying on color alone */
+a { color: var(--link); text-decoration: none; font-weight: 500; transition: color var(--transition-fast); }
+a:hover { color: var(--link-hover); text-decoration: underline; }
 
 @media (max-width: 768px) {
   h1 { font-size: 24px; }
@@ -80,8 +82,8 @@ a:hover { color: var(--link-hover); text-decoration: none; }
 /* ============================================================
    SELECTION
    ============================================================ */
-::selection { background: rgba(10,80,160,0.20); color: var(--text-primary); }
-::-moz-selection { background: rgba(10,80,160,0.20); color: var(--text-primary); }
+::selection { background: rgba(26,115,232,0.20); color: var(--text-primary); }
+::-moz-selection { background: rgba(26,115,232,0.20); color: var(--text-primary); }
 
 /* ============================================================
    SCROLLBAR — minimal, 4px
@@ -184,7 +186,7 @@ input:hover, textarea:hover, select:hover {
 }
 input:focus, textarea:focus, select:focus {
   border-color: var(--link) !important;
-  box-shadow: 0 0 0 3px rgba(10,80,160,0.25) !important;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.25) !important;
   outline: none;
 }
 
@@ -307,7 +309,7 @@ hr { border-color: var(--surface-border); }
   --color-blue: var(--link);
   --color-blue-dark: var(--link-hover);
   --color-blue-mid: var(--link);
-  --color-blue-pale: rgba(10,80,160,0.08);
+  --color-blue-pale: rgba(26,115,232,0.08);
   --text-white: #FFFFFF;
   --text-link: var(--link);
   --text-muted-dark: var(--text-tertiary);
@@ -358,7 +360,7 @@ hr { border-color: var(--surface-border); }
   font-family: var(--font-body); font-size: 12px; font-weight: 500;
   padding: 0 8px; height: 20px; border-radius: var(--radius-sm);
 }
-.badge-federal { background: rgba(10,80,160,0.08); color: var(--link); border: 1px solid rgba(10,80,160,0.15); }
+.badge-federal { background: rgba(26,115,232,0.08); color: var(--link); border: 1px solid rgba(26,115,232,0.15); }
 .badge-positive { background: var(--data-positive-bg); color: var(--data-positive); }
 .badge-negative { background: var(--data-negative-bg); color: var(--data-negative); }
 .badge-neutral { background: rgba(180,83,9,0.08); color: #B45309; }
@@ -406,7 +408,7 @@ hr { border-color: var(--surface-border); }
 
 /* Auth */
 .auth-input { transition: border-color var(--transition-base), box-shadow var(--transition-base); }
-.auth-input:focus { border-color: var(--link) !important; box-shadow: 0 0 0 3px rgba(10,80,160,0.25) !important; outline: none; }
+.auth-input:focus { border-color: var(--link) !important; box-shadow: 0 0 0 3px rgba(26,115,232,0.25) !important; outline: none; }
 .auth-btn { transition: background var(--transition-base), transform var(--transition-fast); }
 .auth-btn:hover { background-color: var(--accent-hover) !important; }
 .auth-btn:active { transform: scale(0.98); }
@@ -501,13 +503,13 @@ hr { border-color: var(--surface-border); }
 @keyframes checkDraw { to { stroke-dashoffset: 0; } }
 @keyframes checkBurst { 0% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.15); } 100% { opacity: 1; transform: scale(1); } }
 @keyframes feedPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-@keyframes counterGlow { 0%, 100% { text-shadow: none; } 50% { text-shadow: 0 0 8px rgba(10,80,160,0.15); } }
+@keyframes counterGlow { 0%, 100% { text-shadow: none; } 50% { text-shadow: 0 0 8px rgba(26,115,232,0.15); } }
 @keyframes roiPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 @keyframes ripple { 0% { transform: scale(0); opacity: 0.35; } 100% { transform: scale(4); opacity: 0; } }
 @keyframes tickerSlide { 0% { transform: translateY(100%); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
 @keyframes subtleShake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-4px); } 40% { transform: translateX(4px); } 60% { transform: translateX(-2px); } 80% { transform: translateX(2px); } }
 @keyframes skeleton-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-@keyframes stat-glow { 0%, 100% { text-shadow: none; } 50% { text-shadow: 0 0 12px rgba(10,80,160,0.10); } }
+@keyframes stat-glow { 0%, 100% { text-shadow: none; } 50% { text-shadow: 0 0 12px rgba(26,115,232,0.10); } }
 @keyframes counterTick { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
 @keyframes compPulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.02); } }
 @keyframes lockedShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
@@ -560,7 +562,7 @@ hr { border-color: var(--surface-border); }
 .locked-shimmer { position: relative; overflow: hidden; }
 .locked-shimmer::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(110deg, transparent 25%, rgba(10,80,160,0.04) 37%, transparent 63%);
+  background: linear-gradient(110deg, transparent 25%, rgba(26,115,232,0.04) 37%, transparent 63%);
   background-size: 200% 100%; animation: lockedShimmer 3s ease-in-out infinite;
 }
 
@@ -670,3 +672,120 @@ hr { border-color: var(--surface-border); }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+
+/* ============================================================
+   WESTLAW PRECISION UTILITIES
+   ------------------------------------------------------------
+   Narrow, composable classes for the Westlaw type system.
+   Audit items 25–35 — use these instead of inline styles.
+   ============================================================ */
+
+/* audit #32 — uppercase tracking for small metadata labels
+   (JURISDICTION, DATE, OUTCOME, NOS, CIRCUIT, etc.) */
+.wl-caps {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* audit #27 + #35 — IBM Plex Mono tabular-nums for all numeric output
+   (settlement values, counts, percentages, dates, citations, dockets) */
+.wl-num,
+.wl-cite {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'lnum' 1;
+}
+
+/* audit #26 — Libre Baskerville serif for case/judge/district names */
+.wl-legal-name {
+  font-family: var(--font-legal);
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+/* audit #17 + #34 — link style: Westlaw blue, weight 500,
+   underline on hover only */
+.wl-link {
+  color: var(--link);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.wl-link:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* audit #20 — Westlaw card/panel: gray bg + thin border, no shadow */
+.wl-panel {
+  background: var(--card);
+  border: 1px solid var(--bdr);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+/* audit #23 — subtle hover tint on interactive surfaces */
+.wl-hover-tint:hover {
+  background: var(--surface-hover);
+}
+
+/* audit #24 — selected/active navigation indicator
+   (left blue border, used on sidebar nav and tabs) */
+.wl-active {
+  position: relative;
+  color: var(--link);
+  background: var(--link-light);
+}
+.wl-active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--link);
+}
+
+/* ============================================================
+   CASECITE FLAG — KeyCite-inspired status indicator
+   audit #18, #53 — green (favorable), yellow (caution),
+   red (overruled), red-striped (overruled in part), blue (informational)
+   ============================================================ */
+.wl-keycite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.wl-keycite--green        { background: var(--flag-green); }
+.wl-keycite--yellow       { background: var(--flag-yellow); }
+.wl-keycite--red          { background: var(--flag-red); }
+.wl-keycite--blue         { background: var(--flag-blue); }
+.wl-keycite--red-striped  {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--flag-red) 0, var(--flag-red) 3px,
+    #FFFFFF 3px, #FFFFFF 6px
+  );
+  outline: 1px solid var(--flag-red);
+  outline-offset: -1px;
+}
+
+/* Larger variant — for case headers / detail pages */
+.wl-keycite--lg { width: 20px; height: 20px; }
+
+/* ============================================================
+   WESTLAW TYPE TOKENS — applied via class on block elements
+   audit #28, #29, #33 — compact type scale, 14px body,
+   no font size exceeds 28px anywhere
+   ============================================================ */
+.wl-display   { font: var(--type-display); }
+.wl-heading   { font: var(--type-heading-lg); color: var(--text-primary); }
+.wl-subheading{ font: var(--type-heading-md); color: var(--text-primary); }
+.wl-body      { font: var(--type-body-md); color: var(--text-secondary); }
+.wl-meta      { font: var(--type-label-md); color: var(--text-tertiary); }
+

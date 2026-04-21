@@ -190,7 +190,7 @@ export default function AboutPage() {
           font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.2em;
-          color: rgba(10,80,160,0.4);
+          color: rgba(26,115,232,0.4);
         }
 
         .data-sources-grid {
@@ -215,8 +215,8 @@ export default function AboutPage() {
         }
 
         .source-card:hover {
-          border-color: rgba(10,80,160,0.3);
-          background: rgba(10,80,160,0.02);
+          border-color: rgba(26,115,232,0.3);
+          background: rgba(26,115,232,0.02);
         }
 
         .source-title {
@@ -257,8 +257,8 @@ export default function AboutPage() {
         }
 
         .audience-card:hover {
-          border-color: rgba(10,80,160,0.3);
-          background: rgba(10,80,160,0.02);
+          border-color: rgba(26,115,232,0.3);
+          background: rgba(26,115,232,0.02);
         }
 
         .audience-title {
@@ -364,8 +364,8 @@ export default function AboutPage() {
             display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '4px 8px', marginBottom: 16,
             borderRadius: 999,
-            border: '1px solid rgba(10,80,160,0.2)',
-            background: 'rgba(10,80,160,0.08)',
+            border: '1px solid rgba(26,115,232,0.2)',
+            background: 'rgba(26,115,232,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 12,
             fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
@@ -396,7 +396,7 @@ export default function AboutPage() {
           <div className="section">
             <div
               style={{
-                background: 'var(--surf, var(--sidebar2, #F4F3EF))',
+                background: 'var(--surf, var(--sidebar2, #F7F8FA))',
                 border: '1px solid var(--bdr)',
                 borderRadius: 4,
                 padding: '2rem',

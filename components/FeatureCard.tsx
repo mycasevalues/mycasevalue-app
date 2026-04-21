@@ -23,7 +23,7 @@ export default function FeatureCard({ title, description, icon, href, delay = 0,
         transition={{ duration: 0.5, delay }}
         whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
         style={{
-          padding: 24, borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)',
+          padding: 24, borderRadius: '4px', border: '1px solid var(--bdr, #E5E7EB)',
           backgroundColor: 'var(--card, #FFFFFF)', cursor: 'pointer', height: '100%',
           transition: 'border-color 200ms',
         }}

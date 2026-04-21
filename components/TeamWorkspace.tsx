@@ -631,7 +631,7 @@ export default function TeamWorkspace() {
                   disabled={!newNoteText.trim() || !newNoteNOS.trim()}
                   style={{
                     padding: '8px 16px',
-                    backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+                    backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? 'var(--link)' : 'var(--bdr, #E5E7EB)',
                     color: 'var(--chrome-text)',
                     border: 'none',
                     borderRadius: '4px',
@@ -863,7 +863,7 @@ export default function TeamWorkspace() {
                   marginTop: '12px',
                   padding: '8px 16px',
                   backgroundColor:
-                    newCaseName.trim() && newCaseType && newCaseDistrict ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+                    newCaseName.trim() && newCaseType && newCaseDistrict ? 'var(--link)' : 'var(--bdr, #E5E7EB)',
                   color: 'var(--card)',
                   border: 'none',
                   borderRadius: '4px',
@@ -1166,7 +1166,7 @@ export default function TeamWorkspace() {
               disabled={!inviteEmail.trim()}
               style={{
                 padding: '8px 16px',
-                backgroundColor: inviteEmail.trim() ? 'var(--link)' : 'var(--bdr, #E2DFD8)',
+                backgroundColor: inviteEmail.trim() ? 'var(--link)' : 'var(--bdr, #E5E7EB)',
                 color: 'var(--chrome-text)',
                 border: 'none',
                 borderRadius: '4px',

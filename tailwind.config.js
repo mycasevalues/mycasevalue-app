@@ -12,12 +12,12 @@ module.exports = {
           navy:        '#1B2D45',   // Westlaw deep navy (nav, footer)
           panel:       '#F9F8F6',   // sidebar bg
           border:      '#E2DFD8',   // panel edge
-          blue:        '#0A50A2',   // Westlaw blue (links)
+          blue:        '#1A73E8',   // Westlaw blue (links)
           'blue-dark': '#083A7A',   // link hover
-          'blue-mid':  '#0A50A2',   // borders / focus rings
+          'blue-mid':  '#1A73E8',   // borders / focus rings
           'blue-pale': 'rgba(10,80,162,0.08)',   // tints / selected states
           white:       '#FFFFFF',   // surface
-          link:        '#0A50A2',   // link color
+          link:        '#1A73E8',   // link color
           muted:       '#8AAAC8',   // secondary / muted text
           dim:         '#A8A6A0',   // disclaimer / fine print
           sep:         '#E2DFD8',   // separator
@@ -43,7 +43,7 @@ module.exports = {
         },
         // Legacy compat — mapped to Westlaw tokens
         navy: { DEFAULT: '#1B2D45', dark: '#121F32', light: '#2A3F58' },
-        midnight: { DEFAULT: '#1B2D45', 50: '#0A50A2', 100: '#C4882A', 200: '#A87222', 800: '#F6F5F2', 900: '#1B2D45' },
+        midnight: { DEFAULT: '#1B2D45', 50: '#1A73E8', 100: '#C4882A', 200: '#A87222', 800: '#F6F5F2', 900: '#1B2D45' },
         outcome: {
           win: '#15803D',
           'win-bg': 'rgba(21,128,61,0.08)',
@@ -63,7 +63,7 @@ module.exports = {
           nav:       '#1B2D45',
           surface:   '#FFFFFF',
           'surface-alt': '#F6F5F2',
-          link:      '#0A50A2',
+          link:      '#1A73E8',
           cta:       '#C4882A',
           'cta-hover': '#A87222',
           divider:   '#E2DFD8',

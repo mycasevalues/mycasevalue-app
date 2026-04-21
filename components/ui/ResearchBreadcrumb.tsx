@@ -2,7 +2,7 @@
 
 /**
  * ResearchBreadcrumb — Westlaw-style breadcrumb trail.
- * Light mode: var(--text4, #8A8780) separators, var(--link, #0A50A2) links, var(--text1, #18181A) current page.
+ * Light mode: var(--text4, #8A8780) separators, var(--link, #1A73E8) links, var(--text1, #333333) current page.
  */
 
 import Link from 'next/link';
@@ -90,7 +90,7 @@ export default function ResearchBreadcrumb() {
               height="10"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="var(--bdr, #E2DFD8)"
+              stroke="var(--bdr, #E5E7EB)"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -100,12 +100,12 @@ export default function ResearchBreadcrumb() {
             </svg>
           )}
           {i === crumbs.length - 1 ? (
-            <span style={{ color: 'var(--text1, #18181A)', fontWeight: 500 }}>{crumb.label}</span>
+            <span style={{ color: 'var(--text1, #333333)', fontWeight: 500 }}>{crumb.label}</span>
           ) : (
             <Link
               href={crumb.href}
               style={{
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 textDecoration: 'none',
                 transition: 'color 120ms',
               }}

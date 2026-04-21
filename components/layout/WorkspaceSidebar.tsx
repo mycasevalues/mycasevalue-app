@@ -12,7 +12,7 @@
  * Specs:
  * - Width: 258px (results pages), 202px (detail pages)
  * - Background: var(--sidebar) = #F9F8F6
- * - Border-right: 1px solid var(--bdr) = #E2DFD8
+ * - Border-right: 1px solid var(--bdr) = #E5E7EB
  */
 
 import { useState, useMemo } from 'react';
