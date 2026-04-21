@@ -19,6 +19,11 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
+import {
+  clearResearchHistory,
+  readResearchHistory,
+  type ResearchHistoryEntry,
+} from '../../lib/researchHistory';
 
 /* ── Search Autocomplete Data ── */
 
@@ -89,6 +94,8 @@ function SearchIcon({ size = 13 }: { size?: number }) {
 export default function Header() {
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [authOpen, setAuthOpen] = useState(false);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [history, setHistory] = useState<ResearchHistoryEntry[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchFocused, setSearchFocused] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
@@ -96,6 +103,7 @@ export default function Header() {
   const router = useRouter();
   const searchRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const historyRef = useRef<HTMLDivElement>(null);
 
   /* Auth */
   useEffect(() => {
@@ -128,8 +136,12 @@ export default function Header() {
   /* Close dropdown on click outside */
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      if (searchRef.current && !searchRef.current.contains(target)) {
         setSearchFocused(false);
+      }
+      if (historyRef.current && !historyRef.current.contains(target)) {
+        setHistoryOpen(false);
       }
       if (authOpen) setAuthOpen(false);
     };
@@ -141,6 +153,7 @@ export default function Header() {
   useEffect(() => {
     setSearchFocused(false);
     setAuthOpen(false);
+    setHistoryOpen(false);
     setMobileSearchOpen(false);
   }, [pathname]);
 
@@ -150,11 +163,24 @@ export default function Header() {
       if (e.key === 'Escape') {
         setSearchFocused(false);
         setAuthOpen(false);
+        setHistoryOpen(false);
         setMobileSearchOpen(false);
       }
     };
     document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
+  }, []);
+
+  /* Research history sync — read on mount + when recorder broadcasts */
+  useEffect(() => {
+    const sync = () => setHistory(readResearchHistory());
+    sync();
+    window.addEventListener('mcv-research-history', sync);
+    window.addEventListener('storage', sync);
+    return () => {
+      window.removeEventListener('mcv-research-history', sync);
+      window.removeEventListener('storage', sync);
+    };
   }, []);
 
   /* Search */
@@ -174,6 +200,25 @@ export default function Header() {
   }, [searchQuery, router]);
 
   const initials = userEmail ? userEmail.charAt(0).toUpperCase() : '';
+
+  const navIconStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 2,
+    color: 'var(--chrome-text-muted)',
+    textDecoration: 'none',
+    opacity: 0.7,
+    cursor: 'pointer',
+  };
+
+  const navIconLabelStyle: React.CSSProperties = {
+    fontSize: 12,
+    textTransform: 'uppercase',
+    letterSpacing: '0.5px',
+    fontFamily: 'var(--font-ui)',
+    fontWeight: 500,
+  };
 
   return (
     <header
@@ -454,40 +499,202 @@ export default function Header() {
         >
           {/* Nav icons — desktop only */}
           <div className="hidden lg:flex items-center gap-3.5" style={{ marginRight: 12 }}>
-            {[
-              { icon: <FoldersIcon />, label: 'Folders', href: '/dashboard' },
-              { icon: <HistoryIcon />, label: 'History', href: '/dashboard' },
-              { icon: <AlertsIcon />, label: 'Alerts', href: '/dashboard' },
-              { icon: <HelpIcon />, label: 'Help', href: '/methodology' },
-            ].map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
+            {/* Folders */}
+            <Link
+              href="/dashboard"
+              style={navIconStyle}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.7'; }}
+            >
+              <FoldersIcon />
+              <span style={navIconLabelStyle}>Folders</span>
+            </Link>
+
+            {/* History — opens dropdown with recent items */}
+            <div ref={historyRef} style={{ position: 'relative', display: 'flex' }}>
+              <button
+                type="button"
+                onClick={() => setHistoryOpen((v) => !v)}
+                aria-haspopup="menu"
+                aria-expanded={historyOpen}
+                aria-label="Research history"
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: 2,
-                  color: 'var(--chrome-text-muted)',
-                  textDecoration: 'none',
-                  opacity: 0.7,
-                  cursor: 'pointer',
+                  ...navIconStyle,
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  opacity: historyOpen ? 1 : 0.7,
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.7'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = historyOpen ? '1' : '0.7'; }}
               >
-                {item.icon}
-                <span style={{
-                  fontSize: 12,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  fontFamily: 'var(--font-ui)',
-                  fontWeight: 500,
-                }}>
-                  {item.label}
-                </span>
-              </Link>
-            ))}
+                <HistoryIcon />
+                <span style={navIconLabelStyle}>History</span>
+              </button>
+              {historyOpen && (
+                <div
+                  role="menu"
+                  style={{
+                    position: 'absolute',
+                    top: 'calc(100% + 6px)',
+                    right: 0,
+                    width: 320,
+                    background: 'var(--card, #FFFFFF)',
+                    border: '1px solid var(--bdr-strong, #D4D2CC)',
+                    borderRadius: 2,
+                    boxShadow: '0 6px 20px rgba(0,0,0,0.14)',
+                    zIndex: 60,
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: '8px 12px',
+                      borderBottom: '1px solid var(--bdr, #E5E7EB)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <span style={{
+                      fontSize: 12,
+                      fontFamily: 'var(--font-ui)',
+                      fontWeight: 600,
+                      color: 'var(--text1, #333333)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                    }}>
+                      Recent Research
+                    </span>
+                    {history.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => { clearResearchHistory(); setHistory([]); }}
+                        style={{
+                          fontSize: 12,
+                          fontFamily: 'var(--font-ui)',
+                          color: 'var(--link, #1A73E8)',
+                          background: 'none',
+                          border: 'none',
+                          cursor: 'pointer',
+                          padding: 0,
+                        }}
+                      >
+                        Clear
+                      </button>
+                    )}
+                  </div>
+                  {history.length === 0 ? (
+                    <div
+                      style={{
+                        padding: '16px 12px',
+                        fontSize: 12,
+                        fontFamily: 'var(--font-ui)',
+                        color: 'var(--text3, #6B7280)',
+                        textAlign: 'center',
+                      }}
+                    >
+                      No recent research yet.
+                      <br />
+                      Visited cases, judges, and districts will appear here.
+                    </div>
+                  ) : (
+                    <div style={{ maxHeight: 360, overflowY: 'auto' }}>
+                      {history.map((entry) => (
+                        <Link
+                          key={entry.href}
+                          href={entry.href}
+                          role="menuitem"
+                          onClick={() => setHistoryOpen(false)}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 8,
+                            padding: '8px 12px',
+                            fontFamily: 'var(--font-ui)',
+                            fontSize: 12,
+                            color: 'var(--text1, #333333)',
+                            textDecoration: 'none',
+                            borderBottom: '1px solid var(--sidebar, #F7F8FA)',
+                            transition: 'background 120ms ease',
+                          }}
+                          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--tbl-hover, #EBF5FF)'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.background = ''; }}
+                        >
+                          <span
+                            style={{
+                              flexShrink: 0,
+                              width: 60,
+                              fontSize: 12,
+                              fontWeight: 600,
+                              color: 'var(--text4, #8A8780)',
+                              textTransform: 'uppercase',
+                              letterSpacing: '0.5px',
+                              background: 'var(--sidebar, #F7F8FA)',
+                              borderRadius: 2,
+                              padding: '2px 4px',
+                              textAlign: 'center',
+                            }}
+                          >
+                            {entry.kind}
+                          </span>
+                          <span style={{
+                            flex: 1,
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap',
+                            color: 'var(--link, #1A73E8)',
+                          }}>
+                            {entry.label}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  <div
+                    style={{
+                      padding: '8px 12px',
+                      borderTop: '1px solid var(--bdr, #E5E7EB)',
+                      background: 'var(--sidebar, #F7F8FA)',
+                    }}
+                  >
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setHistoryOpen(false)}
+                      style={{
+                        fontSize: 12,
+                        fontFamily: 'var(--font-ui)',
+                        color: 'var(--link, #1A73E8)',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      View full research folder →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Alerts */}
+            <Link
+              href="/dashboard"
+              style={navIconStyle}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.7'; }}
+            >
+              <AlertsIcon />
+              <span style={navIconLabelStyle}>Alerts</span>
+            </Link>
+
+            {/* Help */}
+            <Link
+              href="/methodology"
+              style={navIconStyle}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.7'; }}
+            >
+              <HelpIcon />
+              <span style={navIconLabelStyle}>Help</span>
+            </Link>
           </div>
 
           {/* Mobile search toggle */}
