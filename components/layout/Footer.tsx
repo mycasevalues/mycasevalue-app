@@ -25,26 +25,25 @@ const COLS = [
     ],
   },
   {
-    title: 'TOOLS',
-    links: [
-      { label: 'Precision Analytics', href: '/analytics' },
-      { label: 'Venue Comparison', href: '/compare' },
-      { label: 'Settlement Calculator', href: '/calculator' },
-      { label: 'Alert Setup', href: '/dashboard' },
-    ],
-  },
-  {
-    title: 'RESEARCH TOOLS',
+    title: 'RESOURCES',
     links: [
       { label: 'Advanced Search', href: '/attorney/advanced-search' },
       { label: 'Citation Check', href: '/attorney/citation-check' },
       { label: 'Secondary Sources', href: '/attorney/secondary-sources' },
       { label: '50-State Survey', href: '/attorney/state-survey' },
-      { label: 'Compare Text', href: '/attorney/compare-text' },
-      { label: 'Alerts', href: '/attorney/alerts' },
+      { label: 'Settlement Calculator', href: '/calculator' },
+      { label: 'Venue Comparison', href: '/compare' },
       { label: 'Research Folders', href: '/attorney/folders' },
-      { label: 'Find & Print', href: '/attorney/find-print' },
       { label: 'Glossary', href: '/glossary' },
+      { label: 'Methodology', href: '/methodology' },
+    ],
+  },
+  {
+    title: 'LEGAL',
+    links: [
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
+      { label: 'Accessibility', href: '/accessibility' },
     ],
   },
   {
@@ -55,10 +54,6 @@ const COLS = [
       { label: 'FAQ', href: '/faq' },
       { label: 'Changelog', href: '/data/changelog' },
       { label: 'Contact', href: '/contact' },
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Service', href: '/terms' },
-      { label: 'Accessibility', href: '/accessibility' },
-      { label: 'Methodology', href: '/methodology' },
     ],
   },
 ];

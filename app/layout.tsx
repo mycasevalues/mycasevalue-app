@@ -8,6 +8,7 @@ import BrowseNav from '../components/layout/BrowseNav';
 import Footer from '../components/layout/Footer';
 import WorkspaceShell, { ConditionalFooter, ConditionalHeader } from '../components/layout/WorkspaceShell';
 import ReferralCapture from '../components/ReferralCapture';
+import ResearchHistoryRecorder from '../components/ResearchHistoryRecorder';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
@@ -342,6 +343,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
         <ReferralCapture />
+        <ResearchHistoryRecorder />
         <ErrorBoundary>
           <AnalyticsProvider>
             <ToastProvider>
