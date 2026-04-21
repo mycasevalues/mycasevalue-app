@@ -142,6 +142,75 @@ export default function CaseDetailPage() {
   const keyIssues = c.tags.filter((t) => t.category === 'practice_area' || t.category === 'claim_type');
   const otherTags = c.tags.filter((t) => t.category !== 'practice_area' && t.category !== 'claim_type');
 
+  // ── Batch 6: Procedural history timeline ──
+  // Synthesize a chronological timeline from filings + case bookends (filed/terminated).
+  type HistoryEvent = {
+    date: string | null;
+    title: string;
+    description?: string;
+    kind: 'filed' | 'answer' | 'motion' | 'order' | 'opinion' | 'judgment' | 'discovery' | 'trial' | 'settlement' | 'terminated' | 'filing';
+    documentUrl?: string;
+    filingNumber?: number;
+  };
+  const classifyFiling = (title: string): HistoryEvent['kind'] => {
+    const t = title.toLowerCase();
+    if (t.includes('complaint') || t.includes('notice of removal')) return 'filed';
+    if (t.includes('answer')) return 'answer';
+    if (t.includes('judgment')) return 'judgment';
+    if (t.includes('order')) return 'order';
+    if (t.includes('opinion') || t.includes('memorandum')) return 'opinion';
+    if (t.includes('motion')) return 'motion';
+    if (t.includes('discovery') || t.includes('deposition') || t.includes('interrogator')) return 'discovery';
+    if (t.includes('trial') || t.includes('hearing')) return 'trial';
+    if (t.includes('settlement') || t.includes('stipulation of dismissal') || t.includes('voluntary dismissal')) return 'settlement';
+    return 'filing';
+  };
+  const historyEvents: HistoryEvent[] = [];
+  if (c.filingDate) {
+    historyEvents.push({
+      date: c.filingDate,
+      title: 'Case Filed',
+      description: c.caseType ? `${c.caseType} action commenced` : 'Action commenced',
+      kind: 'filed',
+    });
+  }
+  c.filings.forEach((f) => {
+    historyEvents.push({
+      date: f.date,
+      title: f.title || 'Filing',
+      description: f.description,
+      kind: classifyFiling(f.title || ''),
+      documentUrl: f.documentUrl,
+      filingNumber: f.number,
+    });
+  });
+  if (c.terminationDate) {
+    historyEvents.push({
+      date: c.terminationDate,
+      title: 'Case Terminated',
+      description: c.proceduralPosture ? `Disposition: ${c.proceduralPosture}` : 'Proceeding closed',
+      kind: 'terminated',
+    });
+  }
+  // Sort chronologically by date (null dates sink to end)
+  historyEvents.sort((a, b) => {
+    if (!a.date && !b.date) return 0;
+    if (!a.date) return 1;
+    if (!b.date) return -1;
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  });
+
+  // ── Batch 6: Citing References vs Related Cases partition ──
+  // Citing References = same court or same NOS/caseType (like KeyCite's citing references)
+  // Related Cases    = "Cited With" — other cases frequently seen alongside this one
+  const courtAbbr = c.court?.abbreviation || '';
+  const citingReferences = c.relatedCases.filter(
+    (rc) =>
+      (courtAbbr && rc.courtAbbreviation === courtAbbr) ||
+      (c.caseType && rc.caseType === c.caseType),
+  );
+  const citedWith = c.relatedCases.filter((rc) => !citingReferences.includes(rc));
+
   const citationText = [
     c.caseName,
     c.docketNumber ? `No. ${c.docketNumber}` : '',
@@ -462,55 +531,21 @@ export default function CaseDetailPage() {
           </Section>
         )}
 
-        {/* ── SECTION 5b: FILINGS ── */}
-        {c.filings.length > 0 && (
-          <Section title="Docket Activity">
-            <div className="space-y-1">
-              {c.filings.slice(0, 20).map((f, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 py-2 border-b last:border-0"
-                  style={{ borderColor: 'var(--bdr)' }}
-                >
-                  <span
-                    className="w-10 flex-shrink-0 text-right tabular-nums"
-                    style={{
-                      fontSize: 12,
-                      color: 'var(--text-tertiary)',
-                      fontFamily: 'var(--font-mono)',
-                    }}
-                  >
-                    #{f.number || i + 1}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <p className="truncate" style={{ fontSize: 14, color: 'var(--text-primary)' }}>
-                      {f.title || 'Filing'}
-                    </p>
-                    {f.date && (
-                      <p style={{ fontSize: 12, color: 'var(--text-tertiary)', marginTop: 1 }}>
-                        {new Date(f.date).toLocaleDateString()}
-                      </p>
-                    )}
-                  </div>
-                  {f.documentUrl && (
-                    <a
-                      href={f.documentUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline flex-shrink-0"
-                      style={{ fontSize: 12, color: 'var(--link)', fontWeight: 500 }}
-                    >
-                      Doc &rarr;
-                    </a>
-                  )}
-                </div>
-              ))}
-              {c.filings.length > 20 && (
-                <p className="pt-2" style={{ fontSize: 12, color: 'var(--text-tertiary)', fontStyle: 'italic' }}>
-                  Showing 20 of {c.filings.length} filings
-                </p>
-              )}
-            </div>
+        {/* ── SECTION 5b: HISTORY TIMELINE ── */}
+        {historyEvents.length > 0 && (
+          <Section title="History">
+            <p
+              className="mb-4"
+              style={{ fontSize: 12, color: 'var(--text-tertiary)', fontFamily: 'var(--font-ui)' }}
+            >
+              Procedural timeline from filing through disposition.
+            </p>
+            <HistoryTimeline events={historyEvents.slice(0, 25)} />
+            {historyEvents.length > 25 && (
+              <p className="pt-3" style={{ fontSize: 12, color: 'var(--text-tertiary)', fontStyle: 'italic' }}>
+                Showing 25 of {historyEvents.length} events
+              </p>
+            )}
           </Section>
         )}
 
@@ -554,42 +589,35 @@ export default function CaseDetailPage() {
           </p>
         </Section>
 
-        {/* ── SECTION 7: RELATED CASES ── */}
-        {c.relatedCases.length > 0 && (
+        {/* ── SECTION 7: CITING REFERENCES ── */}
+        {citingReferences.length > 0 && (
+          <Section title="Citing References">
+            <p
+              className="mb-3"
+              style={{ fontSize: 12, color: 'var(--text-tertiary)', fontFamily: 'var(--font-ui)' }}
+            >
+              {courtAbbr && c.caseType
+                ? `Other cases from ${courtAbbr} or involving ${c.caseType}.`
+                : courtAbbr
+                  ? `Other cases from ${courtAbbr}.`
+                  : c.caseType
+                    ? `Other cases involving ${c.caseType}.`
+                    : 'Cases that share court, judge, or nature-of-suit with this matter.'}
+            </p>
+            <RelatedCaseList cases={citingReferences} currentCourtAbbr={courtAbbr} currentCaseType={c.caseType} />
+          </Section>
+        )}
+
+        {/* ── SECTION 8: RELATED CASES (Cited With) ── */}
+        {citedWith.length > 0 && (
           <Section title="Related Cases">
-            <div className="space-y-1">
-              {c.relatedCases.map((rc) => (
-                <Link
-                  key={rc.id}
-                  href={`/case/${rc.id}`}
-                  className="flex items-center justify-between py-2 border-b last:border-0 group"
-                  style={{ borderColor: 'var(--bdr)' }}
-                >
-                  <div>
-                    <p
-                      className="group-hover:underline transition-colors"
-                      style={{
-                        fontSize: 14,
-                        color: 'var(--link)',
-                        fontFamily: 'var(--font-legal)',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {rc.caseName}
-                    </p>
-                    <p style={{ fontSize: 12, color: 'var(--text-tertiary)', marginTop: 1 }}>
-                      {rc.courtAbbreviation && (
-                        <span style={{ fontFamily: 'var(--font-mono)' }}>{rc.courtAbbreviation}</span>
-                      )}
-                      {rc.courtAbbreviation && rc.filingDate && <span> · </span>}
-                      {rc.filingDate && new Date(rc.filingDate).getFullYear()}
-                      {rc.caseType && <span> · {rc.caseType}</span>}
-                    </p>
-                  </div>
-                  <span style={{ fontSize: 14, color: 'var(--link)' }}>&rarr;</span>
-                </Link>
-              ))}
-            </div>
+            <p
+              className="mb-3"
+              style={{ fontSize: 12, color: 'var(--text-tertiary)', fontFamily: 'var(--font-ui)' }}
+            >
+              Cases frequently appearing alongside this one in the broader docket.
+            </p>
+            <RelatedCaseList cases={citedWith} currentCourtAbbr={courtAbbr} currentCaseType={c.caseType} />
           </Section>
         )}
       </div>
@@ -705,6 +733,341 @@ function ordinalSuffix(n: string): string {
     case 3: return 'rd';
     default: return 'th';
   }
+}
+
+// ── Batch 6: History Timeline ──
+
+type TimelineEvent = {
+  date: string | null;
+  title: string;
+  description?: string;
+  kind: 'filed' | 'answer' | 'motion' | 'order' | 'opinion' | 'judgment' | 'discovery' | 'trial' | 'settlement' | 'terminated' | 'filing';
+  documentUrl?: string;
+  filingNumber?: number;
+};
+
+function eventDotColor(kind: TimelineEvent['kind']): { fill: string; ring: string } {
+  switch (kind) {
+    case 'filed':
+      return { fill: '#1A73E8', ring: '#B6D4F7' };
+    case 'terminated':
+      return { fill: '#16A34A', ring: '#BBE5C6' };
+    case 'judgment':
+    case 'order':
+    case 'opinion':
+      return { fill: '#6B7280', ring: '#D1D5DB' };
+    case 'motion':
+      return { fill: '#C4882A', ring: '#F2DDB3' };
+    case 'settlement':
+      return { fill: '#16A34A', ring: '#BBE5C6' };
+    default:
+      return { fill: '#9CA3AF', ring: '#E5E7EB' };
+  }
+}
+
+function eventKindLabel(kind: TimelineEvent['kind']): string {
+  switch (kind) {
+    case 'filed': return 'Filed';
+    case 'answer': return 'Answer';
+    case 'motion': return 'Motion';
+    case 'order': return 'Order';
+    case 'opinion': return 'Opinion';
+    case 'judgment': return 'Judgment';
+    case 'discovery': return 'Discovery';
+    case 'trial': return 'Trial';
+    case 'settlement': return 'Settlement';
+    case 'terminated': return 'Terminated';
+    default: return 'Filing';
+  }
+}
+
+function HistoryTimeline({ events }: { events: TimelineEvent[] }) {
+  return (
+    <ol style={{ position: 'relative', margin: 0, padding: 0, listStyle: 'none' }}>
+      {/* Vertical rail */}
+      <span
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          left: 92,
+          top: 6,
+          bottom: 6,
+          width: 1,
+          background: 'var(--bdr, #E5E7EB)',
+        }}
+      />
+      {events.map((e, i) => {
+        const dot = eventDotColor(e.kind);
+        return (
+          <li
+            key={i}
+            style={{
+              position: 'relative',
+              display: 'grid',
+              gridTemplateColumns: '84px 20px 1fr',
+              gap: 8,
+              alignItems: 'start',
+              padding: '8px 0',
+            }}
+          >
+            {/* Date column */}
+            <span
+              className="tabular-nums"
+              style={{
+                fontSize: 12,
+                fontFamily: 'var(--font-mono)',
+                color: 'var(--text-tertiary)',
+                paddingTop: 1,
+                textAlign: 'right',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {e.date
+                ? new Date(e.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })
+                : '—'}
+            </span>
+            {/* Dot column */}
+            <span style={{ display: 'flex', justifyContent: 'center', paddingTop: 5 }}>
+              <span
+                aria-hidden="true"
+                style={{
+                  display: 'block',
+                  width: 10,
+                  height: 10,
+                  borderRadius: '50%',
+                  background: dot.fill,
+                  boxShadow: `0 0 0 3px ${dot.ring}`,
+                }}
+              />
+            </span>
+            {/* Content column */}
+            <div style={{ minWidth: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap' }}>
+                <span
+                  className="uppercase"
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    color: dot.fill,
+                    fontFamily: 'var(--font-ui)',
+                  }}
+                >
+                  {eventKindLabel(e.kind)}
+                </span>
+                {typeof e.filingNumber === 'number' && e.filingNumber > 0 && (
+                  <span
+                    style={{
+                      fontSize: 11,
+                      fontFamily: 'var(--font-mono)',
+                      color: 'var(--text-tertiary)',
+                    }}
+                  >
+                    #{e.filingNumber}
+                  </span>
+                )}
+              </div>
+              <p
+                style={{
+                  fontSize: 14,
+                  color: 'var(--text-primary)',
+                  fontFamily: 'var(--font-legal)',
+                  fontWeight: 500,
+                  margin: '2px 0 0',
+                }}
+              >
+                {e.title}
+              </p>
+              {e.description && (
+                <p
+                  style={{
+                    fontSize: 12,
+                    color: 'var(--text-secondary)',
+                    marginTop: 2,
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {e.description}
+                </p>
+              )}
+              {e.documentUrl && (
+                <a
+                  href={e.documentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                  style={{
+                    display: 'inline-block',
+                    marginTop: 4,
+                    fontSize: 12,
+                    color: 'var(--link)',
+                    fontWeight: 500,
+                    fontFamily: 'var(--font-ui)',
+                  }}
+                >
+                  View document &rarr;
+                </a>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
+// ── Batch 6: Related-case list (shared by Citing References + Related Cases) ──
+
+function RelatedCaseList({
+  cases,
+  currentCourtAbbr,
+  currentCaseType,
+}: {
+  cases: Array<{
+    id: number;
+    caseName: string;
+    caseType: string;
+    filingDate: string;
+    status: string;
+    courtAbbreviation: string;
+  }>;
+  currentCourtAbbr?: string;
+  currentCaseType?: string | null;
+}) {
+  const statusColor = (s: string): string => {
+    const v = (s || '').toLowerCase();
+    if (v === 'open' || v === 'pending' || v === 'active') return '#1A73E8';
+    if (v === 'closed' || v === 'terminated') return '#16A34A';
+    if (v === 'stayed' || v === 'remanded') return '#C4882A';
+    return '#9CA3AF';
+  };
+  return (
+    <div className="space-y-1">
+      {cases.map((rc) => {
+        const sameCourt = !!currentCourtAbbr && rc.courtAbbreviation === currentCourtAbbr;
+        const sameNos = !!currentCaseType && rc.caseType === currentCaseType;
+        const dot = statusColor(rc.status);
+        return (
+          <Link
+            key={rc.id}
+            href={`/case/${rc.id}`}
+            className="flex items-center justify-between py-2 border-b last:border-0 group"
+            style={{ borderColor: 'var(--bdr)' }}
+          >
+            <div style={{ minWidth: 0, flex: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <span
+                  aria-label={`Status: ${rc.status || 'unknown'}`}
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    background: dot,
+                    flexShrink: 0,
+                  }}
+                />
+                <p
+                  className="group-hover:underline transition-colors truncate"
+                  style={{
+                    fontSize: 14,
+                    color: 'var(--link)',
+                    fontFamily: 'var(--font-legal)',
+                    fontWeight: 500,
+                  }}
+                >
+                  {rc.caseName}
+                </p>
+              </div>
+              <div
+                style={{
+                  fontSize: 12,
+                  color: 'var(--text-tertiary)',
+                  marginTop: 3,
+                  paddingLeft: 16,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                {rc.courtAbbreviation && (
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      color: sameCourt ? 'var(--text-secondary)' : 'var(--text-tertiary)',
+                      fontWeight: sameCourt ? 600 : 400,
+                    }}
+                  >
+                    {rc.courtAbbreviation}
+                    {sameCourt && (
+                      <span
+                        className="uppercase"
+                        style={{
+                          marginLeft: 4,
+                          padding: '1px 5px',
+                          fontSize: 9,
+                          fontWeight: 700,
+                          letterSpacing: '0.06em',
+                          color: '#1557B0',
+                          background: '#EBF5FF',
+                          borderRadius: 2,
+                          fontFamily: 'var(--font-ui)',
+                        }}
+                      >
+                        Same court
+                      </span>
+                    )}
+                  </span>
+                )}
+                {rc.filingDate && (
+                  <>
+                    <span>·</span>
+                    <span>{new Date(rc.filingDate).getFullYear()}</span>
+                  </>
+                )}
+                {rc.caseType && (
+                  <>
+                    <span>·</span>
+                    <span
+                      style={{
+                        color: sameNos ? 'var(--text-secondary)' : 'var(--text-tertiary)',
+                        fontWeight: sameNos ? 600 : 400,
+                      }}
+                    >
+                      {rc.caseType}
+                      {sameNos && (
+                        <span
+                          className="uppercase"
+                          style={{
+                            marginLeft: 4,
+                            padding: '1px 5px',
+                            fontSize: 9,
+                            fontWeight: 700,
+                            letterSpacing: '0.06em',
+                            color: '#166534',
+                            background: '#F0F9F3',
+                            borderRadius: 2,
+                            fontFamily: 'var(--font-ui)',
+                          }}
+                        >
+                          Same NOS
+                        </span>
+                      )}
+                    </span>
+                  </>
+                )}
+              </div>
+            </div>
+            <span style={{ fontSize: 14, color: 'var(--link)', marginLeft: 8, flexShrink: 0 }}>&rarr;</span>
+          </Link>
+        );
+      })}
+    </div>
+  );
 }
 
 function PartyGroup({ label, parties }: { label: string; parties: Array<{ name: string; role: string }> }) {
