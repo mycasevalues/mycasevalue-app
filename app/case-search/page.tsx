@@ -71,6 +71,7 @@ function CaseSearchContent() {
   const [status, setStatus] = useState(searchParams.get('status') || '');
   const [sort, setSort] = useState(searchParams.get('sort') || 'relevance');
   const [page, setPage] = useState(parseInt(searchParams.get('page') || '1', 10));
+  const [pageSize, setPageSize] = useState(parseInt(searchParams.get('pageSize') || '25', 10));
 
   // Results state
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -95,6 +96,7 @@ function CaseSearchContent() {
       if (yearTo) params.set('yearTo', yearTo);
       if (status) params.set('status', status);
       if (sort !== 'relevance') params.set('sort', sort);
+      if (pageSize !== 25) params.set('pageSize', String(pageSize));
       if (p > 1) params.set('page', String(p));
 
       // Update URL without navigation
@@ -102,7 +104,7 @@ function CaseSearchContent() {
       window.history.replaceState({}, '', url);
 
       try {
-        params.set('limit', '20');
+        params.set('limit', String(pageSize));
         params.set('page', String(p));
         const res = await fetch(`/api/cases/search?${params.toString()}`);
         if (!res.ok) throw new Error('Search request failed');
@@ -129,7 +131,7 @@ function CaseSearchContent() {
         setLoading(false);
       }
     },
-    [query, court, caseType, yearFrom, yearTo, status, sort, page]
+    [query, court, caseType, yearFrom, yearTo, status, sort, page, pageSize]
   );
 
   // Search on mount if URL has params
@@ -154,6 +156,7 @@ function CaseSearchContent() {
     setStatus('');
     setSort('relevance');
     setPage(1);
+    setPageSize(25);
     setResults([]);
     setTotal(0);
     setHasSearched(false);
@@ -390,6 +393,20 @@ function CaseSearchContent() {
                   </div>
 
                   <div className="flex items-center gap-2 flex-shrink-0">
+                    <div className="inline-flex items-center gap-2">
+                      <span className="uppercase" style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', color: 'var(--text-tertiary)' }}>Show</span>
+                      <select
+                        value={pageSize}
+                        onChange={(e) => { const n = parseInt(e.target.value, 10); setPageSize(n); setPage(1); setTimeout(() => performSearch(1), 0); }}
+                        className="px-2 py-1 rounded border focus:outline-none focus:ring-1 focus:ring-[var(--link)]/30"
+                        style={{ fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--text-primary)', borderColor: 'var(--bdr)', background: '#FFFFFF' }}
+                      >
+                        <option value={10}>10</option>
+                        <option value={25}>25</option>
+                        <option value={50}>50</option>
+                        <option value={100}>100</option>
+                      </select>
+                    </div>
                     <label
                       className="uppercase hidden sm:inline"
                       style={{
@@ -673,6 +690,24 @@ function CaseSearchContent() {
   );
 }
 
+// ── CaseCite Flag (Westlaw KeyCite-inspired status indicator) ──
+
+function CaseCiteFlag({ status }: { status?: string | null }) {
+  const s = (status || '').toLowerCase();
+  // Westlaw KeyCite-inspired palette
+  let color = '#9CA3AF'; // default gray (unknown)
+  let label = 'Status unknown';
+  if (s === 'closed' || s === 'terminated') { color = '#16A34A'; label = 'Closed'; }
+  else if (s === 'open' || s === 'pending' || s === 'active') { color = '#1A73E8'; label = 'Open'; }
+  else if (s === 'stayed' || s === 'remanded') { color = '#C4882A'; label = 'Stayed'; }
+  return (
+    <svg aria-label={`CaseCite flag: ${label}`} role="img" width="10" height="14" viewBox="0 0 10 14" style={{ display: 'inline-block', verticalAlign: '-2px', marginRight: 6, flexShrink: 0 }}>
+      <rect x="1" y="0" width="1.5" height="14" fill="#6B7280" />
+      <path d="M2.5 0 L9 0 L7.5 3 L9 6 L2.5 6 Z" fill={color} />
+    </svg>
+  );
+}
+
 // ── Case Result Card ──
 
 function CaseResultCard({ result }: { result: SearchResult }) {
@@ -721,6 +756,7 @@ function CaseResultCard({ result }: { result: SearchResult }) {
             color: 'var(--link)',
           }}
         >
+          <CaseCiteFlag status={result.status} />
           {result.caseName}
         </h3>
         {result.status && (
