@@ -7,6 +7,7 @@ import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { ATTORNEY_IMPACT } from '../../lib/attorney-impact';
 import { getWinRateColor } from '../../lib/color-scale';
+import { fmtK } from '../../lib/format';
 
 // Note: Metadata cannot be exported from client components.
 // For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
@@ -508,9 +509,9 @@ export default function ComparePage() {
                             <div style={{ position: 'absolute', top: 4, width: 2, height: 16, background: 'var(--gold)', left: `${(s.medianRecovery / s.rngHi) * 100}%`, transform: 'translateX(-50%)' }} />
                           </div>
                           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--text2)', marginTop: 4, fontFamily: 'var(--font-mono)' }}>
-                            <span>${s.rngLo}K</span>
-                            <span>${s.medianRecovery}K</span>
-                            <span>${s.rngHi}K</span>
+                            <span>{fmtK(s.rngLo)}</span>
+                            <span>{fmtK(s.medianRecovery)}</span>
+                            <span>{fmtK(s.rngHi)}</span>
                           </div>
                         </div>
                       )}
@@ -567,7 +568,7 @@ export default function ComparePage() {
                 <p style={{ fontSize: 14, color: 'var(--text1)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
                   {stats[0].label} cases show a {stats[0].winRate > stats[1].winRate ? 'higher' : 'lower'} win rate ({stats[0].winRate.toFixed(1)}%) compared to {stats[1].label} ({stats[1].winRate.toFixed(1)}%), with {Math.abs(stats[0].medianDuration - stats[1].medianDuration).toFixed(0)} months difference in median case duration.{' '}
                   {stats[0].medianRecovery !== null && stats[1].medianRecovery !== null
-                    ? `Median recovery for ${stats[0].label} ($${stats[0].medianRecovery}K) is ${stats[0].medianRecovery > stats[1].medianRecovery ? 'higher' : 'lower'} than ${stats[1].label} ($${stats[1].medianRecovery}K).`
+                    ? `Median recovery for ${stats[0].label} (${fmtK(stats[0].medianRecovery)}) is ${stats[0].medianRecovery > stats[1].medianRecovery ? 'higher' : 'lower'} than ${stats[1].label} (${fmtK(stats[1].medianRecovery)}).`
                     : ''}{' '}
                   Attorney representation provides a {stats[0].attorneyWR !== null && stats[0].proSeWR !== null ? `+${stats[0].attorneyWR - stats[0].proSeWR}%` : 'significant'} advantage in {stats[0].label} and {stats[1].attorneyWR !== null && stats[1].proSeWR !== null ? `+${stats[1].attorneyWR - stats[1].proSeWR}%` : 'significant'} in {stats[1].label} cases.
                 </p>

@@ -47,12 +47,14 @@ const HEADERS: Record<string, string> = {
 
 // ─── Opinion Search ──────────────────────────────────────────────────
 
-/** Search federal court opinions by free-text query. */
+/** Search federal court opinions by free-text query.
+ *  federalOnly defaults to `true` — MyCaseValue is a federal-only platform,
+ *  state court records are excluded from the dataset. */
 export async function searchOpinions(
   query: string,
   court?: string,
   limit = 5,
-  federalOnly = false,
+  federalOnly = true,
 ) {
   try {
     const params = new URLSearchParams({
@@ -89,8 +91,9 @@ export async function searchOpinions(
 
 // ─── RECAP Docket Search ─────────────────────────────────────────────
 
-/** Search RECAP dockets (free PACER mirrors) by free-text query. */
-export async function searchRECAPDockets(query: string, limit = 5, federalOnly = false) {
+/** Search RECAP dockets (free PACER mirrors) by free-text query.
+ *  federalOnly defaults to `true` — see searchOpinions note. */
+export async function searchRECAPDockets(query: string, limit = 5, federalOnly = true) {
   try {
     const params = new URLSearchParams({
       q: query,
@@ -479,6 +482,9 @@ export async function getRecentFilings(limit = 20): Promise<RecentFiling[]> {
       order_by: '-date_filed',
       page_size: Math.min(limit, 20).toString(),
       format: 'json',
+      // Federal-only platform: exclude state court dockets from CourtListener
+      // jurisdiction_type FD = Federal District courts
+      court__jurisdiction: 'FD',
     });
 
     const res = await fetch(`${CL_BASE}/dockets/?${params}`, {
