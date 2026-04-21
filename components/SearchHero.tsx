@@ -62,7 +62,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               outline: 'none',
               fontSize: 14,
               fontFamily: 'var(--font-ui)',
-              color: dark ? 'var(--bdr)' : 'var(--text1, #18181A)',
+              color: dark ? 'var(--bdr)' : 'var(--text1, #333333)',
             }}
           />
           <button
@@ -115,7 +115,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               padding: '4px 8px',
               borderRadius: 2,
               border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid var(--bdr, #E2DFD8)',
-              color: dark ? 'var(--color-text-muted)' : 'var(--link, #0A50A2)',
+              color: dark ? 'var(--color-text-muted)' : 'var(--link, #1A73E8)',
               background: 'transparent',
               cursor: 'pointer',
               fontFamily: 'var(--font-ui)',
@@ -130,7 +130,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
 
       <style>{`
         .search-example-pill:hover {
-          border-color: var(--link, #0A50A2) !important;
+          border-color: var(--link, #1A73E8) !important;
           background: rgba(0,82,204,0.04) !important;
         }
       `}</style>

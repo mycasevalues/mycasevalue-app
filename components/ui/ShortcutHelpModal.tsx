@@ -192,7 +192,7 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
         </div>
 
         {/* Body */}
-        <div className="px-6 py-5 max-h-[60vh] overflow-y-auto" style={{ background: 'var(--surf, #F6F5F2)' }}>
+        <div className="px-6 py-5 max-h-[60vh] overflow-y-auto" style={{ background: 'var(--surf, #FFFFFF)' }}>
           {SHORTCUT_CATEGORIES.map((section) => (
             <div key={section.category} className="mb-6 last:mb-0">
               <h3
@@ -256,7 +256,7 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
             <kbd
  className="px-1 py-0.5 text-[10px]"
  style={{ fontFamily: 'var(--font-mono, "IBM Plex Mono", monospace)',
- background: 'var(--surf, #F6F5F2)',
+ background: 'var(--surf, #FFFFFF)',
  border: '1px solid var(--bdr, #E2DFD8)',
  borderRadius: '2px', fontWeight: 500 }}
  >

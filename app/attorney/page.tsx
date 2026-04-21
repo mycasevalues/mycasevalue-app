@@ -159,7 +159,7 @@ const FeatureCard = ({
             fontSize: '16px',
             fontWeight: '500',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text1, #18181A)',
+            color: 'var(--text1, #333333)',
           }}
         >
           {title}
@@ -544,10 +544,10 @@ export default function AttorneyPage() {
   return (
     <div
       style={{
-        color: 'var(--text1, #18181A)',
+        color: 'var(--text1, #333333)',
         fontFamily: 'var(--font-ui)',
         minHeight: '100vh',
-        backgroundColor: 'var(--surf, #F6F5F2)',
+        backgroundColor: 'var(--surf, #FFFFFF)',
       }}
     >
       <script
@@ -591,7 +591,7 @@ export default function AttorneyPage() {
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '14px', fontFamily: 'var(--font-ui)' }}>
             <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'var(--bdr)' }}>›</span>
-            <span style={{ color: 'var(--text1, #18181A)', fontWeight: 600 }}>Attorney Tools</span>
+            <span style={{ color: 'var(--text1, #333333)', fontWeight: 600 }}>Attorney Tools</span>
           </nav>
 
           {/* Title */}
@@ -602,7 +602,7 @@ export default function AttorneyPage() {
               fontWeight: '700',
               fontFamily: 'var(--font-legal)',
               lineHeight: '1.2',
-              color: 'var(--text1, #18181A)',
+              color: 'var(--text1, #333333)',
               letterSpacing: '-0.5px',
             }}
           >
@@ -648,7 +648,7 @@ export default function AttorneyPage() {
                 fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--text1, #18181A)',
+                color: 'var(--text1, #333333)',
               }}
             >
               Intelligence Tools Enterprise Platforms Don't Build
@@ -736,7 +736,7 @@ export default function AttorneyPage() {
                         fontSize: '16px',
                         fontWeight: '600',
                         fontFamily: 'var(--font-ui)',
-                        color: 'var(--text1, #18181A)',
+                        color: 'var(--text1, #333333)',
                       }}
                     >
                       {item.title}
@@ -789,7 +789,7 @@ export default function AttorneyPage() {
                 fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--text1, #18181A)',
+                color: 'var(--text1, #333333)',
               }}
             >
               Replace Hours of Manual Research with Minutes of Data-Backed Insights
@@ -834,7 +834,7 @@ export default function AttorneyPage() {
               <div
                 key={index}
                 style={{
-                  backgroundColor: 'var(--surf, #F6F5F2)',
+                  backgroundColor: 'var(--surf, #FFFFFF)',
                   border: '1px solid var(--bdr)',
                   borderRadius: 4,
                   padding: '32px',
@@ -867,7 +867,7 @@ export default function AttorneyPage() {
                       fontSize: '16px',
                       fontWeight: '600',
                       fontFamily: 'var(--font-ui)',
-                      color: 'var(--text1, #18181A)',
+                      color: 'var(--text1, #333333)',
                     }}
                   >
                     {useCase.title}
@@ -913,7 +913,7 @@ export default function AttorneyPage() {
                 fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--text1, #18181A)',
+                color: 'var(--text1, #333333)',
               }}
             >
               Built on Transparency. Powered by Real Data.
@@ -1018,7 +1018,7 @@ export default function AttorneyPage() {
                 fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--text1, #18181A)',
+                color: 'var(--text1, #333333)',
               }}
             >
               Everything in Unlimited,
@@ -1081,7 +1081,7 @@ export default function AttorneyPage() {
                 fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--text1, #18181A)',
+                color: 'var(--text1, #333333)',
               }}
             >
               Get Started
@@ -1154,7 +1154,7 @@ export default function AttorneyPage() {
                     fontSize: '16px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-ui)',
-                    color: 'var(--text1, #18181A)',
+                    color: 'var(--text1, #333333)',
                   }}
                 >
                   {cta.label}

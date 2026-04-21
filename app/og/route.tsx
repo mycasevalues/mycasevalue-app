@@ -158,7 +158,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0A50A2',
+                  color: '#1A73E8',
                 }}
               >
                 {winRate}%
@@ -192,7 +192,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0A50A2',
+                  color: '#1A73E8',
                 }}
               >
                 {parseInt(cases as string).toLocaleString('en-US')}
@@ -226,7 +226,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0A50A2',
+                  color: '#1A73E8',
                 }}
               >
                 {decodeURIComponent(recovery as string)}

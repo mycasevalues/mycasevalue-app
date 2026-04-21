@@ -394,7 +394,7 @@ export default function MethodologyPage() {
                 icon: 'building'
               },
             ].map((source, i) => (
-              <div key={i} className="source-card p-5" style={{ background: 'var(--surf, #F6F5F2)', borderRadius: '4px' }}>
+              <div key={i} className="source-card p-5" style={{ background: 'var(--surf, #FFFFFF)', borderRadius: '4px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="flex-shrink-0" style={{ fontSize: 20 }}>
                     {source.icon === 'database' && '-'}

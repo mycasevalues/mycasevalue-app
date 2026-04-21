@@ -21,7 +21,7 @@ export default function RootError({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--surf, #F6F5F2)',
+        background: 'var(--surf, #FFFFFF)',
         fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
         padding: 0,
         position: 'relative',
@@ -246,7 +246,7 @@ export default function RootError({
             <a
               href="mailto:support@mycasevalues.com?subject=Error%20Report"
               style={{
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
               }}

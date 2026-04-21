@@ -63,14 +63,14 @@ export default function EmailCapture({ heading, subtext, source, variant }: Emai
           padding: '0 10px',
           fontSize: 14,
           fontFamily: 'var(--font-ui)',
-          color: 'var(--text1, #18181A)',
+          color: 'var(--text1, #333333)',
           background: 'var(--card, #fff)',
           border: '1px solid var(--bdr, #D4D2CC)',
           borderRadius: 2,
           outline: 'none',
           transition: 'border-color 150ms ease',
         }}
-        onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--link, #0A50A2)')}
+        onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--link, #1A73E8)')}
         onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--bdr, #D4D2CC)')}
       />
       <button
@@ -83,7 +83,7 @@ export default function EmailCapture({ heading, subtext, source, variant }: Emai
           fontFamily: 'var(--font-ui)',
           fontWeight: 600,
           color: '#fff',
-          background: 'var(--link, #0A50A2)',
+          background: 'var(--link, #1A73E8)',
           border: 'none',
           borderRadius: 2,
           cursor: status === 'loading' ? 'wait' : 'pointer',
@@ -139,7 +139,7 @@ export default function EmailCapture({ heading, subtext, source, variant }: Emai
               fontSize: 14,
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
-              color: 'var(--text1, #18181A)',
+              color: 'var(--text1, #333333)',
             }}
           >
             {heading}
@@ -179,7 +179,7 @@ export default function EmailCapture({ heading, subtext, source, variant }: Emai
           fontSize: 18,
           fontFamily: 'var(--font-ui)',
           fontWeight: 700,
-          color: 'var(--text1, #18181A)',
+          color: 'var(--text1, #333333)',
           margin: '0 0 6px',
           lineHeight: 1.3,
         }}

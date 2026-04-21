@@ -22,7 +22,7 @@ const FLAG_COLORS: Record<FlagType, string> = {
   green: 'var(--flag-green, #176438)',
   yellow: 'var(--flag-yellow, #C8900A)',
   red: 'var(--flag-red, #CC1414)',
-  blue: 'var(--flag-blue, #0A50A2)',
+  blue: 'var(--flag-blue, #1A73E8)',
   'red-striped': 'var(--flag-red, #CC1414)',
 };
 

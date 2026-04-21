@@ -70,7 +70,7 @@ export default async function JudgesPage() {
   };
 
   return (
-    <div style={{ background: 'var(--surf, #F6F5F2)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--surf, #FFFFFF)', minHeight: '100vh' }}>
       <JsonLd data={jsonLd} />
       {/* Header */}
       <div style={{

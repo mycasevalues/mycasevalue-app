@@ -95,7 +95,7 @@ export default function ResultsPage() {
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
-            color: 'var(--text1, #18181A)',
+            color: 'var(--text1, #333333)',
             margin: '0 0 16px 0',
           }}>
             Benchmark your case against real data

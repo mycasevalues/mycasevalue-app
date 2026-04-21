@@ -1,6 +1,6 @@
 export default function AttorneyLoading() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--surf, #F6F5F2)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf, #FFFFFF)' }}>
       {/* Header skeleton */}
       <div style={{ background: 'var(--chrome-bg, #1B2D45)', padding: '64px 24px', borderBottom: '3px solid var(--bdr, #E2DFD8)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
@@ -18,8 +18,8 @@ export default function AttorneyLoading() {
               borderRadius: '4px', padding: '32px', height: '180px',
             }}>
               <div style={{ height: '18px', width: '60%', background: 'var(--bdr, #E2DFD8)', borderRadius: '4px', marginBottom: '12px' }} />
-              <div style={{ height: '14px', width: '90%', background: 'var(--surf, #F6F5F2)', borderRadius: '4px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '70%', background: 'var(--surf, #F6F5F2)', borderRadius: '4px' }} />
+              <div style={{ height: '14px', width: '90%', background: 'var(--surf, #FFFFFF)', borderRadius: '4px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '70%', background: 'var(--surf, #FFFFFF)', borderRadius: '4px' }} />
             </div>
           ))}
         </div>

@@ -69,7 +69,7 @@ export default function HomeHeroSearch() {
               outline: 'none',
               fontSize: 14,
               fontFamily: 'var(--font-ui)',
-              color: 'var(--text1, #18181A)',
+              color: 'var(--text1, #333333)',
               background: 'transparent',
             }}
           />
@@ -83,7 +83,7 @@ export default function HomeHeroSearch() {
             alignItems: 'center',
             justifyContent: 'space-between',
             padding: '0 10px',
-            background: 'var(--surf, #F6F5F2)',
+            background: 'var(--surf, #FFFFFF)',
             borderLeft: '1px solid var(--bdr)',
             fontSize: 12,
             fontFamily: 'var(--font-ui)',

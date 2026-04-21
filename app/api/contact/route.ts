@@ -124,7 +124,7 @@ export async function POST(req: NextRequest) {
             .header { background: #18181A; color: white; padding: 24px; text-align: center; }
             .content { background: white; padding: 32px 24px; }
             .field { margin-bottom: 24px; }
-            .label { font-weight: 600; color: #0A50A2; margin-bottom: 8px; font-size: 14px; }
+            .label { font-weight: 600; color: #1A73E8; margin-bottom: 8px; font-size: 14px; }
             .value { color: #4B5563; font-size: 15px; line-height: 1.6; }
             .message-box { background: #f3f4f6; padding: 16px; border-left: 4px solid #C4882A; border-radius: 4px; }
             .footer { background: #f9fafb; padding: 16px 24px; border-top: 1px solid #e5e7eb; font-size: 13px; color: #6b7280; }

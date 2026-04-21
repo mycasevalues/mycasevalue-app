@@ -60,7 +60,7 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
     <div
       style={{
         height: 42,
-        background: 'var(--surf, #F6F5F2)',
+        background: 'var(--surf, #FFFFFF)',
         display: 'flex',
         alignItems: 'center',
         borderTop: '1px solid var(--bdr, #E2DFD8)',
@@ -109,8 +109,8 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
             transition: 'border-color 150ms ease, color 150ms ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'var(--link, #0A50A2)';
-            e.currentTarget.style.color = 'var(--link, #0A50A2)';
+            e.currentTarget.style.borderColor = 'var(--link, #1A73E8)';
+            e.currentTarget.style.color = 'var(--link, #1A73E8)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = 'var(--bdr-strong, #C8C4B8)';

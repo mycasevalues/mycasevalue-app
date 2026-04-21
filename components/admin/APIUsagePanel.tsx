@@ -352,7 +352,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--link-light, #BAE6FD)',
             borderRadius: '4px',
             fontSize: '0.75rem',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link, #1A73E8)',
             fontFamily: 'var(--font-ui)',
           }}
         >

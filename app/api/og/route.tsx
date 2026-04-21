@@ -178,7 +178,7 @@ function renderNOSImage(code: string, locale: Locale = 'en'): React.ReactElement
           style={{
             fontSize: '96px',
             fontWeight: '800',
-            color: '#0A50A2',
+            color: '#1A73E8',
             lineHeight: '1',
           }}
         >
@@ -220,7 +220,7 @@ function renderNOSImage(code: string, locale: Locale = 'en'): React.ReactElement
             style={{
               height: '100%',
               width: `${settlementRate}%`,
-              backgroundColor: '#0A50A2',
+              backgroundColor: '#1A73E8',
             }}
           />
         </div>
@@ -249,7 +249,7 @@ function renderNOSImage(code: string, locale: Locale = 'en'): React.ReactElement
           style={{
             fontSize: '16px',
             fontWeight: '600',
-            color: '#0A50A2',
+            color: '#1A73E8',
           }}
         >
           MyCaseValue
@@ -351,7 +351,7 @@ function renderDistrictImage(districtCode: string, locale: Locale = 'en'): React
           style={{
             fontSize: '72px',
             fontWeight: '800',
-            color: '#0A50A2',
+            color: '#1A73E8',
             lineHeight: '1',
           }}
         >
@@ -411,7 +411,7 @@ function renderDistrictImage(districtCode: string, locale: Locale = 'en'): React
               <div
                 style={{
                   height: '8px',
-                  backgroundColor: '#0A50A2',
+                  backgroundColor: '#1A73E8',
                   borderRadius: '4px',
                   width: `${(caseType.total / (topCases[0]?.total || 1)) * 200}px`,
                   marginRight: '12px',
@@ -442,7 +442,7 @@ function renderDistrictImage(districtCode: string, locale: Locale = 'en'): React
           style={{
             fontSize: '16px',
             fontWeight: '600',
-            color: '#0A50A2',
+            color: '#1A73E8',
           }}
         >
           MyCaseValue
@@ -490,7 +490,7 @@ function renderHomeImage(locale: Locale = 'en'): React.ReactElement {
         >
           5.1M {t('federal cases. What really happened.', locale).split('.')[0]}.
           <br />
-          <span style={{ color: '#0A50A2' }}>{t('federal cases. What really happened.', locale).split('. ')[1]}</span>
+          <span style={{ color: '#1A73E8' }}>{t('federal cases. What really happened.', locale).split('. ')[1]}</span>
         </div>
 
         {/* Subheading */}
@@ -510,7 +510,7 @@ function renderHomeImage(locale: Locale = 'en'): React.ReactElement {
           style={{
             fontSize: '18px',
             fontWeight: '600',
-            color: '#0A50A2',
+            color: '#1A73E8',
             textDecoration: 'underline',
           }}
         >
@@ -577,7 +577,7 @@ function renderGenericImage(title: string, subtitle?: string): React.ReactElemen
           style={{
             fontSize: '18px',
             fontWeight: '600',
-            color: '#0A50A2',
+            color: '#1A73E8',
           }}
         >
           MyCaseValue

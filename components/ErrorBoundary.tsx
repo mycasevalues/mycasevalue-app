@@ -42,7 +42,7 @@ function DefaultFallback({ onRetry }: { onRetry: () => void }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--surf, #F6F5F2)',
+        background: 'var(--surf, #FFFFFF)',
         fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
         padding: 24,
       }}
@@ -185,7 +185,7 @@ function DefaultFallback({ onRetry }: { onRetry: () => void }) {
               gap: 8,
               padding: '10px 24px',
               background: 'transparent',
-              color: 'var(--link, #0A50A2)',
+              color: 'var(--link, #1A73E8)',
               border: '1px solid var(--bdr, #E2DFD8)',
               borderRadius: 2,
               fontSize: 14,

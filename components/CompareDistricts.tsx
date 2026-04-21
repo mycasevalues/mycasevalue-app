@@ -260,7 +260,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                         idx < comparisonData.length - 1
                           ? '1px solid var(--bdr)'
                           : 'none',
-                      backgroundColor: idx % 2 === 0 ? 'var(--card)' : 'var(--surf, #F6F5F2)',
+                      backgroundColor: idx % 2 === 0 ? 'var(--card)' : 'var(--surf, #FFFFFF)',
                     }}
                   >
                     <td

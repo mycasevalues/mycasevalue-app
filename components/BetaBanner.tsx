@@ -4,7 +4,7 @@ export default function BetaBanner() {
   return (
     <div
       style={{
-        background: 'var(--text1, #18181A)',
+        background: 'var(--text1, #333333)',
         color: 'rgba(255,255,255,0.7)',
         minHeight: '28px',
         display: 'flex',

@@ -21,7 +21,7 @@ export default function AttorneyError({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--surf, #F6F5F2)',
+        background: 'var(--surf, #FFFFFF)',
         fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
         padding: '24px',
         position: 'relative',
@@ -247,7 +247,7 @@ export default function AttorneyError({
             <a
               href="mailto:support@mycasevalues.com?subject=Attorney%20Tool%20Error"
               style={{
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
               }}

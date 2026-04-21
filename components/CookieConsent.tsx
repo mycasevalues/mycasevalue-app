@@ -80,7 +80,7 @@ export default function CookieConsent() {
               margin: 0,
               fontSize: '14px',
               lineHeight: '1.5',
-              color: 'var(--text1, #18181A)',
+              color: 'var(--text1, #333333)',
               fontFamily: 'var(--font-ui)',
             }}
           >
@@ -88,7 +88,7 @@ export default function CookieConsent() {
             <Link
               href="/privacy"
               style={{
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
                 fontWeight: 500,

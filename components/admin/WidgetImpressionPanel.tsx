@@ -229,7 +229,7 @@ export default function WidgetImpressionPanel() {
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: 'var(--link, #0A50A2)',
+                      backgroundColor: 'var(--link, #1A73E8)',
                       width: `${percentage}%`,
                       transition: 'width 0.3s ease',
                     }}

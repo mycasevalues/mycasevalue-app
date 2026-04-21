@@ -183,8 +183,8 @@
   box-shadow: none;
 }
 .mcv-card--outlined:hover {
-  border-color: var(--link, #0A50A2);
-  box-shadow: 0 0 0 1px var(--link, #0A50A2);
+  border-color: var(--link, #1A73E8);
+  box-shadow: 0 0 0 1px var(--link, #1A73E8);
 }
 
 /* Interactive card */
@@ -198,7 +198,7 @@
     background-color 150ms ease;
 }
 .mcv-card--interactive:hover {
-  border-color: var(--link, #0A50A2);
+  border-color: var(--link, #1A73E8);
   background: rgba(0,82,204,0.02);
 }
 .mcv-card--interactive:active {
@@ -322,12 +322,12 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 }
 
 .mcv-input:focus {
-  border-color: var(--link, #0A50A2);
+  border-color: var(--link, #1A73E8);
   box-shadow: var(--shadow-focus);
 }
 
 .mcv-input:focus-visible {
-  outline: 2px solid var(--link, #0A50A2);
+  outline: 2px solid var(--link, #1A73E8);
   outline-offset: 2px;
 }
 
@@ -396,7 +396,7 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 .mcv-badge--success  { background: var(--success-subtle); color: var(--success); }
 .mcv-badge--warning  { background: var(--warning-subtle); color: var(--warning); }
 .mcv-badge--danger   { background: var(--danger-subtle); color: var(--danger); }
-.mcv-badge--info     { background: rgba(0,82,204,0.08); color: var(--link, #0A50A2); }
+.mcv-badge--info     { background: rgba(0,82,204,0.08); color: var(--link, #1A73E8); }
 .mcv-badge--accent   { background: rgba(230,92,0,0.08); color: var(--gold, #C4882A); }
 .mcv-badge--outline  { background: transparent; color: var(--text-tertiary); border: 1px solid var(--bdr); }
 .mcv-badge--outline:hover { background-color: var(--surface-secondary); border-color: var(--link); }
@@ -413,7 +413,7 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 }
 
 .mcv-stat-card:hover {
-  border-color: var(--link, #0A50A2);
+  border-color: var(--link, #1A73E8);
 }
 
 .mcv-stat-card__header {
@@ -472,7 +472,7 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
   transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 .auth-input:focus {
-  border-color: var(--link, #0A50A2) !important;
+  border-color: var(--link, #1A73E8) !important;
   box-shadow: var(--shadow-focus) !important;
   outline: none;
 }

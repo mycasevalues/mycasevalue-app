@@ -122,7 +122,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
             transform: 'translateX(-50%)',
             width: '280px',
             background: 'var(--text1)',
-            color: 'var(--surf, #F6F5F2)',
+            color: 'var(--surf, #FFFFFF)',
             borderRadius: '4px',
             padding: '12px 14px',
             boxShadow: '0 4px 16px rgba(0,0,0,0.18)',

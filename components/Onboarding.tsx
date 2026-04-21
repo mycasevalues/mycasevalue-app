@@ -356,7 +356,7 @@ export default function Onboarding() {
                 fontSize: 16,
                 fontWeight: 700,
                 fontFamily: "var(--font-legal, 'Libre Baskerville', serif)",
-                color: 'var(--text1, #18181A)',
+                color: 'var(--text1, #333333)',
                 lineHeight: 1.3,
               }}
             >
@@ -416,7 +416,7 @@ export default function Onboarding() {
                     fontSize: 14,
                     fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
                     fontWeight: 600,
-                    color: 'var(--text1, #18181A)',
+                    color: 'var(--text1, #333333)',
                     backgroundColor: 'transparent',
                     border: '1px solid var(--bdr, #E2DFD8)',
                     borderRadius: 2,

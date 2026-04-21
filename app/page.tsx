@@ -185,7 +185,7 @@ export default function HomePage() {
               margin: '0 0 4px',
             }}
           >
-            <span style={{ color: 'var(--text1, #18181A)' }}>The Federal Court Record.</span>
+            <span style={{ color: 'var(--text1, #333333)' }}>The Federal Court Record.</span>
             <br />
             <span style={{ color: 'var(--gold, #C4882A)' }}>Open to Everyone.</span>
           </h1>
@@ -598,7 +598,7 @@ export default function HomePage() {
                     style={{
                       fontSize: 12,
                       fontFamily: 'var(--font-mono)',
-                      color: 'var(--text1, #18181A)',
+                      color: 'var(--text1, #333333)',
                       fontVariantNumeric: 'tabular-nums',
                     }}
                   >
@@ -633,7 +633,7 @@ export default function HomePage() {
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 600,
                 fontSize: 20,
-                color: 'var(--text1, #18181A)',
+                color: 'var(--text1, #333333)',
                 margin: 0,
               }}
             >
@@ -740,7 +740,7 @@ export default function HomePage() {
               fontFamily: 'var(--font-ui)',
               fontSize: 20,
               fontWeight: 600,
-              color: 'var(--text1, #18181A)',
+              color: 'var(--text1, #333333)',
               marginBottom: 16,
               textAlign: 'center',
             }}
@@ -784,7 +784,7 @@ export default function HomePage() {
               fontWeight: 600,
               letterSpacing: '-0.02em',
               lineHeight: 1.2,
-              color: 'var(--text1, #18181A)',
+              color: 'var(--text1, #333333)',
               margin: '0 0 12px',
             }}
           >
@@ -861,7 +861,7 @@ export default function HomePage() {
           border-bottom-color: var(--link) !important;
         }
         #tab-records:checked ~ div .hp-tab-generic {
-          color: var(--text1, #18181A) !important;
+          color: var(--text1, #333333) !important;
           font-weight: 600;
           border-bottom-color: var(--link) !important;
         }
@@ -873,7 +873,7 @@ export default function HomePage() {
         }
 
         /* Tab hover */
-        .hp-tab-label:hover { color: var(--text1, #18181A) !important; }
+        .hp-tab-label:hover { color: var(--text1, #333333) !important; }
 
         /* Browse cards hover */
         .hp-browse-card:hover {

@@ -54,7 +54,7 @@ export default function MasterDetailLayout({
           flex-1 overflow-y-auto
           ${hasSelection ? 'block' : 'hidden lg:block'}
         `}
-        style={{ background: 'var(--surf, #F6F5F2)' }}
+        style={{ background: 'var(--surf, #FFFFFF)' }}
       >
         {/* Mobile back button */}
         {hasSelection && (
@@ -75,7 +75,7 @@ export default function MasterDetailLayout({
                 fontSize: 14,
                 fontWeight: 500,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
@@ -179,7 +179,7 @@ export function StatPill({ label, value, color }: { label: string; value: string
         style={{
           fontFamily: 'var(--font-mono)',
           fontWeight: 600,
-          color: color || 'var(--text1, #18181A)',
+          color: color || 'var(--text1, #333333)',
           fontVariantNumeric: 'tabular-nums',
         }}
       >

@@ -57,7 +57,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
             fontSize: 12,
             fontWeight: 700,
             color: 'var(--card, #FFFFFF)',
-            background: 'var(--link, #0A50A2)',
+            background: 'var(--link, #1A73E8)',
             borderRadius: 4,
             padding: '1px 5px',
             lineHeight: '14px',
@@ -76,7 +76,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
               href={step.href}
               style={{
                 fontSize: 12,
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 fontFamily: 'var(--font-ui)',
                 textDecoration: 'none',
                 cursor: 'pointer',
@@ -88,7 +88,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
             <span
               style={{
                 fontSize: 12,
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link, #1A73E8)',
                 fontFamily: 'var(--font-ui)',
                 cursor: 'pointer',
               }}
@@ -112,7 +112,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
                   width: 7,
                   height: 7,
                   borderRadius: '50%',
-                  border: '2px solid var(--link, #0A50A2)',
+                  border: '2px solid var(--link, #1A73E8)',
                   background: 'var(--card, #FFFFFF)',
                   flexShrink: 0,
                 }}
@@ -132,7 +132,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
                 <span
                   style={{
                     fontSize: 12,
-                    color: 'var(--link, #0A50A2)',
+                    color: 'var(--link, #1A73E8)',
                     fontFamily: 'var(--font-ui)',
                   }}
                 >
@@ -149,7 +149,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
         <span
           style={{
             fontSize: 12,
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link, #1A73E8)',
             fontFamily: 'var(--font-ui)',
             cursor: 'pointer',
           }}

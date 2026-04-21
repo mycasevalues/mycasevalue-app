@@ -52,7 +52,7 @@ const monoValueStyle: React.CSSProperties = {
 
 const linkStyle: React.CSSProperties = {
   fontSize: 12,
-  color: 'var(--link, #0A50A2)',
+  color: 'var(--link, #1A73E8)',
   fontFamily: 'var(--font-ui)',
   cursor: 'pointer',
   background: 'none',
@@ -88,7 +88,7 @@ function FullCoverage({ data, onMoreCases, onSimilarFact }: Omit<AnalyticsBoxPro
               fontSize: 12,
               fontWeight: 700,
               color: 'var(--card, #FFFFFF)',
-              background: 'var(--link, #0A50A2)',
+              background: 'var(--link, #1A73E8)',
               borderRadius: 4,
               padding: '1px 6px',
               lineHeight: '14px',
@@ -220,7 +220,7 @@ function PartialCoverage({ data }: { data: AnalyticsBoxData }) {
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: 12,
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link, #1A73E8)',
             cursor: 'pointer',
           }}
         >
