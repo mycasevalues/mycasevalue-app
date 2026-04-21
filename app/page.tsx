@@ -38,18 +38,18 @@ export const metadata: Metadata = {
     absolute: 'MyCaseValue — Federal Court Intelligence Platform',
   },
   description:
-    'Litigation intelligence from public federal court records. Case outcomes, judge analytics, venue analysis, and settlement data across all 94 federal districts.',
+    'Know what your case is worth before you file. 5.1M+ federal court cases across all 94 districts — win rates by judge, settlement ranges by case type, case timelines, venue analysis. Open to everyone.',
   openGraph: {
     type: 'website',
     title: 'MyCaseValue | Federal Court Intelligence',
     images: [{ url: `${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('Federal Court Data — Open to Everyone')}`, width: 1200, height: 630, alt: 'MyCaseValue' }],
-    description: 'Litigation intelligence from public federal court records.',
+    description: 'Know what your case is worth before you file. 5.1M+ federal cases, win rates by judge, settlement ranges by district. Open to everyone.',
     url: SITE_URL,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MyCaseValue | Federal Court Intelligence',
-    description: 'Litigation intelligence from public federal court records.',
+    description: 'Know what your case is worth before you file. 5.1M+ federal cases, win rates by judge, settlement ranges by district. Open to everyone.',
     images: [`${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('Federal Court Data — Open to Everyone')}`],
   },
   alternates: {
